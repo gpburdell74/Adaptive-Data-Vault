@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Adaptive.Data.Vault.DataAccess</AssemblyName>
+    <RootNamespace>Adaptive.Data.Vault.DataAccess</RootNamespace>
+    <PackageId>Adaptive.Data.Vault.DataAccess</PackageId>
+    <Title>Adaptive Intelligence Data Vault Data Access Library</Title>
+    <Version>0.2.0.0</Version>
+    <Authors>Sam Jones</Authors>
+    <Company>Adaptive Intelligence</Company>
+    <Product>Adaptive.Data.Vault.DataAccess</Product>
+    <Description>A .NET Class Library to provide data access capabilities and definitions for the Adaptive Data Vault Application.</Description>
+    <Copyright>Copyright (C) 2024-2025 by Sam Jones. All rights reserved.</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <IsTrimmable>True</IsTrimmable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <IsTrimmable>True</IsTrimmable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Framework\Shared Code Library\Adaptive.Intelligence.Shared\Adaptive.Intelligence.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

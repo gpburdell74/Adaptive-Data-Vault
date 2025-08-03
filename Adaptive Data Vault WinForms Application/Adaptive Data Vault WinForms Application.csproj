@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <RootNamespace>Adaptive.Data.Vault.UI</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Adaptive.Data.Vault.Desktop</AssemblyName>
+    <ApplicationIcon>ADV.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ADV.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Framework\Shared Code Library\Adaptive.Intelligence.Shared\Adaptive.Intelligence.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI\Adaptive.Intelligence.Shared.UI.csproj" />
+    <ProjectReference Include="..\Adaptive.Data.Vault.DataAccess\Adaptive.Data.Vault.DataAccess.csproj" />
+    <ProjectReference Include="..\Adaptive.Data.Vault.Test\Adaptive.Data.Vault.Test.csproj" />
+    <ProjectReference Include="..\Adaptive.Data.Vault.UI\Adaptive.Data.Vault.UI.csproj" />
+    <ProjectReference Include="..\Adaptive.Data.Vault\Adaptive.Data.Vault.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
