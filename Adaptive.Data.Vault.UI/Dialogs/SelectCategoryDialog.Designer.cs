@@ -34,7 +34,7 @@ partial class SelectCategoryDialog
         BorderPanel.Padding = new Padding(10);
         BorderPanel.Size = new Size(569, 498);
         BorderPanel.TabIndex = 0;
-        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Button.template";
+        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         // 
         // ContainerPanel
         // 

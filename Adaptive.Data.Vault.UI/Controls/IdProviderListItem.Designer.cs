@@ -2,12 +2,13 @@
 
 namespace Adaptive.Data.Vault.UI;
 
-partial class WebAccountListItem
+partial class IdProviderListItem
 {
     /// <summary> 
     /// Required designer variable.
     /// </summary>
     private System.ComponentModel.IContainer components;
+
 
     #region Component Designer generated code
 
@@ -18,7 +19,7 @@ partial class WebAccountListItem
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WebAccountListItem));
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdProviderListItem));
         ContainerPanel = new GradientPanel();
         ContextMenu = new ContextMenuStrip(components);
         ContextMenuNew = new ToolStripMenuItem();
@@ -113,12 +114,11 @@ partial class WebAccountListItem
         // 
         // ContextMenuProperties
         // 
-        ContextMenuProperties.Image = (Image)resources.GetObject("ContextMenuProperties.Image");
         ContextMenuProperties.Name = "ContextMenuProperties";
         ContextMenuProperties.ShortcutKeys = Keys.F5;
         ContextMenuProperties.Size = new Size(202, 22);
         ContextMenuProperties.Text = "Properties";
-        ContextMenuProperties.ToolTipText = "Show the detail imformation for this entry.";
+        ContextMenuProperties.ToolTipText = "Show the detail information for this entry.";
         // 
         // DividerLine
         // 
@@ -277,7 +277,7 @@ partial class WebAccountListItem
         AutoScaleDimensions = new SizeF(96F, 96F);
         Controls.Add(ContainerPanel);
         Margin = new Padding(3);
-        Name = "WebAccountListItem";
+        Name = "IdProviderListItem";
         Size = new Size(440, 54);
         ContainerPanel.ResumeLayout(false);
         ContextMenu.ResumeLayout(false);
@@ -310,4 +310,5 @@ partial class WebAccountListItem
     private ToolStripMenuItem ContextMenuCategorize;
     private ToolStripSeparator ContextMenuDividerB;
     private ToolStripMenuItem ContextMenuProperties;
+
 }

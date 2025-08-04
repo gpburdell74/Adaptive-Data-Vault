@@ -44,7 +44,7 @@ partial class WebAccountListControl
         NewAccountButton.Name = "NewAccountButton";
         NewAccountButton.Size = new Size(247, 32);
         NewAccountButton.TabIndex = 0;
-        NewAccountButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Button.template";
+        NewAccountButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         NewAccountButton.Text = "Create New Account Entry...";
         NewAccountButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         NewAccountButton.UseVisualStyleBackColor = true;

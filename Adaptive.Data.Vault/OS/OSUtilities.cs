@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Adaptive.Intelligence.Shared.Logging;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -54,7 +55,7 @@ public static class OSUtilities
         }
         catch (Exception ex)
         {
-
+            ExceptionLog.LogException(ex);
         }
     }
     #endregion
@@ -109,6 +110,7 @@ public static class OSUtilities
         }
         catch (Exception ex)
         {
+            ExceptionLog.LogException(ex);
             path = null;
         }
 

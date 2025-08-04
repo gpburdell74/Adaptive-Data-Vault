@@ -25,6 +25,9 @@
     <Compile Update="Controls\IdentityProviderListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Controls\IdProviderListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Controls\ItemHeaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -36,6 +39,9 @@
     </Compile>
     <Compile Update="Controls\VaultDialogHeader.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dialogs\IdentityProviderInfoDialog.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Dialogs\SelectCategoryDialog.cs">
       <SubType>Form</SubType>

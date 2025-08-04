@@ -44,7 +44,7 @@ partial class AddEditWebAccountDialog
         BorderPanel.Padding = new Padding(5);
         BorderPanel.Size = new Size(800, 378);
         BorderPanel.TabIndex = 2;
-        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Button.template";
+        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         // 
         // DialogHeader
         // 

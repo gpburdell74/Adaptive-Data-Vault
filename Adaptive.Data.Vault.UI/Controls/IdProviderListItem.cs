@@ -6,10 +6,10 @@ using System.ComponentModel;
 namespace Adaptive.Data.Vault.UI;
 
 /// <summary>
-/// Provides a control for displaying a Web Account as a line item.
+/// Provides a control for displaying an identity provider as a line item.
 /// </summary>
 /// <seealso cref="AdaptiveControlBase" />
-public partial class WebAccountListItem : AdaptiveControlBase
+public partial class IdProviderListItem : AdaptiveControlBase
 {
     #region Public Events
     /// <summary>
@@ -20,14 +20,14 @@ public partial class WebAccountListItem : AdaptiveControlBase
     /// <summary>
     /// Occurs when a user attempts to delete an entry.
     /// </summary>
-    public event Intelligence.Shared.EventHandler<WebAccount>? DeleteRequest;
+    public event Intelligence.Shared.EventHandler<IdentityProvider>? DeleteRequest;
     #endregion
 
     #region Private Member Declarations
     /// <summary>
     /// The account
     /// </summary>
-    private WebAccount? _account;
+    private IdentityProvider? _provider;
 
     /// <summary>
     /// The selected flag.
@@ -37,12 +37,12 @@ public partial class WebAccountListItem : AdaptiveControlBase
 
     #region Constructor / Dispose Methods
     /// <summary>
-    /// Initializes a new instance of the <see cref="WebAccountListItem"/> class.
+    /// Initializes a new instance of the <see cref="IdProviderListItem"/> class.
     /// </summary>
     /// <remarks>
     /// This is the default constructor.
     /// </remarks>
-    public WebAccountListItem()
+    public IdProviderListItem()
     {
         InitializeComponent();
     }
@@ -57,7 +57,7 @@ public partial class WebAccountListItem : AdaptiveControlBase
             components?.Dispose();
         }
 
-        _account = null;
+        _provider = null;
         components = null;
         base.Dispose(disposing);
     }
@@ -65,26 +65,26 @@ public partial class WebAccountListItem : AdaptiveControlBase
 
     #region Public Properties
     /// <summary>
-    /// Gets or sets the reference to the Web account being shown.
+    /// Gets or sets the reference to the Identity Provider being shown.
     /// </summary>
     /// <value>
-    /// The <see cref="WebAccount"/> instance.
+    /// The <see cref="IdentityProvider"/> instance.
     /// </value>
     [Browsable(false),
      DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public WebAccount? Account
+    public IdentityProvider? Provider
     {
-        get => _account;
+        get => _provider;
         set
         {
-            _account = value;
+            _provider = value;
             SetControlValues();
             Invalidate();
         }
     }
 
     /// <summary>
-    /// Gets a value indicating whether this <see cref="WebAccountListItem"/> is selected.
+    /// Gets a value indicating whether this <see cref="IdentityProviderListItem"/> is selected.
     /// </summary>
     /// <value>
     ///   <c>true</c> if selected; otherwise, <c>false</c>.
@@ -211,10 +211,10 @@ public partial class WebAccountListItem : AdaptiveControlBase
     /// Raises the <see cref="DeleteRequest" /> event.
     /// </summary>
     /// <param name="evArgs">
-    /// The <see cref="EventArgs{T}"/> of <see cref="WebAccount"/> instance containing the 
-    /// reference to the <see cref="WebAccount"/> entry to be deleted.
+    /// The <see cref="EventArgs{T}"/> of <see cref="IdentityProvider"/> instance containing the 
+    /// reference to the <see cref="IdentityProvider"/> entry to be deleted.
     /// </param>
-    private void OnDeleteRequest(EventArgs<WebAccount> evArgs)
+    private void OnDeleteRequest(EventArgs<IdentityProvider> evArgs)
     {
         ContinueInMainThread(() =>
         {
@@ -233,7 +233,7 @@ public partial class WebAccountListItem : AdaptiveControlBase
     {
         SetPreLoadState();
 
-        OSUtilities.StartBrowser(_account?.Url ?? string.Empty);
+        OSUtilities.StartBrowser(_provider?.Url ?? string.Empty);
 
         SetPostLoadState();
         SetState();
@@ -248,14 +248,11 @@ public partial class WebAccountListItem : AdaptiveControlBase
     {
         SetPreLoadState();
 
-        if (_account != null)
-        {
-            WebAccountInfoDialog dialog = new WebAccountInfoDialog();
-            dialog.Account = _account;
-            dialog.ShowDialog();
+        IdentityProviderInfoDialog dialog = new IdentityProviderInfoDialog();
+        dialog.IdProvider = _provider;
+        dialog.ShowDialog();
 
-            dialog.Dispose();
-        }
+        dialog.Dispose();
 
         SetPostLoadState();
         SetState();
@@ -270,13 +267,13 @@ public partial class WebAccountListItem : AdaptiveControlBase
     {
         SetPreLoadState();
 
-        AddEditWebAccountDialog dialog = new AddEditWebAccountDialog();
+        AddEditIdentityProviderDialog dialog = new AddEditIdentityProviderDialog();
         DialogResult result = dialog.ShowDialog();
 
         if (result == DialogResult.OK)
         {
             if (Parent != null)
-                ((WebAccountListControl)Parent).AddNewItem();
+                ((IdentityProviderListControl)Parent).AddNewItem();
         }
 
         SetPostLoadState();
@@ -291,8 +288,8 @@ public partial class WebAccountListItem : AdaptiveControlBase
     {
         SetPreLoadState();
 
-        AddEditWebAccountDialog dialog = new AddEditWebAccountDialog();
-        dialog.Account = _account;
+        AddEditIdentityProviderDialog dialog = new AddEditIdentityProviderDialog();
+        dialog.IdProvider = _provider;
         DialogResult result = dialog.ShowDialog();
         if (result == DialogResult.OK)
         {
@@ -312,14 +309,14 @@ public partial class WebAccountListItem : AdaptiveControlBase
     {
         SetPreLoadState();
 
-        if (_account != null)
+        if (_provider != null)
         {
             bool canDelete = GetUserConfirmation("Delete This Entry?",
-                $"Are you sure you want to delete the entry for: {_account.Name}?  This action cannot be undone.");
+                $"Are you sure you want to delete the entry for: {_provider.Name}?  This action cannot be undone.");
 
             if (canDelete)
             {
-                OnDeleteRequest(new EventArgs<WebAccount>(_account));
+                OnDeleteRequest(new EventArgs<IdentityProvider>(_provider));
             }
         }
         SetPostLoadState();
@@ -360,11 +357,11 @@ public partial class WebAccountListItem : AdaptiveControlBase
     /// </summary>
     private void SetControlValues()
     {
-        if (_account != null)
+        if (_provider != null)
         {
-            NameLabel.Text = _account.Name;
-            DescriptionLabel.Text = _account.Description;
-            UrlLabel.Text = _account.Url;
+            NameLabel.Text = _provider.ProviderTypeName;
+            DescriptionLabel.Text = _provider.Name;
+            UrlLabel.Text = _provider.Url;
         }
     }
     #endregion

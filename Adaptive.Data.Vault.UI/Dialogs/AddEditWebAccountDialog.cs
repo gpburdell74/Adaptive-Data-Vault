@@ -139,7 +139,6 @@ public partial class AddEditWebAccountDialog : AdaptiveDialogBase
     {
         SetPreLoadState();
         DialogResult = DialogResult.OK;
-        WebAccount a = WebEdit.Account;
         Close();
     }
 

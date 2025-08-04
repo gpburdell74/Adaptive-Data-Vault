@@ -44,17 +44,17 @@ partial class MainDialog
         SaveAsButton = new ToolStripButton();
         ToolbarSaveDivider = new ToolStripSeparator();
         OptionsButton = new ToolStripButton();
-        Container = new SplitContainer();
+        MainContainer = new SplitContainer();
         CatTree = new CategoriesTreeControl();
         Data = new CategorizedItemsContainerControl();
         ttp = new ToolTip(components);
         MainMenu.SuspendLayout();
         MainStatus.SuspendLayout();
         MainToolbar.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)Container).BeginInit();
-        Container.Panel1.SuspendLayout();
-        Container.Panel2.SuspendLayout();
-        Container.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)MainContainer).BeginInit();
+        MainContainer.Panel1.SuspendLayout();
+        MainContainer.Panel2.SuspendLayout();
+        MainContainer.SuspendLayout();
         SuspendLayout();
         // 
         // MainMenu
@@ -268,21 +268,21 @@ partial class MainDialog
         // 
         // Container
         // 
-        Container.Dock = DockStyle.Fill;
-        Container.Location = new Point(0, 49);
-        Container.Name = "Container";
+        MainContainer.Dock = DockStyle.Fill;
+        MainContainer.Location = new Point(0, 49);
+        MainContainer.Name = "Container";
         // 
         // Container.Panel1
         // 
-        Container.Panel1.Controls.Add(CatTree);
+        MainContainer.Panel1.Controls.Add(CatTree);
         // 
         // Container.Panel2
         // 
-        Container.Panel2.AutoScroll = true;
-        Container.Panel2.Controls.Add(Data);
-        Container.Size = new Size(930, 490);
-        Container.SplitterDistance = 309;
-        Container.TabIndex = 3;
+        MainContainer.Panel2.AutoScroll = true;
+        MainContainer.Panel2.Controls.Add(Data);
+        MainContainer.Size = new Size(930, 490);
+        MainContainer.SplitterDistance = 309;
+        MainContainer.TabIndex = 3;
         // 
         // CatTree
         // 
@@ -309,7 +309,7 @@ partial class MainDialog
         AutoScaleDimensions = new SizeF(96F, 96F);
         AutoScaleMode = AutoScaleMode.Dpi;
         ClientSize = new Size(930, 561);
-        Controls.Add(Container);
+        Controls.Add(MainContainer);
         Controls.Add(MainToolbar);
         Controls.Add(MainStatus);
         Controls.Add(MainMenu);
@@ -325,10 +325,10 @@ partial class MainDialog
         MainStatus.PerformLayout();
         MainToolbar.ResumeLayout(false);
         MainToolbar.PerformLayout();
-        Container.Panel1.ResumeLayout(false);
-        Container.Panel2.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)Container).EndInit();
-        Container.ResumeLayout(false);
+        MainContainer.Panel1.ResumeLayout(false);
+        MainContainer.Panel2.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)MainContainer).EndInit();
+        MainContainer.ResumeLayout(false);
         ResumeLayout(false);
         PerformLayout();
     }
@@ -338,7 +338,7 @@ partial class MainDialog
     private MenuStrip MainMenu;
     private StatusStrip MainStatus;
     private ToolStrip MainToolbar;
-    private SplitContainer Container;
+    private SplitContainer MainContainer;
     private ToolStripMenuItem FileMenu;
     private ToolStripMenuItem ToolMenu;
     private ToolStripMenuItem FileMenuNewFile;

@@ -22,10 +22,6 @@ namespace Adaptive.Data.Vault.UI.Controls
         /// The name of the entry.
         /// </summary>
         private string? _name;
-        /// <summary>
-        /// The rating for the entry.
-        /// </summary>
-        private int _rating = 0;
         #endregion
 
         #region Constructor / Dispose Methods

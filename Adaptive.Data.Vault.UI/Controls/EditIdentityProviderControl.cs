@@ -69,22 +69,6 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
     }
     #endregion
 
-    #region Protected Method Overrides    
-    /// <summary>
-    /// Initializes the control and dialog state according to the form data.
-    /// </summary>
-    protected override void InitializeDataContent()
-    {
-        IdProviderTypeList.Items.Add("None");
-        IdProviderTypeList.Items.Add("Microsoft");
-        IdProviderTypeList.Items.Add("Google");
-        IdProviderTypeList.Items.Add("Facebook");
-        IdProviderTypeList.Items.Add("Apple");
-        IdProviderTypeList.Items.Add("Corporate, Custom, or Other");
-        IdProviderTypeList.SelectedIndex = 0;
-    }
-    #endregion
-
     #region Private Methods / Functions
     /// <summary>
     /// Saves the control values to the business object.
@@ -123,9 +107,12 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
     {
         if (_provider != null)
         {
+            if (IdProviderTypeList.Items.Count == 0)
+                SetListContent();
+
             IdProviderTypeList.SelectedIndex = (int)_provider.ProviderType;
-            NameText.Text = _provider.Name;
-            DescText.Text = _provider.Description;
+            NameText.Text = _provider.ProviderTypeName;
+            DescText.Text = _provider.Name;
             UrlText.Text = _provider.Url;
             UserIdText.Text = _provider.UserId;
             PasswordText.Text = _provider.Password;
@@ -137,6 +124,16 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
                 MfaAddressText.Text = _provider.MFADeviceAddress;
             }
         }
+    }
+    private void SetListContent()
+    {
+        IdProviderTypeList.Items.Add("None");
+        IdProviderTypeList.Items.Add("Microsoft");
+        IdProviderTypeList.Items.Add("Google");
+        IdProviderTypeList.Items.Add("Facebook");
+        IdProviderTypeList.Items.Add("Apple");
+        IdProviderTypeList.Items.Add("Corporate, Custom, or Other");
+        IdProviderTypeList.SelectedIndex = 0;
     }
     #endregion
 }

@@ -21,6 +21,5 @@ internal static class Program
         MainDialog dialog = new MainDialog();
         Application.Run(dialog);
         dialog.Dispose();
-        dialog = null;
     }
 }

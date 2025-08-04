@@ -286,7 +286,13 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     /// </summary>
     private void SetIdProviderList()
     {
-
+        if (_manager != null && _manager.IdProviders != null)
+        {
+            // Set the list for the currently selected category.
+            IdProvidersList.ClearList();
+            IdProvidersList.Category = _category;
+            IdProvidersList.Manager = _manager;
+        }
     }
 
     /// <summary>

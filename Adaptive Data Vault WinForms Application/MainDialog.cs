@@ -164,7 +164,7 @@ public partial class MainDialog : AdaptiveDialogBase
         SaveButton.Visible = isOpen;
         SaveAsButton.Visible = isOpen;
 
-        Container.Panel1Collapsed = !isOpen;
+        MainContainer.Panel1Collapsed = !isOpen;
         CatTree.Visible = isOpen;
         Data.Visible = isOpen;
     }
@@ -230,17 +230,20 @@ public partial class MainDialog : AdaptiveDialogBase
                 PerformClose();
 
                 _secParams = secParams;
-                _manager = new VaultManager();
-                _manager.Load(
-                    _secParams.FileName,
-                    _secParams.UserId,
-                    _secParams.Password,
-                    _secParams.Pin);
+                if (_secParams!= null)
+                {
+                    _manager = new VaultManager();
+                    _manager.Load(
+                        _secParams.FileName!,
+                        _secParams.UserId!,
+                        _secParams.Password!,
+                        _secParams.Pin);
 
-                // Set the categories list.
-                CatTree.Categories = _manager!.Categories;
-                Data.Manager = _manager;
-                Data.SelectedCategory = CatTree.SelectedCategory;
+                    // Set the categories list.
+                    CatTree.Categories = _manager!.Categories;
+                    Data.Manager = _manager;
+                    Data.SelectedCategory = CatTree.SelectedCategory;
+                }
             }
         }
 
@@ -416,7 +419,7 @@ public partial class MainDialog : AdaptiveDialogBase
     /// A string containing the user-specified path and file name if successful;
     /// otherwise, returns <b>null</b>.
     /// </returns>
-    private string? GetNewFileName(bool saveAs =false)
+    private static string? GetNewFileName(bool saveAs =false)
     {
         string? fileName = null;
 
@@ -444,7 +447,7 @@ public partial class MainDialog : AdaptiveDialogBase
     /// A string containing the user-specified path and file name if successful;
     /// otherwise, returns <b>null</b>.
     /// </returns>
-    private string? GetOpenFileName()
+    private static string? GetOpenFileName()
     {
         string? fileName = null;
 
@@ -469,16 +472,13 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <b>true</b> if the login and load of the file is successful; otherwise,
     /// returns <b>false</b>.
     /// </returns>
-    private SecureFileParameters? ShowFileLogin(string newFileName)
+    private static SecureFileParameters? ShowFileLogin(string newFileName)
     {
-        SecureFileParameters? secParams = null;
-
-        secParams = DialogProvider.DisplayLoginDialog(newFileName);
+        SecureFileParameters? secParams = DialogProvider.DisplayLoginDialog(newFileName);
         if (secParams != null)
             secParams.FileName = newFileName;
         
         return secParams;
-
     }
 
     /// <summary>
@@ -492,9 +492,9 @@ public partial class MainDialog : AdaptiveDialogBase
                 _manager = new VaultManager();
 
             _manager.Save(
-                _secParams.FileName,
-                _secParams.UserId,
-                _secParams.Password,
+                _secParams.FileName!,
+                _secParams.UserId!,
+                _secParams.Password!,
                 _secParams.Pin);
         }
     }

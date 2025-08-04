@@ -136,7 +136,7 @@ partial class LoginDialog
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(100, 32);
         CloseButton.TabIndex = 1;
-        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Cancel  Template.template";
+        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
         CloseButton.Text = "Cancel";
         CloseButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(CloseButton, "Click here to Cancel.");
@@ -151,7 +151,7 @@ partial class LoginDialog
         OkButton.Name = "OkButton";
         OkButton.Size = new Size(100, 32);
         OkButton.TabIndex = 0;
-        OkButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Button.template";
+        OkButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         OkButton.Text = "OK";
         OkButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(OkButton, "Click here to log in to the file and load the contents.");

@@ -102,7 +102,7 @@ public partial class AddEditIdentityProviderDialog : AdaptiveDialogBase
     /// </summary>
     protected override void InitializeDataContent()
     {
-        IdProviderEdit.IdProvider = _provider;
+    //    IdProviderEdit.IdProvider = _provider;
     }
 
     /// <summary>

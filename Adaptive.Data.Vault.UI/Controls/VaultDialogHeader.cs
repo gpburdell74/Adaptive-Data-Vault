@@ -8,7 +8,7 @@ namespace Adaptive.Data.Vault.UI.Controls
     {
         #region Private Member Declarations
 
-        private Container components;
+        private Container? components;
         private Color _startColor = Color.FromArgb(255, 0, 79, 210);
         private Color _endColor = Color.FromArgb(255, 136, 181, 255);
 

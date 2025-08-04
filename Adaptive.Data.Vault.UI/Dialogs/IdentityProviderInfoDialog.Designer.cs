@@ -1,6 +1,8 @@
-﻿namespace Adaptive.Data.Vault.UI;
+﻿using System.Xml.Linq;
 
-partial class WebAccountInfoDialog
+namespace Adaptive.Data.Vault.UI;
+
+partial class IdentityProviderInfoDialog
 {
     /// <summary>
     /// Required designer variable.
@@ -136,7 +138,6 @@ partial class WebAccountInfoDialog
         CopyUrlButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
         ttp.SetToolTip(CopyUrlButton, "Copy this URL to the clipboard.");
         CopyUrlButton.UseVisualStyleBackColor = true;
-        CopyUrlButton.Click += CopyUrlButton_Click;
         // 
         // PasswordLabel
         // 

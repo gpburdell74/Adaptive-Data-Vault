@@ -104,11 +104,14 @@ public sealed class VaultFile : DisposableObjectBase, IVaultFile
             SuperCrypt crypt = new SuperCrypt(userId, password, pin);
             byte[]? outputData = crypt.Encrypt(data);
 
-            stream.Write(outputData, 0, outputData.Length);
+            if (outputData != null)
+                stream.Write(outputData, 0, outputData.Length);
+
             stream.Flush();
             stream.Dispose();
 
-            Array.Clear(outputData, 0, outputData.Length);
+            if (outputData != null) 
+                Array.Clear(outputData, 0, outputData.Length);
             Array.Clear(data, 0, data.Length);
         }
     }
