@@ -24,7 +24,7 @@ partial class CategorizedItemsContainerControl
         AccountsButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
         WebAccountsList = new WebAccountListControl();
         IdProvidersList = new Adaptive.Data.Vault.UI.IdentityProviderListControl();
-        SecureNotesList = new Adaptive.Data.Vault.UI.Controls.SecureNoteListControl();
+        SecureNotesList = new Adaptive.Data.Vault.UI.SecureNoteListControl();
         TabsPanel.SuspendLayout();
         SuspendLayout();
         // 
@@ -150,5 +150,5 @@ partial class CategorizedItemsContainerControl
     private Panel AcctSeparatorPanel;
     private WebAccountListControl WebAccountsList;
     private IdentityProviderListControl IdProvidersList;
-    private Controls.SecureNoteListControl SecureNotesList;
+    private SecureNoteListControl SecureNotesList;
 }

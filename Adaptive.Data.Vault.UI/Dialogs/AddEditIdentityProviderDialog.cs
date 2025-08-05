@@ -97,13 +97,6 @@ public partial class AddEditIdentityProviderDialog : AdaptiveDialogBase
         SaveCancel.SaveClicked -= HandleSaveClicked;
         SaveCancel.CancelClicked -= HandleCancelClicked;
     }
-    /// <summary>
-    /// Initializes the control and dialog state according to the form data.
-    /// </summary>
-    protected override void InitializeDataContent()
-    {
-    //    IdProviderEdit.IdProvider = _provider;
-    }
 
     /// <summary>
     /// Sets the state of the UI controls before the data content is loaded.

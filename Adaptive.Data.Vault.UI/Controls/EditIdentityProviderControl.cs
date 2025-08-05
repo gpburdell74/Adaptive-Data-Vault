@@ -69,6 +69,18 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
     }
     #endregion
 
+    #region Protected Method Overrides
+    /// <summary>
+    /// Initializes the control and dialog state according to the form data.
+    /// </summary>
+    protected override void InitializeDataContent()
+    {
+        SetControlValues();
+        if (_provider == null)
+            _provider = new IdentityProvider();
+    }
+    #endregion
+    
     #region Private Methods / Functions
     /// <summary>
     /// Saves the control values to the business object.
@@ -105,10 +117,11 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
     /// </summary>
     private void SetControlValues()
     {
+        if (IdProviderTypeList.Items.Count == 0)
+            SetListContent();
+
         if (_provider != null)
         {
-            if (IdProviderTypeList.Items.Count == 0)
-                SetListContent();
 
             IdProviderTypeList.SelectedIndex = (int)_provider.ProviderType;
             NameText.Text = _provider.ProviderTypeName;

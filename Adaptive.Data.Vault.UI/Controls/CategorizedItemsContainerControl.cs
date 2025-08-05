@@ -109,8 +109,16 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
 
         // Lists.
         WebAccountsList.ContentChanged += HandleGenericContentChange;
-        WebAccountsList.ItemAdded += HandleItemAdded;
-        WebAccountsList.ItemDeleted += HandleItemDeleted;
+        WebAccountsList.ItemAdded += HandleWebAccountAdded;
+        WebAccountsList.ItemDeleted += HandleWebAccountDeleted;
+        
+        IdProvidersList.ContentChanged += HandleGenericContentChange;
+        IdProvidersList.ItemAdded += HandleIdProviderAdded;
+        IdProvidersList.ItemDeleted += HandleIdProviderDeleted;
+
+        SecureNotesList.ContentChanged += HandleGenericContentChange;
+        SecureNotesList.ItemAdded += HandleSecureNoteAdded;
+        SecureNotesList.ItemDeleted += HandleSecureNoteDeleted;
     }
 
     /// <summary>
@@ -120,8 +128,8 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     {
         // Lists.
         WebAccountsList.ContentChanged -= HandleGenericContentChange;
-        WebAccountsList.ItemAdded -= HandleItemAdded;
-        WebAccountsList.ItemDeleted -= HandleItemDeleted;
+        WebAccountsList.ItemAdded -= HandleWebAccountAdded;
+        WebAccountsList.ItemDeleted -= HandleWebAccountDeleted;
 
         // Buttons.
         AccountsButton.Click -= HandleAccountsClicked;
@@ -182,7 +190,7 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
-    private void HandleItemAdded(object? sender, EventArgs<WebAccount> e)
+    private void HandleWebAccountAdded(object? sender, EventArgs<WebAccount> e)
     {
         if (_manager != null && _manager.WebAccounts != null && e.Data != null)
         {
@@ -193,15 +201,74 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     }
 
     /// <summary>
+    /// Handles the event when a new identity provider is added.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
+    private void HandleIdProviderAdded(object? sender, EventArgs<IdentityProvider> e)
+    {
+        if (_manager != null && _manager.IdProviders != null && e.Data != null)
+        {
+            _manager.IdProviders.Add(e.Data);
+            _manager.Save();
+        }
+
+    }
+
+    /// <summary>
+    /// Handles the event when a new item is added.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
+    private void HandleSecureNoteAdded(object? sender, EventArgs<SecureNote> e)
+    {
+        if (_manager != null && _manager.SecureNotes != null && e.Data != null)
+        {
+            _manager.SecureNotes.Add(e.Data);
+            _manager.Save();
+        }
+
+    }
+
+    /// <summary>
     /// Handles the event when an item is deleted.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
-    private void HandleItemDeleted(object? sender, EventArgs<WebAccount> e)
+    private void HandleWebAccountDeleted(object? sender, EventArgs<WebAccount> e)
     {
         if (_manager != null && _manager.WebAccounts != null && e.Data != null)
         {
             _manager.WebAccounts.Remove(e.Data);
+            _manager.Save();
+        }
+    }
+
+    /// <summary>
+    /// Handles the event when an item is deleted.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
+    private void HandleIdProviderDeleted(object? sender, EventArgs<IdentityProvider> e)
+    {
+        if (_manager != null && _manager.IdProviders != null && e.Data != null)
+        {
+            _manager.IdProviders.Remove(e.Data);
+            _manager.Save();
+        }
+    }
+
+    /// <summary>
+    /// Handles the event when an item is deleted.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
+    private void HandleSecureNoteDeleted(object? sender, EventArgs<SecureNote> e)
+    {
+        if (_manager != null && _manager.WebAccounts != null && e.Data != null)
+        {
+            _manager.SecureNotes.Remove(e.Data);
+            _manager.Save();
         }
     }
     /// <summary>
@@ -300,6 +367,13 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     /// </summary>
     private void SetSecureNotesList()
     {
+        if (_manager != null && _manager.SecureNotes != null)
+        {
+            // Set the list for the currently selected category.
+            SecureNotesList.ClearList();
+            SecureNotesList.Category = _category;
+            SecureNotesList.Manager = _manager;
+        }
     }
     #endregion
 }

@@ -120,13 +120,29 @@
   <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ToolMenuDecryptMessage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAj9JREFUOE+NkktIFVEch8/cuV57282KKHPVrlq4aldY0CKkRYVQBKlFmZlXi2uh
+        ZRZokfa0d4tUIqVMe5gtilDsGulNDKUCQSKoCGtR4S79+o0zEjUUHfg4Zx6/7/znf8ZMjOoBWtfdhcxm
+        cdubJ2iB9begsKPttPe6f2x+SoM5BqZanBDHRZW3diiBPviaEY+XeJHfR/YTbjghWy9bwj4JwTPubJ+S
+        oBzeAofg867hwRov9mvktLsVOKGgqkiQJKRgyLnWOnhRkpX1E8TFEi/qjqwOCVSB5eysYGINTHe4ADOv
+        QNIlCNdKfGBsHAkyvag7tsRotLXbnMuwqA6WNcDyJkhXA1fchKWNsFCi5LMuPkF2J41hPVh8FVar41kP
+        obIXql5BpB3WSpR2DVLOufgEe/tpSdORpT+ANY9hUwy2v4DSQcjpgY2dkPEIVt1z8QmcJoYqfjCjepRk
+        9WCedllwHlL17fM1z1Z1YTVzmvrk4BNktXHdFI8QOjjK1CMwSyeSotNIVWiuAkmVMOnwP5qY3SrBnu8E
+        S0eYXKZKJAlXSHRUp6B5in6ABN0PagMHv+AO9WZHP4HCIeyid9jRDyRGP5K47xMJxcMERSD6BSv6bRy/
+        oHmszmzrwtrZjcmLE8jvJVDwEiu/H6vgNVZkCCOxibx38QmaRmvN1g6svGfYeV0EcmOSPde1hJKZyACW
+        qvurIOe+epDbrd16FIhjCpy1wrv7sIpUSdEbzH5VoM8a50/BhrLect10HvwvEhjzE9CB82lO4/WFAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
   <metadata name="MainStatus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
   <metadata name="MainToolbar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>247, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="CloseFileButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

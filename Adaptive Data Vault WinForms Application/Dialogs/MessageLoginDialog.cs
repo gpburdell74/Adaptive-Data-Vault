@@ -1,26 +1,47 @@
-﻿using Adaptive.Intelligence.Shared.UI;
+﻿using Adaptive.Intelligence.Shared;
+using Adaptive.Intelligence.Shared.UI;
 using System.ComponentModel;
 
 namespace Adaptive.Data.Vault.UI;
 
 /// <summary>
-/// Provides the dialog used when logging in to a file.
+/// Provides a dialog for providing the credentials needed to encrypt or decrypt a 
+/// secure message.
 /// </summary>
-/// <seealso cref="AdaptiveDialogBase" />
-public partial class LoginDialog : AdaptiveDialogBase
+/// <seealso cref="Adaptive.Intelligence.Shared.UI.AdaptiveDialogBase" />
+public partial class MessageLoginDialog : AdaptiveDialogBase
 {
-    #region Constructor / Dispose Methods		
+    #region Private Member Declarations
+    /// <summary>
+    /// The credentials instance.
+    /// </summary>
+    private InMemoryCredentials? _credentials;
+    #endregion
+
+    #region Constructor / Dispose Methods
     /// <summary>
     /// Initializes a new instance of the <see cref="LoginDialog"/> class.
     /// </summary>
     /// <remarks>
     /// This is the default constructor.
     /// </remarks>
-    public LoginDialog()
+    public MessageLoginDialog()
     {
         InitializeComponent();
+        _credentials = new InMemoryCredentials();
     }
-
+    /// <summary>
+    /// Initializes a new instance of the <see cref="LoginDialog"/> class.
+    /// </summary>
+    /// <param name="credentials">
+    /// The <see cref="InMemoryCredentials"/> instance to use.
+    /// </param>
+    public MessageLoginDialog(InMemoryCredentials credentials)
+    {
+        InitializeComponent();
+        if (credentials != null)
+            _credentials = credentials.Clone();
+    }
     /// <summary>
     /// Clean up any resources being used.
     /// </summary>
@@ -29,65 +50,28 @@ public partial class LoginDialog : AdaptiveDialogBase
     {
         if (!IsDisposed && disposing)
         {
-            components?.Dispose();
+            _credentials?.Dispose();
+            components.Dispose();
         }
 
+        _credentials = null;
         components = null;
         base.Dispose(disposing);
     }
     #endregion
 
+
     #region Public Properties
     /// <summary>
-    /// Gets or sets the password value.
+    /// Gets the reference to the credentials in memory.
     /// </summary>
     /// <value>
-    /// A string containing the value.
+    /// An <see cref="InMemoryCredentials"/> instance containing the login parameters.
     /// </value>
     [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public string Password
+    public InMemoryCredentials? Credentials
     {
-        get => PasswordText.Text;
-        set
-        {
-            PasswordText.Text = value;
-            Invalidate();
-        }
-    }
-    /// <summary>
-    /// Gets or sets the PIN value.
-    /// </summary>
-    /// <value>
-    /// An integer containing the value.
-    /// </value>
-    [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public int Pin
-    {
-        get
-        {
-            return Convert.ToInt32(PinText.Text);
-        }
-        set
-        {
-            PinText.Text = value.ToString();
-            Invalidate();
-        }
-    }
-    /// <summary>
-    /// Gets or sets the user ID / name value.
-    /// </summary>
-    /// <value>
-    /// A string containing the value.
-    /// </value>
-    [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public string UserId
-    {
-        get => NameText.Text;
-        set
-        {
-            NameText.Text = value;
-            Invalidate();
-        }
+        get => _credentials;
     }
     #endregion
 
@@ -97,8 +81,8 @@ public partial class LoginDialog : AdaptiveDialogBase
     /// </summary>
     protected override void AssignEventHandlers()
     {
-        OkButton.Click += HandleOkClicked;
-        CloseButton.Click += HandleCloseClicked;
+        ButtonBar.SaveClicked += HandleOkClicked;
+        ButtonBar.CancelClicked += HandleCloseClicked;
 
         NameText.TextChanged += HandleGenericControlChange;
         PasswordText.TextChanged += HandleGenericControlChange;
@@ -108,8 +92,8 @@ public partial class LoginDialog : AdaptiveDialogBase
     /// </summary>
     protected override void RemoveEventHandlers()
     {
-        OkButton.Click -= HandleOkClicked;
-        CloseButton.Click -= HandleCloseClicked;
+        ButtonBar.SaveClicked -= HandleOkClicked;
+        ButtonBar.CancelClicked -= HandleCloseClicked;
 
         NameText.TextChanged -= HandleGenericControlChange;
         PasswordText.TextChanged -= HandleGenericControlChange;
@@ -120,10 +104,20 @@ public partial class LoginDialog : AdaptiveDialogBase
     /// </summary>
     protected override void InitializeDataContent()
     {
+        if (_credentials == null)
+            _credentials = new InMemoryCredentials();
+
         // TODO: Remove this later.
-        NameText.Text = "Sam Jones";
-        PasswordText.Text = "7329.Wnyhiq";
-        PinText.Text = "12345";
+        _credentials.UserId = "Sam Jones";
+        _credentials.Password = "7329.Wnyhiq";
+        _credentials.PIN = 12345;
+        
+        if (_credentials != null)
+        {
+            NameText.Text = _credentials.UserId;
+            PasswordText.Text = _credentials.Password;
+            PinText.Text = _credentials.PIN.ToString();
+        }
     }
     /// <summary>
     /// When implemented in a derived class, sets the display state for the controls on the dialog based on
@@ -136,12 +130,14 @@ public partial class LoginDialog : AdaptiveDialogBase
     {
         ErrorProvider.Clear();
 
+        ButtonBar.SaveEnabled = false; 
+
         if (NameText.Text.Length == 0)
             ErrorProvider.SetError(NameText, "You must enter a name value here.");
         else if (PasswordText.Text.Length == 0)
             ErrorProvider.SetError(PasswordText, "You must enter the password for the file here.");
         else
-            OkButton.Enabled = true;
+            ButtonBar.SaveEnabled = true;
     }
     /// <summary>
     /// Sets the state of the UI controls before the data content is loaded.
@@ -149,8 +145,8 @@ public partial class LoginDialog : AdaptiveDialogBase
     protected override void SetPreLoadState()
     {
         Cursor = Cursors.WaitCursor;
-        OkButton.Enabled = false;
-        CloseButton.Enabled = false;
+        ButtonBar.SaveEnabled = false;
+        ButtonBar.CancelEnabled = false;
         NameText.Enabled = false;
         PasswordText.Enabled = false;
         Application.DoEvents();
@@ -162,8 +158,8 @@ public partial class LoginDialog : AdaptiveDialogBase
     protected override void SetPostLoadState()
     {
         Cursor = Cursors.Default;
-        OkButton.Enabled = true;
-        CloseButton.Enabled = true;
+        ButtonBar.SaveEnabled = true;
+        ButtonBar.CancelEnabled = true;
         NameText.Enabled = true;
         PasswordText.Enabled = true;
         ResumeLayout();
@@ -179,7 +175,17 @@ public partial class LoginDialog : AdaptiveDialogBase
     private void HandleOkClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-        DialogResult = DialogResult.OK;
+        if (_credentials != null)
+        {
+            DialogResult = DialogResult.OK;
+            _credentials.UserId = NameText.Text;
+            _credentials.Password = PasswordText.Text;
+            _credentials.PIN = Convert.ToInt32(PinText.Text);
+        }
+        else
+        {
+            DialogResult = DialogResult.Cancel;
+        }
         Close();
     }
     /// <summary>
@@ -195,4 +201,3 @@ public partial class LoginDialog : AdaptiveDialogBase
     }
     #endregion
 }
-

@@ -65,6 +65,11 @@ public partial class MainDialog : AdaptiveDialogBase
         FileMenuSaveAs.Click += HandleFileMenuSaveAsClicked;
         FileMenuExit.Click += HandleFileMenuExitClicked;
 
+        ToolMenuSecureMessage.Click += HandleToolMenuSecureMessageClicked;
+        ToolMenuDecryptMessage.Click += HandleToolMenuDecryptMessageClicked;
+        ToolMenuEraseFile.Click += HandleToolMenuEraseFileClicked;
+        ToolMenuOptions.Click += HandleToolMenuOptionsClicked;
+
         // Tool bar
         NewFileButton.Click += HandleFileMenuNewClicked;
         OpenFileButton.Click += HandleFileMenuOpenClicked;
@@ -94,6 +99,11 @@ public partial class MainDialog : AdaptiveDialogBase
         FileMenuSave.Click -= HandleFileMenuSaveClicked;
         FileMenuSaveAs.Click -= HandleFileMenuSaveAsClicked;
         FileMenuExit.Click -= HandleFileMenuExitClicked;
+
+        ToolMenuSecureMessage.Click -= HandleToolMenuSecureMessageClicked;
+        ToolMenuDecryptMessage.Click -= HandleToolMenuDecryptMessageClicked;
+        ToolMenuEraseFile.Click -= HandleToolMenuEraseFileClicked;
+        ToolMenuOptions.Click -= HandleToolMenuOptionsClicked;
 
         // Tool bar
         NewFileButton.Click -= HandleFileMenuNewClicked;
@@ -230,7 +240,7 @@ public partial class MainDialog : AdaptiveDialogBase
                 PerformClose();
 
                 _secParams = secParams;
-                if (_secParams!= null)
+                if (_secParams != null)
                 {
                     _manager = new VaultManager();
                     _manager.Load(
@@ -301,6 +311,77 @@ public partial class MainDialog : AdaptiveDialogBase
         PerformClose();
         Close();
     }
+
+    /// <summary>
+    /// Handles the event when the Tool Menu - Secure Message item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuSecureMessageClicked(object? sender, EventArgs e)
+    {
+        SetPreLoadState();
+
+        CreateSecureMessageDialog dialog = new CreateSecureMessageDialog();
+        dialog.ShowDialog();
+        dialog.Dispose();
+
+        SetPostLoadState();
+        SetDisplayState();
+    }
+
+
+    /// <summary>
+    /// Handles the event when the Tool Menu - Decrypt Message item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuDecryptMessageClicked(object? sender, EventArgs e)
+    {
+        SetPreLoadState();
+
+        DecodeSecureMessageDialog dialog = new DecodeSecureMessageDialog();
+        dialog.ShowDialog();
+        dialog.Dispose();
+
+        SetPostLoadState();
+        SetDisplayState();
+    }
+    /// <summary>
+    /// Handles the event when the Tool Menu - Erase File item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuEraseFileClicked(object? sender, EventArgs e)
+    {
+        SetPreLoadState();
+
+        SecureEraseFileDialog dialog = new SecureEraseFileDialog();
+        dialog.ShowDialog();
+        dialog.Dispose();
+
+        SetPostLoadState();
+        SetDisplayState();
+
+    }
+
+    /// <summary>
+    /// Handles the event when the Tool Menu - Options item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuOptionsClicked(object? sender, EventArgs e)
+    {
+        SetPreLoadState();
+
+        OptionsDialog dialog = new OptionsDialog();
+        dialog.ShowDialog();
+        dialog.Dispose();
+
+        SetPostLoadState();
+        SetDisplayState();
+
+    }
+
     #endregion
 
     #region Category Tree    
@@ -402,7 +483,7 @@ public partial class MainDialog : AdaptiveDialogBase
 
         _manager?.Dispose();
         _secParams?.Dispose();
-        
+
         _manager = null;
         _secParams = null;
         GC.Collect();
@@ -419,7 +500,7 @@ public partial class MainDialog : AdaptiveDialogBase
     /// A string containing the user-specified path and file name if successful;
     /// otherwise, returns <b>null</b>.
     /// </returns>
-    private static string? GetNewFileName(bool saveAs =false)
+    private static string? GetNewFileName(bool saveAs = false)
     {
         string? fileName = null;
 
@@ -477,7 +558,7 @@ public partial class MainDialog : AdaptiveDialogBase
         SecureFileParameters? secParams = DialogProvider.DisplayLoginDialog(newFileName);
         if (secParams != null)
             secParams.FileName = newFileName;
-        
+
         return secParams;
     }
 

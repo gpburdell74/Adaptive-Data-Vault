@@ -16,9 +16,11 @@ partial class IdentityProviderListControl
     /// </summary>
     private void InitializeComponent()
     {
+        components = new System.ComponentModel.Container();
         ToolbarPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
         NewAccountButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
         ContainerPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+        ttp = new ToolTip(components);
         ToolbarPanel.SuspendLayout();
         SuspendLayout();
         // 
@@ -43,11 +45,12 @@ partial class IdentityProviderListControl
         NewAccountButton.ImageAlign = ContentAlignment.MiddleLeft;
         NewAccountButton.Location = new Point(5, 5);
         NewAccountButton.Name = "NewAccountButton";
-        NewAccountButton.Size = new Size(247, 32);
+        NewAccountButton.Size = new Size(265, 32);
         NewAccountButton.TabIndex = 0;
         NewAccountButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
-        NewAccountButton.Text = "Create New Account Entry...";
+        NewAccountButton.Text = "Create New ID Provider Entry...";
         NewAccountButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+        ttp.SetToolTip(NewAccountButton, "Create a new entry to contain the login information for an identity provider, such as Microsoft, Google, Facebook, etc.");
         NewAccountButton.UseVisualStyleBackColor = true;
         // 
         // ContainerPanel
@@ -59,8 +62,9 @@ partial class IdentityProviderListControl
         ContainerPanel.Size = new Size(400, 358);
         ContainerPanel.TabIndex = 1;
         ContainerPanel.TemplateFile = null;
+        ttp.SetToolTip(ContainerPanel, "List if identity providers in this category.");
         // 
-        // WebAccountListControl
+        // IdentityProviderListControl
         // 
         BackColor = Color.White;
         Controls.Add(ContainerPanel);
@@ -76,6 +80,7 @@ partial class IdentityProviderListControl
     private Intelligence.Shared.UI.GradientPanel ToolbarPanel;
     private Intelligence.Shared.UI.TemplatedButton NewAccountButton;
     private Intelligence.Shared.UI.GradientPanel ContainerPanel;
+    private ToolTip ttp;
 }
 
 
