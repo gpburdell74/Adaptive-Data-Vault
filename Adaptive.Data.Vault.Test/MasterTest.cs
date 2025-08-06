@@ -6,9 +6,9 @@ namespace Adaptive.Data.Vault.Test
 {
     public class MasterTest
     {
-        private const string CredUid = "Sam Jones";
-        private const string CredPwd = "7329.Wnyhiq";
-        private const int CredPin = 12345;
+        private const string CredUid = "ABCDE";
+        private const string CredPwd = "ABCDE";
+        private const int CredPin = 1111;
 
         [Fact]
         public void ExecuteMasterBusinessTest()

@@ -9,10 +9,28 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>Adaptive.Data.Vault.Desktop</AssemblyName>
     <ApplicationIcon>ADV.ico</ApplicationIcon>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <PackageId>Adaptive.Data.Vault.Desktop.UI</PackageId>
+    <Title>Adaptive Data Vault Application</Title>
+    <Version>0.9.0</Version>
+    <Authors>Sam Jones</Authors>
+    <Company>Adaptive Intelligence</Company>
+    <Product>Adaptive Data Vault</Product>
+    <Description>A Windows application for securely storing and managing Internet site logins and passwords and other secure information.</Description>
+    <Copyright>Copyright © 2025 by Sam Jones.  All rights reserved.</Copyright>
+    <PackageProjectUrl>http://samjones.azurewebsites.net/AdaptiveDataVault</PackageProjectUrl>
+    <PackageIcon>ADV.ico</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Include="ADV.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\ADV.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

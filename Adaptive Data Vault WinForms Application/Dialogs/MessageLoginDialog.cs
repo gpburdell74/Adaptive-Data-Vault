@@ -106,11 +106,6 @@ public partial class MessageLoginDialog : AdaptiveDialogBase
     {
         if (_credentials == null)
             _credentials = new InMemoryCredentials();
-
-        // TODO: Remove this later.
-        _credentials.UserId = "Sam Jones";
-        _credentials.Password = "7329.Wnyhiq";
-        _credentials.PIN = 12345;
         
         if (_credentials != null)
         {

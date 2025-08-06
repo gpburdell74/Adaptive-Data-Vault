@@ -120,10 +120,6 @@ public partial class LoginDialog : AdaptiveDialogBase
     /// </summary>
     protected override void InitializeDataContent()
     {
-        // TODO: Remove this later.
-        NameText.Text = "Sam Jones";
-        PasswordText.Text = "7329.Wnyhiq";
-        PinText.Text = "12345";
     }
     /// <summary>
     /// When implemented in a derived class, sets the display state for the controls on the dialog based on

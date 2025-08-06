@@ -29,11 +29,9 @@ partial class MainDialog
         FileMenuExit = new ToolStripMenuItem();
         ToolMenu = new ToolStripMenuItem();
         ToolMenuSecureMessage = new ToolStripMenuItem();
+        ToolMenuDecryptMessage = new ToolStripMenuItem();
         ToolMenuEraseFile = new ToolStripMenuItem();
         ToolMenuDividerA = new ToolStripSeparator();
-        ToolMenuOptions = new ToolStripMenuItem();
-        WindowMenu = new ToolStripMenuItem();
-        WindowMenuDividerA = new ToolStripSeparator();
         MainStatus = new StatusStrip();
         MainStatusLabel = new ToolStripStatusLabel();
         MainStatusPrg = new ToolStripProgressBar();
@@ -45,12 +43,10 @@ partial class MainDialog
         SaveButton = new ToolStripButton();
         SaveAsButton = new ToolStripButton();
         ToolbarSaveDivider = new ToolStripSeparator();
-        OptionsButton = new ToolStripButton();
         MainContainer = new SplitContainer();
         CatTree = new CategoriesTreeControl();
         Data = new CategorizedItemsContainerControl();
         ttp = new ToolTip(components);
-        ToolMenuDecryptMessage = new ToolStripMenuItem();
         MainMenu.SuspendLayout();
         MainStatus.SuspendLayout();
         MainToolbar.SuspendLayout();
@@ -62,7 +58,7 @@ partial class MainDialog
         // 
         // MainMenu
         // 
-        MainMenu.Items.AddRange(new ToolStripItem[] { FileMenu, ToolMenu, WindowMenu });
+        MainMenu.Items.AddRange(new ToolStripItem[] { FileMenu, ToolMenu });
         MainMenu.Location = new Point(0, 0);
         MainMenu.Name = "MainMenu";
         MainMenu.Size = new Size(930, 24);
@@ -142,7 +138,7 @@ partial class MainDialog
         // 
         // ToolMenu
         // 
-        ToolMenu.DropDownItems.AddRange(new ToolStripItem[] { ToolMenuSecureMessage, ToolMenuDecryptMessage, ToolMenuEraseFile, ToolMenuDividerA, ToolMenuOptions });
+        ToolMenu.DropDownItems.AddRange(new ToolStripItem[] { ToolMenuSecureMessage, ToolMenuDecryptMessage, ToolMenuDividerA, ToolMenuEraseFile });
         ToolMenu.Name = "ToolMenu";
         ToolMenu.Size = new Size(46, 20);
         ToolMenu.Text = "&Tools";
@@ -154,6 +150,14 @@ partial class MainDialog
         ToolMenuSecureMessage.Size = new Size(211, 22);
         ToolMenuSecureMessage.Text = "Create &Secure Message...";
         ToolMenuSecureMessage.ToolTipText = "Create an encrypted message.";
+        // 
+        // ToolMenuDecryptMessage
+        // 
+        ToolMenuDecryptMessage.Image = (Image)resources.GetObject("ToolMenuDecryptMessage.Image");
+        ToolMenuDecryptMessage.Name = "ToolMenuDecryptMessage";
+        ToolMenuDecryptMessage.Size = new Size(211, 22);
+        ToolMenuDecryptMessage.Text = "&Decrypt Secure Message...";
+        ToolMenuDecryptMessage.ToolTipText = "Decrypt and view a secure message.";
         // 
         // ToolMenuEraseFile
         // 
@@ -167,25 +171,6 @@ partial class MainDialog
         // 
         ToolMenuDividerA.Name = "ToolMenuDividerA";
         ToolMenuDividerA.Size = new Size(208, 6);
-        // 
-        // ToolMenuOptions
-        // 
-        ToolMenuOptions.Image = Properties.Resources.Settings_32;
-        ToolMenuOptions.Name = "ToolMenuOptions";
-        ToolMenuOptions.Size = new Size(211, 22);
-        ToolMenuOptions.Text = "&Options...";
-        // 
-        // WindowMenu
-        // 
-        WindowMenu.DropDownItems.AddRange(new ToolStripItem[] { WindowMenuDividerA });
-        WindowMenu.Name = "WindowMenu";
-        WindowMenu.Size = new Size(63, 20);
-        WindowMenu.Text = "&Window";
-        // 
-        // WindowMenuDividerA
-        // 
-        WindowMenuDividerA.Name = "WindowMenuDividerA";
-        WindowMenuDividerA.Size = new Size(57, 6);
         // 
         // MainStatus
         // 
@@ -210,7 +195,7 @@ partial class MainDialog
         // 
         // MainToolbar
         // 
-        MainToolbar.Items.AddRange(new ToolStripItem[] { NewFileButton, OpenFileButton, CloseFileButton, ToolbarSeparatorA, SaveButton, SaveAsButton, ToolbarSaveDivider, OptionsButton });
+        MainToolbar.Items.AddRange(new ToolStripItem[] { NewFileButton, OpenFileButton, CloseFileButton, ToolbarSeparatorA, SaveButton, SaveAsButton, ToolbarSaveDivider });
         MainToolbar.Location = new Point(0, 24);
         MainToolbar.Name = "MainToolbar";
         MainToolbar.Size = new Size(930, 25);
@@ -276,15 +261,6 @@ partial class MainDialog
         ToolbarSaveDivider.Size = new Size(6, 25);
         ToolbarSaveDivider.Visible = false;
         // 
-        // OptionsButton
-        // 
-        OptionsButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        OptionsButton.Image = Properties.Resources.Settings_Flat_16x16;
-        OptionsButton.ImageTransparentColor = Color.Magenta;
-        OptionsButton.Name = "OptionsButton";
-        OptionsButton.Size = new Size(23, 22);
-        OptionsButton.ToolTipText = "User Preferences and Options";
-        // 
         // MainContainer
         // 
         MainContainer.Dock = DockStyle.Fill;
@@ -322,14 +298,6 @@ partial class MainDialog
         Data.Size = new Size(617, 490);
         Data.TabIndex = 0;
         Data.Visible = false;
-        // 
-        // ToolMenuDecryptMessage
-        // 
-        ToolMenuDecryptMessage.Image = (Image)resources.GetObject("ToolMenuDecryptMessage.Image");
-        ToolMenuDecryptMessage.Name = "ToolMenuDecryptMessage";
-        ToolMenuDecryptMessage.Size = new Size(211, 22);
-        ToolMenuDecryptMessage.Text = "&Decrypt Secure Message...";
-        ToolMenuDecryptMessage.ToolTipText = "Decrypt and view a secure message.";
         // 
         // MainDialog
         // 
@@ -376,10 +344,7 @@ partial class MainDialog
     private ToolStripMenuItem FileMenuSaveAs;
     private ToolStripSeparator FileMenuDividerB;
     private ToolStripMenuItem FileMenuExit;
-    private ToolStripMenuItem WindowMenu;
     private ToolStripSeparator ToolMenuDividerA;
-    private ToolStripMenuItem ToolMenuOptions;
-    private ToolStripSeparator WindowMenuDividerA;
     private ToolStripStatusLabel MainStatusLabel;
     private ToolStripProgressBar MainStatusPrg;
     private ToolStripButton NewFileButton;
@@ -389,7 +354,6 @@ partial class MainDialog
     private ToolStripButton SaveButton;
     private ToolStripButton SaveAsButton;
     private ToolStripSeparator ToolbarSaveDivider;
-    private ToolStripButton OptionsButton;
     private ToolTip ttp;
     private CategoriesTreeControl CatTree;
     private CategorizedItemsContainerControl Data;

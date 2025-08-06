@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaptive.Data.Vault.UI", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaptive Data Vault WinForms Application", "Adaptive Data Vault WinForms Application\Adaptive Data Vault WinForms Application.csproj", "{84835724-FDB9-4EE3-8219-5F1DC8985032}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Adaptive Data Vault Install", "Adaptive Data Vault Install\Adaptive Data Vault Install.vdproj", "{9E204C9B-0CA7-D144-70EB-51F34150FA17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{84835724-FDB9-4EE3-8219-5F1DC8985032}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84835724-FDB9-4EE3-8219-5F1DC8985032}.Release|x64.ActiveCfg = Release|Any CPU
 		{84835724-FDB9-4EE3-8219-5F1DC8985032}.Release|x64.Build.0 = Release|Any CPU
+		{9E204C9B-0CA7-D144-70EB-51F34150FA17}.Debug|Any CPU.ActiveCfg = Debug
+		{9E204C9B-0CA7-D144-70EB-51F34150FA17}.Debug|x64.ActiveCfg = Debug
+		{9E204C9B-0CA7-D144-70EB-51F34150FA17}.Release|Any CPU.ActiveCfg = Release
+		{9E204C9B-0CA7-D144-70EB-51F34150FA17}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

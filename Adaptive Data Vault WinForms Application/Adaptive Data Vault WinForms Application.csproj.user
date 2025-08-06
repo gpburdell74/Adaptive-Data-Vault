@@ -10,9 +10,6 @@
     <Compile Update="Dialogs\MessageLoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Dialogs\OptionsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Dialogs\SecureEraseFileDialog.cs">
       <SubType>Form</SubType>
     </Compile>

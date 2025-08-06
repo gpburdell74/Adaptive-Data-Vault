@@ -68,7 +68,6 @@ public partial class MainDialog : AdaptiveDialogBase
         ToolMenuSecureMessage.Click += HandleToolMenuSecureMessageClicked;
         ToolMenuDecryptMessage.Click += HandleToolMenuDecryptMessageClicked;
         ToolMenuEraseFile.Click += HandleToolMenuEraseFileClicked;
-        ToolMenuOptions.Click += HandleToolMenuOptionsClicked;
 
         // Tool bar
         NewFileButton.Click += HandleFileMenuNewClicked;
@@ -103,7 +102,6 @@ public partial class MainDialog : AdaptiveDialogBase
         ToolMenuSecureMessage.Click -= HandleToolMenuSecureMessageClicked;
         ToolMenuDecryptMessage.Click -= HandleToolMenuDecryptMessageClicked;
         ToolMenuEraseFile.Click -= HandleToolMenuEraseFileClicked;
-        ToolMenuOptions.Click -= HandleToolMenuOptionsClicked;
 
         // Tool bar
         NewFileButton.Click -= HandleFileMenuNewClicked;
@@ -296,7 +294,25 @@ public partial class MainDialog : AdaptiveDialogBase
     private void HandleFileMenuSaveAsClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-
+        if (_manager != null)
+        {
+            string? newFileName = GetNewFileName(true);
+            if (!string.IsNullOrEmpty(newFileName))
+            {
+                bool changeCredentials = GetUserConfirmation("Change File Credentials?",
+                    "Would you like to enter new credentials for the new file?");
+                if (changeCredentials)
+                {
+                    SecureFileParameters? secParams = ShowFileLogin(newFileName);
+                    if (secParams != null)
+                    {
+                        _secParams?.Dispose();
+                        _secParams = secParams;
+                    }
+                }
+                _manager.Save(newFileName, _secParams!.UserId!, _secParams.Password!, _secParams.Pin);
+            }
+        }      
         SetPostLoadState();
         SetState();
     }
@@ -363,25 +379,6 @@ public partial class MainDialog : AdaptiveDialogBase
         SetDisplayState();
 
     }
-
-    /// <summary>
-    /// Handles the event when the Tool Menu - Options item is clicked.
-    /// </summary>
-    /// <param name="sender">The sender.</param>
-    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-    private void HandleToolMenuOptionsClicked(object? sender, EventArgs e)
-    {
-        SetPreLoadState();
-
-        OptionsDialog dialog = new OptionsDialog();
-        dialog.ShowDialog();
-        dialog.Dispose();
-
-        SetPostLoadState();
-        SetDisplayState();
-
-    }
-
     #endregion
 
     #region Category Tree    

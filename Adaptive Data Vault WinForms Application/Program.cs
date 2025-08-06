@@ -1,4 +1,6 @@
 using Adaptive.Data.Vault.Test;
+using Adaptive.Intelligence.Shared.IO;
+using System.Security.Cryptography;
 
 namespace Adaptive.Data.Vault.UI;
 
@@ -10,10 +12,7 @@ internal static class Program
     [STAThread]
     static void Main()
     {
-        // re-create.
-        //MasterTest t = new MasterTest();
-        //t.ExecuteMasterTest();
-        
+
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
