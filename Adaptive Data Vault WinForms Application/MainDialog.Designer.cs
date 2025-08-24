@@ -28,10 +28,10 @@ partial class MainDialog
         FileMenuDividerB = new ToolStripSeparator();
         FileMenuExit = new ToolStripMenuItem();
         ToolMenu = new ToolStripMenuItem();
+        ToolMenuSecureMessage = new ToolStripMenuItem();
+        ToolMenuDecryptMessage = new ToolStripMenuItem();
         ToolMenuDividerA = new ToolStripSeparator();
-        ToolMenuOptions = new ToolStripMenuItem();
-        WindowMenu = new ToolStripMenuItem();
-        WindowMenuDividerA = new ToolStripSeparator();
+        ToolMenuEraseFile = new ToolStripMenuItem();
         MainStatus = new StatusStrip();
         MainStatusLabel = new ToolStripStatusLabel();
         MainStatusPrg = new ToolStripProgressBar();
@@ -43,23 +43,26 @@ partial class MainDialog
         SaveButton = new ToolStripButton();
         SaveAsButton = new ToolStripButton();
         ToolbarSaveDivider = new ToolStripSeparator();
-        OptionsButton = new ToolStripButton();
-        Container = new SplitContainer();
+        MainContainer = new SplitContainer();
         CatTree = new CategoriesTreeControl();
         Data = new CategorizedItemsContainerControl();
         ttp = new ToolTip(components);
+        FileMenuRecentFiles = new ToolStripMenuItem();
+        FileMenuMruDivider = new ToolStripSeparator();
+        MruDivider = new ToolStripSeparator();
+        MruMenuClear = new ToolStripMenuItem();
         MainMenu.SuspendLayout();
         MainStatus.SuspendLayout();
         MainToolbar.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)Container).BeginInit();
-        Container.Panel1.SuspendLayout();
-        Container.Panel2.SuspendLayout();
-        Container.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)MainContainer).BeginInit();
+        MainContainer.Panel1.SuspendLayout();
+        MainContainer.Panel2.SuspendLayout();
+        MainContainer.SuspendLayout();
         SuspendLayout();
         // 
         // MainMenu
         // 
-        MainMenu.Items.AddRange(new ToolStripItem[] { FileMenu, ToolMenu, WindowMenu });
+        MainMenu.Items.AddRange(new ToolStripItem[] { FileMenu, ToolMenu });
         MainMenu.Location = new Point(0, 0);
         MainMenu.Name = "MainMenu";
         MainMenu.Size = new Size(930, 24);
@@ -68,7 +71,7 @@ partial class MainDialog
         // 
         // FileMenu
         // 
-        FileMenu.DropDownItems.AddRange(new ToolStripItem[] { FileMenuNewFile, FileMenuOpenFile, FileMenuCloseFile, FileMenuDividerA, FileMenuSave, FileMenuSaveAs, FileMenuDividerB, FileMenuExit });
+        FileMenu.DropDownItems.AddRange(new ToolStripItem[] { FileMenuNewFile, FileMenuOpenFile, FileMenuCloseFile, FileMenuDividerA, FileMenuSave, FileMenuSaveAs, FileMenuMruDivider, FileMenuRecentFiles, FileMenuDividerB, FileMenuExit });
         FileMenu.Name = "FileMenu";
         FileMenu.Size = new Size(37, 20);
         FileMenu.Text = "&File";
@@ -78,7 +81,7 @@ partial class MainDialog
         FileMenuNewFile.Image = Properties.Resources.New_File_16x16;
         FileMenuNewFile.Name = "FileMenuNewFile";
         FileMenuNewFile.ShortcutKeyDisplayString = "Ctrl+N";
-        FileMenuNewFile.Size = new Size(214, 22);
+        FileMenuNewFile.Size = new Size(216, 22);
         FileMenuNewFile.Text = "Create &New File...";
         FileMenuNewFile.ToolTipText = "Create a new secure file for storing passwords and secure data.";
         // 
@@ -87,14 +90,15 @@ partial class MainDialog
         FileMenuOpenFile.Image = Properties.Resources.OpenButton_Image;
         FileMenuOpenFile.Name = "FileMenuOpenFile";
         FileMenuOpenFile.ShortcutKeyDisplayString = "Ctrl+O";
-        FileMenuOpenFile.Size = new Size(214, 22);
+        FileMenuOpenFile.Size = new Size(216, 22);
         FileMenuOpenFile.Text = "&Open File...";
         FileMenuOpenFile.ToolTipText = "Open an existing Adaptive Data Vault file.";
         // 
         // FileMenuCloseFile
         // 
+        FileMenuCloseFile.Image = Properties.Resources.Close_16x161;
         FileMenuCloseFile.Name = "FileMenuCloseFile";
-        FileMenuCloseFile.Size = new Size(214, 22);
+        FileMenuCloseFile.Size = new Size(216, 22);
         FileMenuCloseFile.Text = "C&lose";
         FileMenuCloseFile.ToolTipText = "Close the current file.";
         FileMenuCloseFile.Visible = false;
@@ -102,14 +106,14 @@ partial class MainDialog
         // FileMenuDividerA
         // 
         FileMenuDividerA.Name = "FileMenuDividerA";
-        FileMenuDividerA.Size = new Size(211, 6);
+        FileMenuDividerA.Size = new Size(213, 6);
         // 
         // FileMenuSave
         // 
         FileMenuSave.Image = Properties.Resources.Save_16x16_Blue;
         FileMenuSave.Name = "FileMenuSave";
         FileMenuSave.ShortcutKeyDisplayString = "Ctrl+S";
-        FileMenuSave.Size = new Size(214, 22);
+        FileMenuSave.Size = new Size(216, 22);
         FileMenuSave.Text = "Save File";
         FileMenuSave.ToolTipText = "Save the current file.";
         FileMenuSave.Visible = false;
@@ -119,54 +123,59 @@ partial class MainDialog
         FileMenuSaveAs.Image = Properties.Resources.Save_16x16;
         FileMenuSaveAs.Name = "FileMenuSaveAs";
         FileMenuSaveAs.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
-        FileMenuSaveAs.Size = new Size(214, 22);
-        FileMenuSaveAs.Text = "Safe File &As...";
+        FileMenuSaveAs.Size = new Size(216, 22);
+        FileMenuSaveAs.Text = "Save File &As...";
         FileMenuSaveAs.ToolTipText = "Save the current file under a new location and/or name.";
         FileMenuSaveAs.Visible = false;
         // 
         // FileMenuDividerB
         // 
         FileMenuDividerB.Name = "FileMenuDividerB";
-        FileMenuDividerB.Size = new Size(211, 6);
-        FileMenuDividerB.Visible = false;
+        FileMenuDividerB.Size = new Size(213, 6);
         // 
         // FileMenuExit
         // 
         FileMenuExit.Name = "FileMenuExit";
         FileMenuExit.ShortcutKeys = Keys.Alt | Keys.F4;
-        FileMenuExit.Size = new Size(214, 22);
+        FileMenuExit.Size = new Size(216, 22);
         FileMenuExit.Text = "E&xit";
         FileMenuExit.ToolTipText = "Exit the application.";
         // 
         // ToolMenu
         // 
-        ToolMenu.DropDownItems.AddRange(new ToolStripItem[] { ToolMenuDividerA, ToolMenuOptions });
+        ToolMenu.DropDownItems.AddRange(new ToolStripItem[] { ToolMenuSecureMessage, ToolMenuDecryptMessage, ToolMenuDividerA, ToolMenuEraseFile });
         ToolMenu.Name = "ToolMenu";
         ToolMenu.Size = new Size(46, 20);
         ToolMenu.Text = "&Tools";
         // 
+        // ToolMenuSecureMessage
+        // 
+        ToolMenuSecureMessage.Image = Properties.Resources.Secure_File_16x16;
+        ToolMenuSecureMessage.Name = "ToolMenuSecureMessage";
+        ToolMenuSecureMessage.Size = new Size(211, 22);
+        ToolMenuSecureMessage.Text = "Create &Secure Message...";
+        ToolMenuSecureMessage.ToolTipText = "Create an encrypted message.";
+        // 
+        // ToolMenuDecryptMessage
+        // 
+        ToolMenuDecryptMessage.Image = Properties.Resources.Secure_File_16x16;
+        ToolMenuDecryptMessage.Name = "ToolMenuDecryptMessage";
+        ToolMenuDecryptMessage.Size = new Size(211, 22);
+        ToolMenuDecryptMessage.Text = "&Decrypt Secure Message...";
+        ToolMenuDecryptMessage.ToolTipText = "Decrypt and view a secure message.";
+        // 
         // ToolMenuDividerA
         // 
         ToolMenuDividerA.Name = "ToolMenuDividerA";
-        ToolMenuDividerA.Size = new Size(122, 6);
+        ToolMenuDividerA.Size = new Size(208, 6);
         // 
-        // ToolMenuOptions
+        // ToolMenuEraseFile
         // 
-        ToolMenuOptions.Name = "ToolMenuOptions";
-        ToolMenuOptions.Size = new Size(125, 22);
-        ToolMenuOptions.Text = "&Options...";
-        // 
-        // WindowMenu
-        // 
-        WindowMenu.DropDownItems.AddRange(new ToolStripItem[] { WindowMenuDividerA });
-        WindowMenu.Name = "WindowMenu";
-        WindowMenu.Size = new Size(63, 20);
-        WindowMenu.Text = "&Window";
-        // 
-        // WindowMenuDividerA
-        // 
-        WindowMenuDividerA.Name = "WindowMenuDividerA";
-        WindowMenuDividerA.Size = new Size(57, 6);
+        ToolMenuEraseFile.Image = Properties.Resources.Misc_194;
+        ToolMenuEraseFile.Name = "ToolMenuEraseFile";
+        ToolMenuEraseFile.Size = new Size(211, 22);
+        ToolMenuEraseFile.Text = "Secure &Erase File...";
+        ToolMenuEraseFile.ToolTipText = "Securely Erase a file.";
         // 
         // MainStatus
         // 
@@ -191,7 +200,7 @@ partial class MainDialog
         // 
         // MainToolbar
         // 
-        MainToolbar.Items.AddRange(new ToolStripItem[] { NewFileButton, OpenFileButton, CloseFileButton, ToolbarSeparatorA, SaveButton, SaveAsButton, ToolbarSaveDivider, OptionsButton });
+        MainToolbar.Items.AddRange(new ToolStripItem[] { NewFileButton, OpenFileButton, CloseFileButton, ToolbarSeparatorA, SaveButton, SaveAsButton, ToolbarSaveDivider });
         MainToolbar.Location = new Point(0, 24);
         MainToolbar.Name = "MainToolbar";
         MainToolbar.Size = new Size(930, 25);
@@ -219,7 +228,7 @@ partial class MainDialog
         // CloseFileButton
         // 
         CloseFileButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        CloseFileButton.Image = (Image)resources.GetObject("CloseFileButton.Image");
+        CloseFileButton.Image = Properties.Resources.Close_16x16;
         CloseFileButton.ImageTransparentColor = Color.Magenta;
         CloseFileButton.Name = "CloseFileButton";
         CloseFileButton.Size = new Size(23, 22);
@@ -257,32 +266,23 @@ partial class MainDialog
         ToolbarSaveDivider.Size = new Size(6, 25);
         ToolbarSaveDivider.Visible = false;
         // 
-        // OptionsButton
+        // MainContainer
         // 
-        OptionsButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        OptionsButton.Image = Properties.Resources.Settings_Flat_16x16;
-        OptionsButton.ImageTransparentColor = Color.Magenta;
-        OptionsButton.Name = "OptionsButton";
-        OptionsButton.Size = new Size(23, 22);
-        OptionsButton.ToolTipText = "User Preferences and Options";
+        MainContainer.Dock = DockStyle.Fill;
+        MainContainer.Location = new Point(0, 49);
+        MainContainer.Name = "MainContainer";
         // 
-        // Container
+        // MainContainer.Panel1
         // 
-        Container.Dock = DockStyle.Fill;
-        Container.Location = new Point(0, 49);
-        Container.Name = "Container";
+        MainContainer.Panel1.Controls.Add(CatTree);
         // 
-        // Container.Panel1
+        // MainContainer.Panel2
         // 
-        Container.Panel1.Controls.Add(CatTree);
-        // 
-        // Container.Panel2
-        // 
-        Container.Panel2.AutoScroll = true;
-        Container.Panel2.Controls.Add(Data);
-        Container.Size = new Size(930, 490);
-        Container.SplitterDistance = 309;
-        Container.TabIndex = 3;
+        MainContainer.Panel2.AutoScroll = true;
+        MainContainer.Panel2.Controls.Add(Data);
+        MainContainer.Size = new Size(930, 490);
+        MainContainer.SplitterDistance = 309;
+        MainContainer.TabIndex = 3;
         // 
         // CatTree
         // 
@@ -304,12 +304,35 @@ partial class MainDialog
         Data.TabIndex = 0;
         Data.Visible = false;
         // 
+        // FileMenuRecentFiles
+        // 
+        FileMenuRecentFiles.DropDownItems.AddRange(new ToolStripItem[] { MruDivider, MruMenuClear });
+        FileMenuRecentFiles.Name = "FileMenuRecentFiles";
+        FileMenuRecentFiles.Size = new Size(216, 22);
+        FileMenuRecentFiles.Text = "Recent";
+        // 
+        // FileMenuMruDivider
+        // 
+        FileMenuMruDivider.Name = "FileMenuMruDivider";
+        FileMenuMruDivider.Size = new Size(213, 6);
+        // 
+        // MruDivider
+        // 
+        MruDivider.Name = "MruDivider";
+        MruDivider.Size = new Size(177, 6);
+        // 
+        // MruMenuClear
+        // 
+        MruMenuClear.Name = "MruMenuClear";
+        MruMenuClear.Size = new Size(180, 22);
+        MruMenuClear.Text = "Clear Recent List";
+        // 
         // MainDialog
         // 
         AutoScaleDimensions = new SizeF(96F, 96F);
         AutoScaleMode = AutoScaleMode.Dpi;
         ClientSize = new Size(930, 561);
-        Controls.Add(Container);
+        Controls.Add(MainContainer);
         Controls.Add(MainToolbar);
         Controls.Add(MainStatus);
         Controls.Add(MainMenu);
@@ -325,10 +348,10 @@ partial class MainDialog
         MainStatus.PerformLayout();
         MainToolbar.ResumeLayout(false);
         MainToolbar.PerformLayout();
-        Container.Panel1.ResumeLayout(false);
-        Container.Panel2.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)Container).EndInit();
-        Container.ResumeLayout(false);
+        MainContainer.Panel1.ResumeLayout(false);
+        MainContainer.Panel2.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)MainContainer).EndInit();
+        MainContainer.ResumeLayout(false);
         ResumeLayout(false);
         PerformLayout();
     }
@@ -366,4 +389,12 @@ partial class MainDialog
     private ToolTip ttp;
     private CategoriesTreeControl CatTree;
     private CategorizedItemsContainerControl Data;
+    private SplitContainer MainContainer;
+    private ToolStripMenuItem ToolMenuSecureMessage;
+    private ToolStripMenuItem ToolMenuEraseFile;
+    private ToolStripMenuItem ToolMenuDecryptMessage;
+    private ToolStripSeparator FileMenuMruDivider;
+    private ToolStripMenuItem FileMenuRecentFiles;
+    private ToolStripSeparator MruDivider;
+    private ToolStripMenuItem MruMenuClear;
 }

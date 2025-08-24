@@ -33,6 +33,7 @@
             ContainerPanel.Name = "ContainerPanel";
             ContainerPanel.Size = new Size(1039, 48);
             ContainerPanel.TabIndex = 0;
+            ContainerPanel.TemplateFile = null;
             // 
             // ButtonPanel
             // 
@@ -46,6 +47,7 @@
             ButtonPanel.Padding = new Padding(5);
             ButtonPanel.Size = new Size(257, 48);
             ButtonPanel.TabIndex = 0;
+            ButtonPanel.TemplateFile = null;
             // 
             // SaveButton
             // 
@@ -55,9 +57,10 @@
             SaveButton.ImageAlign = ContentAlignment.MiddleLeft;
             SaveButton.Location = new Point(7, 5);
             SaveButton.Name = "SaveButton";
+            SaveButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
             SaveButton.Size = new Size(120, 38);
             SaveButton.TabIndex = 2;
-            SaveButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Button.template";
+            SaveButton.TemplateFile = null;
             SaveButton.Text = "Save";
             SaveButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             SaveButton.UseVisualStyleBackColor = true;
@@ -69,6 +72,7 @@
             SpacerPanel.Name = "SpacerPanel";
             SpacerPanel.Size = new Size(5, 38);
             SpacerPanel.TabIndex = 1;
+            SpacerPanel.TemplateFile = null;
             // 
             // CancelButton
             // 
@@ -78,9 +82,10 @@
             CancelButton.ImageAlign = ContentAlignment.MiddleLeft;
             CancelButton.Location = new Point(132, 5);
             CancelButton.Name = "CancelButton";
+            CancelButton.ResourceTemplate = Properties.Resources.ButtonTemplateCancel;
             CancelButton.Size = new Size(120, 38);
             CancelButton.TabIndex = 0;
-            CancelButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Cancel  Template.template";
+            CancelButton.TemplateFile = null;
             CancelButton.Text = "Cancel";
             CancelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             CancelButton.UseVisualStyleBackColor = true;

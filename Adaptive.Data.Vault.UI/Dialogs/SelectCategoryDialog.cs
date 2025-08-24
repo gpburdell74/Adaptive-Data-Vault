@@ -7,7 +7,7 @@ namespace Adaptive.Data.Vault.UI;
 /// Provides a dialog for selecting a category.
 /// </summary>
 /// <seealso cref="AdaptiveDialogBase" />
-public partial class SelectCategoryDialog : AdaptiveDialogBase
+public partial class SelectCategoryDialog : BorderedDialog
 {
     #region Private Member Declarations
     /// <summary>

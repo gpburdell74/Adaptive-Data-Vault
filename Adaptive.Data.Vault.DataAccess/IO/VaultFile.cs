@@ -41,12 +41,17 @@ public sealed class VaultFile : DisposableObjectBase, IVaultFile
 
             SuperCrypt crypt = new SuperCrypt(userId, password, pin);
             byte[]? clearData = crypt.Decrypt(content);
-            MemoryStream ms = new MemoryStream(clearData);
 
-            dataSet = LoadDataSet(ms, userId, password, pin);
+            if (clearData != null)
+            {
+                MemoryStream ms = new MemoryStream(clearData);
 
-            ms.Dispose();
-            Array.Clear(clearData, 0, clearData.Length);
+                dataSet = LoadDataSet(ms, userId, password, pin);
+
+                ms.Dispose();
+                Array.Clear(clearData, 0, clearData.Length);
+            }
+            
             Array.Clear(content, 0, content.Length);
         }
 

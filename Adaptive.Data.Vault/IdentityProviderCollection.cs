@@ -38,7 +38,6 @@ namespace Adaptive.Data.Vault
         #endregion
 
         #region Public Methods / Functions
-
         /// <summary>
         /// Adds the identity provider record.
         /// </summary>
@@ -89,6 +88,35 @@ namespace Adaptive.Data.Vault
             Add(provider);
         }
 
+        /// <summary>
+        /// Sorts the list's content into alphabetical order by name.
+        /// </summary>
+        public void SortAlpha()
+        {
+            Sort(AlphabeticComparison);
+        }
         #endregion
+
+        #region Private Methods / Functions        
+        /// <summary>
+        /// Provides the predicate implementation for comparing two <see cref="IdentityProvider"/> instances
+        /// by name value.
+        /// </summary>
+        /// <param name="left">
+        /// The left <see cref="IdentityProvider"/> to compare.
+        /// </param>
+        /// <param name="right">
+        /// The right <see cref="IdentityProvider"/> to compare.
+        /// </param>
+        /// <returns>
+        /// The result of the comparison, as an integer value, in the same context as the <see cref="string.Compare"/>
+        /// function.
+        /// </returns>
+        private int AlphabeticComparison(IdentityProvider left, IdentityProvider right)
+        {
+            return string.Compare(left.Name, right.Name, StringComparison.OrdinalIgnoreCase);
+        }
+        #endregion
+
     }
 }

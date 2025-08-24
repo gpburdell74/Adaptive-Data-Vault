@@ -1,7 +1,6 @@
 ﻿using Adaptive.Data.Vault.OS;
 using Adaptive.Intelligence.Shared.UI;
 using System.ComponentModel;
-using System.ComponentModel.Design.Serialization;
 
 namespace Adaptive.Data.Vault.UI
 {
@@ -9,7 +8,7 @@ namespace Adaptive.Data.Vault.UI
     /// Provides the dialog for showing the detail information for a web account entry.
     /// </summary>
     /// <seealso cref="AdaptiveDialogBase" />
-    public partial class WebAccountInfoDialog : AdaptiveDialogBase
+    public partial class WebAccountInfoDialog : BorderedDialog
     {
         #region Private Member Declarations
         /// <summary>
@@ -137,27 +136,35 @@ namespace Adaptive.Data.Vault.UI
         /// current conditions.
         /// </summary>
         /// <remarks>
-        /// This is called by <see cref="M:Adaptive.Intelligence.Shared.UI.AdaptiveDialogBase.SetState" /> after <see cref="M:Adaptive.Intelligence.Shared.UI.AdaptiveDialogBase.SetSecurityState" /> is called.
+        /// This is called by <see cref="SetState" /> after <see cref="SetSecurityState" /> is called.
         /// </remarks>
         protected override void SetDisplayState()
         {
-
         }
         #endregion
 
 
         #region Private Event Handlers
-
-        private bool _userIdChecked;
-
+        /// <summary>
+        /// Handles the event when the address label is clicked.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleAddressClicked(object? sender, EventArgs e)
         {
             SetPreLoadState();
 
-            OSUtilities.StartBrowser(_account.Url);
+            if (_account != null && _account.Url != null)
+                OSUtilities.StartBrowser(_account.Url);
 
             SetPostLoadState();
         }
+
+        /// <summary>
+        /// Handles the event when the Show/Hide user ID button is clicked.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleShowUserIdClicked(object? sender, EventArgs e)
         {
             ShowUserIdButton.Checked = !ShowUserIdButton.Checked;
@@ -167,6 +174,12 @@ namespace Adaptive.Data.Vault.UI
                 UserIdLabel.Text = new string('*', _account.UserId.Length);
 
         }
+
+        /// <summary>
+        /// Handles the event when the Show/Hide Password button is clicked.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleShowPasswordClicked(object? sender, EventArgs e)
         {
             ShowPasswordButton.Checked = !ShowPasswordButton.Checked;
@@ -177,18 +190,42 @@ namespace Adaptive.Data.Vault.UI
             Invalidate();
         }
 
+        /// <summary>
+        /// Handles the event when the Copy Password button is clicked.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleCopyPasswordClicked(object? sender, EventArgs e)
         {
             Clipboard.SetText(_account.Password);
         }
+
+        /// <summary>
+        /// Handles the event when the Copy URL button is clicked.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleCopyUrlClicked(object? sender, EventArgs e)
         {
             Clipboard.SetText(_account.Url);
         }
+
+
+        /// <summary>
+        /// Handles the event when the Copy User ID button is clicked.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleCopyUserIdClicked(object? sender, EventArgs e)
         {
             Clipboard.SetText(_account.UserId);
         }
+
+        /// <summary>
+        /// Handles the event when the Close button is clicked.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleCloseClicked(object? sender, EventArgs e)
         {
             SetPreLoadState();
@@ -196,15 +233,7 @@ namespace Adaptive.Data.Vault.UI
             DialogResult = DialogResult.OK;
             Close();
         }
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-        }
         #endregion
 
-        private void CopyUrlButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

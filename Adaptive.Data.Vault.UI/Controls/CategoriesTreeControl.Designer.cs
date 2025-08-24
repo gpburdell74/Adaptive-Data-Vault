@@ -56,7 +56,7 @@ partial class CategoriesTreeControl
         // 
         // CategoryMenuAdd
         // 
-        CategoryMenuAdd.Image = Properties.Resources.Add_16x16;
+        CategoryMenuAdd.Image = Properties.Resources.Add16x16;
         CategoryMenuAdd.Name = "CategoryMenuAdd";
         CategoryMenuAdd.Size = new Size(168, 22);
         CategoryMenuAdd.Text = "&Add Category...";

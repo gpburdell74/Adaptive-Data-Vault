@@ -32,6 +32,7 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     public CategorizedItemsContainerControl()
     {
         InitializeComponent();
+        AccountsButton.Checked = true;
     }
     /// <summary> 
     /// Clean up any resources being used.
@@ -286,7 +287,13 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     /// </summary>
     private void SetIdProviderList()
     {
-
+        if (_manager != null && _manager.IdProviders != null)
+        {
+            // Set the list for the currently selected category.
+            IdProvidersList.ClearList();
+            IdProvidersList.Category = _category;
+            IdProvidersList.Manager = _manager;
+        }
     }
 
     /// <summary>
@@ -294,6 +301,13 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     /// </summary>
     private void SetSecureNotesList()
     {
+        if (_manager != null && _manager.SecureNotes != null)
+        {
+            // Set the list for the currently selected category.
+            SecureNotesList.ClearList();
+            SecureNotesList.Category = _category;
+            SecureNotesList.Manager = _manager;
+        }
     }
     #endregion
 }

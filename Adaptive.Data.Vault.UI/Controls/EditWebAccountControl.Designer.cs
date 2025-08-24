@@ -172,6 +172,7 @@ partial class EditWebAccountControl
         NamePanel.Padding = new Padding(0, 0, 5, 0);
         NamePanel.Size = new Size(600, 30);
         NamePanel.TabIndex = 0;
+        NamePanel.TemplateFile = null;
         // 
         // NameLabelPanel
         // 
@@ -205,6 +206,7 @@ partial class EditWebAccountControl
         DescPanel.Padding = new Padding(0, 0, 5, 0);
         DescPanel.Size = new Size(600, 30);
         DescPanel.TabIndex = 1;
+        DescPanel.TemplateFile = null;
         // 
         // DescLabelPanel
         // 
@@ -214,6 +216,7 @@ partial class EditWebAccountControl
         DescLabelPanel.Name = "DescLabelPanel";
         DescLabelPanel.Size = new Size(100, 30);
         DescLabelPanel.TabIndex = 0;
+        DescLabelPanel.TemplateFile = null;
         // 
         // DescLabel
         // 
@@ -238,6 +241,7 @@ partial class EditWebAccountControl
         UrlPanel.Padding = new Padding(0, 0, 5, 0);
         UrlPanel.Size = new Size(600, 30);
         UrlPanel.TabIndex = 2;
+        UrlPanel.TemplateFile = null;
         // 
         // UrlLabelPanel
         // 
@@ -247,6 +251,7 @@ partial class EditWebAccountControl
         UrlLabelPanel.Name = "UrlLabelPanel";
         UrlLabelPanel.Size = new Size(100, 30);
         UrlLabelPanel.TabIndex = 0;
+        UrlLabelPanel.TemplateFile = null;
         // 
         // UrlLabel
         // 
@@ -271,6 +276,7 @@ partial class EditWebAccountControl
         UseridPanel.Padding = new Padding(0, 0, 5, 0);
         UseridPanel.Size = new Size(600, 30);
         UseridPanel.TabIndex = 3;
+        UseridPanel.TemplateFile = null;
         // 
         // UserIdLabelPanel
         // 
@@ -280,6 +286,7 @@ partial class EditWebAccountControl
         UserIdLabelPanel.Name = "UserIdLabelPanel";
         UserIdLabelPanel.Size = new Size(100, 30);
         UserIdLabelPanel.TabIndex = 0;
+        UserIdLabelPanel.TemplateFile = null;
         // 
         // UserIdLabel
         // 
@@ -304,6 +311,7 @@ partial class EditWebAccountControl
         PwdPanel.Padding = new Padding(0, 0, 5, 0);
         PwdPanel.Size = new Size(600, 30);
         PwdPanel.TabIndex = 4;
+        PwdPanel.TemplateFile = null;
         // 
         // PwdLabelPanel
         // 
@@ -313,6 +321,7 @@ partial class EditWebAccountControl
         PwdLabelPanel.Name = "PwdLabelPanel";
         PwdLabelPanel.Size = new Size(100, 30);
         PwdLabelPanel.TabIndex = 0;
+        PwdLabelPanel.TemplateFile = null;
         // 
         // PasswordLabel
         // 
@@ -337,6 +346,7 @@ partial class EditWebAccountControl
         MafAddressPanel.Padding = new Padding(0, 0, 5, 0);
         MafAddressPanel.Size = new Size(600, 30);
         MafAddressPanel.TabIndex = 7;
+        MafAddressPanel.TemplateFile = null;
         // 
         // MfaAddLabelPanel
         // 
@@ -346,6 +356,7 @@ partial class EditWebAccountControl
         MfaAddLabelPanel.Name = "MfaAddLabelPanel";
         MfaAddLabelPanel.Size = new Size(100, 30);
         MfaAddLabelPanel.TabIndex = 0;
+        MfaAddLabelPanel.TemplateFile = null;
         // 
         // MfaCheckLabel
         // 
@@ -370,6 +381,7 @@ partial class EditWebAccountControl
         MfaTypePanel.Padding = new Padding(0, 0, 5, 0);
         MfaTypePanel.Size = new Size(600, 30);
         MfaTypePanel.TabIndex = 6;
+        MfaTypePanel.TemplateFile = null;
         // 
         // MfaTypeLabelPanel
         // 
@@ -379,6 +391,7 @@ partial class EditWebAccountControl
         MfaTypeLabelPanel.Name = "MfaTypeLabelPanel";
         MfaTypeLabelPanel.Size = new Size(100, 30);
         MfaTypeLabelPanel.TabIndex = 0;
+        MfaTypeLabelPanel.TemplateFile = null;
         // 
         // MfaTypeLabel
         // 
@@ -403,6 +416,7 @@ partial class EditWebAccountControl
         MfaCheckPanel.Padding = new Padding(0, 0, 5, 0);
         MfaCheckPanel.Size = new Size(600, 30);
         MfaCheckPanel.TabIndex = 5;
+        MfaCheckPanel.TemplateFile = null;
         // 
         // MfaCheckLabelPanel
         // 
@@ -412,6 +426,7 @@ partial class EditWebAccountControl
         MfaCheckLabelPanel.Name = "MfaCheckLabelPanel";
         MfaCheckLabelPanel.Size = new Size(100, 30);
         MfaCheckLabelPanel.TabIndex = 0;
+        MfaCheckLabelPanel.TemplateFile = null;
         // 
         // MfaDeviceLabel
         // 

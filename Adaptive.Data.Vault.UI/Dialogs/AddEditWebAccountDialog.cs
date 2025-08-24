@@ -7,7 +7,7 @@ namespace Adaptive.Data.Vault.UI;
 /// Provides a dialog for adding a new or editing an existing web account.
 /// </summary>
 /// <seealso cref="AdaptiveDialogBase" />
-public partial class AddEditWebAccountDialog : AdaptiveDialogBase
+public partial class AddEditWebAccountDialog : BorderedDialog
 {
     #region Private Member Declarations
     /// <summary>

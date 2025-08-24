@@ -4,3 +4,17 @@
 
 /.vs
 /.cr/personal/FavoritesList
+/Adaptive Data Vault WinForms Application/obj
+/Adaptive.Data.Vault/obj
+/Adaptive.Data.Vault.DataAccess/obj
+/Adaptive.Data.Vault.Test/obj
+/Adaptive.Data.Vault.UI/obj
+/Adaptive Data Vault Install/Adaptive Data Vault Installer/Debug
+/Adaptive Data Vault WinForms Application/bin/Debug/net9.0-windows
+/Adaptive.Data.Vault/bin/Debug/net9.0
+/Adaptive.Data.Vault.DataAccess/bin/Debug/net9.0
+/Adaptive.Data.Vault.DataAccess.Tests/bin/Debug/net9.0
+/Adaptive.Data.Vault.DataAccess.Tests/obj
+/Adaptive.Data.Vault.Tests/bin/Debug/net9.0-windows
+/Adaptive.Data.Vault.Tests/obj
+/Adaptive.Data.Vault.UI/bin/Debug/net9.0-windows

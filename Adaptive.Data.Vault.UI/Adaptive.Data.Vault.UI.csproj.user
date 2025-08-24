@@ -25,7 +25,7 @@
     <Compile Update="Controls\IdentityProviderListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Controls\ItemHeaderControl.cs">
+    <Compile Update="Controls\IdProviderListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Controls\SaveCancelBar.cs">
@@ -34,8 +34,32 @@
     <Compile Update="Controls\SecureNoteListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Controls\SecureNoteListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Controls\VaultDialogHeader.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Dialogs\BorderedDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\CreateSecureMessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\DecodeSecureMessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\IdentityProviderInfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\MessageLoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\SecureEraseFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\SecureNoteInfoDialog.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Dialogs\SelectCategoryDialog.cs">
       <SubType>Form</SubType>

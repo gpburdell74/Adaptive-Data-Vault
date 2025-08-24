@@ -63,9 +63,49 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Close 16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Close_16x161 {
+            get {
+                object obj = ResourceManager.GetObject("Close 16x161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Document_Types_2094 {
+            get {
+                object obj = ResourceManager.GetObject("Document Types 2094", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Document_Types_2097 {
             get {
                 object obj = ResourceManager.GetObject("Document Types 2097", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Misc_194 {
+            get {
+                object obj = ResourceManager.GetObject("Misc 194", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +146,16 @@ namespace Adaptive.Data.Vault.UI.Properties {
         internal static System.Drawing.Bitmap Save_16x16_Blue {
             get {
                 object obj = ResourceManager.GetObject("Save 16x16 Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Secure_File_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Secure File 16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
