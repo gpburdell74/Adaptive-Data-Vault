@@ -4,3 +4,8 @@
 
 /.vs
 /.cr/personal/FavoritesList
+/Adaptive Data Vault WinForms Application/obj
+/Adaptive.Data.Vault/obj
+/Adaptive.Data.Vault.DataAccess/obj
+/Adaptive.Data.Vault.Test/obj
+/Adaptive.Data.Vault.UI/obj
