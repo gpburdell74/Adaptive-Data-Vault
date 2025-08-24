@@ -18,3 +18,10 @@
 /Adaptive.Data.Vault.Tests/bin/Debug/net9.0-windows
 /Adaptive.Data.Vault.Tests/obj
 /Adaptive.Data.Vault.UI/bin/Debug/net9.0-windows
+/Adaptive Data Vault Install/Adaptive Data Vault Installer/Release
+/Adaptive Data Vault WinForms Application/bin/Release/net9.0-windows
+/Adaptive.Data.Vault/bin/Release/net9.0
+/Adaptive.Data.Vault.DataAccess/bin/Release/net9.0
+/Adaptive.Data.Vault.DataAccess.Tests/bin/Release/net9.0
+/Adaptive.Data.Vault.Tests/bin/Release/net9.0-windows
+/Adaptive.Data.Vault.UI/bin/Release/net9.0-windows
