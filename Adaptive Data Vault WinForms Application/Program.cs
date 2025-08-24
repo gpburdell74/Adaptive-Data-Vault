@@ -1,5 +1,3 @@
-using Adaptive.Data.Vault.Test;
-
 namespace Adaptive.Data.Vault.UI;
 
 internal static class Program

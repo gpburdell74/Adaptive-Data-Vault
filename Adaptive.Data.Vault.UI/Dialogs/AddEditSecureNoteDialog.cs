@@ -7,7 +7,7 @@ namespace Adaptive.Data.Vault.UI;
 /// Provides a dialog for adding a new or editing an existing secure note.
 /// </summary>
 /// <seealso cref="AdaptiveDialogBase" />
-public partial class AddEditSecureNoteDialog : AdaptiveDialogBase
+public partial class AddEditSecureNoteDialog : BorderedDialog
 {
     #region Private Member Declarations
     /// <summary>

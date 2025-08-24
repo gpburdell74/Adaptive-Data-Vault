@@ -9,13 +9,17 @@
 	<RootNamespace>Adaptive.Data.Vault.UI</RootNamespace>
 	<PackageId>Adaptive.Data.Vault.UI</PackageId>
 	<Title>Adaptive Intelligence Data Vault UI Class Library</Title>
-	<Version>0.2.0.0</Version>
+	<Description>A .NET User Controls Library to support the Adaptive Data Vault Application.</Description>
+	<Version>0.90.100.0001</Version>
 	<Authors>Sam Jones</Authors>
 	<Company>Adaptive Intelligence</Company>
-	<Product>Adaptive.Data.Vault</Product>
-	<Description>A .NET User Controls Library to support the Adaptive Data Vault Application.</Description>
-	<Copyright>Copyright (C) 2024-2025 by Sam Jones. All rights reserved.</Copyright>
-</PropertyGroup>
+	<Product>Adaptive Data Vault</Product>
+	<Copyright>Copyright © 2025 by Sam Jones.  All rights reserved.</Copyright>
+	<PackageProjectUrl>https://samjones.azurewebsites.net</PackageProjectUrl>
+	<PackageIcon>ADV.ico</PackageIcon>
+	<RepositoryType>github</RepositoryType>
+	<RepositoryUrl>https://github.com/gpburdell74/Adaptive-Data-Vault</RepositoryUrl>
+  </PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<IsTrimmable>True</IsTrimmable>
@@ -24,6 +28,33 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<IsTrimmable>True</IsTrimmable>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Controls\ItemHeaderControl.cs" />
+	  <Compile Remove="Controls\ItemHeaderControl.Designer.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Remove="Controls\ItemHeaderControl.resx" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\ADV Button.template" />
+	  <None Remove="Resources\ADV Cancel  Template.template" />
+	  <None Remove="Resources\ADV Copy Button Template.template" />
+	  <None Remove="Resources\ADV Delete Template.template" />
+	  <None Remove="Resources\ADV ShowHide Template.template" />
+	  <None Remove="Resources\ADV User Info Button.template" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\ADV Button.template" />
+	  <EmbeddedResource Include="Resources\ADV Cancel  Template.template" />
+	  <EmbeddedResource Include="Resources\ADV Copy Button Template.template" />
+	  <EmbeddedResource Include="Resources\ADV Delete Template.template" />
+	  <EmbeddedResource Include="Resources\ADV ShowHide Template.template" />
+	  <EmbeddedResource Include="Resources\ADV User Info Button.template" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\..\Framework\Shared Code Library\Adaptive.Intelligence.Shared\Adaptive.Intelligence.Shared.csproj" />

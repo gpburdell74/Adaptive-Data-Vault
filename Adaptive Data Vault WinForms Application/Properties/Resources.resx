@@ -118,8 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="New File 16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\New File 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Save 16x16 Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save 16x16 Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Document Types 2094" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Document Types 2094.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Save 16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,13 +130,25 @@
   <data name="Document Types 2097" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Document Types 2097.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Settings Flat 16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings Flat 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close 16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="OpenButton.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OpenButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Save 16x16 Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save 16x16 Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="New File 16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New File 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Settings Flat 16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings Flat 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Close 16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close 16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Secure File 16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Secure File 16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Misc 194" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Misc 194.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

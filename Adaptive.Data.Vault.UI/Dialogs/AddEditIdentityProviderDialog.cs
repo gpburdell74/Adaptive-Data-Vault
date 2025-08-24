@@ -7,7 +7,7 @@ namespace Adaptive.Data.Vault.UI;
 /// Provides a dialog for adding a new or editing an existing identity provider entry.
 /// </summary>
 /// <seealso cref="AdaptiveDialogBase" />
-public partial class AddEditIdentityProviderDialog : AdaptiveDialogBase
+public partial class AddEditIdentityProviderDialog : BorderedDialog
 {
     #region Private Member Declarations
     /// <summary>

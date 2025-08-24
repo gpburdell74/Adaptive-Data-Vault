@@ -18,7 +18,15 @@
             SaveCancel = new Adaptive.Data.Vault.UI.Controls.SaveCancelBar();
             DialogHeader = new Adaptive.Data.Vault.UI.Controls.VaultDialogHeader();
             CategoryEdit = new EditCategoryControl();
+            ContainerPanel.SuspendLayout();
             SuspendLayout();
+            // 
+            // ContainerPanel
+            // 
+            ContainerPanel.Controls.Add(CategoryEdit);
+            ContainerPanel.Controls.Add(SaveCancel);
+            ContainerPanel.Controls.Add(DialogHeader);
+            ContainerPanel.Size = new Size(432, 182);
             // 
             // SaveCancel
             // 
@@ -27,47 +35,41 @@
             SaveCancel.CancelVisible = true;
             SaveCancel.Dock = DockStyle.Bottom;
             SaveCancel.Font = new Font("Segoe UI", 9.75F);
-            SaveCancel.Location = new Point(0, 143);
+            SaveCancel.Location = new Point(5, 129);
             SaveCancel.Margin = new Padding(48, 22, 48, 22);
             SaveCancel.Name = "SaveCancel";
             SaveCancel.SaveEnabled = true;
             SaveCancel.SaveText = "Save";
             SaveCancel.SaveVisible = true;
-            SaveCancel.Size = new Size(488, 48);
+            SaveCancel.Size = new Size(422, 48);
             SaveCancel.TabIndex = 1;
             // 
             // DialogHeader
             // 
             DialogHeader.Dock = DockStyle.Top;
-            DialogHeader.Location = new Point(0, 0);
+            DialogHeader.Location = new Point(5, 5);
             DialogHeader.Name = "DialogHeader";
-            DialogHeader.Size = new Size(488, 70);
+            DialogHeader.Size = new Size(422, 70);
             DialogHeader.TabIndex = 2;
             DialogHeader.TitleText = "CATEGORY";
             // 
             // CategoryEdit
             // 
-            CategoryEdit.Dock = DockStyle.Top;
+            CategoryEdit.Dock = DockStyle.Fill;
             CategoryEdit.Font = new Font("Segoe UI", 9.75F);
-            CategoryEdit.Location = new Point(0, 70);
+            CategoryEdit.Location = new Point(5, 75);
             CategoryEdit.Name = "CategoryEdit";
             CategoryEdit.Padding = new Padding(0, 10, 0, 0);
-            CategoryEdit.Size = new Size(488, 68);
+            CategoryEdit.Size = new Size(422, 54);
             CategoryEdit.TabIndex = 0;
             // 
             // AddEditCategoryDialog
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(488, 191);
-            ControlBox = false;
-            Controls.Add(CategoryEdit);
-            Controls.Add(SaveCancel);
-            Controls.Add(DialogHeader);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            KeyPreview = true;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(432, 182);
             Name = "AddEditCategoryDialog";
-            StartPosition = FormStartPosition.CenterScreen;
+            ContainerPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 

@@ -75,13 +75,16 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
     /// </summary>
     protected override void InitializeDataContent()
     {
-        IdProviderTypeList.Items.Add("None");
-        IdProviderTypeList.Items.Add("Microsoft");
-        IdProviderTypeList.Items.Add("Google");
-        IdProviderTypeList.Items.Add("Facebook");
-        IdProviderTypeList.Items.Add("Apple");
-        IdProviderTypeList.Items.Add("Corporate, Custom, or Other");
-        IdProviderTypeList.SelectedIndex = 0;
+        if (IdProviderTypeList.Items.Count == 0)
+        {
+            IdProviderTypeList.Items.Add("None");
+            IdProviderTypeList.Items.Add("Microsoft");
+            IdProviderTypeList.Items.Add("Google");
+            IdProviderTypeList.Items.Add("Facebook");
+            IdProviderTypeList.Items.Add("Apple");
+            IdProviderTypeList.Items.Add("Corporate, Custom, or Other");
+            IdProviderTypeList.SelectedIndex = 0;
+        }
     }
     #endregion
 
@@ -123,6 +126,9 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
     {
         if (_provider != null)
         {
+            if (IdProviderTypeList.Items.Count == 0)
+                InitializeDataContent();
+
             IdProviderTypeList.SelectedIndex = (int)_provider.ProviderType;
             NameText.Text = _provider.Name;
             DescText.Text = _provider.Description;
