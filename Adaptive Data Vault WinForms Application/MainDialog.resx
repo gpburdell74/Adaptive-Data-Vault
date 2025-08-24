@@ -126,19 +126,10 @@
   <metadata name="MainToolbar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>247, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="CloseFileButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACGSURBVDhPzZFdCoAwDIN3rv2IXkzYyXUZ3Wi7UvamHwSL
-        Scqm4X+UUg4aFzyvk3O+mx486dXE8zoppZMCQzOImXvIkiVpRuXBJhR1uVLcxliyXx5YS7bLoBXEsUn2
-        x9MgqIpc/hIEeAHHNq6z9xv5nfUSZMmSjCAvDzxPEGO8aFzwvK8I4QXdxHqVYUSrYgAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
   <metadata name="ttp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>367, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAEBAQAAAAAAAoAQAAVgAAACAgEAAAAAAA6AIAAH4BAAAgIAAAAQAIAKgIAABmBAAAEBAAAAEA

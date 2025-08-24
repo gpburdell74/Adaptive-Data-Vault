@@ -1,19 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFramework>net9.0</TargetFramework>
-	  <ImplicitUsings>enable</ImplicitUsings>
-	  <Nullable>enable</Nullable>
-	  <AssemblyName>Adaptive.Data.Vault</AssemblyName>
-	  <RootNamespace>Adaptive.Data.Vault</RootNamespace>
-	  <PackageId>Adaptive.Data.Vault</PackageId>
-	  <Title>Adaptive Intelligence Data Vault Class Library</Title>
-	  <Version>0.2.0.0</Version>
-	  <Authors>Sam Jones</Authors>
-	  <Company>Adaptive Intelligence</Company>
-	  <Product>Adaptive.Data.Vault</Product>
-	  <Description>A .NET Class Library to support the Adaptive Data Vault Application.</Description>
-	  <Copyright>Copyright (C) 2024-2025 by Sam Jones. All rights reserved.</Copyright>
+	<TargetFramework>net9.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+	<AssemblyName>Adaptive.Data.Vault</AssemblyName>
+	<RootNamespace>Adaptive.Data.Vault</RootNamespace>
+	<PackageId>Adaptive.Data.Vault</PackageId>
+	<Title>Adaptive Intelligence Data Vault Class Library</Title>
+	<Description>A .NET Class Library to support the Adaptive Data Vault Application.</Description>
+	<Version>0.90.100.0001</Version>
+	<Authors>Sam Jones</Authors>
+	<Company>Adaptive Intelligence</Company>
+	<Product>Adaptive Data Vault</Product>
+	<Copyright>Copyright © 2025 by Sam Jones.  All rights reserved.</Copyright>
+	<PackageProjectUrl>https://samjones.azurewebsites.net</PackageProjectUrl>
+	<PackageIcon>ADV.ico</PackageIcon>
+	<RepositoryType>github</RepositoryType>
+	<RepositoryUrl>https://github.com/gpburdell74/Adaptive-Data-Vault</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

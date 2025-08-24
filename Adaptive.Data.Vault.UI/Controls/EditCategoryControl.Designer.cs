@@ -33,6 +33,7 @@
             NamePanel.Padding = new Padding(0, 0, 5, 0);
             NamePanel.Size = new Size(600, 30);
             NamePanel.TabIndex = 1;
+            NamePanel.TemplateFile = null;
             // 
             // NameText
             // 

@@ -1,4 +1,5 @@
 ﻿using Adaptive.Intelligence.Shared.UI;
+using Adaptive.Intelligence.Shared.UI.Controls;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -28,15 +29,17 @@ namespace Adaptive.Data.Vault.UI
             // AddButton
             // 
             AddButton.Checked = false;
-            AddButton.Image = Properties.Resources.Add_16x16;
+            AddButton.Image = Properties.Resources.Add16x16;
             AddButton.ImageAlign = ContentAlignment.MiddleLeft;
             AddButton.Location = new Point(3, 3);
             AddButton.Name = "AddButton";
+            AddButton.ResourceTemplate = null;
             AddButton.Size = new Size(100, 25);
             AddButton.TabIndex = 0;
-            AddButton.TemplateFile = "D:\\Adaptive.Intelligence\\Branding\\Adaptive Intelligence Button Template.template";
+            AddButton.TemplateFile = null;
             AddButton.Text = "&Add Entry";
             AddButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            AddButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
             AddButton.UseVisualStyleBackColor = true;
             // 
             // EditButton
@@ -46,11 +49,13 @@ namespace Adaptive.Data.Vault.UI
             EditButton.ImageAlign = ContentAlignment.MiddleLeft;
             EditButton.Location = new Point(109, 3);
             EditButton.Name = "EditButton";
+            EditButton.ResourceTemplate = null;
             EditButton.Size = new Size(100, 25);
             EditButton.TabIndex = 1;
-            EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Branding\\Adaptive Intelligence Button Template.template";
+            EditButton.TemplateFile = null;
             EditButton.Text = "&Edit Entry";
             EditButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            EditButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
             EditButton.UseVisualStyleBackColor = true;
             // 
             // RemoveButton
@@ -60,11 +65,13 @@ namespace Adaptive.Data.Vault.UI
             RemoveButton.ImageAlign = ContentAlignment.MiddleLeft;
             RemoveButton.Location = new Point(215, 3);
             RemoveButton.Name = "RemoveButton";
+            RemoveButton.ResourceTemplate = null;
             RemoveButton.Size = new Size(112, 25);
             RemoveButton.TabIndex = 2;
-            RemoveButton.TemplateFile = "D:\\Adaptive.Intelligence\\Branding\\Adaptive Intelligence Button Template.template";
+            RemoveButton.TemplateFile = null;
             RemoveButton.Text = "&Remove Entry";
             RemoveButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            RemoveButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
             RemoveButton.UseVisualStyleBackColor = true;
             // 
             // AddEditRemoveToolbar

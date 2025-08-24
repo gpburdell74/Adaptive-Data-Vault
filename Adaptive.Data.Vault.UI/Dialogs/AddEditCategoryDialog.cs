@@ -7,7 +7,7 @@ namespace Adaptive.Data.Vault.UI;
 /// Provides a dialog for adding a new or editing an existing category.
 /// </summary>
 /// <seealso cref="AdaptiveDialogBase" />
-public partial class AddEditCategoryDialog : AdaptiveDialogBase
+public partial class AddEditCategoryDialog : BorderedDialog
 {
     #region Private Member Declarations
     /// <summary>

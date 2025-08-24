@@ -85,6 +85,7 @@
             UseridPanel.Padding = new Padding(0, 0, 5, 0);
             UseridPanel.Size = new Size(600, 30);
             UseridPanel.TabIndex = 20;
+            UseridPanel.TemplateFile = null;
             // 
             // UserIdText
             // 
@@ -106,6 +107,7 @@
             UserIdLabelPanel.Name = "UserIdLabelPanel";
             UserIdLabelPanel.Size = new Size(100, 30);
             UserIdLabelPanel.TabIndex = 0;
+            UserIdLabelPanel.TemplateFile = null;
             // 
             // UserIdLabel
             // 
@@ -141,6 +143,7 @@
             UrlLabelPanel.Name = "UrlLabelPanel";
             UrlLabelPanel.Size = new Size(100, 30);
             UrlLabelPanel.TabIndex = 0;
+            UrlLabelPanel.TemplateFile = null;
             // 
             // UrlPanel
             // 
@@ -152,6 +155,7 @@
             UrlPanel.Padding = new Padding(0, 0, 5, 0);
             UrlPanel.Size = new Size(600, 30);
             UrlPanel.TabIndex = 19;
+            UrlPanel.TemplateFile = null;
             // 
             // UrlText
             // 
@@ -251,6 +255,7 @@
             NamePanel.Padding = new Padding(0, 0, 5, 0);
             NamePanel.Size = new Size(600, 30);
             NamePanel.TabIndex = 17;
+            NamePanel.TemplateFile = null;
             // 
             // NameLabelPanel
             // 
@@ -284,6 +289,7 @@
             DescPanel.Padding = new Padding(0, 0, 5, 0);
             DescPanel.Size = new Size(600, 30);
             DescPanel.TabIndex = 18;
+            DescPanel.TemplateFile = null;
             // 
             // DescLabelPanel
             // 
@@ -293,6 +299,7 @@
             DescLabelPanel.Name = "DescLabelPanel";
             DescLabelPanel.Size = new Size(100, 30);
             DescLabelPanel.TabIndex = 0;
+            DescLabelPanel.TemplateFile = null;
             // 
             // DescLabel
             // 
@@ -363,6 +370,7 @@
             MfaCheckPanel.Padding = new Padding(0, 0, 5, 0);
             MfaCheckPanel.Size = new Size(600, 30);
             MfaCheckPanel.TabIndex = 22;
+            MfaCheckPanel.TemplateFile = null;
             // 
             // MfaCheckLabelPanel
             // 
@@ -372,6 +380,7 @@
             MfaCheckLabelPanel.Name = "MfaCheckLabelPanel";
             MfaCheckLabelPanel.Size = new Size(100, 30);
             MfaCheckLabelPanel.TabIndex = 0;
+            MfaCheckLabelPanel.TemplateFile = null;
             // 
             // MfaTypeLabel
             // 
@@ -396,6 +405,7 @@
             MfaTypePanel.Padding = new Padding(0, 0, 5, 0);
             MfaTypePanel.Size = new Size(600, 30);
             MfaTypePanel.TabIndex = 23;
+            MfaTypePanel.TemplateFile = null;
             // 
             // MfaTypeLabelPanel
             // 
@@ -405,6 +415,7 @@
             MfaTypeLabelPanel.Name = "MfaTypeLabelPanel";
             MfaTypeLabelPanel.Size = new Size(100, 30);
             MfaTypeLabelPanel.TabIndex = 0;
+            MfaTypeLabelPanel.TemplateFile = null;
             // 
             // MfaAddLabelPanel
             // 
@@ -414,6 +425,7 @@
             MfaAddLabelPanel.Name = "MfaAddLabelPanel";
             MfaAddLabelPanel.Size = new Size(100, 30);
             MfaAddLabelPanel.TabIndex = 0;
+            MfaAddLabelPanel.TemplateFile = null;
             // 
             // MfaCheckLabel
             // 
@@ -438,6 +450,7 @@
             MafAddressPanel.Padding = new Padding(0, 0, 5, 0);
             MafAddressPanel.Size = new Size(600, 30);
             MafAddressPanel.TabIndex = 24;
+            MafAddressPanel.TemplateFile = null;
             // 
             // PasswordLabel
             // 
@@ -460,6 +473,7 @@
             PwdLabelPanel.Name = "PwdLabelPanel";
             PwdLabelPanel.Size = new Size(100, 30);
             PwdLabelPanel.TabIndex = 0;
+            PwdLabelPanel.TemplateFile = null;
             // 
             // PwdPanel
             // 
@@ -471,6 +485,7 @@
             PwdPanel.Padding = new Padding(0, 0, 5, 0);
             PwdPanel.Size = new Size(600, 30);
             PwdPanel.TabIndex = 21;
+            PwdPanel.TemplateFile = null;
             // 
             // EditIdentityProviderControl
             // 

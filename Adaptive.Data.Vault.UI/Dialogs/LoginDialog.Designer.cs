@@ -1,5 +1,6 @@
 ﻿using Adaptive.Data.Vault.UI.Controls;
 using Adaptive.Intelligence.Shared.UI;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Adaptive.Data.Vault.UI;
 
@@ -28,14 +29,14 @@ partial class LoginDialog
         UserIdImage = new PictureBox();
         PwdImage = new PictureBox();
         ttp = new ToolTip(components);
-        ErrorProvider = new ErrorProvider(components);
-        ButtonPanel = new Panel();
         CloseButton = new TemplatedButton();
         OkButton = new TemplatedButton();
-        DividerLine = new LineControl();
-        pictureBox1 = new PictureBox();
         PinText = new PasswordTextBox();
         PinLabel = new AdvancedLabel();
+        ErrorProvider = new ErrorProvider(components);
+        ButtonPanel = new Panel();
+        DividerLine = new LineControl();
+        pictureBox1 = new PictureBox();
         ((System.ComponentModel.ISupportInitialize)UserIdImage).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PwdImage).BeginInit();
         ((System.ComponentModel.ISupportInitialize)ErrorProvider).BeginInit();
@@ -113,21 +114,6 @@ partial class LoginDialog
         PwdImage.TabIndex = 6;
         PwdImage.TabStop = false;
         // 
-        // ErrorProvider
-        // 
-        ErrorProvider.ContainerControl = this;
-        // 
-        // ButtonPanel
-        // 
-        ButtonPanel.Controls.Add(CloseButton);
-        ButtonPanel.Controls.Add(OkButton);
-        ButtonPanel.Controls.Add(DividerLine);
-        ButtonPanel.Dock = DockStyle.Bottom;
-        ButtonPanel.Location = new Point(0, 305);
-        ButtonPanel.Name = "ButtonPanel";
-        ButtonPanel.Size = new Size(460, 51);
-        ButtonPanel.TabIndex = 7;
-        // 
         // CloseButton
         // 
         CloseButton.Checked = false;
@@ -136,7 +122,7 @@ partial class LoginDialog
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(100, 32);
         CloseButton.TabIndex = 1;
-        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Cancel  Template.template";
+        CloseButton.ResourceTemplate = Properties.Resources.ButtonTemplateCancel;
         CloseButton.Text = "Cancel";
         CloseButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(CloseButton, "Click here to Cancel.");
@@ -151,11 +137,50 @@ partial class LoginDialog
         OkButton.Name = "OkButton";
         OkButton.Size = new Size(100, 32);
         OkButton.TabIndex = 0;
-        OkButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Button.template";
+        OkButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
         OkButton.Text = "OK";
         OkButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(OkButton, "Click here to log in to the file and load the contents.");
         OkButton.UseVisualStyleBackColor = true;
+        // 
+        // PinText
+        // 
+        PinText.Font = new Font("Segoe UI", 9.75F);
+        PinText.Location = new Point(55, 259);
+        PinText.Margin = new Padding(4);
+        PinText.Name = "PinText";
+        PinText.NumericOnly = true;
+        PinText.PlaceholderText = "(Password)";
+        PinText.Size = new Size(385, 25);
+        PinText.TabIndex = 6;
+        ttp.SetToolTip(PinText, "Enter the PIN number for this file.");
+        // 
+        // PinLabel
+        // 
+        PinLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        PinLabel.Location = new Point(52, 234);
+        PinLabel.Name = "PinLabel";
+        PinLabel.Size = new Size(385, 20);
+        PinLabel.TabIndex = 5;
+        PinLabel.TabStop = false;
+        PinLabel.Text = "Enter the File P&IN:";
+        PinLabel.TextAlign = ContentAlignment.MiddleLeft;
+        ttp.SetToolTip(PinLabel, "Enter the password for this file.");
+        // 
+        // ErrorProvider
+        // 
+        ErrorProvider.ContainerControl = this;
+        // 
+        // ButtonPanel
+        // 
+        ButtonPanel.Controls.Add(CloseButton);
+        ButtonPanel.Controls.Add(OkButton);
+        ButtonPanel.Controls.Add(DividerLine);
+        ButtonPanel.Dock = DockStyle.Bottom;
+        ButtonPanel.Location = new Point(0, 305);
+        ButtonPanel.Name = "ButtonPanel";
+        ButtonPanel.Size = new Size(460, 51);
+        ButtonPanel.TabIndex = 7;
         // 
         // DividerLine
         // 
@@ -183,30 +208,6 @@ partial class LoginDialog
         pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         pictureBox1.TabIndex = 11;
         pictureBox1.TabStop = false;
-        // 
-        // PinText
-        // 
-        PinText.Font = new Font("Segoe UI", 9.75F);
-        PinText.Location = new Point(55, 259);
-        PinText.Margin = new Padding(4);
-        PinText.Name = "PinText";
-        PinText.NumericOnly = true;
-        PinText.PlaceholderText = "(Password)";
-        PinText.Size = new Size(385, 25);
-        PinText.TabIndex = 6;
-        ttp.SetToolTip(PinText, "Enter the PIN number for this file.");
-        // 
-        // PinLabel
-        // 
-        PinLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        PinLabel.Location = new Point(52, 234);
-        PinLabel.Name = "PinLabel";
-        PinLabel.Size = new Size(385, 20);
-        PinLabel.TabIndex = 5;
-        PinLabel.TabStop = false;
-        PinLabel.Text = "Enter the File P&IN:";
-        PinLabel.TextAlign = ContentAlignment.MiddleLeft;
-        ttp.SetToolTip(PinLabel, "Enter the password for this file.");
         // 
         // LoginDialog
         // 

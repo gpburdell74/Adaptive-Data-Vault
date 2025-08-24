@@ -19,6 +19,7 @@ namespace Adaptive.Data.Vault
         public SecureNoteCollection()
         {
         }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureNoteCollection"/> class.
         /// </summary>
@@ -57,6 +58,34 @@ namespace Adaptive.Data.Vault
                 SecureContent = content,
             };
             Add(entity);
+        }
+        /// <summary>
+        /// Sorts the list's content into alphabetical order by name.
+        /// </summary>
+        public void SortAlpha()
+        {
+            Sort(AlphabeticComparison);
+        }
+        #endregion
+
+        #region Private Methods / Functions
+        /// <summary>
+        /// Provides the predicate implementation for comparing two <see cref="SecureNote"/> instances
+        /// by name value.
+        /// </summary>
+        /// <param name="left">
+        /// The left <see cref="SecureNote"/> to compare.
+        /// </param>
+        /// <param name="right">
+        /// The right <see cref="SecureNote"/> to compare.
+        /// </param>
+        /// <returns>
+        /// The result of the comparison, as an integer value, in the same context as the <see cref="string.Compare"/>
+        /// function.
+        /// </returns>
+        private int AlphabeticComparison(SecureNote left, SecureNote right)
+        {
+            return string.Compare(left.Name, right.Name, StringComparison.OrdinalIgnoreCase);
         }
         #endregion
     }

@@ -63,10 +63,80 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_16x16 {
+        internal static System.Drawing.Bitmap Add16x16 {
             get {
-                object obj = ResourceManager.GetObject("Add 16x16", resourceCulture);
+                object obj = ResourceManager.GetObject("Add16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonTemplateCancel {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateCancel", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonTemplateCopy {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateCopy", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonTemplateDelete {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateDelete", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonTemplateEditUser {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateEditUser", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonTemplateShowHide {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateShowHide", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonTemplateStandard {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateStandard", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonTemplateUserInfo {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateUserInfo", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -131,6 +201,16 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Edit_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Edit 32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Password_Lock {
             get {
                 object obj = ResourceManager.GetObject("Password Lock", resourceCulture);
@@ -144,6 +224,26 @@ namespace Adaptive.Data.Vault.UI.Properties {
         internal static System.Drawing.Bitmap User_ID_Keys {
             get {
                 object obj = ResourceManager.GetObject("User ID Keys", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_ID_Keys1 {
+            get {
+                object obj = ResourceManager.GetObject("User ID Keys1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_Info_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("User Info 32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
