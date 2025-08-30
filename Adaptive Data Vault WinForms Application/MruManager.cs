@@ -75,7 +75,7 @@ namespace Adaptive.Data.Vault.UI
         /// <value>
         ///   <c>true</c> if the EULA was accepted; otherwise, <c>false</c>.
         /// </value>
-        public bool EulaAccepted { get; set; }
+        public bool EulaAccepted { get; set; } = false;
 
         /// <summary>
         /// Gets the recent file name list.
@@ -202,6 +202,10 @@ namespace Adaptive.Data.Vault.UI
             {
                 ReadContent(data);
                 Array.Clear(data, 0, data.Length);
+            }
+            else
+            {
+                EulaAccepted = false;
             }
         }
 

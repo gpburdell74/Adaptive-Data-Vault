@@ -61,6 +61,16 @@ namespace Adaptive.Data.Vault.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonStandard {
+            get {
+                object obj = ResourceManager.GetObject("ButtonStandard", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Close_16x16 {
@@ -97,6 +107,16 @@ namespace Adaptive.Data.Vault.UI.Properties {
             get {
                 object obj = ResourceManager.GetObject("Document Types 2097", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] EULA {
+            get {
+                object obj = ResourceManager.GetObject("EULA", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

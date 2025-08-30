@@ -69,7 +69,8 @@ namespace Adaptive.Data.Vault.UI
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(155, 40);
             this.DeleteButton.TabIndex = 7;
-            this.DeleteButton.ResourceTemplate = Properties.Resources.ButtonTemplateDelete;
+            this.DeleteButton.ResourceTemplate = Properties.Resources.ButtonTemplateDeleteFixed;
+
             this.DeleteButton.Text = "Secure Delete";
             this.DeleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DeleteButton.UseVisualStyleBackColor = true;

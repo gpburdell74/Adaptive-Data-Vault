@@ -132,13 +132,26 @@ public partial class MainDialog : AdaptiveDialogBase
         Data.ContentChanged -= HandleDataContentChanged;
     }
 
+    /// <summary>
+    /// Initializes the control and dialog state according to the form data.
+    /// </summary>
     protected override void InitializeDataContent()
     {
+        if (_mru == null)
+            _mru = new MruManager();
+
         if (!_mru.EulaAccepted)
         {
             EulaDialog dialog = new EulaDialog();
             dialog.ShowDialog();
 
+            _mru.EulaAccepted = dialog.Checked;
+            dialog.Dispose();
+            
+        }
+        if (!_mru.EulaAccepted)
+        {
+            Close();
         }
     }
     /// <summary>
@@ -182,7 +195,8 @@ public partial class MainDialog : AdaptiveDialogBase
     protected override void SetDisplayState()
     {
         bool isOpen = _manager != null;
-        bool hasMru = _mru.Count > 0;
+        
+        bool hasMru = _mru != null && _mru.Count > 0;
 
         FileMenuCloseFile.Visible = isOpen;
         FileMenuSave.Visible = isOpen;

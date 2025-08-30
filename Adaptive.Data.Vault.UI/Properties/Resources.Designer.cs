@@ -73,6 +73,16 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] ADV_Copy_Button_Template {
+            get {
+                object obj = ResourceManager.GetObject("ADV Copy Button Template", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] ButtonTemplateCancel {
             get {
                 object obj = ResourceManager.GetObject("ButtonTemplateCancel", resourceCulture);
@@ -96,6 +106,16 @@ namespace Adaptive.Data.Vault.UI.Properties {
         internal static byte[] ButtonTemplateDelete {
             get {
                 object obj = ResourceManager.GetObject("ButtonTemplateDelete", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonTemplateDeleteFixed {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateDeleteFixed", resourceCulture);
                 return ((byte[])(obj));
             }
         }
