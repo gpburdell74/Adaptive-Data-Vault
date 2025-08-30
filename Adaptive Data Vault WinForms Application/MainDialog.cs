@@ -132,6 +132,15 @@ public partial class MainDialog : AdaptiveDialogBase
         Data.ContentChanged -= HandleDataContentChanged;
     }
 
+    protected override void InitializeDataContent()
+    {
+        if (!_mru.EulaAccepted)
+        {
+            EulaDialog dialog = new EulaDialog();
+            dialog.ShowDialog();
+
+        }
+    }
     /// <summary>
     /// Sets the state of the UI controls before the data content is loaded.
     /// </summary>
