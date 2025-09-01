@@ -70,6 +70,14 @@ namespace Adaptive.Data.Vault.UI
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the EULA was accepted.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if the EULA was accepted; otherwise, <c>false</c>.
+        /// </value>
+        public bool EulaAccepted { get; set; }
+
+        /// <summary>
         /// Gets the recent file name list.
         /// </summary>
         /// <value>
@@ -162,6 +170,8 @@ namespace Adaptive.Data.Vault.UI
             BinaryWriter writer = new BinaryWriter(ms);
             if (_mruList != null)
             {
+                writer.Write(EulaAccepted);
+
                 writer.Write(_mruList.Count);
                 foreach (string file in _mruList)
                 {
@@ -206,6 +216,8 @@ namespace Adaptive.Data.Vault.UI
             {
                 MemoryStream ms = new MemoryStream(data);
                 SafeBinaryReader reader = new SafeBinaryReader(ms);
+
+                EulaAccepted = reader.ReadBoolean();
 
                 int length = reader.ReadInt32();
                 for (int count = 0; count < length; count++)
