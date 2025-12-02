@@ -57,10 +57,9 @@
             SaveButton.ImageAlign = ContentAlignment.MiddleLeft;
             SaveButton.Location = new Point(7, 5);
             SaveButton.Name = "SaveButton";
-            SaveButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
             SaveButton.Size = new Size(120, 38);
             SaveButton.TabIndex = 2;
-            SaveButton.TemplateFile = null;
+            SaveButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
             SaveButton.Text = "Save";
             SaveButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             SaveButton.UseVisualStyleBackColor = true;
@@ -82,10 +81,9 @@
             CancelButton.ImageAlign = ContentAlignment.MiddleLeft;
             CancelButton.Location = new Point(132, 5);
             CancelButton.Name = "CancelButton";
-            CancelButton.ResourceTemplate = Properties.Resources.ButtonTemplateCancel;
             CancelButton.Size = new Size(120, 38);
             CancelButton.TabIndex = 0;
-            CancelButton.TemplateFile = null;
+            CancelButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
             CancelButton.Text = "Cancel";
             CancelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             CancelButton.UseVisualStyleBackColor = true;

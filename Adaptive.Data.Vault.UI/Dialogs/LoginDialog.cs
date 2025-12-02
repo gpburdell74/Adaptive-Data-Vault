@@ -91,7 +91,7 @@ public partial class LoginDialog : AdaptiveDialogBase
     }
     #endregion
 
-    #region Protected Method Overrides		
+    #region Protected Method Overrides
     /// <summary>
     /// Assigns the event handlers for the controls on the dialog.
     /// </summary>
@@ -120,6 +120,16 @@ public partial class LoginDialog : AdaptiveDialogBase
     /// </summary>
     protected override void InitializeDataContent()
     {
+        NameText.Focus();
+    }
+
+    /// <summary>
+    /// Called when the initial loading process is completed.
+    /// </summary>
+    protected override void OnInitLoadComplete()
+    {
+        base.OnInitLoadComplete();
+        NameText.Focus();
     }
     /// <summary>
     /// When implemented in a derived class, sets the display state for the controls on the dialog based on
@@ -133,9 +143,13 @@ public partial class LoginDialog : AdaptiveDialogBase
         ErrorProvider.Clear();
 
         if (NameText.Text.Length == 0)
+        {
             ErrorProvider.SetError(NameText, "You must enter a name value here.");
+        }
         else if (PasswordText.Text.Length == 0)
+        {
             ErrorProvider.SetError(PasswordText, "You must enter the password for the file here.");
+        }
         else
             OkButton.Enabled = true;
     }

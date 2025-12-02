@@ -10,7 +10,7 @@
 	<PackageId>Adaptive.Data.Vault.UI</PackageId>
 	<Title>Adaptive Intelligence Data Vault UI Class Library</Title>
 	<Description>A .NET User Controls Library to support the Adaptive Data Vault Application.</Description>
-	  <Version>0.91.200.0022</Version>
+	  <Version>0.93.100.0001</Version>
 	<Authors>Sam Jones</Authors>
 	<Company>Adaptive Intelligence</Company>
 	<Product>Adaptive Data Vault</Product>
@@ -54,10 +54,6 @@
 	  <EmbeddedResource Include="Resources\ADV Delete Template.template" />
 	  <EmbeddedResource Include="Resources\ADV ShowHide Template.template" />
 	  <EmbeddedResource Include="Resources\ADV User Info Button.template" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="Sam.Jones.Adaptive.Intelligence.Shared" Version="0.91.200.22" />
 	</ItemGroup>
 
 	<ItemGroup>

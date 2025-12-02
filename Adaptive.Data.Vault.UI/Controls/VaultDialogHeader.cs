@@ -8,7 +8,6 @@ namespace Adaptive.Data.Vault.UI.Controls
     {
         #region Private Member Declarations
 
-        private Container components;
         private Color _startColor = Color.FromArgb(255, 0, 79, 210);
         private Color _endColor = Color.FromArgb(255, 136, 181, 255);
 
@@ -24,8 +23,6 @@ namespace Adaptive.Data.Vault.UI.Controls
         /// </remarks>
         public VaultDialogHeader()
         {
-            InitializeComponent();
-
             SetStyle(ControlStyles.AllPaintingInWmPaint, value: true);
             SetStyle(ControlStyles.DoubleBuffer, value: true);
             SetStyle(ControlStyles.ResizeRedraw, value: true);
@@ -40,7 +37,6 @@ namespace Adaptive.Data.Vault.UI.Controls
         {
             if (!IsDisposed && disposing)
             {
-                components?.Dispose();
             }
 
             base.Dispose(disposing);
@@ -99,13 +95,6 @@ namespace Adaptive.Data.Vault.UI.Controls
         #endregion
 
         #region Private Methods / Functions		
-        /// <summary>
-        /// Initializes the component.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            components = new Container();
-        }
         /// <summary>
         /// Draws the initial background.
         /// </summary>

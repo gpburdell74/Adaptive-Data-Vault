@@ -17,176 +17,222 @@ partial class IdentityProviderInfoDialog
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adaptive.Data.Vault.UI.WebAccountInfoDialog));
-        this.BorderPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-        this.ContentPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-        this.CloseButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        this.CopyPasswordButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        this.ShowPasswordButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        this.CopyUserIdButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        this.ShowUserIdButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        this.CopyUrlButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        this.PasswordLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-        this.PasswordTitleLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-        this.UserIdLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-        this.UserIdTitleLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-        this.AddressLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-        this.Header = new Adaptive.Intelligence.Shared.UI.SectionTitleHeader();
-        this.AddressTitleLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-        this.ttp = new System.Windows.Forms.ToolTip(this.components);
-        this.BorderPanel.SuspendLayout();
-        this.ContentPanel.SuspendLayout();
-        base.SuspendLayout();
-        this.BorderPanel.Controls.Add(this.ContentPanel);
-        this.BorderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        this.BorderPanel.Location = new System.Drawing.Point(0, 0);
-        this.BorderPanel.Name = "BorderPanel";
-        this.BorderPanel.Padding = new System.Windows.Forms.Padding(5);
-        this.BorderPanel.Size = new System.Drawing.Size(587, 248);
-        this.BorderPanel.TabIndex = 0;
-        this.BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
-        this.ContentPanel.Controls.Add(this.CloseButton);
-        this.ContentPanel.Controls.Add(this.CopyPasswordButton);
-        this.ContentPanel.Controls.Add(this.ShowPasswordButton);
-        this.ContentPanel.Controls.Add(this.CopyUserIdButton);
-        this.ContentPanel.Controls.Add(this.ShowUserIdButton);
-        this.ContentPanel.Controls.Add(this.CopyUrlButton);
-        this.ContentPanel.Controls.Add(this.PasswordLabel);
-        this.ContentPanel.Controls.Add(this.PasswordTitleLabel);
-        this.ContentPanel.Controls.Add(this.UserIdLabel);
-        this.ContentPanel.Controls.Add(this.UserIdTitleLabel);
-        this.ContentPanel.Controls.Add(this.AddressLabel);
-        this.ContentPanel.Controls.Add(this.Header);
-        this.ContentPanel.Controls.Add(this.AddressTitleLabel);
-        this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        this.ContentPanel.Location = new System.Drawing.Point(5, 5);
-        this.ContentPanel.Name = "ContentPanel";
-        this.ContentPanel.Size = new System.Drawing.Size(577, 238);
-        this.ContentPanel.TabIndex = 0;
-        this.ContentPanel.TemplateFile = null;
-        this.CloseButton.Checked = false;
-        this.CloseButton.Location = new System.Drawing.Point(485, 187);
-        this.CloseButton.Name = "CloseButton";
-        this.CloseButton.Size = new System.Drawing.Size(80, 40);
-        this.CloseButton.TabIndex = 12;
-        this.CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
-        this.CloseButton.Text = "Close";
-        this.ttp.SetToolTip(this.CloseButton, "Close this window.");
-        this.CloseButton.UseVisualStyleBackColor = true;
-        this.CopyPasswordButton.Checked = false;
-        this.CopyPasswordButton.Location = new System.Drawing.Point(525, 125);
-        this.CopyPasswordButton.Name = "CopyPasswordButton";
-        this.CopyPasswordButton.Size = new System.Drawing.Size(40, 40);
-        this.CopyPasswordButton.TabIndex = 11;
-        this.CopyPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
-        this.ttp.SetToolTip(this.CopyPasswordButton, "Copy the password to the clipboard.");
-        this.CopyPasswordButton.UseVisualStyleBackColor = true;
-        this.ShowPasswordButton.Checked = false;
-        this.ShowPasswordButton.Location = new System.Drawing.Point(485, 125);
-        this.ShowPasswordButton.Name = "ShowPasswordButton";
-        this.ShowPasswordButton.Size = new System.Drawing.Size(40, 40);
-        this.ShowPasswordButton.TabIndex = 10;
-        this.ShowPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
-        this.ttp.SetToolTip(this.ShowPasswordButton, "Show or Hide the Password.");
-        this.ShowPasswordButton.UseVisualStyleBackColor = true;
-        this.CopyUserIdButton.Checked = false;
-        this.CopyUserIdButton.Location = new System.Drawing.Point(525, 85);
-        this.CopyUserIdButton.Name = "CopyUserIdButton";
-        this.CopyUserIdButton.Size = new System.Drawing.Size(40, 40);
-        this.CopyUserIdButton.TabIndex = 9;
-        this.CopyUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
-        this.ttp.SetToolTip(this.CopyUserIdButton, "Copy the User ID / Login Name to the clipboard.");
-        this.CopyUserIdButton.UseVisualStyleBackColor = true;
-        this.ShowUserIdButton.Checked = false;
-        this.ShowUserIdButton.Location = new System.Drawing.Point(485, 85);
-        this.ShowUserIdButton.Name = "ShowUserIdButton";
-        this.ShowUserIdButton.Size = new System.Drawing.Size(40, 40);
-        this.ShowUserIdButton.TabIndex = 8;
-        this.ShowUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
-        this.ttp.SetToolTip(this.ShowUserIdButton, "Show or Hide the User Id.");
-        this.ShowUserIdButton.UseVisualStyleBackColor = true;
-        this.CopyUrlButton.Checked = false;
-        this.CopyUrlButton.Location = new System.Drawing.Point(485, 45);
-        this.CopyUrlButton.Name = "CopyUrlButton";
-        this.CopyUrlButton.Size = new System.Drawing.Size(40, 40);
-        this.CopyUrlButton.TabIndex = 7;
-        this.CopyUrlButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
-        this.ttp.SetToolTip(this.CopyUrlButton, "Copy this URL to the clipboard.");
-        this.CopyUrlButton.UseVisualStyleBackColor = true;
-        this.PasswordLabel.Font = new System.Drawing.Font("Segoe UI", 14.25f);
-        this.PasswordLabel.Location = new System.Drawing.Point(121, 125);
-        this.PasswordLabel.Name = "PasswordLabel";
-        this.PasswordLabel.Size = new System.Drawing.Size(360, 40);
-        this.PasswordLabel.TabIndex = 6;
-        this.PasswordLabel.TabStop = false;
-        this.PasswordLabel.Text = "****";
-        this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.PasswordTitleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25f, System.Drawing.FontStyle.Bold);
-        this.PasswordTitleLabel.Location = new System.Drawing.Point(10, 85);
-        this.PasswordTitleLabel.Name = "PasswordTitleLabel";
-        this.PasswordTitleLabel.Size = new System.Drawing.Size(105, 40);
-        this.PasswordTitleLabel.TabIndex = 5;
-        this.PasswordTitleLabel.TabStop = false;
-        this.PasswordTitleLabel.Text = "Password:";
-        this.PasswordTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-        this.UserIdLabel.Font = new System.Drawing.Font("Segoe UI", 14.25f);
-        this.UserIdLabel.Location = new System.Drawing.Point(121, 85);
-        this.UserIdLabel.Name = "UserIdLabel";
-        this.UserIdLabel.Size = new System.Drawing.Size(360, 40);
-        this.UserIdLabel.TabIndex = 4;
-        this.UserIdLabel.TabStop = false;
-        this.UserIdLabel.Text = "****";
-        this.UserIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.UserIdTitleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25f, System.Drawing.FontStyle.Bold);
-        this.UserIdTitleLabel.Location = new System.Drawing.Point(10, 45);
-        this.UserIdTitleLabel.Name = "UserIdTitleLabel";
-        this.UserIdTitleLabel.Size = new System.Drawing.Size(105, 40);
-        this.UserIdTitleLabel.TabIndex = 3;
-        this.UserIdTitleLabel.TabStop = false;
-        this.UserIdTitleLabel.Text = "User ID:";
-        this.UserIdTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-        this.AddressLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-        this.AddressLabel.Font = new System.Drawing.Font("Segoe UI", 14.25f);
-        this.AddressLabel.ForeColor = System.Drawing.Color.Blue;
-        this.AddressLabel.Location = new System.Drawing.Point(121, 45);
-        this.AddressLabel.Name = "AddressLabel";
-        this.AddressLabel.Size = new System.Drawing.Size(360, 40);
-        this.AddressLabel.TabIndex = 2;
-        this.AddressLabel.TabStop = false;
-        this.AddressLabel.Text = "https://samjones.azurewebsites.net/";
-        this.AddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.ttp.SetToolTip(this.AddressLabel, "Click here to open the website.");
-        this.Header.Dock = System.Windows.Forms.DockStyle.Top;
-        this.Header.Location = new System.Drawing.Point(0, 0);
-        this.Header.Margin = new System.Windows.Forms.Padding(48, 23, 48, 23);
-        this.Header.Name = "Header";
-        this.Header.Size = new System.Drawing.Size(577, 39);
-        this.Header.TabIndex = 1;
-        this.Header.Text = "(Header)";
-        this.AddressTitleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25f, System.Drawing.FontStyle.Bold);
-        this.AddressTitleLabel.Location = new System.Drawing.Point(10, 125);
-        this.AddressTitleLabel.Name = "AddressTitleLabel";
-        this.AddressTitleLabel.Size = new System.Drawing.Size(105, 40);
-        this.AddressTitleLabel.TabIndex = 0;
-        this.AddressTitleLabel.TabStop = false;
-        this.AddressTitleLabel.Text = "Address:";
-        this.AddressTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-        base.AutoScaleDimensions = new System.Drawing.SizeF(96f, 96f);
-        base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-        base.ClientSize = new System.Drawing.Size(587, 248);
-        base.ControlBox = false;
-        base.Controls.Add(this.BorderPanel);
-        base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-        base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-        base.KeyPreview = true;
-        base.MaximizeBox = false;
-        base.MinimizeBox = false;
-        base.Name = "WebAccountInfoDialog";
-        base.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        this.BorderPanel.ResumeLayout(false);
-        this.ContentPanel.ResumeLayout(false);
-        base.ResumeLayout(false);
+        components = new System.ComponentModel.Container();
+        BorderPanel = new GradientPanel();
+        ContentPanel = new GradientPanel();
+        CloseButton = new TemplatedButton();
+        CopyPasswordButton = new TemplatedButton();
+        ShowPasswordButton = new TemplatedButton();
+        CopyUserIdButton = new TemplatedButton();
+        ShowUserIdButton = new TemplatedButton();
+        CopyUrlButton = new TemplatedButton();
+        PasswordLabel = new AdvancedLabel();
+        PasswordTitleLabel = new AdvancedLabel();
+        UserIdLabel = new AdvancedLabel();
+        UserIdTitleLabel = new AdvancedLabel();
+        AddressLabel = new AdvancedLabel();
+        Header = new SectionTitleHeader();
+        AddressTitleLabel = new AdvancedLabel();
+        ttp = new ToolTip(components);
+        BorderPanel.SuspendLayout();
+        ContentPanel.SuspendLayout();
+        SuspendLayout();
+        // 
+        // BorderPanel
+        // 
+        BorderPanel.Controls.Add(ContentPanel);
+        BorderPanel.Dock = DockStyle.Fill;
+        BorderPanel.Location = new Point(0, 0);
+        BorderPanel.Name = "BorderPanel";
+        BorderPanel.Padding = new Padding(5);
+        BorderPanel.Size = new Size(587, 248);
+        BorderPanel.TabIndex = 0;
+        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        // 
+        // ContentPanel
+        // 
+        ContentPanel.Controls.Add(CloseButton);
+        ContentPanel.Controls.Add(CopyPasswordButton);
+        ContentPanel.Controls.Add(ShowPasswordButton);
+        ContentPanel.Controls.Add(CopyUserIdButton);
+        ContentPanel.Controls.Add(ShowUserIdButton);
+        ContentPanel.Controls.Add(CopyUrlButton);
+        ContentPanel.Controls.Add(PasswordLabel);
+        ContentPanel.Controls.Add(PasswordTitleLabel);
+        ContentPanel.Controls.Add(UserIdLabel);
+        ContentPanel.Controls.Add(UserIdTitleLabel);
+        ContentPanel.Controls.Add(AddressLabel);
+        ContentPanel.Controls.Add(Header);
+        ContentPanel.Controls.Add(AddressTitleLabel);
+        ContentPanel.Dock = DockStyle.Fill;
+        ContentPanel.Location = new Point(5, 5);
+        ContentPanel.Name = "ContentPanel";
+        ContentPanel.Size = new Size(577, 238);
+        ContentPanel.TabIndex = 0;
+        ContentPanel.TemplateFile = null;
+        // 
+        // CloseButton
+        // 
+        CloseButton.Checked = false;
+        CloseButton.Location = new Point(485, 187);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(80, 40);
+        CloseButton.TabIndex = 12;
+        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
+        CloseButton.Text = "Close";
+        ttp.SetToolTip(CloseButton, "Close this window.");
+        CloseButton.UseVisualStyleBackColor = true;
+        // 
+        // CopyPasswordButton
+        // 
+        CopyPasswordButton.Checked = false;
+        CopyPasswordButton.Location = new Point(525, 125);
+        CopyPasswordButton.Name = "CopyPasswordButton";
+        CopyPasswordButton.Size = new Size(40, 40);
+        CopyPasswordButton.TabIndex = 11;
+        CopyPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
+        ttp.SetToolTip(CopyPasswordButton, "Copy the password to the clipboard.");
+        CopyPasswordButton.UseVisualStyleBackColor = true;
+        // 
+        // ShowPasswordButton
+        // 
+        ShowPasswordButton.Checked = false;
+        ShowPasswordButton.Location = new Point(485, 125);
+        ShowPasswordButton.Name = "ShowPasswordButton";
+        ShowPasswordButton.Size = new Size(40, 40);
+        ShowPasswordButton.TabIndex = 10;
+        ShowPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
+        ttp.SetToolTip(ShowPasswordButton, "Show or Hide the Password.");
+        ShowPasswordButton.UseVisualStyleBackColor = true;
+        // 
+        // CopyUserIdButton
+        // 
+        CopyUserIdButton.Checked = false;
+        CopyUserIdButton.Location = new Point(525, 85);
+        CopyUserIdButton.Name = "CopyUserIdButton";
+        CopyUserIdButton.Size = new Size(40, 40);
+        CopyUserIdButton.TabIndex = 9;
+        CopyUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
+        ttp.SetToolTip(CopyUserIdButton, "Copy the User ID / Login Name to the clipboard.");
+        CopyUserIdButton.UseVisualStyleBackColor = true;
+        // 
+        // ShowUserIdButton
+        // 
+        ShowUserIdButton.Checked = false;
+        ShowUserIdButton.Location = new Point(485, 85);
+        ShowUserIdButton.Name = "ShowUserIdButton";
+        ShowUserIdButton.Size = new Size(40, 40);
+        ShowUserIdButton.TabIndex = 8;
+        ShowUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
+        ttp.SetToolTip(ShowUserIdButton, "Show or Hide the User Id.");
+        ShowUserIdButton.UseVisualStyleBackColor = true;
+        // 
+        // CopyUrlButton
+        // 
+        CopyUrlButton.Checked = false;
+        CopyUrlButton.Location = new Point(485, 45);
+        CopyUrlButton.Name = "CopyUrlButton";
+        CopyUrlButton.Size = new Size(40, 40);
+        CopyUrlButton.TabIndex = 7;
+        CopyUrlButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
+        ttp.SetToolTip(CopyUrlButton, "Copy this URL to the clipboard.");
+        CopyUrlButton.UseVisualStyleBackColor = true;
+        // 
+        // PasswordLabel
+        // 
+        PasswordLabel.Font = new Font("Segoe UI", 14.25F);
+        PasswordLabel.Location = new Point(121, 125);
+        PasswordLabel.Name = "PasswordLabel";
+        PasswordLabel.Size = new Size(360, 40);
+        PasswordLabel.TabIndex = 6;
+        PasswordLabel.TabStop = false;
+        PasswordLabel.Text = "****";
+        PasswordLabel.TextAlign = ContentAlignment.MiddleLeft;
+        // 
+        // PasswordTitleLabel
+        // 
+        PasswordTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+        PasswordTitleLabel.Location = new Point(7, 125);
+        PasswordTitleLabel.Name = "PasswordTitleLabel";
+        PasswordTitleLabel.Size = new Size(105, 40);
+        PasswordTitleLabel.TabIndex = 5;
+        PasswordTitleLabel.TabStop = false;
+        PasswordTitleLabel.Text = "Password:";
+        PasswordTitleLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // UserIdLabel
+        // 
+        UserIdLabel.Font = new Font("Segoe UI", 14.25F);
+        UserIdLabel.Location = new Point(121, 85);
+        UserIdLabel.Name = "UserIdLabel";
+        UserIdLabel.Size = new Size(360, 40);
+        UserIdLabel.TabIndex = 4;
+        UserIdLabel.TabStop = false;
+        UserIdLabel.Text = "****";
+        UserIdLabel.TextAlign = ContentAlignment.MiddleLeft;
+        // 
+        // UserIdTitleLabel
+        // 
+        UserIdTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+        UserIdTitleLabel.Location = new Point(7, 83);
+        UserIdTitleLabel.Name = "UserIdTitleLabel";
+        UserIdTitleLabel.Size = new Size(105, 40);
+        UserIdTitleLabel.TabIndex = 3;
+        UserIdTitleLabel.TabStop = false;
+        UserIdTitleLabel.Text = "User ID:";
+        UserIdTitleLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // AddressLabel
+        // 
+        AddressLabel.Cursor = Cursors.Hand;
+        AddressLabel.Font = new Font("Segoe UI", 14.25F);
+        AddressLabel.ForeColor = Color.Blue;
+        AddressLabel.Location = new Point(121, 45);
+        AddressLabel.Name = "AddressLabel";
+        AddressLabel.Size = new Size(360, 40);
+        AddressLabel.TabIndex = 2;
+        AddressLabel.TabStop = false;
+        AddressLabel.Text = "https://samjones.azurewebsites.net/";
+        AddressLabel.TextAlign = ContentAlignment.MiddleLeft;
+        ttp.SetToolTip(AddressLabel, "Click here to open the website.");
+        // 
+        // Header
+        // 
+        Header.Dock = DockStyle.Top;
+        Header.Location = new Point(0, 0);
+        Header.Margin = new Padding(48, 23, 48, 23);
+        Header.Name = "Header";
+        Header.Size = new Size(577, 39);
+        Header.TabIndex = 1;
+        Header.Text = "(Header)";
+        // 
+        // AddressTitleLabel
+        // 
+        AddressTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+        AddressTitleLabel.Location = new Point(7, 45);
+        AddressTitleLabel.Name = "AddressTitleLabel";
+        AddressTitleLabel.Size = new Size(105, 40);
+        AddressTitleLabel.TabIndex = 0;
+        AddressTitleLabel.TabStop = false;
+        AddressTitleLabel.Text = "Address:";
+        AddressTitleLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // IdentityProviderInfoDialog
+        // 
+        AutoScaleDimensions = new SizeF(96F, 96F);
+        AutoScaleMode = AutoScaleMode.Dpi;
+        ClientSize = new Size(587, 248);
+        ControlBox = false;
+        Controls.Add(BorderPanel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
+        KeyPreview = true;
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "IdentityProviderInfoDialog";
+        StartPosition = FormStartPosition.CenterScreen;
+        BorderPanel.ResumeLayout(false);
+        ContentPanel.ResumeLayout(false);
+        ResumeLayout(false);
     }
     #endregion
 

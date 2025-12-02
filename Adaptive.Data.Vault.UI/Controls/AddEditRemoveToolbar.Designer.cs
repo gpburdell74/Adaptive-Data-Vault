@@ -33,13 +33,11 @@ namespace Adaptive.Data.Vault.UI
             AddButton.ImageAlign = ContentAlignment.MiddleLeft;
             AddButton.Location = new Point(3, 3);
             AddButton.Name = "AddButton";
-            AddButton.ResourceTemplate = null;
-            AddButton.Size = new Size(100, 25);
+            AddButton.Size = new Size(120, 25);
             AddButton.TabIndex = 0;
-            AddButton.TemplateFile = null;
+            AddButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
             AddButton.Text = "&Add Entry";
             AddButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            AddButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
             AddButton.UseVisualStyleBackColor = true;
             // 
             // EditButton
@@ -47,15 +45,14 @@ namespace Adaptive.Data.Vault.UI
             EditButton.Checked = false;
             EditButton.Enabled = false;
             EditButton.ImageAlign = ContentAlignment.MiddleLeft;
-            EditButton.Location = new Point(109, 3);
+            EditButton.Location = new Point(127, 3);
             EditButton.Name = "EditButton";
-            EditButton.ResourceTemplate = null;
-            EditButton.Size = new Size(100, 25);
+            EditButton.Size = new Size(120, 25);
             EditButton.TabIndex = 1;
-            EditButton.TemplateFile = null;
+            EditButton.Tag = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+            EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
             EditButton.Text = "&Edit Entry";
             EditButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            EditButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
             EditButton.UseVisualStyleBackColor = true;
             // 
             // RemoveButton
@@ -63,15 +60,13 @@ namespace Adaptive.Data.Vault.UI
             RemoveButton.Checked = false;
             RemoveButton.Enabled = false;
             RemoveButton.ImageAlign = ContentAlignment.MiddleLeft;
-            RemoveButton.Location = new Point(215, 3);
+            RemoveButton.Location = new Point(250, 3);
             RemoveButton.Name = "RemoveButton";
-            RemoveButton.ResourceTemplate = null;
-            RemoveButton.Size = new Size(112, 25);
+            RemoveButton.Size = new Size(120, 25);
             RemoveButton.TabIndex = 2;
-            RemoveButton.TemplateFile = null;
+            RemoveButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
             RemoveButton.Text = "&Remove Entry";
             RemoveButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            RemoveButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
             RemoveButton.UseVisualStyleBackColor = true;
             // 
             // AddEditRemoveToolbar
@@ -85,7 +80,7 @@ namespace Adaptive.Data.Vault.UI
             MaximumSize = new Size(0, 32);
             MinimumSize = new Size(332, 32);
             Name = "AddEditRemoveToolbar";
-            Size = new Size(332, 32);
+            Size = new Size(378, 32);
             ResumeLayout(false);
         }
 

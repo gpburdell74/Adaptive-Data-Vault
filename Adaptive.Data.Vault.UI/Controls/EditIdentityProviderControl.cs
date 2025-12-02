@@ -88,11 +88,11 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
     }
     #endregion
 
-    #region Private Methods / Functions
+    #region Public Methods / Functions
     /// <summary>
     /// Saves the control values to the business object.
     /// </summary>
-    private void SaveControlValues()
+    public void SaveControlValues()
     {
         if (_provider != null)
         {
@@ -118,6 +118,9 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
         }
 
     }
+    #endregion
+
+    #region Private Methods / Functions
 
     /// <summary>
     /// Sets the content of the control from the business object.

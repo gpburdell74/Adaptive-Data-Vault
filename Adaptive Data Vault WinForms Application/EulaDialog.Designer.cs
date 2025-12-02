@@ -70,7 +70,6 @@
             EulaText.BorderStyle = BorderStyle.None;
             EulaText.Dock = DockStyle.Fill;
             EulaText.Location = new Point(10, 27);
-            EulaText.Multiline = true;
             EulaText.Name = "EulaText";
             EulaText.ReadOnly = true;
             EulaText.ScrollBars = RichTextBoxScrollBars.Vertical;
@@ -116,10 +115,9 @@
             CloseButton.Checked = false;
             CloseButton.Location = new Point(670, 6);
             CloseButton.Name = "CloseButton";
-            CloseButton.ResourceTemplate = Properties.Resources.ButtonStandard;
             CloseButton.Size = new Size(100, 32);
             CloseButton.TabIndex = 0;
-            CloseButton.TemplateFile = null;
+            CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
             CloseButton.Text = "Close";
             CloseButton.UseVisualStyleBackColor = true;
             // 
@@ -148,7 +146,6 @@
             ContainerPanel.ResumeLayout(false);
             EulaPanel.ResumeLayout(false);
             TextPanel.ResumeLayout(false);
-            TextPanel.PerformLayout();
             ButtonsPanel.ResumeLayout(false);
             ButtonsPanel.PerformLayout();
             ResumeLayout(false);

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaptive.Data.Vault.DataAcc
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Adaptive Data Vault Installer", "Adaptive Data Vault Install\Adaptive Data Vault Installer\Adaptive Data Vault Installer.vdproj", "{F2ADB3FE-AF04-E61B-71C2-5F629B3A6A2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaptive.Intelligence.Shared", "..\..\..\Framework\Shared Code Library\Adaptive.Intelligence.Shared\Adaptive.Intelligence.Shared.csproj", "{2F5DDFCB-ECB8-841C-80AA-B21D6F041834}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,14 @@ Global
 		{F2ADB3FE-AF04-E61B-71C2-5F629B3A6A2B}.Debug|x64.ActiveCfg = Debug
 		{F2ADB3FE-AF04-E61B-71C2-5F629B3A6A2B}.Release|Any CPU.ActiveCfg = Release
 		{F2ADB3FE-AF04-E61B-71C2-5F629B3A6A2B}.Release|x64.ActiveCfg = Release
+		{2F5DDFCB-ECB8-841C-80AA-B21D6F041834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5DDFCB-ECB8-841C-80AA-B21D6F041834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5DDFCB-ECB8-841C-80AA-B21D6F041834}.Debug|x64.ActiveCfg = Debug|x64
+		{2F5DDFCB-ECB8-841C-80AA-B21D6F041834}.Debug|x64.Build.0 = Debug|x64
+		{2F5DDFCB-ECB8-841C-80AA-B21D6F041834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5DDFCB-ECB8-841C-80AA-B21D6F041834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F5DDFCB-ECB8-841C-80AA-B21D6F041834}.Release|x64.ActiveCfg = Release|x64
+		{2F5DDFCB-ECB8-841C-80AA-B21D6F041834}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

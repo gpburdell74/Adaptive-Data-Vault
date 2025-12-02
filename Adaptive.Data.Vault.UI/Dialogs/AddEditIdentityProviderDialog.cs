@@ -138,6 +138,7 @@ public partial class AddEditIdentityProviderDialog : BorderedDialog
     private void HandleSaveClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
+        IdProviderEdit.SaveControlValues();
         DialogResult = DialogResult.OK;
         Close();
     }

@@ -51,7 +51,7 @@ partial class MessageLoginDialog
         BorderPanel.Location = new Point(0, 0);
         BorderPanel.Name = "BorderPanel";
         BorderPanel.Padding = new Padding(5);
-        BorderPanel.Size = new Size(497, 355);
+        BorderPanel.Size = new Size(497, 375);
         BorderPanel.TabIndex = 0;
         BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         // 
@@ -73,7 +73,7 @@ partial class MessageLoginDialog
         ContentPanel.Dock = DockStyle.Fill;
         ContentPanel.Location = new Point(5, 5);
         ContentPanel.Name = "ContentPanel";
-        ContentPanel.Size = new Size(487, 345);
+        ContentPanel.Size = new Size(487, 365);
         ContentPanel.TabIndex = 0;
         ContentPanel.TemplateFile = null;
         // 
@@ -195,13 +195,13 @@ partial class MessageLoginDialog
         ButtonBar.CancelVisible = true;
         ButtonBar.Dock = DockStyle.Bottom;
         ButtonBar.Font = new Font("Segoe UI", 9.75F);
-        ButtonBar.Location = new Point(0, 305);
+        ButtonBar.Location = new Point(0, 315);
         ButtonBar.Margin = new Padding(48, 22, 48, 22);
         ButtonBar.Name = "ButtonBar";
         ButtonBar.SaveEnabled = true;
         ButtonBar.SaveText = "Save";
         ButtonBar.SaveVisible = true;
-        ButtonBar.Size = new Size(487, 40);
+        ButtonBar.Size = new Size(487, 50);
         ButtonBar.TabIndex = 9;
         // 
         // DialogHeader
@@ -221,7 +221,7 @@ partial class MessageLoginDialog
         // 
         AutoScaleDimensions = new SizeF(7F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(497, 355);
+        ClientSize = new Size(497, 375);
         ControlBox = false;
         Controls.Add(BorderPanel);
         FormBorderStyle = FormBorderStyle.None;

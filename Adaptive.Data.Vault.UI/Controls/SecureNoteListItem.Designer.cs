@@ -191,12 +191,12 @@ partial class SecureNoteListItem
         // 
         UserInfoButton.Checked = false;
         UserInfoButton.Dock = DockStyle.Right;
+        UserInfoButton.Image = Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
-        UserInfoButton.ResourceTemplate = Properties.Resources.ButtonTemplateUserInfo;
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = null;
+        UserInfoButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -213,12 +213,12 @@ partial class SecureNoteListItem
         // 
         EditButton.Checked = false;
         EditButton.Dock = DockStyle.Right;
+        EditButton.Image = Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
-        EditButton.ResourceTemplate = Properties.Resources.ButtonTemplateEditUser;
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.TemplateFile = null;
+        EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -238,10 +238,9 @@ partial class SecureNoteListItem
         DeleteButton.Image = Properties.Resources.Delete_2_16x16;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
-        DeleteButton.ResourceTemplate = Properties.Resources.ButtonTemplateDelete;
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateFile = null;
+        DeleteButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 

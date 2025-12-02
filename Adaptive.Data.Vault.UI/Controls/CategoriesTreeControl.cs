@@ -128,7 +128,7 @@ public partial class CategoriesTreeControl : AdaptiveControlBase
         set
         {
             if (value == null)
-                _categories.Clear();
+                _categories?.Clear();
             else
             {
                 // Copy the original

@@ -18,122 +18,153 @@ partial class DecodeSecureMessageDialog
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.MessageText = new System.Windows.Forms.TextBox();
-        this.BorderPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-        this.ContainerPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-        this.ContentPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-        this.PrepareButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        this.MessageHeader = new Adaptive.Intelligence.Shared.UI.SectionTitleHeader();
-        this.ButtonBar = new Adaptive.Data.Vault.UI.Controls.SaveCancelBar();
-        this.Header = new Adaptive.Data.Vault.UI.Controls.VaultDialogHeader();
-        this.ttp = new System.Windows.Forms.ToolTip(this.components);
-        this.FileButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        this.BorderPanel.SuspendLayout();
-        this.ContainerPanel.SuspendLayout();
-        this.ContentPanel.SuspendLayout();
-        base.SuspendLayout();
-        this.MessageText.AcceptsReturn = true;
-        this.MessageText.AcceptsTab = true;
-        this.MessageText.BackColor = System.Drawing.Color.Black;
-        this.MessageText.Dock = System.Windows.Forms.DockStyle.Top;
-        this.MessageText.Font = new System.Drawing.Font("Consolas", 9.75f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-        this.MessageText.ForeColor = System.Drawing.Color.DarkGreen;
-        this.MessageText.Location = new System.Drawing.Point(5, 25);
-        this.MessageText.Multiline = true;
-        this.MessageText.Name = "MessageText";
-        this.MessageText.PlaceholderText = "(Enter Message Here or Paste the Text from the Clipboard.)";
-        this.MessageText.Size = new System.Drawing.Size(625, 420);
-        this.MessageText.TabIndex = 1;
-        this.ttp.SetToolTip(this.MessageText, "Enter the message to be sent.");
-        this.MessageText.WordWrap = false;
-        this.BorderPanel.Controls.Add(this.ContainerPanel);
-        this.BorderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        this.BorderPanel.Location = new System.Drawing.Point(0, 0);
-        this.BorderPanel.Name = "BorderPanel";
-        this.BorderPanel.Padding = new System.Windows.Forms.Padding(5);
-        this.BorderPanel.Size = new System.Drawing.Size(645, 639);
-        this.BorderPanel.TabIndex = 2;
-        this.BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
-        this.ContainerPanel.Controls.Add(this.ContentPanel);
-        this.ContainerPanel.Controls.Add(this.ButtonBar);
-        this.ContainerPanel.Controls.Add(this.Header);
-        this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        this.ContainerPanel.Location = new System.Drawing.Point(5, 5);
-        this.ContainerPanel.Name = "ContainerPanel";
-        this.ContainerPanel.Size = new System.Drawing.Size(635, 629);
-        this.ContainerPanel.TabIndex = 1;
-        this.ContainerPanel.TemplateFile = null;
-        this.ContentPanel.Controls.Add(this.FileButton);
-        this.ContentPanel.Controls.Add(this.PrepareButton);
-        this.ContentPanel.Controls.Add(this.MessageText);
-        this.ContentPanel.Controls.Add(this.MessageHeader);
-        this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        this.ContentPanel.Location = new System.Drawing.Point(0, 60);
-        this.ContentPanel.Name = "ContentPanel";
-        this.ContentPanel.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
-        this.ContentPanel.Size = new System.Drawing.Size(635, 529);
-        this.ContentPanel.TabIndex = 1;
-        this.ContentPanel.TemplateFile = null;
-        this.PrepareButton.Checked = false;
-        this.PrepareButton.Location = new System.Drawing.Point(479, 489);
-        this.PrepareButton.Name = "PrepareButton";
-        this.PrepareButton.Size = new System.Drawing.Size(151, 32);
-        this.PrepareButton.TabIndex = 3;
-        this.PrepareButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
-        this.PrepareButton.Text = "&Decode Message";
-        this.ttp.SetToolTip(this.PrepareButton, "Click to decrypt the message for reading.");
-        this.PrepareButton.UseVisualStyleBackColor = true;
-        this.MessageHeader.Dock = System.Windows.Forms.DockStyle.Top;
-        this.MessageHeader.Location = new System.Drawing.Point(5, 0);
-        this.MessageHeader.Margin = new System.Windows.Forms.Padding(48, 23, 48, 23);
-        this.MessageHeader.Name = "MessageHeader";
-        this.MessageHeader.Size = new System.Drawing.Size(625, 25);
-        this.MessageHeader.TabIndex = 0;
-        this.MessageHeader.TabStop = false;
-        this.MessageHeader.Text = "Message";
-        this.ButtonBar.CancelEnabled = true;
-        this.ButtonBar.CancelText = "Close";
-        this.ButtonBar.CancelVisible = true;
-        this.ButtonBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-        this.ButtonBar.Font = new System.Drawing.Font("Segoe UI", 9.75f);
-        this.ButtonBar.Location = new System.Drawing.Point(0, 589);
-        this.ButtonBar.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
-        this.ButtonBar.Name = "ButtonBar";
-        this.ButtonBar.SaveEnabled = true;
-        this.ButtonBar.SaveText = "Copy";
-        this.ButtonBar.SaveVisible = false;
-        this.ButtonBar.Size = new System.Drawing.Size(635, 40);
-        this.ButtonBar.TabIndex = 2;
-        this.ttp.SetToolTip(this.ButtonBar, "Copy the encrypted content to the clipboard, or click Close to cancel the operation.");
-        this.Header.Dock = System.Windows.Forms.DockStyle.Top;
-        this.Header.Location = new System.Drawing.Point(0, 0);
-        this.Header.Name = "Header";
-        this.Header.Size = new System.Drawing.Size(635, 60);
-        this.Header.TabIndex = 0;
-        this.Header.TitleText = "ADAPTIVE DATA VAULT";
-        this.FileButton.Checked = false;
-        this.FileButton.Location = new System.Drawing.Point(479, 451);
-        this.FileButton.Name = "FileButton";
-        this.FileButton.Size = new System.Drawing.Size(151, 32);
-        this.FileButton.TabIndex = 2;
-        this.FileButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
-        this.FileButton.Text = "&From File";
-        this.ttp.SetToolTip(this.FileButton, "Click to load the encrypted text from a file.");
-        this.FileButton.UseVisualStyleBackColor = true;
-        base.AutoScaleDimensions = new System.Drawing.SizeF(7f, 15f);
-        base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        base.ClientSize = new System.Drawing.Size(645, 639);
-        base.ControlBox = false;
-        base.Controls.Add(this.BorderPanel);
-        base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-        base.Name = "DecodeSecureMessageDialog";
-        base.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        this.BorderPanel.ResumeLayout(false);
-        this.ContainerPanel.ResumeLayout(false);
-        this.ContentPanel.ResumeLayout(false);
-        this.ContentPanel.PerformLayout();
-        base.ResumeLayout(false);
+        components = new System.ComponentModel.Container();
+        MessageText = new TextBox();
+        BorderPanel = new GradientPanel();
+        ContainerPanel = new GradientPanel();
+        ContentPanel = new GradientPanel();
+        FileButton = new TemplatedButton();
+        PrepareButton = new TemplatedButton();
+        MessageHeader = new SectionTitleHeader();
+        ButtonBar = new SaveCancelBar();
+        Header = new VaultDialogHeader();
+        ttp = new ToolTip(components);
+        BorderPanel.SuspendLayout();
+        ContainerPanel.SuspendLayout();
+        ContentPanel.SuspendLayout();
+        SuspendLayout();
+        // 
+        // MessageText
+        // 
+        MessageText.AcceptsReturn = true;
+        MessageText.AcceptsTab = true;
+        MessageText.BackColor = Color.Black;
+        MessageText.Dock = DockStyle.Top;
+        MessageText.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        MessageText.ForeColor = Color.DarkGreen;
+        MessageText.Location = new Point(5, 25);
+        MessageText.Multiline = true;
+        MessageText.Name = "MessageText";
+        MessageText.PlaceholderText = "(Enter Message Here or Paste the Text from the Clipboard.)";
+        MessageText.Size = new Size(625, 420);
+        MessageText.TabIndex = 1;
+        ttp.SetToolTip(MessageText, "Enter the message to be sent.");
+        MessageText.WordWrap = false;
+        // 
+        // BorderPanel
+        // 
+        BorderPanel.Controls.Add(ContainerPanel);
+        BorderPanel.Dock = DockStyle.Fill;
+        BorderPanel.Location = new Point(0, 0);
+        BorderPanel.Name = "BorderPanel";
+        BorderPanel.Padding = new Padding(5);
+        BorderPanel.Size = new Size(645, 639);
+        BorderPanel.TabIndex = 2;
+        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        // 
+        // ContainerPanel
+        // 
+        ContainerPanel.Controls.Add(ContentPanel);
+        ContainerPanel.Controls.Add(ButtonBar);
+        ContainerPanel.Controls.Add(Header);
+        ContainerPanel.Dock = DockStyle.Fill;
+        ContainerPanel.Location = new Point(5, 5);
+        ContainerPanel.Name = "ContainerPanel";
+        ContainerPanel.Size = new Size(635, 629);
+        ContainerPanel.TabIndex = 1;
+        ContainerPanel.TemplateFile = null;
+        // 
+        // ContentPanel
+        // 
+        ContentPanel.Controls.Add(FileButton);
+        ContentPanel.Controls.Add(PrepareButton);
+        ContentPanel.Controls.Add(MessageText);
+        ContentPanel.Controls.Add(MessageHeader);
+        ContentPanel.Dock = DockStyle.Fill;
+        ContentPanel.Location = new Point(0, 60);
+        ContentPanel.Name = "ContentPanel";
+        ContentPanel.Padding = new Padding(5, 0, 5, 5);
+        ContentPanel.Size = new Size(635, 529);
+        ContentPanel.TabIndex = 1;
+        ContentPanel.TemplateFile = null;
+        // 
+        // FileButton
+        // 
+        FileButton.Checked = false;
+        FileButton.Location = new Point(479, 451);
+        FileButton.Name = "FileButton";
+        FileButton.Size = new Size(151, 32);
+        FileButton.TabIndex = 2;
+        FileButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        FileButton.Text = "&From File";
+        ttp.SetToolTip(FileButton, "Click to load the encrypted text from a file.");
+        FileButton.UseVisualStyleBackColor = true;
+        // 
+        // PrepareButton
+        // 
+        PrepareButton.Checked = false;
+        PrepareButton.Location = new Point(479, 489);
+        PrepareButton.Name = "PrepareButton";
+        PrepareButton.Size = new Size(151, 32);
+        PrepareButton.TabIndex = 3;
+        PrepareButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        PrepareButton.Text = "&Decode Message";
+        ttp.SetToolTip(PrepareButton, "Click to decrypt the message for reading.");
+        PrepareButton.UseVisualStyleBackColor = true;
+        // 
+        // MessageHeader
+        // 
+        MessageHeader.Dock = DockStyle.Top;
+        MessageHeader.Location = new Point(5, 0);
+        MessageHeader.Margin = new Padding(48, 23, 48, 23);
+        MessageHeader.Name = "MessageHeader";
+        MessageHeader.Size = new Size(625, 25);
+        MessageHeader.TabIndex = 0;
+        MessageHeader.TabStop = false;
+        MessageHeader.Text = "Message";
+        // 
+        // ButtonBar
+        // 
+        ButtonBar.CancelEnabled = true;
+        ButtonBar.CancelText = "Close";
+        ButtonBar.CancelVisible = true;
+        ButtonBar.Dock = DockStyle.Bottom;
+        ButtonBar.Font = new Font("Segoe UI", 9.75F);
+        ButtonBar.Location = new Point(0, 589);
+        ButtonBar.Margin = new Padding(48, 22, 48, 22);
+        ButtonBar.Name = "ButtonBar";
+        ButtonBar.SaveEnabled = true;
+        ButtonBar.SaveText = "Copy";
+        ButtonBar.SaveVisible = false;
+        ButtonBar.Size = new Size(635, 40);
+        ButtonBar.TabIndex = 2;
+        ttp.SetToolTip(ButtonBar, "Copy the encrypted content to the clipboard, or click Close to cancel the operation.");
+        // 
+        // Header
+        // 
+        Header.Dock = DockStyle.Top;
+        Header.Location = new Point(0, 0);
+        Header.Name = "Header";
+        Header.Size = new Size(635, 60);
+        Header.TabIndex = 0;
+        Header.TitleText = "ADAPTIVE DATA VAULT";
+        // 
+        // DecodeSecureMessageDialog
+        // 
+        AutoScaleDimensions = new SizeF(7F, 17F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(645, 639);
+        ControlBox = false;
+        Controls.Add(BorderPanel);
+        FormBorderStyle = FormBorderStyle.None;
+        KeyPreview = true;
+        Name = "DecodeSecureMessageDialog";
+        StartPosition = FormStartPosition.CenterScreen;
+        BorderPanel.ResumeLayout(false);
+        ContainerPanel.ResumeLayout(false);
+        ContentPanel.ResumeLayout(false);
+        ContentPanel.PerformLayout();
+        ResumeLayout(false);
     }
 
     private TextBox MessageText;

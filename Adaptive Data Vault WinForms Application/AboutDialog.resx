@@ -117,25 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="SaveButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7gAACu4BrzForAAAAAd0SU1FB9QHBwgcNzpVudoAAAM+SURBVDhPTdN7bEtRHAfwI2zW0RKGLEKZeUT4
-        AxHxCOYxRPAHknlMlg1bY6QibJiY2FTnNW9GvTY6Sbd2rLKxtmu3Tmtru9lGsGHT1mrtlhUxrfj69Xr1
-        JJ/k3nPz+57fPedeFrbTks3WGfxHC0x4+bIZ9Y0vOHW2Bpie1aHK+BRPtHpoNBocvFACFqf3hy2TnWSM
-        RZB+LCSh2scmnccpmRaB8cHugNVWD1t9AyxWG2rrLHje2IQejwsn88sRsSYHgjVKHxWv40JCE41g0/KQ
-        I9NxAX6/H11dXeju7obL5YLdbud4PjkhvaXGKLEB/OX3QcXZJIr1T6wBm3UDOdcruIA3La2o1BtgqKrm
-        BK7rLFZ0frRDKnsIYZoFgiUFgYBcMpGFbXsKNu8Osq89pnIfenp64Ha70dnZiY6ODm71trY2uBztOH7t
-        Acbst4C/5G4g4CwXwNtmQt/Fhci6WoYf37/geVMzKjRaaHWV0FXqiQHmZ7VwfnhHi5QgKsNGAVwH5/51
-        wFupgPS6Gn6vE589dnztcuKLx4luVxvcjlbY3zbD2dKAnLwiTDhcD8HSoABeigkR61WYISrBot1KLBAX
-        I2aPEgv30P0+FWLSHmDxgVLEHipFTKYGU7MaIIi99z8gPNmMkfFqjIh/hEGbyhAW9xjh8VoIEg0YnGzE
-        UJEJw3eZEZ1uxWRafbq0kTrg9uBPgMgMYVIZIhMrsP6wChqdHoUKFU6cvYKs03S8l/NxU14MYVwuxiXL
-        sejia/CXBnUwUFSLcSlPELldh125pUjIeAi2QoktEjUsNTq0v3/LHa9w611qvwmpKjt4wZvITzFjkrgS
-        o1OrsEMix8aMYvDoNVLzauB49wq9vb1U3otRSfmYKmmGSOlAeGzQMYasLi0YkaTFRDpfseQGNkjKwRdb
-        cUDZQoU/4fP58Kn9FaLFRZh5oRV7tW6Ex9z+RsW/PyQ2gBcZOv1YAZst+zh3baZHLs/3yovUXl1Vtddk
-        NHoVCsXXwjtX0WdKurvvrEsdg+ZcdPQZNl9OxUdIFGGhJJpsJplESk6QwB/312lyhgTmJeQgWUWGEG6E
-        kGFkLAmEjf9jQhBql5sLPBcSKmb9fgHDOi22JMhcvwAAAABJRU5ErkJggg==
-</value>
+  <metadata name="ContentPanel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="WarningLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="WarningLabel.Text" xml:space="preserve">
+    <value>WARNING:  This computer program is protected by copyright law and international treaties.  Unauthorized reproduction or distribution of this program, or any portion of it, may result in severe civil or criminal penalties and will be prosecuted under the law.</value>
   </data>
+  <metadata name="SiteLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SiteTitleLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="EmailLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BottomLine.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TopLine.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CloseButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="EmailTitleLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="FrameworkAllrightsLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="FrameworkCopyrightLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="FrameworkVersionLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="FrameworkNameLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AppAllrightsLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AppCopyrightLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AppVersionLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AppNameLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DialogHeader.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
