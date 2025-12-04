@@ -72,7 +72,7 @@ partial class WebAccountListItem
         // 
         // ContextMenuNew
         // 
-        ContextMenuNew.Image = Properties.Resources.Add16x16;
+        ContextMenuNew.Image = Properties.Resources.Add16;
         ContextMenuNew.Name = "ContextMenuNew";
         ContextMenuNew.Size = new Size(197, 22);
         ContextMenuNew.Text = "New...";
@@ -217,7 +217,7 @@ partial class WebAccountListItem
         UserInfoButton.Name = "UserInfoButton";
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV User Info Button.template";
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -239,7 +239,7 @@ partial class WebAccountListItem
         EditButton.Name = "EditButton";
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -261,7 +261,7 @@ partial class WebAccountListItem
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 

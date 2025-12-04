@@ -42,13 +42,13 @@ partial class IdentityProviderListControl
         // 
         NewAccountButton.Checked = false;
         NewAccountButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        NewAccountButton.Image = Properties.Resources.Add16x16;
+        NewAccountButton.Image = Properties.Resources.Add16;
         NewAccountButton.ImageAlign = ContentAlignment.MiddleLeft;
         NewAccountButton.Location = new Point(5, 5);
         NewAccountButton.Name = "NewAccountButton";
         NewAccountButton.Size = new Size(265, 32);
         NewAccountButton.TabIndex = 0;
-        NewAccountButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         NewAccountButton.Text = "Create New ID Provider Entry...";
         NewAccountButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(NewAccountButton, "Create a new entry to contain the login information for an identity provider, such as Microsoft, Google, Facebook, etc.");

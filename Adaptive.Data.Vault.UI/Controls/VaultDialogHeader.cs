@@ -4,6 +4,7 @@ using System.Drawing.Text;
 
 namespace Adaptive.Data.Vault.UI.Controls
 {
+    [DesignerCategory("Code")]
     public partial class VaultDialogHeader : UserControl
     {
         #region Private Member Declarations
@@ -23,23 +24,15 @@ namespace Adaptive.Data.Vault.UI.Controls
         /// </remarks>
         public VaultDialogHeader()
         {
+            // Set default size.
+            Width = 800;
+            Height = 300;
             SetStyle(ControlStyles.AllPaintingInWmPaint, value: true);
             SetStyle(ControlStyles.DoubleBuffer, value: true);
             SetStyle(ControlStyles.ResizeRedraw, value: true);
             SetStyle(ControlStyles.Selectable, value: false);
             SetStyle(ControlStyles.UserPaint, value: true);
-        }
-        /// <summary>
-        /// Releases the unmanaged resources used by the <see cref="T:System.Windows.Forms.Control" /> and its child controls and optionally releases the managed resources.
-        /// </summary>
-        /// <param name="disposing"><see langword="true" /> to release both managed and unmanaged resources; <see langword="false" /> to release only unmanaged resources.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (!IsDisposed && disposing)
-            {
-            }
-
-            base.Dispose(disposing);
+            UpdateStyles();
         }
         #endregion
 

@@ -19,14 +19,14 @@ partial class CategorizedItemsContainerControl
     private void InitializeComponent()
     {
         TabsPanel = new Panel();
-        SecureNotesButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+        SecureNotesButton = new TemplatedButton();
         IdSeparatorPanel = new Panel();
-        IdProvidersButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+        IdProvidersButton = new TemplatedButton();
         AcctSeparatorPanel = new Panel();
-        AccountsButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+        AccountsButton = new TemplatedButton();
         WebAccountsList = new WebAccountListControl();
-        IdProvidersList = new Adaptive.Data.Vault.UI.IdentityProviderListControl();
-        SecureNotesList = new Adaptive.Data.Vault.UI.SecureNoteListControl();
+        IdProvidersList = new IdentityProviderListControl();
+        SecureNotesList = new SecureNoteListControl();
         TabsPanel.SuspendLayout();
         SuspendLayout();
         // 
@@ -52,7 +52,7 @@ partial class CategorizedItemsContainerControl
         SecureNotesButton.Name = "SecureNotesButton";
         SecureNotesButton.Size = new Size(200, 64);
         SecureNotesButton.TabIndex = 2;
-        SecureNotesButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        SecureNotesButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         SecureNotesButton.Text = "Secure Notes";
         SecureNotesButton.UseVisualStyleBackColor = true;
         // 
@@ -73,7 +73,8 @@ partial class CategorizedItemsContainerControl
         IdProvidersButton.Name = "IdProvidersButton";
         IdProvidersButton.Size = new Size(200, 64);
         IdProvidersButton.TabIndex = 1;
-        IdProvidersButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        IdProvidersButton.TemplateFile = null;
+        IdProvidersButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         IdProvidersButton.Text = "Identity Providers";
         IdProvidersButton.UseVisualStyleBackColor = true;
         // 
@@ -93,7 +94,8 @@ partial class CategorizedItemsContainerControl
         AccountsButton.Name = "AccountsButton";
         AccountsButton.Size = new Size(200, 64);
         AccountsButton.TabIndex = 0;
-        AccountsButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        AccountsButton.TemplateFile = null;
+        AccountsButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         AccountsButton.Text = "Accounts";
         AccountsButton.UseVisualStyleBackColor = true;
         // 
@@ -111,6 +113,7 @@ partial class CategorizedItemsContainerControl
         // 
         // IdProvidersList
         // 
+        IdProvidersList.BackColor = Color.White;
         IdProvidersList.Dock = DockStyle.Fill;
         IdProvidersList.Location = new Point(0, 69);
         IdProvidersList.Name = "IdProvidersList";
@@ -120,6 +123,7 @@ partial class CategorizedItemsContainerControl
         // 
         // SecureNotesList
         // 
+        SecureNotesList.BackColor = Color.White;
         SecureNotesList.Dock = DockStyle.Fill;
         SecureNotesList.Location = new Point(0, 69);
         SecureNotesList.Name = "SecureNotesList";

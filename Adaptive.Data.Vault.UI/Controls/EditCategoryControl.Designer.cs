@@ -1,4 +1,6 @@
-﻿namespace Adaptive.Data.Vault.UI
+﻿using Adaptive.Intelligence.Shared.UI;
+
+namespace Adaptive.Data.Vault.UI
 {
     partial class EditCategoryControl
     {
@@ -84,9 +86,9 @@
 
         #endregion
 
-        private Intelligence.Shared.UI.GradientPanel NamePanel;
+        private GradientPanel NamePanel;
         private TextBox NameText;
         private Panel NameLabelPanel;
-        private Intelligence.Shared.UI.AdvancedLabel NewNameLabel;
+        private AdvancedLabel NewNameLabel;
     }
 }

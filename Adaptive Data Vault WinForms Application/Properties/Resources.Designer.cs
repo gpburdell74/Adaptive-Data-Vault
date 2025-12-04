@@ -61,6 +61,76 @@ namespace Adaptive.Data.Vault.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Add16 {
+            get {
+                object obj = ResourceManager.GetObject("Add16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddMoney {
+            get {
+                object obj = ResourceManager.GetObject("AddMoney", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonCancel {
+            get {
+                object obj = ResourceManager.GetObject("ButtonCancel", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonCopy {
+            get {
+                object obj = ResourceManager.GetObject("ButtonCopy", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonDelete {
+            get {
+                object obj = ResourceManager.GetObject("ButtonDelete", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonEditUser {
+            get {
+                object obj = ResourceManager.GetObject("ButtonEditUser", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonShowHide {
+            get {
+                object obj = ResourceManager.GetObject("ButtonShowHide", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] ButtonStandard {
@@ -71,11 +141,21 @@ namespace Adaptive.Data.Vault.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonUserInfo {
+            get {
+                object obj = ResourceManager.GetObject("ButtonUserInfo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Close_16x16 {
+        internal static System.Drawing.Bitmap Cancel16 {
             get {
-                object obj = ResourceManager.GetObject("Close 16x16", resourceCulture);
+                object obj = ResourceManager.GetObject("Cancel16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +163,39 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Close_16x161 {
+        internal static System.Drawing.Bitmap Close16 {
             get {
-                object obj = ResourceManager.GetObject("Close 16x161", resourceCulture);
+                object obj = ResourceManager.GetObject("Close16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ControlBackground {
+            get {
+                object obj = ResourceManager.GetObject("ControlBackground", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] DeleteFile32 {
+            get {
+                object obj = ResourceManager.GetObject("DeleteFile32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DocumentType {
+            get {
+                object obj = ResourceManager.GetObject("DocumentType", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,19 +203,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Document_Types_2094 {
+        internal static System.Drawing.Bitmap DocumentType2 {
             get {
-                object obj = ResourceManager.GetObject("Document Types 2094", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Document_Types_2097 {
-            get {
-                object obj = ResourceManager.GetObject("Document Types 2097", resourceCulture);
+                object obj = ResourceManager.GetObject("DocumentType2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +223,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Misc_194 {
+        internal static System.Drawing.Bitmap Information32 {
             get {
-                object obj = ResourceManager.GetObject("Misc 194", resourceCulture);
+                object obj = ResourceManager.GetObject("Information32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +233,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap New_File_16x16 {
+        internal static System.Drawing.Bitmap NewFile16 {
             get {
-                object obj = ResourceManager.GetObject("New File 16x16", resourceCulture);
+                object obj = ResourceManager.GetObject("NewFile16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +243,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OpenButton_Image {
+        internal static System.Drawing.Bitmap Open {
             get {
-                object obj = ResourceManager.GetObject("OpenButton.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("Open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +253,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Save_16x16 {
+        internal static System.Drawing.Bitmap Save16 {
             get {
-                object obj = ResourceManager.GetObject("Save 16x16", resourceCulture);
+                object obj = ResourceManager.GetObject("Save16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +263,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Save_16x16_Blue {
+        internal static System.Drawing.Bitmap Save16Blue {
             get {
-                object obj = ResourceManager.GetObject("Save 16x16 Blue", resourceCulture);
+                object obj = ResourceManager.GetObject("Save16Blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +273,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Secure_File_16x16 {
+        internal static System.Drawing.Bitmap SecureComputer {
             get {
-                object obj = ResourceManager.GetObject("Secure File 16x16", resourceCulture);
+                object obj = ResourceManager.GetObject("SecureComputer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +283,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings_Flat_16x16 {
+        internal static System.Drawing.Bitmap SecureErase {
             get {
-                object obj = ResourceManager.GetObject("Settings Flat 16x16", resourceCulture);
+                object obj = ResourceManager.GetObject("SecureErase", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +293,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Symbols_101 {
+        internal static System.Drawing.Bitmap SecureFile16 {
             get {
-                object obj = ResourceManager.GetObject("Symbols 101", resourceCulture);
+                object obj = ResourceManager.GetObject("SecureFile16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +303,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Symbols_673 {
+        internal static System.Drawing.Bitmap Settings16 {
             get {
-                object obj = ResourceManager.GetObject("Symbols 673", resourceCulture);
+                object obj = ResourceManager.GetObject("Settings16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

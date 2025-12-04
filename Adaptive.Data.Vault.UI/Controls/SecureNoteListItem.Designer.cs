@@ -68,7 +68,7 @@ partial class SecureNoteListItem
         // 
         // ContextMenuNew
         // 
-        ContextMenuNew.Image = Properties.Resources.Add16x16;
+        ContextMenuNew.Image = Properties.Resources.Add16;
         ContextMenuNew.Name = "ContextMenuNew";
         ContextMenuNew.Size = new Size(197, 22);
         ContextMenuNew.Text = "New...";
@@ -196,7 +196,7 @@ partial class SecureNoteListItem
         UserInfoButton.Name = "UserInfoButton";
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -218,7 +218,7 @@ partial class SecureNoteListItem
         EditButton.Name = "EditButton";
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -235,12 +235,11 @@ partial class SecureNoteListItem
         // 
         DeleteButton.Checked = false;
         DeleteButton.Dock = DockStyle.Right;
-        DeleteButton.Image = Properties.Resources.Delete_2_16x16;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 

@@ -44,7 +44,7 @@ partial class IdProviderListItem
         ContextMenu.SuspendLayout();
         NamePanel.SuspendLayout();
         ButtonsPanel.SuspendLayout();
-        SuspendLayout();
+        this.SuspendLayout();
         // 
         // ContainerPanel
         // 
@@ -70,7 +70,7 @@ partial class IdProviderListItem
         // 
         // ContextMenuNew
         // 
-        ContextMenuNew.Image = Properties.Resources.Add16x16;
+        ContextMenuNew.Image = Adaptive.Data.Vault.UI.Properties.Resources.Add16;
         ContextMenuNew.Name = "ContextMenuNew";
         ContextMenuNew.Size = new Size(197, 22);
         ContextMenuNew.Text = "New...";
@@ -78,7 +78,7 @@ partial class IdProviderListItem
         // 
         // ContextMenuEdit
         // 
-        ContextMenuEdit.Image = Properties.Resources.Edit_16x16;
+        ContextMenuEdit.Image = Adaptive.Data.Vault.UI.Properties.Resources.Edit_16x16;
         ContextMenuEdit.Name = "ContextMenuEdit";
         ContextMenuEdit.Size = new Size(197, 22);
         ContextMenuEdit.Text = "Edit...";
@@ -86,7 +86,7 @@ partial class IdProviderListItem
         // 
         // ContextMenuDelete
         // 
-        ContextMenuDelete.Image = Properties.Resources.Delete_16x16;
+        ContextMenuDelete.Image = Adaptive.Data.Vault.UI.Properties.Resources.Delete_16x16;
         ContextMenuDelete.Name = "ContextMenuDelete";
         ContextMenuDelete.Size = new Size(197, 22);
         ContextMenuDelete.Text = "Delete";
@@ -99,7 +99,7 @@ partial class IdProviderListItem
         // 
         // ContextMenuCategorize
         // 
-        ContextMenuCategorize.Image = Properties.Resources.Delete_2_16x16;
+        ContextMenuCategorize.Image = Adaptive.Data.Vault.UI.Properties.Resources.Delete_2_16x16;
         ContextMenuCategorize.Name = "ContextMenuCategorize";
         ContextMenuCategorize.Size = new Size(197, 22);
         ContextMenuCategorize.Text = "Change Category...";
@@ -124,7 +124,7 @@ partial class IdProviderListItem
         DividerLine.BevelTopColor = SystemColors.ControlDark;
         DividerLine.Direction = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
         DividerLine.Dock = DockStyle.Bottom;
-        DividerLine.EndColor = Color.FromArgb(136, 181, 255);
+        DividerLine.EndColor = Color.FromArgb((int)(byte)136, (int)(byte)181, (int)(byte)255);
         DividerLine.LineWidth = 2;
         DividerLine.Location = new Point(5, 52);
         DividerLine.Mode = LineControlMode.Line;
@@ -140,7 +140,7 @@ partial class IdProviderListItem
         UrlLabel.ContextMenuStrip = ContextMenu;
         UrlLabel.Cursor = Cursors.Hand;
         UrlLabel.Dock = DockStyle.Top;
-        UrlLabel.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
+        UrlLabel.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, (byte)0);
         UrlLabel.ForeColor = Color.SteelBlue;
         UrlLabel.Location = new Point(5, 34);
         UrlLabel.Name = "UrlLabel";
@@ -165,7 +165,7 @@ partial class IdProviderListItem
         // 
         DescriptionLabel.BackColor = Color.Transparent;
         DescriptionLabel.Dock = DockStyle.Top;
-        DescriptionLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        DescriptionLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
         DescriptionLabel.Location = new Point(0, 20);
         DescriptionLabel.Name = "DescriptionLabel";
         DescriptionLabel.Size = new Size(281, 15);
@@ -179,7 +179,7 @@ partial class IdProviderListItem
         NameLabel.BackColor = Color.Transparent;
         NameLabel.ContextMenuStrip = ContextMenu;
         NameLabel.Dock = DockStyle.Top;
-        NameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        NameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
         NameLabel.Location = new Point(0, 0);
         NameLabel.Name = "NameLabel";
         NameLabel.Size = new Size(281, 20);
@@ -209,12 +209,13 @@ partial class IdProviderListItem
         // 
         UserInfoButton.Checked = false;
         UserInfoButton.Dock = DockStyle.Right;
-        UserInfoButton.Image = Properties.Resources.User_Info_32x32;
+        UserInfoButton.Image = Adaptive.Data.Vault.UI.Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        UserInfoButton.TemplateFile = null;
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo; 
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -231,12 +232,13 @@ partial class IdProviderListItem
         // 
         EditButton.Checked = false;
         EditButton.Dock = DockStyle.Right;
-        EditButton.Image = Properties.Resources.Edit_32x32;
+        EditButton.Image = Adaptive.Data.Vault.UI.Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        EditButton.TemplateFile = null;
+        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -253,12 +255,12 @@ partial class IdProviderListItem
         // 
         DeleteButton.Checked = false;
         DeleteButton.Dock = DockStyle.Right;
-        DeleteButton.Image = Properties.Resources.Delete_2_16x16;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        DeleteButton.TemplateFile = null;
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 
@@ -274,16 +276,16 @@ partial class IdProviderListItem
         // 
         // IdProviderListItem
         // 
-        AutoScaleDimensions = new SizeF(96F, 96F);
-        Controls.Add(ContainerPanel);
-        Margin = new Padding(3);
-        Name = "IdProviderListItem";
-        Size = new Size(440, 54);
+        this.AutoScaleDimensions = new SizeF(96F, 96F);
+        this.Controls.Add(ContainerPanel);
+        this.Margin = new Padding(3);
+        this.Name = "IdProviderListItem";
+        this.Size = new Size(440, 54);
         ContainerPanel.ResumeLayout(false);
         ContextMenu.ResumeLayout(false);
         NamePanel.ResumeLayout(false);
         ButtonsPanel.ResumeLayout(false);
-        ResumeLayout(false);
+        this.ResumeLayout(false);
     }
 
     #endregion

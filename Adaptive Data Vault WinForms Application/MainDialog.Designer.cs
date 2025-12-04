@@ -95,7 +95,7 @@ partial class MainDialog
         // 
         // FileMenuNewFile
         // 
-        FileMenuNewFile.Image = Properties.Resources.New_File_16x16;
+        FileMenuNewFile.Image = Properties.Resources.NewFile16;
         FileMenuNewFile.Name = "FileMenuNewFile";
         FileMenuNewFile.ShortcutKeyDisplayString = "Ctrl+N";
         FileMenuNewFile.Size = new Size(216, 22);
@@ -104,7 +104,7 @@ partial class MainDialog
         // 
         // FileMenuOpenFile
         // 
-        FileMenuOpenFile.Image = Properties.Resources.OpenButton_Image;
+        FileMenuOpenFile.Image = Properties.Resources.Open;
         FileMenuOpenFile.Name = "FileMenuOpenFile";
         FileMenuOpenFile.ShortcutKeyDisplayString = "Ctrl+O";
         FileMenuOpenFile.Size = new Size(216, 22);
@@ -113,7 +113,7 @@ partial class MainDialog
         // 
         // FileMenuCloseFile
         // 
-        FileMenuCloseFile.Image = Properties.Resources.Close_16x161;
+        FileMenuCloseFile.Image = Properties.Resources.Close16;
         FileMenuCloseFile.Name = "FileMenuCloseFile";
         FileMenuCloseFile.Size = new Size(216, 22);
         FileMenuCloseFile.Text = "C&lose";
@@ -127,7 +127,7 @@ partial class MainDialog
         // 
         // FileMenuSave
         // 
-        FileMenuSave.Image = Properties.Resources.Save_16x16_Blue;
+        FileMenuSave.Image = Properties.Resources.Save16;
         FileMenuSave.Name = "FileMenuSave";
         FileMenuSave.ShortcutKeyDisplayString = "Ctrl+S";
         FileMenuSave.Size = new Size(216, 22);
@@ -137,7 +137,7 @@ partial class MainDialog
         // 
         // FileMenuSaveAs
         // 
-        FileMenuSaveAs.Image = Properties.Resources.Save_16x16;
+        FileMenuSaveAs.Image = Properties.Resources.Save16;
         FileMenuSaveAs.Name = "FileMenuSaveAs";
         FileMenuSaveAs.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
         FileMenuSaveAs.Size = new Size(216, 22);
@@ -190,7 +190,7 @@ partial class MainDialog
         // 
         // ToolMenuSecureMessage
         // 
-        ToolMenuSecureMessage.Image = Properties.Resources.Secure_File_16x16;
+        ToolMenuSecureMessage.Image = Properties.Resources.SecureFile16;
         ToolMenuSecureMessage.Name = "ToolMenuSecureMessage";
         ToolMenuSecureMessage.Size = new Size(214, 22);
         ToolMenuSecureMessage.Text = "Create &Secure Message...";
@@ -198,7 +198,7 @@ partial class MainDialog
         // 
         // ToolMenuDecryptMessage
         // 
-        ToolMenuDecryptMessage.Image = Properties.Resources.Secure_File_16x16;
+        ToolMenuDecryptMessage.Image = Properties.Resources.SecureFile16;
         ToolMenuDecryptMessage.Name = "ToolMenuDecryptMessage";
         ToolMenuDecryptMessage.Size = new Size(214, 22);
         ToolMenuDecryptMessage.Text = "&Decrypt Secure Message...";
@@ -211,7 +211,7 @@ partial class MainDialog
         // 
         // ToolMenuEraseFile
         // 
-        ToolMenuEraseFile.Image = Properties.Resources.Misc_194;
+        ToolMenuEraseFile.Image = Properties.Resources.SecureErase;
         ToolMenuEraseFile.Name = "ToolMenuEraseFile";
         ToolMenuEraseFile.Size = new Size(214, 22);
         ToolMenuEraseFile.Text = "Secure &Erase File...";
@@ -283,7 +283,7 @@ partial class MainDialog
         // 
         // HelpMenuViewHelp
         // 
-        HelpMenuViewHelp.Image = Properties.Resources.Symbols_101;
+        HelpMenuViewHelp.Image = Properties.Resources.Information32;
         HelpMenuViewHelp.Name = "HelpMenuViewHelp";
         HelpMenuViewHelp.ShortcutKeys = Keys.F1;
         HelpMenuViewHelp.Size = new Size(210, 22);
@@ -313,7 +313,7 @@ partial class MainDialog
         // 
         // HelpMenuDonate
         // 
-        HelpMenuDonate.Image = Properties.Resources.Symbols_673;
+        HelpMenuDonate.Image = Properties.Resources.AddMoney;
         HelpMenuDonate.Name = "HelpMenuDonate";
         HelpMenuDonate.Size = new Size(210, 22);
         HelpMenuDonate.Text = "Donate To Project";
@@ -351,7 +351,7 @@ partial class MainDialog
         // NewFileButton
         // 
         NewFileButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        NewFileButton.Image = Properties.Resources.New_File_16x16;
+        NewFileButton.Image = Properties.Resources.NewFile16;
         NewFileButton.ImageTransparentColor = Color.Magenta;
         NewFileButton.Name = "NewFileButton";
         NewFileButton.Size = new Size(23, 22);
@@ -360,7 +360,7 @@ partial class MainDialog
         // OpenFileButton
         // 
         OpenFileButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        OpenFileButton.Image = Properties.Resources.OpenButton_Image;
+        OpenFileButton.Image = Properties.Resources.Open;
         OpenFileButton.ImageTransparentColor = Color.Magenta;
         OpenFileButton.Name = "OpenFileButton";
         OpenFileButton.Size = new Size(23, 22);
@@ -369,7 +369,7 @@ partial class MainDialog
         // CloseFileButton
         // 
         CloseFileButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        CloseFileButton.Image = Properties.Resources.Close_16x16;
+        CloseFileButton.Image = Properties.Resources.Close16;
         CloseFileButton.ImageTransparentColor = Color.Magenta;
         CloseFileButton.Name = "CloseFileButton";
         CloseFileButton.Size = new Size(23, 22);
@@ -384,7 +384,7 @@ partial class MainDialog
         // SaveButton
         // 
         SaveButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        SaveButton.Image = Properties.Resources.Save_16x16_Blue;
+        SaveButton.Image = Properties.Resources.Save16Blue;
         SaveButton.ImageTransparentColor = Color.Magenta;
         SaveButton.Name = "SaveButton";
         SaveButton.Size = new Size(23, 22);
@@ -394,7 +394,7 @@ partial class MainDialog
         // SaveAsButton
         // 
         SaveAsButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        SaveAsButton.Image = Properties.Resources.Save_16x16;
+        SaveAsButton.Image = Properties.Resources.Save16;
         SaveAsButton.ImageTransparentColor = Color.Magenta;
         SaveAsButton.Name = "SaveAsButton";
         SaveAsButton.Size = new Size(23, 22);

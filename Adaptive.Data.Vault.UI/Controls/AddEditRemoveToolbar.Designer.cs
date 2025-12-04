@@ -29,13 +29,14 @@ namespace Adaptive.Data.Vault.UI
             // AddButton
             // 
             AddButton.Checked = false;
-            AddButton.Image = Properties.Resources.Add16x16;
+            AddButton.Image = Properties.Resources.Add16;
             AddButton.ImageAlign = ContentAlignment.MiddleLeft;
             AddButton.Location = new Point(3, 3);
             AddButton.Name = "AddButton";
             AddButton.Size = new Size(120, 25);
             AddButton.TabIndex = 0;
-            AddButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+            AddButton.TemplateFile = null;
+            AddButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
             AddButton.Text = "&Add Entry";
             AddButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             AddButton.UseVisualStyleBackColor = true;
@@ -49,8 +50,8 @@ namespace Adaptive.Data.Vault.UI
             EditButton.Name = "EditButton";
             EditButton.Size = new Size(120, 25);
             EditButton.TabIndex = 1;
-            EditButton.Tag = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
-            EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+            EditButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+            EditButton.TemplateFile = null;
             EditButton.Text = "&Edit Entry";
             EditButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             EditButton.UseVisualStyleBackColor = true;
@@ -64,7 +65,8 @@ namespace Adaptive.Data.Vault.UI
             RemoveButton.Name = "RemoveButton";
             RemoveButton.Size = new Size(120, 25);
             RemoveButton.TabIndex = 2;
-            RemoveButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+            RemoveButton.TemplateFile = null;
+            RemoveButton.TemplateSource = Properties.Resources.ButtonTemplateDelete16;
             RemoveButton.Text = "&Remove Entry";
             RemoveButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             RemoveButton.UseVisualStyleBackColor = true;

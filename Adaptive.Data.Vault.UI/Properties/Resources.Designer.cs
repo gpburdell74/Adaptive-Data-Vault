@@ -63,9 +63,9 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add16x16 {
+        internal static System.Drawing.Bitmap Add16 {
             get {
-                object obj = ResourceManager.GetObject("Add16x16", resourceCulture);
+                object obj = ResourceManager.GetObject("Add16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,6 +113,16 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] ButtonTemplateDelete16 {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateDelete16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] ButtonTemplateDeleteFixed {
             get {
                 object obj = ResourceManager.GetObject("ButtonTemplateDeleteFixed", resourceCulture);
@@ -126,6 +136,16 @@ namespace Adaptive.Data.Vault.UI.Properties {
         internal static byte[] ButtonTemplateEditUser {
             get {
                 object obj = ResourceManager.GetObject("ButtonTemplateEditUser", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ButtonTemplateLineItemDelete {
+            get {
+                object obj = ResourceManager.GetObject("ButtonTemplateLineItemDelete", resourceCulture);
                 return ((byte[])(obj));
             }
         }
