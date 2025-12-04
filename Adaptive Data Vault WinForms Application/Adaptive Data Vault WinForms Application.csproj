@@ -24,7 +24,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\ADV Button.template" />
+    <None Remove="Resources\ADV Cancel  Template.template" />
+    <None Remove="Resources\ADV Copy Button Template.template" />
+    <None Remove="Resources\ADV Delete Template.template" />
+    <None Remove="Resources\ADV Edit User Template.template" />
+    <None Remove="Resources\ADV ShowHide Template.template" />
+    <None Remove="Resources\ADV User Info Button.template" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="ADV.ico" />
+    <Content Include="Resources\ADV Button.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Cancel  Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Copy Button Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Delete Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Edit User Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV ShowHide Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV User Info Button.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
