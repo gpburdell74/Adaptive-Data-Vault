@@ -59,7 +59,7 @@ namespace Adaptive.Data.Vault.UI
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(100, 40);
             this.CloseButton.TabIndex = 8;
-            this.CloseButton.ResourceTemplate = Properties.Resources.ButtonTemplateCancel;
+            this.CloseButton.TemplateSource = Properties.Resources.ButtonTemplateCancel;
             this.CloseButton.Text = "Cancel";
             this.CloseButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Checked = false;
@@ -69,7 +69,7 @@ namespace Adaptive.Data.Vault.UI
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(155, 40);
             this.DeleteButton.TabIndex = 7;
-            this.DeleteButton.ResourceTemplate = Properties.Resources.ButtonTemplateDelete;
+            this.DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateDelete;
             this.DeleteButton.Text = "Secure Delete";
             this.DeleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DeleteButton.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@ namespace Adaptive.Data.Vault.UI
             this.BrowseButton.Name = "BrowseButton";
             this.BrowseButton.Size = new System.Drawing.Size(40, 25);
             this.BrowseButton.TabIndex = 3;
-            this.BrowseButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+            this.BrowseButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
             this.BrowseButton.Text = "...";
             this.BrowseButton.UseVisualStyleBackColor = true;
             this.FileText.Location = new System.Drawing.Point(115, 76);

@@ -43,7 +43,7 @@ partial class IdentityProviderListControl
         this.NewAccountButton.Name = "NewAccountButton";
         this.NewAccountButton.Size = new System.Drawing.Size(265, 32);
         this.NewAccountButton.TabIndex = 0;
-        this.NewAccountButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+        this.NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         this.NewAccountButton.Text = "Create New ID Provider Entry...";
         this.NewAccountButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
         this.ttp.SetToolTip(this.NewAccountButton, "Create a new entry to contain the login information for an identity provider, such as Microsoft, Google, Facebook, etc.");

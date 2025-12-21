@@ -80,7 +80,7 @@ partial class DecodeSecureMessageDialog
         this.PrepareButton.Name = "PrepareButton";
         this.PrepareButton.Size = new System.Drawing.Size(151, 32);
         this.PrepareButton.TabIndex = 3;
-        this.PrepareButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+        this.PrepareButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         this.PrepareButton.Text = "&Decode Message";
         this.ttp.SetToolTip(this.PrepareButton, "Click to decrypt the message for reading.");
         this.PrepareButton.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@ partial class DecodeSecureMessageDialog
         this.FileButton.Name = "FileButton";
         this.FileButton.Size = new System.Drawing.Size(151, 32);
         this.FileButton.TabIndex = 2;
-        this.FileButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+        this.FileButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         this.FileButton.Text = "&From File";
         this.ttp.SetToolTip(this.FileButton, "Click to load the encrypted text from a file.");
         this.FileButton.UseVisualStyleBackColor = true;

@@ -41,7 +41,7 @@ partial class SecureNoteListControl
         this.NewAccountButton.Name = "NewAccountButton";
         this.NewAccountButton.Size = new System.Drawing.Size(247, 32);
         this.NewAccountButton.TabIndex = 0;
-        this.NewAccountButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+        this.NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         this.NewAccountButton.Text = "Create New Secure Note...";
         this.NewAccountButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
         this.NewAccountButton.UseVisualStyleBackColor = true;

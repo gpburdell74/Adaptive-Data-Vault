@@ -44,7 +44,7 @@ partial class WebAccountListControl
         NewAccountButton.Name = "NewAccountButton";
         NewAccountButton.Size = new Size(247, 32);
         NewAccountButton.TabIndex = 0;
-        NewAccountButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+        NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         NewAccountButton.Text = "Create New Account Entry...";
         NewAccountButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         NewAccountButton.UseVisualStyleBackColor = true;

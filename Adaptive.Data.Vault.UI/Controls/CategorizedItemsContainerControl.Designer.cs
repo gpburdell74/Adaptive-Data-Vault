@@ -54,7 +54,7 @@ partial class CategorizedItemsContainerControl
         SecureNotesButton.TabIndex = 2;
         SecureNotesButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         SecureNotesButton.Text = "Secure Notes";
-        SecureNotesButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+        SecureNotesButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         SecureNotesButton.UseVisualStyleBackColor = true;
         // 
         // IdSeparatorPanel
@@ -76,7 +76,7 @@ partial class CategorizedItemsContainerControl
         IdProvidersButton.TabIndex = 1;
         IdProvidersButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         IdProvidersButton.Text = "Identity Providers";
-        IdProvidersButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+        IdProvidersButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         IdProvidersButton.UseVisualStyleBackColor = true;
         // 
         // AcctSeparatorPanel
@@ -97,7 +97,7 @@ partial class CategorizedItemsContainerControl
         AccountsButton.TabIndex = 0;
         AccountsButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         AccountsButton.Text = "Accounts";
-        AccountsButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+        AccountsButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         AccountsButton.UseVisualStyleBackColor = true;
         // 
         // WebAccountsList

@@ -131,7 +131,7 @@ public partial class CreateSecureMessageDialog : AdaptiveDialogBase
 
         MessageLoginDialog dialog = new MessageLoginDialog(_credentials);
         DialogResult result = dialog.ShowDialog();
-        if (result == DialogResult.OK)
+        if (result == DialogResult.OK && dialog.Credentials != null)
         {
             _credentials?.Dispose();
             _credentials = dialog.Credentials.Clone();

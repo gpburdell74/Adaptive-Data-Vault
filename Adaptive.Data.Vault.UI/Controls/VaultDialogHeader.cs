@@ -4,11 +4,15 @@ using System.Drawing.Text;
 
 namespace Adaptive.Data.Vault.UI.Controls
 {
+    /// <summary>
+    /// PRovides a UI control to display a consistent header for the application dialogs.
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.UserControl" />
     public partial class VaultDialogHeader : UserControl
     {
         #region Private Member Declarations
 
-        private Container components;
+        private Container? components;
         private Color _startColor = Color.FromArgb(255, 0, 79, 210);
         private Color _endColor = Color.FromArgb(255, 136, 181, 255);
 
@@ -17,13 +21,14 @@ namespace Adaptive.Data.Vault.UI.Controls
 
         #region Constructor / Dispose Methods		
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoginDialogHeader"/> class.
+        /// Initializes a new instance of the <see cref="VaultDialogHeader"/> class.
         /// </summary>
         /// <remarks>
         /// This is the default constructor.
         /// </remarks>
         public VaultDialogHeader()
         {
+            components = new Container();
             InitializeComponent();
 
             SetStyle(ControlStyles.AllPaintingInWmPaint, value: true);
@@ -43,6 +48,7 @@ namespace Adaptive.Data.Vault.UI.Controls
                 components?.Dispose();
             }
 
+            components = null;
             base.Dispose(disposing);
         }
         #endregion

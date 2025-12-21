@@ -193,7 +193,7 @@ partial class SecureNoteListItem
         UserInfoButton.Dock = DockStyle.Right;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
-        UserInfoButton.ResourceTemplate = Properties.Resources.ButtonTemplateUserInfo;
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
         UserInfoButton.TemplateFile = null;
@@ -215,7 +215,7 @@ partial class SecureNoteListItem
         EditButton.Dock = DockStyle.Right;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
-        EditButton.ResourceTemplate = Properties.Resources.ButtonTemplateEditUser;
+        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
         EditButton.TemplateFile = null;
@@ -238,7 +238,7 @@ partial class SecureNoteListItem
         DeleteButton.Image = Properties.Resources.Delete_2_16x16;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
-        DeleteButton.ResourceTemplate = Properties.Resources.ButtonTemplateDelete;
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateDelete;
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
         DeleteButton.TemplateFile = null;

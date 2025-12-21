@@ -213,7 +213,7 @@ partial class IdProviderListItem
         UserInfoButton.Name = "UserInfoButton";
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.ResourceTemplate = Properties.Resources.ButtonTemplateUserInfo;
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -233,7 +233,7 @@ partial class IdProviderListItem
         EditButton.Image = Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
-        EditButton.ResourceTemplate = Properties.Resources.ButtonTemplateEditUser;
+        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
         ttp.SetToolTip(EditButton, "Edit the account information.");
@@ -255,7 +255,7 @@ partial class IdProviderListItem
         DeleteButton.Image = Properties.Resources.Delete_2_16x16;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
-        DeleteButton.ResourceTemplate = Properties.Resources.ButtonTemplateDelete;
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateDelete;
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
         ttp.SetToolTip(DeleteButton, "Delete this entry.");

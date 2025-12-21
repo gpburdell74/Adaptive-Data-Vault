@@ -60,7 +60,7 @@ partial class WebAccountInfoDialog
         CopyPasswordButton.Checked = false;
         CopyPasswordButton.Location = new Point(586, 132);
         CopyPasswordButton.Name = "CopyPasswordButton";
-        CopyPasswordButton.ResourceTemplate = Properties.Resources.ButtonTemplateCopy;
+        CopyPasswordButton.TemplateSource = Properties.Resources.ButtonTemplateCopy;
         CopyPasswordButton.Size = new Size(40, 40);
         CopyPasswordButton.TabIndex = 11;
         CopyPasswordButton.TemplateFile = null;
@@ -72,7 +72,7 @@ partial class WebAccountInfoDialog
         ShowPasswordButton.Checked = false;
         ShowPasswordButton.Location = new Point(540, 132);
         ShowPasswordButton.Name = "ShowPasswordButton";
-        ShowPasswordButton.ResourceTemplate = Properties.Resources.ButtonTemplateShowHide;
+        ShowPasswordButton.TemplateSource = Properties.Resources.ButtonTemplateShowHide;
         ShowPasswordButton.Size = new Size(40, 40);
         ShowPasswordButton.TabIndex = 10;
         ShowPasswordButton.TemplateFile = null;
@@ -84,7 +84,7 @@ partial class WebAccountInfoDialog
         CopyUserIdButton.Checked = false;
         CopyUserIdButton.Location = new Point(586, 86);
         CopyUserIdButton.Name = "CopyUserIdButton";
-        CopyUserIdButton.ResourceTemplate = Properties.Resources.ButtonTemplateCopy;
+        CopyUserIdButton.TemplateSource = Properties.Resources.ButtonTemplateCopy;
         CopyUserIdButton.Size = new Size(40, 40);
         CopyUserIdButton.TabIndex = 7;
         CopyUserIdButton.TemplateFile = null;
@@ -96,7 +96,7 @@ partial class WebAccountInfoDialog
         ShowUserIdButton.Checked = false;
         ShowUserIdButton.Location = new Point(540, 86);
         ShowUserIdButton.Name = "ShowUserIdButton";
-        ShowUserIdButton.ResourceTemplate = Properties.Resources.ButtonTemplateShowHide;
+        ShowUserIdButton.TemplateSource = Properties.Resources.ButtonTemplateShowHide;
         ShowUserIdButton.Size = new Size(40, 40);
         ShowUserIdButton.TabIndex = 6;
         ShowUserIdButton.TemplateFile = null;
@@ -108,7 +108,7 @@ partial class WebAccountInfoDialog
         CopyUrlButton.Checked = false;
         CopyUrlButton.Location = new Point(540, 42);
         CopyUrlButton.Name = "CopyUrlButton";
-        CopyUrlButton.ResourceTemplate = Properties.Resources.ButtonTemplateCopy;
+        CopyUrlButton.TemplateSource = Properties.Resources.ButtonTemplateCopy;
         CopyUrlButton.Size = new Size(40, 40);
         CopyUrlButton.TabIndex = 3;
         CopyUrlButton.TemplateFile = null;
@@ -120,7 +120,7 @@ partial class WebAccountInfoDialog
         CloseButton.Checked = false;
         CloseButton.Location = new Point(497, 203);
         CloseButton.Name = "CloseButton";
-        CloseButton.ResourceTemplate = Properties.Resources.ButtonTemplateCancel;
+        CloseButton.TemplateSource = Properties.Resources.ButtonTemplateCancel;
         CloseButton.Size = new Size(129, 40);
         CloseButton.TabIndex = 12;
         CloseButton.TemplateFile = null;

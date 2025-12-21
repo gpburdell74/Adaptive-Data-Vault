@@ -139,7 +139,6 @@ public partial class AddEditWebAccountDialog : BorderedDialog
     {
         SetPreLoadState();
         DialogResult = DialogResult.OK;
-        WebAccount a = WebEdit.Account;
         Close();
     }
 

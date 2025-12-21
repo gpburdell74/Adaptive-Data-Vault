@@ -122,7 +122,7 @@ partial class LoginDialog
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(100, 32);
         CloseButton.TabIndex = 1;
-        CloseButton.ResourceTemplate = Properties.Resources.ButtonTemplateCancel;
+        CloseButton.TemplateSource = Properties.Resources.ButtonTemplateCancel;
         CloseButton.Text = "Cancel";
         CloseButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(CloseButton, "Click here to Cancel.");
@@ -137,7 +137,7 @@ partial class LoginDialog
         OkButton.Name = "OkButton";
         OkButton.Size = new Size(100, 32);
         OkButton.TabIndex = 0;
-        OkButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+        OkButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         OkButton.Text = "OK";
         OkButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(OkButton, "Click here to log in to the file and load the contents.");

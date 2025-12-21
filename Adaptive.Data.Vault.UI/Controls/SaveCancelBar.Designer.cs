@@ -57,7 +57,7 @@
             SaveButton.ImageAlign = ContentAlignment.MiddleLeft;
             SaveButton.Location = new Point(7, 5);
             SaveButton.Name = "SaveButton";
-            SaveButton.ResourceTemplate = Properties.Resources.ButtonTemplateStandard;
+            SaveButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
             SaveButton.Size = new Size(120, 38);
             SaveButton.TabIndex = 2;
             SaveButton.TemplateFile = null;
@@ -82,7 +82,7 @@
             CancelButton.ImageAlign = ContentAlignment.MiddleLeft;
             CancelButton.Location = new Point(132, 5);
             CancelButton.Name = "CancelButton";
-            CancelButton.ResourceTemplate = Properties.Resources.ButtonTemplateCancel;
+            CancelButton.TemplateSource = Properties.Resources.ButtonTemplateCancel;
             CancelButton.Size = new Size(120, 38);
             CancelButton.TabIndex = 0;
             CancelButton.TemplateFile = null;

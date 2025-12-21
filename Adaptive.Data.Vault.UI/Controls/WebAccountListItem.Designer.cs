@@ -215,7 +215,7 @@ partial class WebAccountListItem
         UserInfoButton.Image = Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
-        UserInfoButton.ResourceTemplate = Properties.Resources.ButtonTemplateUserInfo;
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
         UserInfoButton.TemplateFile = null;
@@ -237,10 +237,9 @@ partial class WebAccountListItem
         EditButton.Dock = DockStyle.Right;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
-        EditButton.ResourceTemplate = null;
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.ResourceTemplate = Properties.Resources.ButtonTemplateEditUser;
+        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -260,10 +259,9 @@ partial class WebAccountListItem
         DeleteButton.Image = Properties.Resources.Delete_2_16x16;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
-        DeleteButton.ResourceTemplate = null;
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.ResourceTemplate = Properties.Resources.ButtonTemplateDelete;
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateDelete;
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 
