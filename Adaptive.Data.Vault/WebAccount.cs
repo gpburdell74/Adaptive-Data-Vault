@@ -32,28 +32,6 @@ public sealed class WebAccount : VaultBusinessBase<IWebAccountEntity>
 
     #region Public Properties
     /// <summary>
-    /// Gets or sets the category Id value.
-    /// </summary>
-    /// <value>
-    /// A <see cref="T:System.Guid" /> containing the ID of the category the item belongs to,
-    /// or <b>null</b> if the item is not categorized.
-    /// </value>
-    public Guid? CategoryId
-    {
-        get
-        {
-            if (Entity != null)
-                return Entity.CategoryId;
-            else
-                return null;
-        }
-        set
-        {
-            if (Entity != null)
-                Entity.CategoryId = value;
-        }
-    }
-    /// <summary>
     /// Gets or sets the description.
     /// </summary>
     /// <value>

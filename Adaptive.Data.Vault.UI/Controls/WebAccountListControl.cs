@@ -6,7 +6,7 @@ namespace Adaptive.Data.Vault.UI;
 /// <summary>
 /// Provides the container control for the custom Web Account List Item controls.
 /// </summary>
-/// <seealso cref="Panel" />
+/// <seealso cref="UserControl" />
 public partial class WebAccountListControl : UserControl
 {
     #region Events

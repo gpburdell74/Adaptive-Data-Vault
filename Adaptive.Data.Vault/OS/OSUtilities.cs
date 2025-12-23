@@ -57,7 +57,7 @@ public static class OSUtilities
         }
         catch (Exception ex)
         {
-
+            ExceptionLog.LogException(ex);
         }
     }
 
@@ -194,6 +194,7 @@ public static class OSUtilities
         }
         catch (Exception ex)
         {
+            ExceptionLog.LogException(ex);
             path = null;
         }
 

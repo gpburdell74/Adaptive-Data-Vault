@@ -22,6 +22,17 @@ partial class SelectCategoryDialog
         ContainerPanel.SuspendLayout();
         SuspendLayout();
         // 
+        // BorderPanel
+        // 
+        BorderPanel.Controls.Add(ContainerPanel);
+        BorderPanel.Dock = DockStyle.Fill;
+        BorderPanel.Location = new Point(0, 0);
+        BorderPanel.Name = "BorderPanel";
+        BorderPanel.Padding = new Padding(10);
+        BorderPanel.Size = new Size(569, 498);
+        BorderPanel.TabIndex = 0;
+        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        // 
         // ContainerPanel
         // 
         ContainerPanel.Controls.Add(CategoryList);

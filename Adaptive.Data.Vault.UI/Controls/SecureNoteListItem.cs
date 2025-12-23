@@ -1,4 +1,5 @@
-﻿using Adaptive.Intelligence.Shared;
+﻿using Adaptive.Data.Vault.OS;
+using Adaptive.Intelligence.Shared;
 using Adaptive.Intelligence.Shared.UI;
 using System.ComponentModel;
 
@@ -97,6 +98,7 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public bool Selected => _selected;
+
     #endregion
 
     #region Protected Method Overrides    
@@ -110,12 +112,18 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     {
         base.Click += HandleToggleSelection;
         SelectionIndicator.Click += HandleToggleSelection;
+
+        // Labels.
         NameLabel.Click += HandleToggleSelection;
+
+        // Menu.
         ContextMenuNew.Click += HandleNewClicked;
         ContextMenuEdit.Click += HandleEditClicked;
         ContextMenuDelete.Click += HandleDeleteClicked;
         ContextMenuCategorize.Click += HandleCategorizeClicked;
         ContextMenuProperties.Click += HandleUserClicked;
+
+        // Buttons.
         UserInfoButton.Click += HandleUserClicked;
         EditButton.Click += HandleEditClicked;
         DeleteButton.Click += HandleDeleteClicked;
@@ -132,12 +140,18 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     {
         base.Click -= HandleToggleSelection;
         SelectionIndicator.Click -= HandleToggleSelection;
+
+        // Labels.
         NameLabel.Click -= HandleToggleSelection;
+
+        // Menu.
         ContextMenuNew.Click -= HandleNewClicked;
         ContextMenuEdit.Click -= HandleEditClicked;
         ContextMenuDelete.Click -= HandleDeleteClicked;
         ContextMenuCategorize.Click -= HandleCategorizeClicked;
         ContextMenuProperties.Click -= HandleUserClicked;
+
+        // Buttons.
         UserInfoButton.Click -= HandleUserClicked;
         EditButton.Click -= HandleEditClicked;
         DeleteButton.Click -= HandleDeleteClicked;
@@ -190,6 +204,7 @@ public partial class SecureNoteListItem : AdaptiveControlBase
             CategorizeRequest?.Invoke(this, e);
         });
     }
+
     /// <summary>
     /// Raises the <see cref="E:DeleteRequest" /> event.
     /// </summary>
@@ -213,6 +228,7 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     private void HandleUserClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
+
         if (_note != null)
         {
             SecureNoteInfoDialog secureNoteInfoDialog = new SecureNoteInfoDialog();
@@ -220,6 +236,7 @@ public partial class SecureNoteListItem : AdaptiveControlBase
             secureNoteInfoDialog.ShowDialog();
             secureNoteInfoDialog.Dispose();
         }
+
         SetPostLoadState();
         SetState();
     }
@@ -238,6 +255,7 @@ public partial class SecureNoteListItem : AdaptiveControlBase
         {
             ((SecureNoteListControl)base.Parent).AddNewItem();
         }
+
         SetPostLoadState();
         SetState();
     }
@@ -274,6 +292,7 @@ public partial class SecureNoteListItem : AdaptiveControlBase
         {
             OnDeleteRequest(new EventArgs<SecureNote>(_note));
         }
+        }
         SetPostLoadState();
         SetState();
     }
@@ -286,7 +305,9 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     private void HandleCategorizeClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
+
         OnCategorizeRequest(e);
+
         SetPostLoadState();
     }
 
@@ -316,4 +337,5 @@ public partial class SecureNoteListItem : AdaptiveControlBase
         }
     }
     #endregion
+
 }

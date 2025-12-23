@@ -235,6 +235,7 @@ partial class SecureNoteListItem
         // 
         DeleteButton.Checked = false;
         DeleteButton.Dock = DockStyle.Right;
+        DeleteButton.Image = Properties.Resources.Delete_2_16x16;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(44, 44);
@@ -266,6 +267,7 @@ partial class SecureNoteListItem
         ButtonsPanel.ResumeLayout(false);
         ResumeLayout(false);
     }
+
     #endregion
 
     private GradientPanel ContainerPanel;

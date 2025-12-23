@@ -1,4 +1,4 @@
-﻿using Adaptive.Intelligence.Shared.UI;
+﻿using System.Xml.Linq;
 
 namespace Adaptive.Data.Vault.UI;
 
@@ -18,21 +18,22 @@ partial class IdentityProviderInfoDialog
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        BorderPanel = new GradientPanel();
-        ContentPanel = new GradientPanel();
-        CloseButton = new TemplatedButton();
-        CopyPasswordButton = new TemplatedButton();
-        ShowPasswordButton = new TemplatedButton();
-        CopyUserIdButton = new TemplatedButton();
-        ShowUserIdButton = new TemplatedButton();
-        CopyUrlButton = new TemplatedButton();
-        PasswordLabel = new AdvancedLabel();
-        PasswordTitleLabel = new AdvancedLabel();
-        UserIdLabel = new AdvancedLabel();
-        UserIdTitleLabel = new AdvancedLabel();
-        AddressLabel = new AdvancedLabel();
-        Header = new SectionTitleHeader();
-        AddressTitleLabel = new AdvancedLabel();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WebAccountInfoDialog));
+        BorderPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+        ContentPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+        CloseButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+        CopyPasswordButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+        ShowPasswordButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+        CopyUserIdButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+        ShowUserIdButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+        CopyUrlButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+        PasswordLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
+        PasswordTitleLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
+        UserIdLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
+        UserIdTitleLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
+        AddressLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
+        Header = new Adaptive.Intelligence.Shared.UI.SectionTitleHeader();
+        AddressTitleLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
         ttp = new ToolTip(components);
         BorderPanel.SuspendLayout();
         ContentPanel.SuspendLayout();
@@ -152,7 +153,7 @@ partial class IdentityProviderInfoDialog
         // PasswordTitleLabel
         // 
         PasswordTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-        PasswordTitleLabel.Location = new Point(7, 125);
+        PasswordTitleLabel.Location = new Point(10, 85);
         PasswordTitleLabel.Name = "PasswordTitleLabel";
         PasswordTitleLabel.Size = new Size(105, 40);
         PasswordTitleLabel.TabIndex = 5;
@@ -174,7 +175,7 @@ partial class IdentityProviderInfoDialog
         // UserIdTitleLabel
         // 
         UserIdTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-        UserIdTitleLabel.Location = new Point(7, 83);
+        UserIdTitleLabel.Location = new Point(10, 45);
         UserIdTitleLabel.Name = "UserIdTitleLabel";
         UserIdTitleLabel.Size = new Size(105, 40);
         UserIdTitleLabel.TabIndex = 3;
@@ -209,7 +210,7 @@ partial class IdentityProviderInfoDialog
         // AddressTitleLabel
         // 
         AddressTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-        AddressTitleLabel.Location = new Point(7, 45);
+        AddressTitleLabel.Location = new Point(10, 125);
         AddressTitleLabel.Name = "AddressTitleLabel";
         AddressTitleLabel.Size = new Size(105, 40);
         AddressTitleLabel.TabIndex = 0;
@@ -217,7 +218,7 @@ partial class IdentityProviderInfoDialog
         AddressTitleLabel.Text = "Address:";
         AddressTitleLabel.TextAlign = ContentAlignment.MiddleRight;
         // 
-        // IdentityProviderInfoDialog
+        // WebAccountInfoDialog
         // 
         AutoScaleDimensions = new SizeF(96F, 96F);
         AutoScaleMode = AutoScaleMode.Dpi;
@@ -225,32 +226,34 @@ partial class IdentityProviderInfoDialog
         ControlBox = false;
         Controls.Add(BorderPanel);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Icon = (Icon)resources.GetObject("$this.Icon");
         KeyPreview = true;
         MaximizeBox = false;
         MinimizeBox = false;
-        Name = "IdentityProviderInfoDialog";
+        Name = "WebAccountInfoDialog";
         StartPosition = FormStartPosition.CenterScreen;
         BorderPanel.ResumeLayout(false);
         ContentPanel.ResumeLayout(false);
         ResumeLayout(false);
     }
+
     #endregion
 
-    private GradientPanel BorderPanel;
-    private GradientPanel ContentPanel;
-    private TemplatedButton CopyPasswordButton;
-    private TemplatedButton ShowPasswordButton;
-    private TemplatedButton CopyUserIdButton;
-    private TemplatedButton ShowUserIdButton;
-    private TemplatedButton CopyUrlButton;
-    private AdvancedLabel PasswordLabel;
-    private AdvancedLabel PasswordTitleLabel;
-    private AdvancedLabel UserIdLabel;
-    private AdvancedLabel UserIdTitleLabel;
-    private AdvancedLabel AddressLabel;
-    private SectionTitleHeader Header;
-    private AdvancedLabel AddressTitleLabel;
-    private TemplatedButton CloseButton;
+    private Intelligence.Shared.UI.GradientPanel BorderPanel;
+    private Intelligence.Shared.UI.GradientPanel ContentPanel;
+    private Intelligence.Shared.UI.TemplatedButton CopyPasswordButton;
+    private Intelligence.Shared.UI.TemplatedButton ShowPasswordButton;
+    private Intelligence.Shared.UI.TemplatedButton CopyUserIdButton;
+    private Intelligence.Shared.UI.TemplatedButton ShowUserIdButton;
+    private Intelligence.Shared.UI.TemplatedButton CopyUrlButton;
+    private Intelligence.Shared.UI.AdvancedLabel PasswordLabel;
+    private Intelligence.Shared.UI.AdvancedLabel PasswordTitleLabel;
+    private Intelligence.Shared.UI.AdvancedLabel UserIdLabel;
+    private Intelligence.Shared.UI.AdvancedLabel UserIdTitleLabel;
+    private Intelligence.Shared.UI.AdvancedLabel AddressLabel;
+    private Intelligence.Shared.UI.SectionTitleHeader Header;
+    private Intelligence.Shared.UI.AdvancedLabel AddressTitleLabel;
+    private Intelligence.Shared.UI.TemplatedButton CloseButton;
     private ToolTip ttp;
 
 }

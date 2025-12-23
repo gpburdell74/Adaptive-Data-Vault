@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "+tuQx+DxZ2s=",
+  "success": true,
+  "projectFilePath": "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Adaptive.Data.Vault.DataAccess.Tests\\Adaptive.Data.Vault.DataAccess.Tests.csproj",
+  "expectedPackageFiles": [
+    "D:\\NuGet\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
+    "D:\\NuGet\\microsoft.codecoverage\\17.14.1\\microsoft.codecoverage.17.14.1.nupkg.sha512",
+    "D:\\NuGet\\microsoft.net.test.sdk\\17.14.1\\microsoft.net.test.sdk.17.14.1.nupkg.sha512",
+    "D:\\NuGet\\microsoft.testplatform.objectmodel\\17.14.1\\microsoft.testplatform.objectmodel.17.14.1.nupkg.sha512",
+    "D:\\NuGet\\microsoft.testplatform.testhost\\17.14.1\\microsoft.testplatform.testhost.17.14.1.nupkg.sha512",
+    "D:\\NuGet\\microsoft.win32.systemevents\\9.0.10\\microsoft.win32.systemevents.9.0.10.nupkg.sha512",
+    "D:\\NuGet\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "D:\\NuGet\\sam.jones.adaptive.intelligence.shared\\0.92.100.1\\sam.jones.adaptive.intelligence.shared.0.92.100.1.nupkg.sha512",
+    "D:\\NuGet\\system.codedom\\9.0.10\\system.codedom.9.0.10.nupkg.sha512",
+    "D:\\NuGet\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
+    "D:\\NuGet\\system.drawing.common\\9.0.10\\system.drawing.common.9.0.10.nupkg.sha512",
+    "D:\\NuGet\\system.reflection.metadata\\8.0.0\\system.reflection.metadata.8.0.0.nupkg.sha512",
+    "D:\\NuGet\\xunit\\2.9.3\\xunit.2.9.3.nupkg.sha512",
+    "D:\\NuGet\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "D:\\NuGet\\xunit.analyzers\\1.18.0\\xunit.analyzers.1.18.0.nupkg.sha512",
+    "D:\\NuGet\\xunit.assert\\2.9.3\\xunit.assert.2.9.3.nupkg.sha512",
+    "D:\\NuGet\\xunit.core\\2.9.3\\xunit.core.2.9.3.nupkg.sha512",
+    "D:\\NuGet\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512",
+    "D:\\NuGet\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512",
+    "D:\\NuGet\\xunit.runner.visualstudio\\3.1.4\\xunit.runner.visualstudio.3.1.4.nupkg.sha512"
+  ],
+  "logs": []
+}

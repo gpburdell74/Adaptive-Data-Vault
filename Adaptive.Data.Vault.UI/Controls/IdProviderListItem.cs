@@ -6,26 +6,26 @@ using System.ComponentModel;
 namespace Adaptive.Data.Vault.UI;
 
 /// <summary>
-/// Provides the UI to represent a list item in the Identity Providers list.
+/// Provides a control for displaying an identity provider as a line item.
 /// </summary>
-/// <seealso cref="Adaptive.Intelligence.Shared.UI.AdaptiveControlBase" />
+/// <seealso cref="AdaptiveControlBase" />
 public partial class IdProviderListItem : AdaptiveControlBase
 {
     #region Public Events    
     /// <summary>
-    /// Occurs when a category change request is made.
+    /// Occurs when the user clicks the Categorize menu item.
     /// </summary>
     public event EventHandler? CategorizeRequest;
 
     /// <summary>
-    /// Occurs when an item is deleted.
+    /// Occurs when a user attempts to delete an entry.
     /// </summary>
     public event Intelligence.Shared.EventHandler<IdentityProvider>? DeleteRequest;
     #endregion
 
     #region Private Member Declarations
     /// <summary>
-    /// The ID provider instance being displayed.
+    /// The account
     /// </summary>
     private IdentityProvider? _provider;
 
@@ -48,10 +48,9 @@ public partial class IdProviderListItem : AdaptiveControlBase
     }
 
     /// <summary>
-    /// Releases unmanaged and - optionally - managed resources.
+    /// Clean up any resources being used.
     /// </summary>
-    /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources;
-    /// <c>false</c> to release only unmanaged resources.</param>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
     protected override void Dispose(bool disposing)
     {
         if (!IsDisposed && disposing)
@@ -68,19 +67,16 @@ public partial class IdProviderListItem : AdaptiveControlBase
     #region Public Properties
 
     /// <summary>
-    /// Gets or sets the reference to the ID provider record being displayed.
+    /// Gets or sets the reference to the Identity Provider being shown.
     /// </summary>
     /// <value>
-    /// The <see cref="IdentityProvider"/> instance whose content is being displayed.
+    /// The <see cref="IdentityProvider"/> instance.
     /// </value>
-    [Browsable(false)]
-    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false),
+     DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public IdentityProvider? Provider
     {
-        get
-        {
-            return _provider;
-        }
+        get => _provider;
         set
         {
             _provider = value;
@@ -90,14 +86,15 @@ public partial class IdProviderListItem : AdaptiveControlBase
     }
 
     /// <summary>
-    /// Gets a value indicating whether this <see cref="IdProviderListItem"/> is selected.
+    /// Gets a value indicating whether this <see cref="IdentityProviderListItem"/> is selected.
     /// </summary>
     /// <value>
-    ///   <c>true</c> if the current item is marked as selected; otherwise, <c>false</c>.
+    ///   <c>true</c> if selected; otherwise, <c>false</c>.
     /// </value>
-    [Browsable(false)]
-    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false),
+     DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public bool Selected => _selected;
+
     #endregion
 
     #region Protected Method Overrides    
@@ -109,16 +106,23 @@ public partial class IdProviderListItem : AdaptiveControlBase
     /// </remarks>
     protected override void AssignEventHandlers()
     {
-        base.Click += HandleToggleSelection;
+        // General
+        Click += HandleToggleSelection;
         SelectionIndicator.Click += HandleToggleSelection;
+
+        // Labels.
         UrlLabel.Click += HandleUrlLabelClick;
         NameLabel.Click += HandleToggleSelection;
         UrlLabel.Click += HandleToggleSelection;
+
+        // Menu.
         ContextMenuNew.Click += HandleNewClicked;
         ContextMenuEdit.Click += HandleEditClicked;
         ContextMenuDelete.Click += HandleDeleteClicked;
         ContextMenuCategorize.Click += HandleCategorizeClicked;
         ContextMenuProperties.Click += HandleUserClicked;
+
+        // Buttons.
         UserInfoButton.Click += HandleUserClicked;
         EditButton.Click += HandleEditClicked;
         DeleteButton.Click += HandleDeleteClicked;
@@ -133,16 +137,23 @@ public partial class IdProviderListItem : AdaptiveControlBase
     /// </remarks>
     protected override void RemoveEventHandlers()
     {
-        base.Click -= HandleToggleSelection;
+        // General
+        Click -= HandleToggleSelection;
         SelectionIndicator.Click -= HandleToggleSelection;
+
+        // Labels.
         UrlLabel.Click -= HandleUrlLabelClick;
         NameLabel.Click -= HandleToggleSelection;
         UrlLabel.Click -= HandleToggleSelection;
+
+        // Menu.
         ContextMenuNew.Click -= HandleNewClicked;
         ContextMenuEdit.Click -= HandleEditClicked;
         ContextMenuDelete.Click -= HandleDeleteClicked;
         ContextMenuCategorize.Click -= HandleCategorizeClicked;
         ContextMenuProperties.Click -= HandleUserClicked;
+
+        // Buttons.
         UserInfoButton.Click -= HandleUserClicked;
         EditButton.Click -= HandleEditClicked;
         DeleteButton.Click -= HandleDeleteClicked;
@@ -189,7 +200,7 @@ public partial class IdProviderListItem : AdaptiveControlBase
     /// current conditions.
     /// </summary>
     /// <remarks>
-    /// This is called by <see cref="M:Adaptive.Intelligence.Shared.UI.AdaptiveControlBase.SetState" /> after <see cref="M:Adaptive.Intelligence.Shared.UI.AdaptiveControlBase.SetSecurityState" /> is called.
+    /// This is called by <see cref="SetState" /> after <see cref="SetSecurityState" /> is called.
     /// </remarks>
     protected override void SetDisplayState()
     {
@@ -201,24 +212,28 @@ public partial class IdProviderListItem : AdaptiveControlBase
     /// <summary>
     /// Raises the <see cref="E:CategorizeRequest" /> event.
     /// </summary>
-    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+    /// <returns></returns>
     private void OnCategorizeRequest(EventArgs e)
     {
-        ContinueInMainThread(delegate
+        ContinueInMainThread(() =>
         {
-            this.CategorizeRequest?.Invoke(this, e);
+            CategorizeRequest?.Invoke(this, e);
         });
     }
 
     /// <summary>
-    /// Raises the <see cref="E:DeleteRequest" /> event.
+    /// Raises the <see cref="DeleteRequest" /> event.
     /// </summary>
-    /// <param name="evArgs">The <see cref="EventArgs{IdentityProvider}"/> instance containing the event data.</param>
+    /// <param name="evArgs">
+    /// The <see cref="EventArgs{T}"/> of <see cref="IdentityProvider"/> instance containing the 
+    /// reference to the <see cref="IdentityProvider"/> entry to be deleted.
+    /// </param>
     private void OnDeleteRequest(EventArgs<IdentityProvider> evArgs)
     {
-        ContinueInMainThread(delegate
+        ContinueInMainThread(() =>
         {
-            this.DeleteRequest?.Invoke(this, evArgs);
+            DeleteRequest?.Invoke(this, evArgs);
         });
     }
     #endregion
@@ -233,57 +248,67 @@ public partial class IdProviderListItem : AdaptiveControlBase
     private void HandleUrlLabelClick(object? sender, EventArgs e)
     {
         SetPreLoadState();
+
         OSUtilities.StartBrowser(_provider?.Url ?? string.Empty);
+
         SetPostLoadState();
         SetState();
     }
 
     /// <summary>
-    /// Handles the event when the User Info button is clicked.
+    /// Handles the event when the user info button is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleUserClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-        IdentityProviderInfoDialog identityProviderInfoDialog = new IdentityProviderInfoDialog();
-        identityProviderInfoDialog.IdProvider = _provider;
-        identityProviderInfoDialog.ShowDialog();
-        identityProviderInfoDialog.Dispose();
+
+        IdentityProviderInfoDialog dialog = new IdentityProviderInfoDialog();
+        dialog.IdProvider = _provider;
+        dialog.ShowDialog();
+
+        dialog.Dispose();
+
         SetPostLoadState();
         SetState();
     }
 
     /// <summary>
-    /// Handles the event when the New button is clicked.
+    /// Handles the event when the Context Menu New Item is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleNewClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-        AddEditIdentityProviderDialog addEditIdentityProviderDialog = new AddEditIdentityProviderDialog();
-        DialogResult dialogResult = addEditIdentityProviderDialog.ShowDialog();
-        if (dialogResult == DialogResult.OK && base.Parent != null)
+
+        AddEditIdentityProviderDialog dialog = new AddEditIdentityProviderDialog();
+        DialogResult result = dialog.ShowDialog();
+
+        if (result == DialogResult.OK)
         {
-            ((IdentityProviderListControl)base.Parent).AddNewItem();
+            if (Parent != null)
+                ((IdentityProviderListControl)Parent).AddNewItem();
         }
+
         SetPostLoadState();
         SetState();
     }
 
     /// <summary>
-    /// Handles the event when the Edit button is clicked.
+    /// Handles the event when the edit button is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleEditClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-        AddEditIdentityProviderDialog addEditIdentityProviderDialog = new AddEditIdentityProviderDialog();
-        addEditIdentityProviderDialog.IdProvider = _provider;
-        DialogResult dialogResult = addEditIdentityProviderDialog.ShowDialog();
-        if (dialogResult == DialogResult.OK)
+
+        AddEditIdentityProviderDialog dialog = new AddEditIdentityProviderDialog();
+        dialog.IdProvider = _provider;
+        DialogResult result = dialog.ShowDialog();
+        if (result == DialogResult.OK)
         {
             SetControlValues();
             OnContentChanged(EventArgs.Empty);
@@ -293,16 +318,23 @@ public partial class IdProviderListItem : AdaptiveControlBase
     }
 
     /// <summary>
-    /// Handles the event when the Delete button is clicked.
+    /// Handles the event when the delete button is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleDeleteClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-        if (_provider != null && GetUserConfirmation("Delete This Entry?", "Are you sure you want to delete the entry for: " + _provider.Name + "?  This action cannot be undone."))
+
+        if (_provider != null)
+        {
+            bool canDelete = GetUserConfirmation("Delete This Entry?",
+                $"Are you sure you want to delete the entry for: {_provider.Name}?  This action cannot be undone.");
+
+            if (canDelete)
         {
             OnDeleteRequest(new EventArgs<IdentityProvider>(_provider));
+        }
         }
         SetPostLoadState();
         SetState();
@@ -316,12 +348,14 @@ public partial class IdProviderListItem : AdaptiveControlBase
     private void HandleCategorizeClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
+
         OnCategorizeRequest(e);
+
         SetPostLoadState();
     }
 
     /// <summary>
-    /// Handles the toggle selection event.
+    /// Handles the event when the control is clicked to toggle a selected / not selected status.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
@@ -336,7 +370,7 @@ public partial class IdProviderListItem : AdaptiveControlBase
 
     #region Private Methods / Functions
     /// <summary>
-    /// Sets the control content from the underlying data.
+    /// Sets the control values based on the business object.
     /// </summary>
     private void SetControlValues()
     {
@@ -348,4 +382,5 @@ public partial class IdProviderListItem : AdaptiveControlBase
         }
     }
     #endregion
+
 }

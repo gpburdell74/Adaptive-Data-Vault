@@ -69,7 +69,7 @@ public partial class LoginDialog : AdaptiveDialogBase
         }
         set
         {
-            PasswordText.Text = value.ToString();
+            PinText.Text = value.ToString();
             Invalidate();
         }
     }

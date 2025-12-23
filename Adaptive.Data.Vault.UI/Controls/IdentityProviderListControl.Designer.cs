@@ -133,3 +133,5 @@ partial class IdentityProviderListControl
     private GradientPanel ContainerPanel;
     private ToolTip ttp;
 }
+
+

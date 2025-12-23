@@ -38,8 +38,14 @@ partial class WebAccountInfoDialog
         // 
         // ContainerPanel
         // 
-        ContainerPanel.Controls.Add(ContentPanel);
-        ContainerPanel.Size = new Size(644, 260);
+        BorderPanel.Controls.Add(ContentPanel);
+        BorderPanel.Dock = DockStyle.Fill;
+        BorderPanel.Location = new Point(0, 0);
+        BorderPanel.Name = "BorderPanel";
+        BorderPanel.Padding = new Padding(5);
+        BorderPanel.Size = new Size(587, 248);
+        BorderPanel.TabIndex = 0;
+        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         // 
         // AddressLabel
         // 
@@ -54,6 +60,18 @@ partial class WebAccountInfoDialog
         AddressLabel.Text = "https://samjones.azurewebsites.net/";
         AddressLabel.TextAlign = ContentAlignment.MiddleLeft;
         ttp.SetToolTip(AddressLabel, "Click here to open the website.");
+        // 
+        // CloseButton
+        // 
+        CloseButton.Checked = false;
+        CloseButton.Location = new Point(485, 187);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(80, 40);
+        CloseButton.TabIndex = 12;
+        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
+        CloseButton.Text = "Close";
+        ttp.SetToolTip(CloseButton, "Close this window.");
+        CloseButton.UseVisualStyleBackColor = true;
         // 
         // CopyPasswordButton
         // 
@@ -83,7 +101,7 @@ partial class WebAccountInfoDialog
         CopyUserIdButton.Location = new Point(586, 86);
         CopyUserIdButton.Name = "CopyUserIdButton";
         CopyUserIdButton.Size = new Size(40, 40);
-        CopyUserIdButton.TabIndex = 7;
+        CopyUserIdButton.TabIndex = 9;
         CopyUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
         ttp.SetToolTip(CopyUserIdButton, "Copy the User ID / Login Name to the clipboard.");
         CopyUserIdButton.UseVisualStyleBackColor = true;
@@ -94,7 +112,7 @@ partial class WebAccountInfoDialog
         ShowUserIdButton.Location = new Point(540, 86);
         ShowUserIdButton.Name = "ShowUserIdButton";
         ShowUserIdButton.Size = new Size(40, 40);
-        ShowUserIdButton.TabIndex = 6;
+        ShowUserIdButton.TabIndex = 8;
         ShowUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
         ttp.SetToolTip(ShowUserIdButton, "Show or Hide the User Id.");
         ShowUserIdButton.UseVisualStyleBackColor = true;
@@ -105,7 +123,7 @@ partial class WebAccountInfoDialog
         CopyUrlButton.Location = new Point(540, 42);
         CopyUrlButton.Name = "CopyUrlButton";
         CopyUrlButton.Size = new Size(40, 40);
-        CopyUrlButton.TabIndex = 3;
+        CopyUrlButton.TabIndex = 7;
         CopyUrlButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
         ttp.SetToolTip(CopyUrlButton, "Copy this URL to the clipboard.");
         CopyUrlButton.UseVisualStyleBackColor = true;

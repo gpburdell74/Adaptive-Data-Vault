@@ -9,6 +9,7 @@ partial class IdProviderListItem
     /// </summary>
     private System.ComponentModel.IContainer components;
 
+
     #region Component Designer generated code
 
     /// <summary> 
@@ -18,6 +19,7 @@ partial class IdProviderListItem
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdProviderListItem));
         ContainerPanel = new GradientPanel();
         ContextMenu = new ContextMenuStrip(components);
         ContextMenuNew = new ToolStripMenuItem();
@@ -44,7 +46,7 @@ partial class IdProviderListItem
         ContextMenu.SuspendLayout();
         NamePanel.SuspendLayout();
         ButtonsPanel.SuspendLayout();
-        this.SuspendLayout();
+        SuspendLayout();
         // 
         // ContainerPanel
         // 
@@ -59,62 +61,62 @@ partial class IdProviderListItem
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(440, 54);
         ContainerPanel.TabIndex = 0;
-        ContainerPanel.TemplateFile = null;
+        ContainerPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ControlBackground.template";
         // 
         // ContextMenu
         // 
         ContextMenu.Items.AddRange(new ToolStripItem[] { ContextMenuNew, ContextMenuEdit, ContextMenuDelete, ContextMenuDividerA, ContextMenuCategorize, ContextMenuDividerB, ContextMenuProperties });
         ContextMenu.Name = "ContextMenu";
         ContextMenu.ShowCheckMargin = true;
-        ContextMenu.Size = new Size(198, 126);
+        ContextMenu.Size = new Size(203, 148);
         // 
         // ContextMenuNew
         // 
-        ContextMenuNew.Image = Adaptive.Data.Vault.UI.Properties.Resources.Add16;
+        ContextMenuNew.Image = Properties.Resources.Add_16x16;
         ContextMenuNew.Name = "ContextMenuNew";
-        ContextMenuNew.Size = new Size(197, 22);
+        ContextMenuNew.Size = new Size(202, 22);
         ContextMenuNew.Text = "New...";
         ContextMenuNew.ToolTipText = "Create a new Web Account entry...";
         // 
         // ContextMenuEdit
         // 
-        ContextMenuEdit.Image = Adaptive.Data.Vault.UI.Properties.Resources.Edit_16x16;
+        ContextMenuEdit.Image = Properties.Resources.Edit_16x16;
         ContextMenuEdit.Name = "ContextMenuEdit";
-        ContextMenuEdit.Size = new Size(197, 22);
+        ContextMenuEdit.Size = new Size(202, 22);
         ContextMenuEdit.Text = "Edit...";
         ContextMenuEdit.ToolTipText = "Edit this Account information.";
         // 
         // ContextMenuDelete
         // 
-        ContextMenuDelete.Image = Adaptive.Data.Vault.UI.Properties.Resources.Delete_16x16;
+        ContextMenuDelete.Image = Properties.Resources.Delete_16x16;
         ContextMenuDelete.Name = "ContextMenuDelete";
-        ContextMenuDelete.Size = new Size(197, 22);
+        ContextMenuDelete.Size = new Size(202, 22);
         ContextMenuDelete.Text = "Delete";
         ContextMenuDelete.ToolTipText = "Delete this account.";
         // 
         // ContextMenuDividerA
         // 
         ContextMenuDividerA.Name = "ContextMenuDividerA";
-        ContextMenuDividerA.Size = new Size(194, 6);
+        ContextMenuDividerA.Size = new Size(199, 6);
         // 
         // ContextMenuCategorize
         // 
-        ContextMenuCategorize.Image = Adaptive.Data.Vault.UI.Properties.Resources.Delete_2_16x16;
+        ContextMenuCategorize.Image = Properties.Resources.Delete_2_16x16;
         ContextMenuCategorize.Name = "ContextMenuCategorize";
-        ContextMenuCategorize.Size = new Size(197, 22);
+        ContextMenuCategorize.Size = new Size(202, 22);
         ContextMenuCategorize.Text = "Change Category...";
         ContextMenuCategorize.ToolTipText = "Change the category this item belongs to.";
         // 
         // ContextMenuDividerB
         // 
         ContextMenuDividerB.Name = "ContextMenuDividerB";
-        ContextMenuDividerB.Size = new Size(194, 6);
+        ContextMenuDividerB.Size = new Size(199, 6);
         // 
         // ContextMenuProperties
         // 
         ContextMenuProperties.Name = "ContextMenuProperties";
         ContextMenuProperties.ShortcutKeys = Keys.F5;
-        ContextMenuProperties.Size = new Size(197, 22);
+        ContextMenuProperties.Size = new Size(202, 22);
         ContextMenuProperties.Text = "Properties";
         ContextMenuProperties.ToolTipText = "Show the detail information for this entry.";
         // 
@@ -124,7 +126,7 @@ partial class IdProviderListItem
         DividerLine.BevelTopColor = SystemColors.ControlDark;
         DividerLine.Direction = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
         DividerLine.Dock = DockStyle.Bottom;
-        DividerLine.EndColor = Color.FromArgb((int)(byte)136, (int)(byte)181, (int)(byte)255);
+        DividerLine.EndColor = Color.FromArgb(136, 181, 255);
         DividerLine.LineWidth = 2;
         DividerLine.Location = new Point(5, 52);
         DividerLine.Mode = LineControlMode.Line;
@@ -140,7 +142,7 @@ partial class IdProviderListItem
         UrlLabel.ContextMenuStrip = ContextMenu;
         UrlLabel.Cursor = Cursors.Hand;
         UrlLabel.Dock = DockStyle.Top;
-        UrlLabel.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, (byte)0);
+        UrlLabel.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
         UrlLabel.ForeColor = Color.SteelBlue;
         UrlLabel.Location = new Point(5, 34);
         UrlLabel.Name = "UrlLabel";
@@ -165,7 +167,7 @@ partial class IdProviderListItem
         // 
         DescriptionLabel.BackColor = Color.Transparent;
         DescriptionLabel.Dock = DockStyle.Top;
-        DescriptionLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+        DescriptionLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
         DescriptionLabel.Location = new Point(0, 20);
         DescriptionLabel.Name = "DescriptionLabel";
         DescriptionLabel.Size = new Size(281, 15);
@@ -179,7 +181,7 @@ partial class IdProviderListItem
         NameLabel.BackColor = Color.Transparent;
         NameLabel.ContextMenuStrip = ContextMenu;
         NameLabel.Dock = DockStyle.Top;
-        NameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+        NameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         NameLabel.Location = new Point(0, 0);
         NameLabel.Name = "NameLabel";
         NameLabel.Size = new Size(281, 20);
@@ -214,8 +216,7 @@ partial class IdProviderListItem
         UserInfoButton.Name = "UserInfoButton";
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = null;
-        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo; 
+        UserInfoButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV User Info Button.template";
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -237,8 +238,7 @@ partial class IdProviderListItem
         EditButton.Name = "EditButton";
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.TemplateFile = null;
-        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
+        EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Edit User Template.template";
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -255,12 +255,12 @@ partial class IdProviderListItem
         // 
         DeleteButton.Checked = false;
         DeleteButton.Dock = DockStyle.Right;
+        DeleteButton.Image = Properties.Resources.Delete_2_16x16;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateFile = null;
-        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
+        DeleteButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Delete Template.template";
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 
@@ -274,18 +274,18 @@ partial class IdProviderListItem
         SelectionIndicator.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         SelectionIndicator.Visible = false;
         // 
-        // IdProviderListItem
+        // WebAccountListItem
         // 
-        this.AutoScaleDimensions = new SizeF(96F, 96F);
-        this.Controls.Add(ContainerPanel);
-        this.Margin = new Padding(3);
-        this.Name = "IdProviderListItem";
-        this.Size = new Size(440, 54);
+        AutoScaleDimensions = new SizeF(96F, 96F);
+        Controls.Add(ContainerPanel);
+        Margin = new Padding(3);
+        Name = "IdProviderListItem";
+        Size = new Size(440, 54);
         ContainerPanel.ResumeLayout(false);
         ContextMenu.ResumeLayout(false);
         NamePanel.ResumeLayout(false);
         ButtonsPanel.ResumeLayout(false);
-        this.ResumeLayout(false);
+        ResumeLayout(false);
     }
 
     #endregion
@@ -293,12 +293,12 @@ partial class IdProviderListItem
     private GradientPanel ContainerPanel;
     private GradientPanel ButtonsPanel;
     private Panel NamePanel;
-    private AdvancedLabel NameLabel;
-    private AdvancedLabel DescriptionLabel;
-    private AdvancedLabel UrlLabel;
-    private TemplatedButton EditButton;
-    private TemplatedButton UserInfoButton;
-    private TemplatedButton DeleteButton;
+    private Intelligence.Shared.UI.AdvancedLabel NameLabel;
+    private Intelligence.Shared.UI.AdvancedLabel DescriptionLabel;
+    private Intelligence.Shared.UI.AdvancedLabel UrlLabel;
+    private Intelligence.Shared.UI.TemplatedButton EditButton;
+    private Intelligence.Shared.UI.TemplatedButton UserInfoButton;
+    private Intelligence.Shared.UI.TemplatedButton DeleteButton;
     private Panel ButtonDividerB;
     private Panel ButtonDividerA;
     private ToolTip ttp;
@@ -312,4 +312,5 @@ partial class IdProviderListItem
     private ToolStripMenuItem ContextMenuCategorize;
     private ToolStripSeparator ContextMenuDividerB;
     private ToolStripMenuItem ContextMenuProperties;
+
 }

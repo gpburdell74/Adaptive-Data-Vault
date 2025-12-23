@@ -68,6 +68,10 @@ partial class MainDialog
         CatTree = new CategoriesTreeControl();
         Data = new CategorizedItemsContainerControl();
         ttp = new ToolTip(components);
+        FileMenuRecentFiles = new ToolStripMenuItem();
+        FileMenuMruDivider = new ToolStripSeparator();
+        MruDivider = new ToolStripSeparator();
+        MruMenuClear = new ToolStripMenuItem();
         MainMenu.SuspendLayout();
         MainStatus.SuspendLayout();
         MainToolbar.SuspendLayout();
@@ -444,6 +448,29 @@ partial class MainDialog
         Data.Size = new Size(617, 490);
         Data.TabIndex = 0;
         Data.Visible = false;
+        // 
+        // FileMenuRecentFiles
+        // 
+        FileMenuRecentFiles.DropDownItems.AddRange(new ToolStripItem[] { MruDivider, MruMenuClear });
+        FileMenuRecentFiles.Name = "FileMenuRecentFiles";
+        FileMenuRecentFiles.Size = new Size(216, 22);
+        FileMenuRecentFiles.Text = "Recent";
+        // 
+        // FileMenuMruDivider
+        // 
+        FileMenuMruDivider.Name = "FileMenuMruDivider";
+        FileMenuMruDivider.Size = new Size(213, 6);
+        // 
+        // MruDivider
+        // 
+        MruDivider.Name = "MruDivider";
+        MruDivider.Size = new Size(177, 6);
+        // 
+        // MruMenuClear
+        // 
+        MruMenuClear.Name = "MruMenuClear";
+        MruMenuClear.Size = new Size(180, 22);
+        MruMenuClear.Text = "Clear Recent List";
         // 
         // MainDialog
         // 

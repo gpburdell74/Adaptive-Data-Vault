@@ -39,6 +39,19 @@ partial class AddEditWebAccountDialog
         // 
         ErrorProvider.ContainerControl = this;
         // 
+        // BorderPanel
+        // 
+        BorderPanel.Controls.Add(SaveCancel);
+        BorderPanel.Controls.Add(WebEdit);
+        BorderPanel.Controls.Add(DialogHeader);
+        BorderPanel.Dock = DockStyle.Fill;
+        BorderPanel.Location = new Point(0, 0);
+        BorderPanel.Name = "BorderPanel";
+        BorderPanel.Padding = new Padding(5);
+        BorderPanel.Size = new Size(800, 378);
+        BorderPanel.TabIndex = 2;
+        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        // 
         // DialogHeader
         // 
         DialogHeader.Dock = DockStyle.Top;

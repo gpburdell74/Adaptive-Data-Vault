@@ -261,6 +261,26 @@ namespace Adaptive.Data.Vault.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] EULA {
+            get {
+                object obj = ResourceManager.GetObject("EULA", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Misc_194 {
+            get {
+                object obj = ResourceManager.GetObject("Misc 194", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Save16Blue {
@@ -283,7 +303,17 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SecureErase {
+        internal static System.Drawing.Bitmap Password_Lock {
+            get {
+                object obj = ResourceManager.GetObject("Password Lock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_16x16 {
             get {
                 object obj = ResourceManager.GetObject("SecureErase", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -303,9 +333,39 @@ namespace Adaptive.Data.Vault.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings16 {
+        internal static System.Drawing.Bitmap Secure_Email_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Secure Email 16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Settings_32 {
+            get {
+                object obj = ResourceManager.GetObject("Settings 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Settings_Flat_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Settings16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_Info_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("User Info 32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

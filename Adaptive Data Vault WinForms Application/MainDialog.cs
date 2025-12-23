@@ -160,6 +160,15 @@ public partial class MainDialog : AdaptiveDialogBase
         Data.ContentChanged -= HandleDataContentChanged;
     }
 
+    protected override void InitializeDataContent()
+    {
+        if (!_mru.EulaAccepted)
+        {
+            EulaDialog dialog = new EulaDialog();
+            dialog.ShowDialog();
+
+        }
+    }
     /// <summary>
     /// Initializes the control and dialog state according to the form data.
     /// </summary>
@@ -223,6 +232,7 @@ public partial class MainDialog : AdaptiveDialogBase
     protected override void SetDisplayState()
     {
         bool isOpen = _manager != null;
+        bool hasMru = _mru.Count > 0;
 
         bool hasMru = _mru != null && _mru.Count > 0;
 

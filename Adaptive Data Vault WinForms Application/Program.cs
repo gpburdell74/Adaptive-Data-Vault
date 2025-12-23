@@ -8,10 +8,7 @@ internal static class Program
     [STAThread]
     static void Main()
     {
-        // re-create.
-        //MasterTest t = new MasterTest();
-        //t.ExecuteMasterTest();
-        
+
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
@@ -19,6 +16,5 @@ internal static class Program
         MainDialog dialog = new MainDialog();
         Application.Run(dialog);
         dialog.Dispose();
-        dialog = null;
     }
 }
