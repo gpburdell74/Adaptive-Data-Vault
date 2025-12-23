@@ -68,7 +68,7 @@ partial class SecureNoteListItem
         // 
         // ContextMenuNew
         // 
-        ContextMenuNew.Image = Properties.Resources.Add16x16;
+        ContextMenuNew.Image = Properties.Resources.Add16;
         ContextMenuNew.Name = "ContextMenuNew";
         ContextMenuNew.Size = new Size(197, 22);
         ContextMenuNew.Text = "New...";
@@ -191,12 +191,12 @@ partial class SecureNoteListItem
         // 
         UserInfoButton.Checked = false;
         UserInfoButton.Dock = DockStyle.Right;
+        UserInfoButton.Image = Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
-        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = null;
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -213,12 +213,12 @@ partial class SecureNoteListItem
         // 
         EditButton.Checked = false;
         EditButton.Dock = DockStyle.Right;
+        EditButton.Image = Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
-        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.TemplateFile = null;
+        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -235,13 +235,11 @@ partial class SecureNoteListItem
         // 
         DeleteButton.Checked = false;
         DeleteButton.Dock = DockStyle.Right;
-        DeleteButton.Image = Properties.Resources.Delete_2_16x16;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
-        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateDelete;
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateFile = null;
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 

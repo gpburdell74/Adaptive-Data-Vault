@@ -11,7 +11,7 @@
     <ApplicationIcon>ADV.ico</ApplicationIcon>
     <PackageId>Adaptive.Data.Vault.Desktop</PackageId>
     <Title>Adaptive Data Vault</Title>
-	<Version>0.92.100.0001</Version>
+    <Version>0.93.100.0001</Version>
     <Authors>Sam Jones</Authors>
     <Company>Adaptive Intelligence</Company>
     <Product>Adaptive Data Vault</Product>
@@ -24,11 +24,41 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="ADV.ico" />
+    <None Remove="Resources\ADV Button.template" />
+    <None Remove="Resources\ADV Cancel  Template.template" />
+    <None Remove="Resources\ADV Copy Button Template.template" />
+    <None Remove="Resources\ADV Delete Template.template" />
+    <None Remove="Resources\ADV Edit User Template.template" />
+    <None Remove="Resources\ADV ShowHide Template.template" />
+    <None Remove="Resources\ADV User Info Button.template" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Framework\Shared Code Library\Adaptive.Intelligence.Shared\Adaptive.Intelligence.Shared.csproj" />
+    <Content Include="ADV.ico" />
+    <Content Include="Resources\ADV Button.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Cancel  Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Copy Button Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Delete Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Edit User Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV ShowHide Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV User Info Button.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI\Adaptive.Intelligence.Shared.UI.csproj" />
     <ProjectReference Include="..\Adaptive.Data.Vault.DataAccess\Adaptive.Data.Vault.DataAccess.csproj" />
     <ProjectReference Include="..\Adaptive.Data.Vault.UI\Adaptive.Data.Vault.UI.csproj" />

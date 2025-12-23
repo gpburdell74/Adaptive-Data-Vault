@@ -9,7 +9,7 @@
     <PackageId>Adaptive.Data.Vault.DataAccess</PackageId>
     <Title>Adaptive Intelligence Data Vault Data Access Library</Title>
     <Description>A .NET Class Library to provide data access capabilities and definitions for the Adaptive Data Vault Application.</Description>
-    <Version>0.92.100.0001</Version>
+	  <Version>0.93.100.0001</Version>
     <Authors>Sam Jones</Authors>
     <Company>Adaptive Intelligence</Company>
     <Product>Adaptive Data Vault</Product>
@@ -29,7 +29,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Framework\Shared Code Library\Adaptive.Intelligence.Shared\Adaptive.Intelligence.Shared.csproj" />
+    <PackageReference Include="Sam.Jones.Adaptive.Intelligence.Shared" Version="0.92.100.1" />
   </ItemGroup>
 
 </Project>

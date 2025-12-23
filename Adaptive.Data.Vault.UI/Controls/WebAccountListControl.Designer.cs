@@ -38,12 +38,13 @@ partial class WebAccountListControl
         // 
         NewAccountButton.Checked = false;
         NewAccountButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        NewAccountButton.Image = Properties.Resources.Add16x16;
+        NewAccountButton.Image = Properties.Resources.Add16;
         NewAccountButton.ImageAlign = ContentAlignment.MiddleLeft;
         NewAccountButton.Location = new Point(5, 5);
         NewAccountButton.Name = "NewAccountButton";
         NewAccountButton.Size = new Size(247, 32);
         NewAccountButton.TabIndex = 0;
+        NewAccountButton.TemplateFile = null;
         NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         NewAccountButton.Text = "Create New Account Entry...";
         NewAccountButton.TextImageRelation = TextImageRelation.ImageBeforeText;

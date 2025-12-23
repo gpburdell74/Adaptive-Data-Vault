@@ -49,7 +49,7 @@ partial class LoginDialog
         DialogHeader.Dock = DockStyle.Top;
         DialogHeader.Location = new Point(0, 0);
         DialogHeader.Name = "DialogHeader";
-        DialogHeader.Size = new Size(460, 77);
+        DialogHeader.Size = new Size(448, 77);
         DialogHeader.TabIndex = 0;
         DialogHeader.TabStop = false;
         DialogHeader.TitleText = "ADAPTIVE DATA VAULT";
@@ -122,7 +122,7 @@ partial class LoginDialog
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(100, 32);
         CloseButton.TabIndex = 1;
-        CloseButton.TemplateSource = Properties.Resources.ButtonTemplateCancel;
+        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
         CloseButton.Text = "Cancel";
         CloseButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(CloseButton, "Click here to Cancel.");
@@ -137,7 +137,7 @@ partial class LoginDialog
         OkButton.Name = "OkButton";
         OkButton.Size = new Size(100, 32);
         OkButton.TabIndex = 0;
-        OkButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+        OkButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         OkButton.Text = "OK";
         OkButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(OkButton, "Click here to log in to the file and load the contents.");
@@ -177,9 +177,9 @@ partial class LoginDialog
         ButtonPanel.Controls.Add(OkButton);
         ButtonPanel.Controls.Add(DividerLine);
         ButtonPanel.Dock = DockStyle.Bottom;
-        ButtonPanel.Location = new Point(0, 305);
+        ButtonPanel.Location = new Point(0, 302);
         ButtonPanel.Name = "ButtonPanel";
-        ButtonPanel.Size = new Size(460, 51);
+        ButtonPanel.Size = new Size(448, 51);
         ButtonPanel.TabIndex = 7;
         // 
         // DividerLine
@@ -194,7 +194,7 @@ partial class LoginDialog
         DividerLine.Mode = LineControlMode.Line;
         DividerLine.Name = "DividerLine";
         DividerLine.Orientation = LineControlOrientation.Horizontal;
-        DividerLine.Size = new Size(460, 3);
+        DividerLine.Size = new Size(448, 3);
         DividerLine.StartColor = Color.DodgerBlue;
         DividerLine.TabIndex = 10;
         DividerLine.TabStop = false;
@@ -213,7 +213,7 @@ partial class LoginDialog
         // 
         AutoScaleDimensions = new SizeF(7F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(460, 356);
+        ClientSize = new Size(448, 353);
         ControlBox = false;
         Controls.Add(pictureBox1);
         Controls.Add(PinText);

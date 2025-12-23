@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A96B847AE756488685F91EC97E2606D9"
+        "MsmKey" = "8:_A43535BFF1814AD390C23C3A5BC894E2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -122,6 +122,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A43535BFF1814AD390C23C3A5BC894E2"
+            {
+            "SourcePath" = "8:..\\..\\ADV.ico"
+            "TargetName" = "8:ADV.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_EAF4E3B9F1C54116A1A5F564720D89C6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -188,21 +208,21 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Adaptive Data Vault Installer"
-        "ProductCode" = "8:{8B5C8F8B-896D-4057-952F-509C75C48EF0}"
-        "PackageCode" = "8:{4E82BDCE-8951-4544-B5A1-43C573E63FE8}"
+        "ProductName" = "8:Adaptive Data Vault Installer (64-bit)"
+        "ProductCode" = "8:{00D72849-2FB1-4BF7-B652-0560B4A35F00}"
+        "PackageCode" = "8:{9F82B5B6-9CC9-4285-986F-908D2C5E56B3}"
         "UpgradeCode" = "8:{10C8695A-F338-4511-BCF0-786E320C19BA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:0.92.1001"
+        "InstallAllUsers" = "11:FALSE"
+        "ProductVersion" = "8:0.93.0001"
         "Manufacturer" = "8:Adaptive Intelligence"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://samjones.azurewebsites.net"
         "Title" = "8:Adaptive Data Vault Installer"
-        "Subject" = "8:"
+        "Subject" = "8:Adadptive Data Vault (pre-release Alpha)"
         "ARPCONTACT" = "8:Sam Jones"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Password Management Application"
@@ -310,6 +330,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F2E0C762CBC94FFBB83ADB552C1B5960"
+            {
+            "Name" = "8:Adaptive Data Vault"
+            "Arguments" = "8:"
+            "Description" = "8:The Adaptive Data Vault password manager application from Adaptive Intelligence."
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_1930FEC1B8FD45059674D28E4BAA1222"
+            "Folder" = "8:_10DEF0E5B4E44C90915A1055649DB4E1"
+            "WorkingFolder" = "8:_EAF4E3B9F1C54116A1A5F564720D89C6"
+            "Icon" = "8:_A43535BFF1814AD390C23C3A5BC894E2"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -731,34 +765,6 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:PublishItems"
-            "OutputProjectGuid" = "8:{84835724-FDB9-4EE3-8219-5F1DC8985032}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A96B847AE756488685F91EC97E2606D9"
-            {
-            "SourcePath" = "8:..\\..\\Adaptive Data Vault WinForms Application\\obj\\Release\\net9.0-windows\\Adaptive.Data.Vault.Desktop.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_10DEF0E5B4E44C90915A1055649DB4E1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{84835724-FDB9-4EE3-8219-5F1DC8985032}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"

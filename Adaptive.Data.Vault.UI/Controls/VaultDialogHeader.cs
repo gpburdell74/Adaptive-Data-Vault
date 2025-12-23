@@ -4,15 +4,11 @@ using System.Drawing.Text;
 
 namespace Adaptive.Data.Vault.UI.Controls
 {
-    /// <summary>
-    /// PRovides a UI control to display a consistent header for the application dialogs.
-    /// </summary>
-    /// <seealso cref="System.Windows.Forms.UserControl" />
+    [DesignerCategory("Code")]
     public partial class VaultDialogHeader : UserControl
     {
         #region Private Member Declarations
 
-        private Container? components;
         private Color _startColor = Color.FromArgb(255, 0, 79, 210);
         private Color _endColor = Color.FromArgb(255, 136, 181, 255);
 
@@ -28,28 +24,15 @@ namespace Adaptive.Data.Vault.UI.Controls
         /// </remarks>
         public VaultDialogHeader()
         {
-            components = new Container();
-            InitializeComponent();
-
+            // Set default size.
+            Width = 800;
+            Height = 300;
             SetStyle(ControlStyles.AllPaintingInWmPaint, value: true);
             SetStyle(ControlStyles.DoubleBuffer, value: true);
             SetStyle(ControlStyles.ResizeRedraw, value: true);
             SetStyle(ControlStyles.Selectable, value: false);
             SetStyle(ControlStyles.UserPaint, value: true);
-        }
-        /// <summary>
-        /// Releases the unmanaged resources used by the <see cref="T:System.Windows.Forms.Control" /> and its child controls and optionally releases the managed resources.
-        /// </summary>
-        /// <param name="disposing"><see langword="true" /> to release both managed and unmanaged resources; <see langword="false" /> to release only unmanaged resources.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (!IsDisposed && disposing)
-            {
-                components?.Dispose();
-            }
-
-            components = null;
-            base.Dispose(disposing);
+            UpdateStyles();
         }
         #endregion
 
@@ -105,13 +88,6 @@ namespace Adaptive.Data.Vault.UI.Controls
         #endregion
 
         #region Private Methods / Functions		
-        /// <summary>
-        /// Initializes the component.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            components = new Container();
-        }
         /// <summary>
         /// Draws the initial background.
         /// </summary>

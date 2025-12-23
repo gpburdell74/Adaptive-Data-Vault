@@ -72,7 +72,7 @@ partial class WebAccountListItem
         // 
         // ContextMenuNew
         // 
-        ContextMenuNew.Image = Properties.Resources.Add16x16;
+        ContextMenuNew.Image = Properties.Resources.Add16;
         ContextMenuNew.Name = "ContextMenuNew";
         ContextMenuNew.Size = new Size(197, 22);
         ContextMenuNew.Text = "New...";
@@ -215,10 +215,9 @@ partial class WebAccountListItem
         UserInfoButton.Image = Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
-        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = null;
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -235,6 +234,7 @@ partial class WebAccountListItem
         // 
         EditButton.Checked = false;
         EditButton.Dock = DockStyle.Right;
+        EditButton.Image = Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
         EditButton.Size = new Size(44, 44);
@@ -261,7 +261,7 @@ partial class WebAccountListItem
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateDelete;
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 

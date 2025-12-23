@@ -1,4 +1,5 @@
 using Adaptive.Intelligence.Shared;
+using Adaptive.Intelligence.Shared.Logging;
 using Adaptive.Intelligence.Shared.UI;
 
 namespace Adaptive.Data.Vault.UI;
@@ -79,6 +80,19 @@ public partial class MainDialog : AdaptiveDialogBase
         ToolMenuSecureMessage.Click += HandleToolMenuSecureMessageClicked;
         ToolMenuDecryptMessage.Click += HandleToolMenuDecryptMessageClicked;
         ToolMenuEraseFile.Click += HandleToolMenuEraseFileClicked;
+        ToolMenuEncryptFile.Click += HandleToolMenuEncryptFileClicked;
+        ToolMenuDecryptFile.Click += HandleToolMenuDecryptFileClicked;
+        ToolMenuNumToHex.Click += HandleToolMenuNumtoHexClicked;
+        ToolMenuTextToBase64.Click += HandleToolMenuTextToBase64Clicked;
+        ToolMenuTextToHex.Click += HandleToolMenuTextToHexClicked;
+        ToolMenuBase64ToText.Click += HandleToolMenuBase64ToTextClicked;
+        ToolMenuHexToText.Click += HandleToolMenuHexToTextClicked;
+
+        // Help Menu
+        HelpMenuViewHelp.Click += HandleHelpMenuViewHelpClicked;
+        HelpMenuWhatsNew.Click += HandleHelpMenuWhatsNewClicked;
+        HelpMenuAbout.Click += HandleHelpMenuAboutClicked;
+        HelpMenuDonate.Click += HandleHelpMenuDonateClicked;
 
         // Tool bar
         NewFileButton.Click += HandleFileMenuNewClicked;
@@ -110,10 +124,24 @@ public partial class MainDialog : AdaptiveDialogBase
         FileMenuSaveAs.Click -= HandleFileMenuSaveAsClicked;
         FileMenuExit.Click -= HandleFileMenuExitClicked;
         MruMenuClear.Click -= HandleClearMruClicked;
+
         // Tool Menu
         ToolMenuSecureMessage.Click -= HandleToolMenuSecureMessageClicked;
         ToolMenuDecryptMessage.Click -= HandleToolMenuDecryptMessageClicked;
         ToolMenuEraseFile.Click -= HandleToolMenuEraseFileClicked;
+        ToolMenuEncryptFile.Click -= HandleToolMenuEncryptFileClicked;
+        ToolMenuDecryptFile.Click -= HandleToolMenuDecryptFileClicked;
+        ToolMenuNumToHex.Click -= HandleToolMenuNumtoHexClicked;
+        ToolMenuTextToBase64.Click -= HandleToolMenuTextToBase64Clicked;
+        ToolMenuTextToHex.Click -= HandleToolMenuTextToHexClicked;
+        ToolMenuBase64ToText.Click -= HandleToolMenuBase64ToTextClicked;
+        ToolMenuHexToText.Click -= HandleToolMenuHexToTextClicked;
+
+        // Help Menu
+        HelpMenuViewHelp.Click -= HandleHelpMenuViewHelpClicked;
+        HelpMenuWhatsNew.Click -= HandleHelpMenuWhatsNewClicked;
+        HelpMenuAbout.Click -= HandleHelpMenuAboutClicked;
+        HelpMenuDonate.Click -= HandleHelpMenuDonateClicked;
 
         // Tool bar
         NewFileButton.Click -= HandleFileMenuNewClicked;
@@ -132,13 +160,26 @@ public partial class MainDialog : AdaptiveDialogBase
         Data.ContentChanged -= HandleDataContentChanged;
     }
 
+    /// <summary>
+    /// Initializes the control and dialog state according to the form data.
+    /// </summary>
     protected override void InitializeDataContent()
     {
+        if (_mru == null)
+            _mru = new MruManager();
+
         if (!_mru.EulaAccepted)
         {
             EulaDialog dialog = new EulaDialog();
             dialog.ShowDialog();
 
+            _mru.EulaAccepted = dialog.Checked;
+            dialog.Dispose();
+
+        }
+        if (!_mru.EulaAccepted)
+        {
+            Close();
         }
     }
     /// <summary>
@@ -182,7 +223,8 @@ public partial class MainDialog : AdaptiveDialogBase
     protected override void SetDisplayState()
     {
         bool isOpen = _manager != null;
-        bool hasMru = _mru.Count > 0;
+
+        bool hasMru = _mru != null && _mru.Count > 0;
 
         FileMenuCloseFile.Visible = isOpen;
         FileMenuSave.Visible = isOpen;
@@ -195,7 +237,7 @@ public partial class MainDialog : AdaptiveDialogBase
         CloseFileButton.Visible = isOpen;
         SaveButton.Visible = isOpen;
         SaveAsButton.Visible = isOpen;
-        
+
         MainContainer.Panel1Collapsed = !isOpen;
         CatTree.Visible = isOpen;
         Data.Visible = isOpen;
@@ -347,7 +389,7 @@ public partial class MainDialog : AdaptiveDialogBase
             FileMenuRecentFiles.DropDownItems[0].Click -= HandleMruItemClicked;
             FileMenuRecentFiles.DropDownItems.RemoveAt(0);
         }
-        
+
         SetPostLoadState();
         SetState();
 
@@ -388,7 +430,7 @@ public partial class MainDialog : AdaptiveDialogBase
         SetPostLoadState();
         SetDisplayState();
     }
-    
+
     /// <summary>
     /// Handles the event when the Tool Menu -- Decode Secure Message item is clicked.
     /// </summary>
@@ -428,17 +470,143 @@ public partial class MainDialog : AdaptiveDialogBase
             SetState();
         }
     }
+
+    /// <summary>
+    /// Handles the event when the Tools -> Encrypt File menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuEncryptFileClicked(object? sender, EventArgs e)
+    {
+    }
+
+    /// <summary>
+    /// Handles the event when the Tools -> Decrypt File menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuDecryptFileClicked(object? sender, EventArgs e)
+    {
+    }
+
+    /// <summary>
+    /// Handles the event when the Tools -> Number To Ex File menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuNumtoHexClicked(object? sender, EventArgs e)
+    {
+    }
+
+    /// <summary>
+    /// Handles the event when the Tools -> Text to Base 64 File menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuTextToBase64Clicked(object? sender, EventArgs e)
+{
+}
+
+    /// <summary>
+    /// Handles the event when the Tools -> Text to Hexadecimal menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuTextToHexClicked(object? sender, EventArgs e)
+{
+}
+
+    /// <summary>
+    /// Handles the event when the Tools -> Base-64 to Text menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuBase64ToTextClicked(object? sender, EventArgs e)
+{
+}
+
+    /// <summary>
+    /// Handles the event when the Tools -> Hexadecimal To Text menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuHexToTextClicked(object? sender, EventArgs e)
+    {
+    }
     #endregion
 
-        #region Category Tree    
-        /// <summary>
-        /// Handles the event when a category is created.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="e">
-        /// The <see cref="EventArgs{T}"/> instance containing the <see cref="UserCategory"/>
-        /// instance that was created.
-        /// </param>
+    #region Help Menu
+    /// <summary>
+    /// Handles the event when the Help -> View Help menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void  HandleHelpMenuViewHelpClicked(object? sender, EventArgs e)
+    {
+
+    }
+
+    /// <summary>
+    /// Handles the event when the Help -> Whats New menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void  HandleHelpMenuWhatsNewClicked(object? sender, EventArgs e)
+    {
+        SetPreLoadState();
+        ReleaseNotesDialog dialog = new ReleaseNotesDialog();
+        dialog.ShowDialog();
+        dialog.Dispose();
+        SetPostLoadState();
+        SetState();
+    }
+
+    /// <summary>
+    /// Handles the event when the Help -> About menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleHelpMenuAboutClicked(object? sender, EventArgs e)
+    {
+        SetPreLoadState();
+
+        AboutDialog dialog = new AboutDialog();
+        dialog.ShowDialog();
+        dialog.Dispose();
+        dialog = null;
+
+        SetPostLoadState();
+    }
+
+    /// <summary>
+    /// Handles the event when the Help -> Donate menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void  HandleHelpMenuDonateClicked(object? sender, EventArgs e)
+    {
+        SetPreLoadState();
+        try
+        {
+            System.Diagnostics.Process.Start("explorer.exe","https://www.paypal.com/ncp/payment/FC8VPVRPW66YE");
+        }
+        catch(Exception ex)
+        {
+            ExceptionLog.LogException(ex);
+        }
+        SetPostLoadState();
+    }
+    #endregion
+
+    #region Category Tree    
+    /// <summary>
+    /// Handles the event when a category is created.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">
+    /// The <see cref="EventArgs{T}"/> instance containing the <see cref="UserCategory"/>
+    /// instance that was created.
+    /// </param>
     private void HandleCategoryCreated(object? sender, EventArgs<UserCategory> e)
     {
         if (_manager != null && _manager.Categories != null && e.Data != null)
@@ -563,7 +731,7 @@ public partial class MainDialog : AdaptiveDialogBase
     /// A string containing the user-specified path and file name if successful;
     /// otherwise, returns <b>null</b>.
     /// </returns>
-    private string? GetNewFileName(bool saveAs =false)
+    private string? GetNewFileName(bool saveAs = false)
     {
         string? fileName = null;
 
@@ -717,4 +885,5 @@ public partial class MainDialog : AdaptiveDialogBase
     }
 
     #endregion
+
 }

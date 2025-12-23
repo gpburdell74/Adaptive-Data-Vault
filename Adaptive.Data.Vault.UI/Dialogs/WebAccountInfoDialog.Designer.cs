@@ -60,10 +60,9 @@ partial class WebAccountInfoDialog
         CopyPasswordButton.Checked = false;
         CopyPasswordButton.Location = new Point(586, 132);
         CopyPasswordButton.Name = "CopyPasswordButton";
-        CopyPasswordButton.TemplateSource = Properties.Resources.ButtonTemplateCopy;
         CopyPasswordButton.Size = new Size(40, 40);
         CopyPasswordButton.TabIndex = 11;
-        CopyPasswordButton.TemplateFile = null;
+        CopyPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
         ttp.SetToolTip(CopyPasswordButton, "Copy the password to the clipboard.");
         CopyPasswordButton.UseVisualStyleBackColor = true;
         // 
@@ -72,10 +71,9 @@ partial class WebAccountInfoDialog
         ShowPasswordButton.Checked = false;
         ShowPasswordButton.Location = new Point(540, 132);
         ShowPasswordButton.Name = "ShowPasswordButton";
-        ShowPasswordButton.TemplateSource = Properties.Resources.ButtonTemplateShowHide;
         ShowPasswordButton.Size = new Size(40, 40);
         ShowPasswordButton.TabIndex = 10;
-        ShowPasswordButton.TemplateFile = null;
+        ShowPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
         ttp.SetToolTip(ShowPasswordButton, "Show or Hide the Password.");
         ShowPasswordButton.UseVisualStyleBackColor = true;
         // 
@@ -84,10 +82,9 @@ partial class WebAccountInfoDialog
         CopyUserIdButton.Checked = false;
         CopyUserIdButton.Location = new Point(586, 86);
         CopyUserIdButton.Name = "CopyUserIdButton";
-        CopyUserIdButton.TemplateSource = Properties.Resources.ButtonTemplateCopy;
         CopyUserIdButton.Size = new Size(40, 40);
         CopyUserIdButton.TabIndex = 7;
-        CopyUserIdButton.TemplateFile = null;
+        CopyUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
         ttp.SetToolTip(CopyUserIdButton, "Copy the User ID / Login Name to the clipboard.");
         CopyUserIdButton.UseVisualStyleBackColor = true;
         // 
@@ -96,10 +93,9 @@ partial class WebAccountInfoDialog
         ShowUserIdButton.Checked = false;
         ShowUserIdButton.Location = new Point(540, 86);
         ShowUserIdButton.Name = "ShowUserIdButton";
-        ShowUserIdButton.TemplateSource = Properties.Resources.ButtonTemplateShowHide;
         ShowUserIdButton.Size = new Size(40, 40);
         ShowUserIdButton.TabIndex = 6;
-        ShowUserIdButton.TemplateFile = null;
+        ShowUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
         ttp.SetToolTip(ShowUserIdButton, "Show or Hide the User Id.");
         ShowUserIdButton.UseVisualStyleBackColor = true;
         // 
@@ -108,10 +104,9 @@ partial class WebAccountInfoDialog
         CopyUrlButton.Checked = false;
         CopyUrlButton.Location = new Point(540, 42);
         CopyUrlButton.Name = "CopyUrlButton";
-        CopyUrlButton.TemplateSource = Properties.Resources.ButtonTemplateCopy;
         CopyUrlButton.Size = new Size(40, 40);
         CopyUrlButton.TabIndex = 3;
-        CopyUrlButton.TemplateFile = null;
+        CopyUrlButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
         ttp.SetToolTip(CopyUrlButton, "Copy this URL to the clipboard.");
         CopyUrlButton.UseVisualStyleBackColor = true;
         // 
@@ -120,10 +115,9 @@ partial class WebAccountInfoDialog
         CloseButton.Checked = false;
         CloseButton.Location = new Point(497, 203);
         CloseButton.Name = "CloseButton";
-        CloseButton.TemplateSource = Properties.Resources.ButtonTemplateCancel;
         CloseButton.Size = new Size(129, 40);
         CloseButton.TabIndex = 12;
-        CloseButton.TemplateFile = null;
+        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
         CloseButton.Text = "Close";
         ttp.SetToolTip(CloseButton, "Close this window.");
         CloseButton.UseVisualStyleBackColor = true;

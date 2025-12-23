@@ -77,7 +77,7 @@ partial class CreateSecureMessageDialog
         PrepareButton.Name = "PrepareButton";
         PrepareButton.Size = new Size(151, 32);
         PrepareButton.TabIndex = 6;
-        PrepareButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+        PrepareButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
         PrepareButton.Text = "&Prepare Message";
         ttp.SetToolTip(PrepareButton, "Click to prepare the message for sending,");
         PrepareButton.UseVisualStyleBackColor = true;
