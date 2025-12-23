@@ -37,7 +37,7 @@
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
-        "Compression" = "3:2"
+        "Compression" = "3:3"
         "SignOutput" = "11:FALSE"
         "CertificateFile" = "8:"
         "PrivateKeyFile" = "8:"
@@ -745,7 +745,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1930FEC1B8FD45059674D28E4BAA1222"
             {
-            "SourcePath" = "8:..\\..\\Adaptive Data Vault WinForms Application\\obj\\Debug\\net9.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\..\\Adaptive Data Vault WinForms Application\\obj\\Release\\net9.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EAF4E3B9F1C54116A1A5F564720D89C6"

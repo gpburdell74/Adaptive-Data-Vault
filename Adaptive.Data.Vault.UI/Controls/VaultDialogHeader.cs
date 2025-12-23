@@ -17,7 +17,7 @@ namespace Adaptive.Data.Vault.UI.Controls
 
         #region Constructor / Dispose Methods		
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoginDialogHeader"/> class.
+        /// Initializes a new instance of the <see cref="VaultDialogHeader"/> class.
         /// </summary>
         /// <remarks>
         /// This is the default constructor.

@@ -11,36 +11,80 @@ using System.Windows.Forms;
 
 namespace Adaptive.Data.Vault.UI;
 
+/// <summary>
+/// Prvides a UI element for displaying a list of secure notes.
+/// </summary>
+/// <seealso cref="System.Windows.Forms.UserControl" />
 public partial class SecureNoteListControl : UserControl
 {
+    #region Public Events    
+    /// <summary>
+    /// Occurs when the content changes.
+    /// </summary>
     public event EventHandler? ContentChanged;
 
-    public event Adaptive.Intelligence.Shared.EventHandler<SecureNote>? ItemAdded;
+    /// <summary>
+    /// Occurs when an item is added.
+    /// </summary>
+    public event Intelligence.Shared.EventHandler<SecureNote>? ItemAdded;
 
-    public event Adaptive.Intelligence.Shared.EventHandler<SecureNote>? ItemDeleted;
+    /// <summary>
+    /// Occurs when an item is deleted.
+    /// </summary>
+    public event Intelligence.Shared.EventHandler<SecureNote>? ItemDeleted;
+    #endregion
 
-
+    #region Private Member Declarations
+    /// <summary>
+    /// The list of secure notes.
+    /// </summary>
     private SecureNoteCollection? _list;
+    /// <summary>
+    /// The manager reference.
+    /// </summary>
     private VaultManager? _manager;
+    /// <summary>
+    /// The category.
+    /// </summary>
     private UserCategory? _category;
+    #endregion
 
+    #region Constructor / Dispose Methods
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SecureNoteListControl"/> class.
+    /// </summary>
+    /// <remarks>
+    /// This is the default constructor.
+    /// </remarks>
     public SecureNoteListControl()
     {
         InitializeComponent();
     }
 
+    /// <summary>
+    /// Releases the unmanaged resources used by the <see cref="T:System.Windows.Forms.Control" /> and its child controls and optionally releases the managed resources.
+    /// </summary>
+    /// <param name="disposing"><see langword="true" /> to release both managed and unmanaged resources; <see langword="false" /> to release only unmanaged resources.</param>
     protected override void Dispose(bool disposing)
     {
         if (!base.IsDisposed && disposing)
         {
             components?.Dispose();
         }
+
         components = null;
         _list = null;
         base.Dispose(disposing);
     }
+    #endregion
 
-
+    #region Public Properties
+    /// <summary>
+    /// Gets or sets the reference to the  category.
+    /// </summary>
+    /// <value>
+    /// The <see cref="UserCategory"/> to which the secure notes belong.
+    /// </value>
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public UserCategory? Category
@@ -57,6 +101,12 @@ public partial class SecureNoteListControl : UserControl
         }
     }
 
+    /// <summary>
+    /// Gets or sets the reference to the vault manager.
+    /// </summary>
+    /// <value>
+    /// The <see cref="VaultManager"/> instance used to perform data operations.
+    /// </value>
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public VaultManager? Manager
@@ -85,34 +135,63 @@ public partial class SecureNoteListControl : UserControl
             Invalidate();
         }
     }
+    #endregion
 
+    #region Protected Method Overrides    
+    /// <summary>
+    /// Raises the <see cref="E:System.Windows.Forms.UserControl.Load" /> event.
+    /// </summary>
+    /// <param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param>
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
         AssignEventHandlers();
     }
 
+    /// <summary>
+    /// Raises the <see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> event.
+    /// </summary>
+    /// <param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param>
     protected override void OnHandleDestroyed(EventArgs e)
     {
         RemoveEventHandlers();
         base.OnHandleDestroyed(e);
     }
 
+    /// <summary>
+    /// Raises the <see cref="E:ItemAdded" /> event.
+    /// </summary>
+    /// <param name="e">The <see cref="EventArgs{SecureNote}"/> instance containing the event data.</param>
     private void OnItemAdded(EventArgs<SecureNote> e)
     {
-        this.ItemAdded?.Invoke(this, e);
+        ItemAdded?.Invoke(this, e);
     }
 
+    /// <summary>
+    /// Raises the <see cref="E:ItemDeleted" /> event.
+    /// </summary>
+    /// <param name="e">The <see cref="EventArgs{SecureNote}"/> instance containing the event data.</param>
     private void OnItemDeleted(EventArgs<SecureNote> e)
     {
-        this.ItemDeleted?.Invoke(this, e);
+        ItemDeleted?.Invoke(this, e);
     }
 
+    /// <summary>
+    /// Raises the <see cref="E:ContentChanged" /> event.
+    /// </summary>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void OnContentChanged(EventArgs e)
     {
-        this.ContentChanged?.Invoke(this, e);
+        ContentChanged?.Invoke(this, e);
     }
+    #endregion
 
+    #region Private Event Handlers
+    /// <summary>
+    /// Handles the event when the New Account button clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleNewAccountButtonClicked(object? sender, EventArgs e)
     {
         Cursor = Cursors.WaitCursor;
@@ -121,7 +200,7 @@ public partial class SecureNoteListControl : UserControl
         DialogResult dialogResult = addEditSecureNoteDialog.ShowDialog();
         if (dialogResult == DialogResult.OK)
         {
-            SecureNote note = addEditSecureNoteDialog.Note;
+            SecureNote? note = addEditSecureNoteDialog.Note;
             if (_list != null && note != null)
             {
                 ContainerPanel.Visible = false;
@@ -137,12 +216,17 @@ public partial class SecureNoteListControl : UserControl
         Cursor = Cursors.Default;
     }
 
+    /// <summary>
+    /// Handles the event for a delete request.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs{SecureNote}"/> instance containing the event data.</param>
     private void HandleDeleteRequest(object? sender, EventArgs<SecureNote> e)
     {
         if (_list != null && e.Data != null)
         {
             _list.Remove(e.Data);
-            SecureNoteListItem secureNoteListItem = (SecureNoteListItem)sender;
+            SecureNoteListItem? secureNoteListItem = (SecureNoteListItem?)sender;
             if (secureNoteListItem != null && ContainerPanel.Controls.Contains(secureNoteListItem))
             {
                 ContainerPanel.Controls.Remove(secureNoteListItem);
@@ -156,6 +240,11 @@ public partial class SecureNoteListControl : UserControl
         Invalidate();
     }
 
+    /// <summary>
+    /// Handles the category request.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleCategoryRequest(object? sender, EventArgs e)
     {
         Cursor = Cursors.WaitCursor;
@@ -166,7 +255,7 @@ public partial class SecureNoteListControl : UserControl
         {
             return;
         }
-        UserCategory selectedCategory = selectCategoryDialog.SelectedCategory;
+        UserCategory? selectedCategory = selectCategoryDialog.SelectedCategory;
         foreach (SecureNoteListItem control in ContainerPanel.Controls)
         {
             if (control.Selected && control.Note != null && selectedCategory != null)
@@ -176,17 +265,29 @@ public partial class SecureNoteListControl : UserControl
         }
     }
 
+    /// <summary>
+    /// Handles the event when a contained control's content changes.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleContentChanged(object? sender, EventArgs e)
     {
         OnContentChanged(e);
     }
+    #endregion
 
-
+    #region Public Methods / Functions
+    /// <summary>
+    /// Creates and adds a new item.
+    /// </summary>
     public void AddNewItem()
     {
         HandleNewAccountButtonClicked(this, EventArgs.Empty);
     }
 
+    /// <summary>
+    /// Clears the list.
+    /// </summary>
     public void ClearList()
     {
         base.Visible = false;
@@ -202,16 +303,25 @@ public partial class SecureNoteListControl : UserControl
         base.Visible = true;
     }
 
+    /// <summary>
+    /// Assigns the event handlers.
+    /// </summary>
     private void AssignEventHandlers()
     {
         NewAccountButton.Click += HandleNewAccountButtonClicked;
     }
 
+    /// <summary>
+    /// Removes the event handlers.
+    /// </summary>
     private void RemoveEventHandlers()
     {
         NewAccountButton.Click -= HandleNewAccountButtonClicked;
     }
 
+    /// <summary>
+    /// Populates the list.
+    /// </summary>
     private void PopulateList()
     {
         SuspendLayout();
@@ -241,4 +351,5 @@ public partial class SecureNoteListControl : UserControl
         }
         ResumeLayout();
     }
+    #endregion
 }
