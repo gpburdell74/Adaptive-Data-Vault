@@ -192,6 +192,7 @@ public partial class SecureNoteListControl : UserControl
             SecureNote? newAccount = dialog.Note;
             if (_list != null && newAccount != null)
             {
+                note.CategoryId = _category.Id;
                 ContainerPanel.Visible = false;
                 _list.Add(newAccount);
                 _list.SortAlpha();

@@ -68,7 +68,7 @@ public partial class MainDialog : AdaptiveDialogBase
         ToolMenuSecureMessage.Click += HandleToolMenuSecureMessageClicked;
         ToolMenuDecryptMessage.Click += HandleToolMenuDecryptMessageClicked;
         ToolMenuEraseFile.Click += HandleToolMenuEraseFileClicked;
-
+        
         // Tool bar
         NewFileButton.Click += HandleFileMenuNewClicked;
         OpenFileButton.Click += HandleFileMenuOpenClicked;
@@ -120,6 +120,16 @@ public partial class MainDialog : AdaptiveDialogBase
         Data.ContentChanged -= HandleDataContentChanged;
     }
 
+    protected override void InitializeDataContent()
+    {
+        if (!_mru.EulaAccepted)
+        {
+            EulaDialog dialog = new EulaDialog();
+            dialog.ShowDialog();
+        }
+        Data.Manager = _manager;
+        
+    }
     /// <summary>
     /// Sets the state of the UI controls before the data content is loaded.
     /// </summary>
