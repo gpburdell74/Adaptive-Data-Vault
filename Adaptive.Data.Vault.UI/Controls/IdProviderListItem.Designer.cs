@@ -211,6 +211,7 @@ partial class IdProviderListItem
         // 
         UserInfoButton.Checked = false;
         UserInfoButton.Dock = DockStyle.Right;
+        UserInfoButton.Image = Adaptive.Data.Vault.UI.Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
         UserInfoButton.Size = new Size(44, 44);
@@ -232,6 +233,7 @@ partial class IdProviderListItem
         // 
         EditButton.Checked = false;
         EditButton.Dock = DockStyle.Right;
+        EditButton.Image = Adaptive.Data.Vault.UI.Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
         EditButton.Size = new Size(44, 44);

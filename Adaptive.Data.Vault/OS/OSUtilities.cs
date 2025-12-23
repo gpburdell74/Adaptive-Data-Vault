@@ -1,5 +1,7 @@
-﻿using Adaptive.Intelligence.Shared.Logging;
+﻿using Adaptive.Intelligence.Shared;
+using Adaptive.Intelligence.Shared.Logging;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -57,6 +59,88 @@ public static class OSUtilities
         {
             ExceptionLog.LogException(ex);
         }
+    }
+
+    /// <summary>
+    /// Gets the version of the currently executing assembly.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="Version"/> instance containing the version data, or all zeroes (0.0.0.0) if
+    /// the version query fails.
+    /// </returns>
+    public static Version GetVersionOfExecutable()
+    {
+        Version? version = null;
+
+        try
+        {
+            Assembly? exeAssembly = Assembly.GetExecutingAssembly();
+            if (exeAssembly != null)
+            {
+                AssemblyName? exeName = exeAssembly.GetName();
+                if (exeName != null)
+                {
+                    Version? exeVersion = exeName.Version;
+                    if (exeVersion != null)
+                    {
+                        version = new Version(
+                            exeVersion.Major,
+                            exeVersion.Minor,
+                            exeVersion.Build,
+                            exeVersion.Revision);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            ExceptionLog.LogException(ex);
+        }
+        if (version == null)
+            version = new Version(0, 0, 0, 0);
+
+        return version;
+    }
+
+    /// <summary>
+    /// Gets the version of the underlying Adaptive Intelligence Framework library.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="Version"/> instance containing the version data, or all zeroes (0.0.0.0) if
+    /// the version query fails.
+    /// </returns>
+    public static Version GetAdaptiveFrameworkVersion()
+    {
+        Version? version = null;
+
+        try
+        {
+            Assembly? frameworkAssembly = Assembly.GetAssembly(typeof(DisposableObjectBase));
+            if (frameworkAssembly != null)
+            {
+                AssemblyName? frameworkName = frameworkAssembly.GetName();
+                if (frameworkName != null)
+                {
+                    Version? frameworkVersion = frameworkName.Version;
+                    if (frameworkVersion != null)
+                    {
+                        version = new Version(
+                        frameworkVersion.Major,
+                        frameworkVersion.Minor,
+                        frameworkVersion.Build,
+                        frameworkVersion.Revision);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            ExceptionLog.LogException(ex);
+        }
+        if (version == null)
+            version = new Version(0, 0, 0, 0);
+
+        return version;
     }
     #endregion
 

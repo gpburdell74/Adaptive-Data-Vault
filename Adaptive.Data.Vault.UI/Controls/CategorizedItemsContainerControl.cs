@@ -32,6 +32,7 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     public CategorizedItemsContainerControl()
     {
         InitializeComponent();
+        AccountsButton.Checked = true;
     }
     /// <summary> 
     /// Clean up any resources being used.

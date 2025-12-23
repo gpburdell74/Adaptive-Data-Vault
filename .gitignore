@@ -4,27 +4,36 @@
 
 /.vs
 /.cr/personal/FavoritesList
+/Adaptive Data Vault Install/Adaptive Data Vault Installer/Debug
+/Adaptive Data Vault Install/Adaptive Data Vault Installer/Release
+/Adaptive Data Vault WinForms Application/bin
 /Adaptive Data Vault WinForms Application/obj/Debug/net9.0-windows
+/Adaptive Data Vault WinForms Application/obj/Release/net9.0-windows
 /Adaptive Data Vault WinForms Application/obj
+/Adaptive.Data.Vault/bin
 /Adaptive.Data.Vault/obj
+/Adaptive.Data.Vault.DataAccess/bin
 /Adaptive.Data.Vault.DataAccess/obj
+/Adaptive.Data.Vault.DataAccess.Tests/bin
+/Adaptive.Data.Vault.DataAccess.Tests/obj/Debug/net9.0
+/Adaptive.Data.Vault.DataAccess.Tests/obj
 /Adaptive.Data.Vault.Test/obj
+/Adaptive.Data.Vault.Tests
+/Adaptive.Data.Vault.UI/bin
 /Adaptive.Data.Vault.UI/obj
+/Adaptive Data Vault Install/Adaptive Data Vault Installer/Debug
 /Adaptive Data Vault WinForms Application/bin/Debug/net9.0-windows
 /Adaptive.Data.Vault/bin/Debug/net9.0
 /Adaptive.Data.Vault.DataAccess/bin/Debug/net9.0
-/Adaptive.Data.Vault.Test/bin/Debug/net9.0
-/Adaptive.Data.Vault.UI/bin/Debug/net9.0-windows
-/Adaptive Data Vault Install/Adaptive Data Vault Installer/Debug
-/Adaptive Data Vault WinForms Application/bin/Release/net9.0-windows/AdaptiveVault.mru
 /Adaptive.Data.Vault.DataAccess.Tests/bin/Debug/net9.0
-/Adaptive.Data.Vault.DataAccess.Tests/obj/Debug/net9.0
-/Adaptive.Data.Vault.DataAccess.Tests/obj/Release/net9.0
-/Adaptive.Data.Vault.DataAccess.Tests/obj/Adaptive.Data.Vault.DataAccess.Tests.csproj.nuget.dgspec.json
-/Adaptive.Data.Vault.DataAccess.Tests/obj/Adaptive.Data.Vault.DataAccess.Tests.csproj.nuget.g.props
-/Adaptive.Data.Vault.DataAccess.Tests/obj/Adaptive.Data.Vault.DataAccess.Tests.csproj.nuget.g.targets
-/Adaptive.Data.Vault.DataAccess.Tests/obj/project.assets.json
+/Adaptive.Data.Vault.DataAccess.Tests/obj
 /Adaptive.Data.Vault.Tests/bin/Debug/net9.0-windows
-/Adaptive.Data.Vault.Tests/obj/Debug
-/Adaptive.Data.Vault.Tests/obj/Release/net9.0-windows
 /Adaptive.Data.Vault.Tests/obj
+/Adaptive.Data.Vault.UI/bin/Debug/net9.0-windows
+/Adaptive Data Vault Install/Adaptive Data Vault Installer/Release
+/Adaptive Data Vault WinForms Application/bin/Release/net9.0-windows
+/Adaptive.Data.Vault/bin/Release/net9.0
+/Adaptive.Data.Vault.DataAccess/bin/Release/net9.0
+/Adaptive.Data.Vault.DataAccess.Tests/bin/Release/net9.0
+/Adaptive.Data.Vault.Tests/bin/Release/net9.0-windows
+/Adaptive.Data.Vault.UI/bin/Release/net9.0-windows

@@ -9,35 +9,58 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>Adaptive.Data.Vault.Desktop</AssemblyName>
     <ApplicationIcon>ADV.ico</ApplicationIcon>
-    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
-    <PackageId>Adaptive.Data.Vault.Desktop.UI</PackageId>
-    <Title>Adaptive Data Vault Application</Title>
-    <Version>0.9.0</Version>
+    <PackageId>Adaptive.Data.Vault.Desktop</PackageId>
+    <Title>Adaptive Data Vault</Title>
+    <Version>0.93.100.0001</Version>
     <Authors>Sam Jones</Authors>
     <Company>Adaptive Intelligence</Company>
     <Product>Adaptive Data Vault</Product>
-    <Description>A Windows application for securely storing and managing Internet site logins and passwords and other secure information.</Description>
+    <Description>Password Management and Security Application for Windows Desktop</Description>
     <Copyright>Copyright © 2025 by Sam Jones.  All rights reserved.</Copyright>
-    <PackageProjectUrl>http://samjones.azurewebsites.net/AdaptiveDataVault</PackageProjectUrl>
+    <PackageProjectUrl>https://samjones.azurewebsites.net</PackageProjectUrl>
     <PackageIcon>ADV.ico</PackageIcon>
+    <RepositoryType>github</RepositoryType>
+    <RepositoryUrl>https://github.com/gpburdell74/Adaptive-Data-Vault</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\ADV Button.template" />
+    <None Remove="Resources\ADV Cancel  Template.template" />
+    <None Remove="Resources\ADV Copy Button Template.template" />
+    <None Remove="Resources\ADV Delete Template.template" />
+    <None Remove="Resources\ADV Edit User Template.template" />
+    <None Remove="Resources\ADV ShowHide Template.template" />
+    <None Remove="Resources\ADV User Info Button.template" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="ADV.ico" />
+    <Content Include="Resources\ADV Button.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Cancel  Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Copy Button Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Delete Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV Edit User Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV ShowHide Template.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ADV User Info Button.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\ADV.ico">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Framework\Shared Code Library\Adaptive.Intelligence.Shared\Adaptive.Intelligence.Shared.csproj" />
     <ProjectReference Include="..\..\..\..\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI\Adaptive.Intelligence.Shared.UI.csproj" />
     <ProjectReference Include="..\Adaptive.Data.Vault.DataAccess\Adaptive.Data.Vault.DataAccess.csproj" />
-    <ProjectReference Include="..\Adaptive.Data.Vault.Test\Adaptive.Data.Vault.Test.csproj" />
     <ProjectReference Include="..\Adaptive.Data.Vault.UI\Adaptive.Data.Vault.UI.csproj" />
     <ProjectReference Include="..\Adaptive.Data.Vault\Adaptive.Data.Vault.csproj" />
   </ItemGroup>
@@ -55,6 +78,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ADV.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

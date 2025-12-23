@@ -25,6 +25,10 @@ partial class MainDialog
         FileMenuDividerA = new ToolStripSeparator();
         FileMenuSave = new ToolStripMenuItem();
         FileMenuSaveAs = new ToolStripMenuItem();
+        FileMenuMruDivider = new ToolStripSeparator();
+        FileMenuRecentFiles = new ToolStripMenuItem();
+        MruDivider = new ToolStripSeparator();
+        MruMenuClear = new ToolStripMenuItem();
         FileMenuDividerB = new ToolStripSeparator();
         FileMenuExit = new ToolStripMenuItem();
         ToolMenu = new ToolStripMenuItem();
@@ -32,6 +36,23 @@ partial class MainDialog
         ToolMenuDecryptMessage = new ToolStripMenuItem();
         ToolMenuDividerA = new ToolStripSeparator();
         ToolMenuEraseFile = new ToolStripMenuItem();
+        ToolMenuDivderB = new ToolStripSeparator();
+        ToolMenuEncryptFile = new ToolStripMenuItem();
+        ToolMenuDecryptFile = new ToolStripMenuItem();
+        ToolMenuDividerC = new ToolStripSeparator();
+        ToolMenuNumToHex = new ToolStripMenuItem();
+        ToolMenuTextToHex = new ToolStripMenuItem();
+        ToolMenuTextToBase64 = new ToolStripMenuItem();
+        ToolMenuDividerD = new ToolStripSeparator();
+        ToolMenuHexToText = new ToolStripMenuItem();
+        ToolMenuBase64ToText = new ToolStripMenuItem();
+        HelpMenu = new ToolStripMenuItem();
+        HelpMenuViewHelp = new ToolStripMenuItem();
+        HelpMenuWhatsNew = new ToolStripMenuItem();
+        HelpMenuDivA = new ToolStripSeparator();
+        HelpMenuAbout = new ToolStripMenuItem();
+        HelpMenuDivB = new ToolStripSeparator();
+        HelpMenuDonate = new ToolStripMenuItem();
         MainStatus = new StatusStrip();
         MainStatusLabel = new ToolStripStatusLabel();
         MainStatusPrg = new ToolStripProgressBar();
@@ -62,7 +83,7 @@ partial class MainDialog
         // 
         // MainMenu
         // 
-        MainMenu.Items.AddRange(new ToolStripItem[] { FileMenu, ToolMenu });
+        MainMenu.Items.AddRange(new ToolStripItem[] { FileMenu, ToolMenu, HelpMenu });
         MainMenu.Location = new Point(0, 0);
         MainMenu.Name = "MainMenu";
         MainMenu.Size = new Size(930, 24);
@@ -78,7 +99,7 @@ partial class MainDialog
         // 
         // FileMenuNewFile
         // 
-        FileMenuNewFile.Image = Properties.Resources.New_File_16x16;
+        FileMenuNewFile.Image = Properties.Resources.NewFile16;
         FileMenuNewFile.Name = "FileMenuNewFile";
         FileMenuNewFile.ShortcutKeyDisplayString = "Ctrl+N";
         FileMenuNewFile.Size = new Size(216, 22);
@@ -87,7 +108,7 @@ partial class MainDialog
         // 
         // FileMenuOpenFile
         // 
-        FileMenuOpenFile.Image = Properties.Resources.OpenButton_Image;
+        FileMenuOpenFile.Image = Properties.Resources.Open;
         FileMenuOpenFile.Name = "FileMenuOpenFile";
         FileMenuOpenFile.ShortcutKeyDisplayString = "Ctrl+O";
         FileMenuOpenFile.Size = new Size(216, 22);
@@ -96,7 +117,7 @@ partial class MainDialog
         // 
         // FileMenuCloseFile
         // 
-        FileMenuCloseFile.Image = Properties.Resources.Close_16x161;
+        FileMenuCloseFile.Image = Properties.Resources.Close16;
         FileMenuCloseFile.Name = "FileMenuCloseFile";
         FileMenuCloseFile.Size = new Size(216, 22);
         FileMenuCloseFile.Text = "C&lose";
@@ -110,7 +131,7 @@ partial class MainDialog
         // 
         // FileMenuSave
         // 
-        FileMenuSave.Image = Properties.Resources.Save_16x16_Blue;
+        FileMenuSave.Image = Properties.Resources.Save16;
         FileMenuSave.Name = "FileMenuSave";
         FileMenuSave.ShortcutKeyDisplayString = "Ctrl+S";
         FileMenuSave.Size = new Size(216, 22);
@@ -120,13 +141,36 @@ partial class MainDialog
         // 
         // FileMenuSaveAs
         // 
-        FileMenuSaveAs.Image = Properties.Resources.Save_16x16;
+        FileMenuSaveAs.Image = Properties.Resources.Save16;
         FileMenuSaveAs.Name = "FileMenuSaveAs";
         FileMenuSaveAs.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
         FileMenuSaveAs.Size = new Size(216, 22);
         FileMenuSaveAs.Text = "Save File &As...";
         FileMenuSaveAs.ToolTipText = "Save the current file under a new location and/or name.";
         FileMenuSaveAs.Visible = false;
+        // 
+        // FileMenuMruDivider
+        // 
+        FileMenuMruDivider.Name = "FileMenuMruDivider";
+        FileMenuMruDivider.Size = new Size(213, 6);
+        // 
+        // FileMenuRecentFiles
+        // 
+        FileMenuRecentFiles.DropDownItems.AddRange(new ToolStripItem[] { MruDivider, MruMenuClear });
+        FileMenuRecentFiles.Name = "FileMenuRecentFiles";
+        FileMenuRecentFiles.Size = new Size(216, 22);
+        FileMenuRecentFiles.Text = "Recent";
+        // 
+        // MruDivider
+        // 
+        MruDivider.Name = "MruDivider";
+        MruDivider.Size = new Size(158, 6);
+        // 
+        // MruMenuClear
+        // 
+        MruMenuClear.Name = "MruMenuClear";
+        MruMenuClear.Size = new Size(161, 22);
+        MruMenuClear.Text = "Clear Recent List";
         // 
         // FileMenuDividerB
         // 
@@ -143,39 +187,140 @@ partial class MainDialog
         // 
         // ToolMenu
         // 
-        ToolMenu.DropDownItems.AddRange(new ToolStripItem[] { ToolMenuSecureMessage, ToolMenuDecryptMessage, ToolMenuDividerA, ToolMenuEraseFile });
+        ToolMenu.DropDownItems.AddRange(new ToolStripItem[] { ToolMenuSecureMessage, ToolMenuDecryptMessage, ToolMenuDividerA, ToolMenuEraseFile, ToolMenuDivderB, ToolMenuEncryptFile, ToolMenuDecryptFile, ToolMenuDividerC, ToolMenuNumToHex, ToolMenuTextToHex, ToolMenuTextToBase64, ToolMenuDividerD, ToolMenuHexToText, ToolMenuBase64ToText });
         ToolMenu.Name = "ToolMenu";
         ToolMenu.Size = new Size(46, 20);
         ToolMenu.Text = "&Tools";
         // 
         // ToolMenuSecureMessage
         // 
-        ToolMenuSecureMessage.Image = Properties.Resources.Secure_File_16x16;
+        ToolMenuSecureMessage.Image = Properties.Resources.SecureFile16;
         ToolMenuSecureMessage.Name = "ToolMenuSecureMessage";
-        ToolMenuSecureMessage.Size = new Size(211, 22);
+        ToolMenuSecureMessage.Size = new Size(214, 22);
         ToolMenuSecureMessage.Text = "Create &Secure Message...";
         ToolMenuSecureMessage.ToolTipText = "Create an encrypted message.";
         // 
         // ToolMenuDecryptMessage
         // 
-        ToolMenuDecryptMessage.Image = Properties.Resources.Secure_File_16x16;
+        ToolMenuDecryptMessage.Image = Properties.Resources.SecureFile16;
         ToolMenuDecryptMessage.Name = "ToolMenuDecryptMessage";
-        ToolMenuDecryptMessage.Size = new Size(211, 22);
+        ToolMenuDecryptMessage.Size = new Size(214, 22);
         ToolMenuDecryptMessage.Text = "&Decrypt Secure Message...";
         ToolMenuDecryptMessage.ToolTipText = "Decrypt and view a secure message.";
         // 
         // ToolMenuDividerA
         // 
         ToolMenuDividerA.Name = "ToolMenuDividerA";
-        ToolMenuDividerA.Size = new Size(208, 6);
+        ToolMenuDividerA.Size = new Size(211, 6);
         // 
         // ToolMenuEraseFile
         // 
-        ToolMenuEraseFile.Image = Properties.Resources.Misc_194;
+        ToolMenuEraseFile.Image = Properties.Resources.SecureErase;
         ToolMenuEraseFile.Name = "ToolMenuEraseFile";
-        ToolMenuEraseFile.Size = new Size(211, 22);
+        ToolMenuEraseFile.Size = new Size(214, 22);
         ToolMenuEraseFile.Text = "Secure &Erase File...";
         ToolMenuEraseFile.ToolTipText = "Securely Erase a file.";
+        // 
+        // ToolMenuDivderB
+        // 
+        ToolMenuDivderB.Name = "ToolMenuDivderB";
+        ToolMenuDivderB.Size = new Size(211, 6);
+        // 
+        // ToolMenuEncryptFile
+        // 
+        ToolMenuEncryptFile.Name = "ToolMenuEncryptFile";
+        ToolMenuEncryptFile.Size = new Size(214, 22);
+        ToolMenuEncryptFile.Text = "E&ncrypt File...";
+        // 
+        // ToolMenuDecryptFile
+        // 
+        ToolMenuDecryptFile.Name = "ToolMenuDecryptFile";
+        ToolMenuDecryptFile.Size = new Size(214, 22);
+        ToolMenuDecryptFile.Text = "Decrypt &File...";
+        // 
+        // ToolMenuDividerC
+        // 
+        ToolMenuDividerC.Name = "ToolMenuDividerC";
+        ToolMenuDividerC.Size = new Size(211, 6);
+        // 
+        // ToolMenuNumToHex
+        // 
+        ToolMenuNumToHex.Name = "ToolMenuNumToHex";
+        ToolMenuNumToHex.Size = new Size(214, 22);
+        ToolMenuNumToHex.Text = "Number To Hexadecimal...";
+        // 
+        // ToolMenuTextToHex
+        // 
+        ToolMenuTextToHex.Name = "ToolMenuTextToHex";
+        ToolMenuTextToHex.Size = new Size(214, 22);
+        ToolMenuTextToHex.Text = "Text To Hexadecimal....";
+        // 
+        // ToolMenuTextToBase64
+        // 
+        ToolMenuTextToBase64.Name = "ToolMenuTextToBase64";
+        ToolMenuTextToBase64.Size = new Size(214, 22);
+        ToolMenuTextToBase64.Text = "Text To Base-64";
+        // 
+        // ToolMenuDividerD
+        // 
+        ToolMenuDividerD.Name = "ToolMenuDividerD";
+        ToolMenuDividerD.Size = new Size(211, 6);
+        // 
+        // ToolMenuHexToText
+        // 
+        ToolMenuHexToText.Name = "ToolMenuHexToText";
+        ToolMenuHexToText.Size = new Size(214, 22);
+        ToolMenuHexToText.Text = "Hexadecimal To Text";
+        // 
+        // ToolMenuBase64ToText
+        // 
+        ToolMenuBase64ToText.Name = "ToolMenuBase64ToText";
+        ToolMenuBase64ToText.Size = new Size(214, 22);
+        ToolMenuBase64ToText.Text = "Base64-To-Text";
+        // 
+        // HelpMenu
+        // 
+        HelpMenu.DropDownItems.AddRange(new ToolStripItem[] { HelpMenuViewHelp, HelpMenuWhatsNew, HelpMenuDivA, HelpMenuAbout, HelpMenuDivB, HelpMenuDonate });
+        HelpMenu.Name = "HelpMenu";
+        HelpMenu.Size = new Size(44, 20);
+        HelpMenu.Text = "&Help";
+        // 
+        // HelpMenuViewHelp
+        // 
+        HelpMenuViewHelp.Image = Properties.Resources.Information32;
+        HelpMenuViewHelp.Name = "HelpMenuViewHelp";
+        HelpMenuViewHelp.ShortcutKeys = Keys.F1;
+        HelpMenuViewHelp.Size = new Size(210, 22);
+        HelpMenuViewHelp.Text = "View Help";
+        // 
+        // HelpMenuWhatsNew
+        // 
+        HelpMenuWhatsNew.Name = "HelpMenuWhatsNew";
+        HelpMenuWhatsNew.Size = new Size(210, 22);
+        HelpMenuWhatsNew.Text = "What's New?";
+        // 
+        // HelpMenuDivA
+        // 
+        HelpMenuDivA.Name = "HelpMenuDivA";
+        HelpMenuDivA.Size = new Size(207, 6);
+        // 
+        // HelpMenuAbout
+        // 
+        HelpMenuAbout.Name = "HelpMenuAbout";
+        HelpMenuAbout.Size = new Size(210, 22);
+        HelpMenuAbout.Text = "About Adaptve Data Vault";
+        // 
+        // HelpMenuDivB
+        // 
+        HelpMenuDivB.Name = "HelpMenuDivB";
+        HelpMenuDivB.Size = new Size(207, 6);
+        // 
+        // HelpMenuDonate
+        // 
+        HelpMenuDonate.Image = Properties.Resources.AddMoney;
+        HelpMenuDonate.Name = "HelpMenuDonate";
+        HelpMenuDonate.Size = new Size(210, 22);
+        HelpMenuDonate.Text = "Donate To Project";
         // 
         // MainStatus
         // 
@@ -210,7 +355,7 @@ partial class MainDialog
         // NewFileButton
         // 
         NewFileButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        NewFileButton.Image = Properties.Resources.New_File_16x16;
+        NewFileButton.Image = Properties.Resources.NewFile16;
         NewFileButton.ImageTransparentColor = Color.Magenta;
         NewFileButton.Name = "NewFileButton";
         NewFileButton.Size = new Size(23, 22);
@@ -219,7 +364,7 @@ partial class MainDialog
         // OpenFileButton
         // 
         OpenFileButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        OpenFileButton.Image = Properties.Resources.OpenButton_Image;
+        OpenFileButton.Image = Properties.Resources.Open;
         OpenFileButton.ImageTransparentColor = Color.Magenta;
         OpenFileButton.Name = "OpenFileButton";
         OpenFileButton.Size = new Size(23, 22);
@@ -228,7 +373,7 @@ partial class MainDialog
         // CloseFileButton
         // 
         CloseFileButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        CloseFileButton.Image = Properties.Resources.Close_16x16;
+        CloseFileButton.Image = Properties.Resources.Close16;
         CloseFileButton.ImageTransparentColor = Color.Magenta;
         CloseFileButton.Name = "CloseFileButton";
         CloseFileButton.Size = new Size(23, 22);
@@ -243,7 +388,7 @@ partial class MainDialog
         // SaveButton
         // 
         SaveButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        SaveButton.Image = Properties.Resources.Save_16x16_Blue;
+        SaveButton.Image = Properties.Resources.Save16Blue;
         SaveButton.ImageTransparentColor = Color.Magenta;
         SaveButton.Name = "SaveButton";
         SaveButton.Size = new Size(23, 22);
@@ -253,7 +398,7 @@ partial class MainDialog
         // SaveAsButton
         // 
         SaveAsButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        SaveAsButton.Image = Properties.Resources.Save_16x16;
+        SaveAsButton.Image = Properties.Resources.Save16;
         SaveAsButton.ImageTransparentColor = Color.Magenta;
         SaveAsButton.Name = "SaveAsButton";
         SaveAsButton.Size = new Size(23, 22);
@@ -397,4 +542,21 @@ partial class MainDialog
     private ToolStripMenuItem FileMenuRecentFiles;
     private ToolStripSeparator MruDivider;
     private ToolStripMenuItem MruMenuClear;
+    private ToolStripSeparator ToolMenuDivderB;
+    private ToolStripMenuItem ToolMenuEncryptFile;
+    private ToolStripMenuItem ToolMenuDecryptFile;
+    private ToolStripSeparator ToolMenuDividerC;
+    private ToolStripMenuItem ToolMenuNumToHex;
+    private ToolStripMenuItem ToolMenuTextToHex;
+    private ToolStripMenuItem ToolMenuTextToBase64;
+    private ToolStripSeparator ToolMenuDividerD;
+    private ToolStripMenuItem ToolMenuHexToText;
+    private ToolStripMenuItem ToolMenuBase64ToText;
+    private ToolStripMenuItem HelpMenu;
+    private ToolStripMenuItem HelpMenuViewHelp;
+    private ToolStripMenuItem HelpMenuWhatsNew;
+    private ToolStripSeparator HelpMenuDivA;
+    private ToolStripMenuItem HelpMenuAbout;
+    private ToolStripSeparator HelpMenuDivB;
+    private ToolStripMenuItem HelpMenuDonate;
 }

@@ -16,16 +16,16 @@ public static class VaultActivator
 
         Type dataType = typeof(T);
         
-        if (dataType == typeof(ISecureNoteEntity))
+        if (typeof(ISecureNoteEntity).IsAssignableFrom(dataType)) 
             instance = (T)(object)new SecureNoteEntity();
 
-        else if (dataType == typeof(IIdentityProviderEntity))
+        else if (typeof(IIdentityProviderEntity).IsAssignableFrom(dataType))
             instance = (T)(object)new IdentityProviderEntity();
 
-        else if (dataType == typeof(IWebAccountEntity))
+        else if (typeof(IWebAccountEntity).IsAssignableFrom(dataType))
             instance = (T)(object)new WebAccountEntity();
 
-        else if (dataType == typeof(IUserCategoryEntity))
+        else if (typeof(IUserCategoryEntity).IsAssignableFrom(dataType))
 
             instance = (T)(object)new UserCategoryEntity();
 

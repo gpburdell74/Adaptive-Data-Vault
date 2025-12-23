@@ -270,13 +270,16 @@ public partial class WebAccountListItem : AdaptiveControlBase
     {
         SetPreLoadState();
 
-        AddEditWebAccountDialog dialog = new AddEditWebAccountDialog();
-        DialogResult result = dialog.ShowDialog();
-
-        if (result == DialogResult.OK)
+        WebAccountListControl? listControl = (WebAccountListControl?)Parent;
+        if (listControl != null)
         {
-            if (Parent != null)
-                ((WebAccountListControl)Parent).AddNewItem();
+            AddEditWebAccountDialog dialog = new AddEditWebAccountDialog();
+            DialogResult result = dialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                listControl.AddNewItem();
+            }
         }
 
         SetPostLoadState();

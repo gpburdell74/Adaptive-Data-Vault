@@ -33,6 +33,7 @@
             ContainerPanel.Name = "ContainerPanel";
             ContainerPanel.Size = new Size(1039, 48);
             ContainerPanel.TabIndex = 0;
+            ContainerPanel.TemplateFile = null;
             // 
             // ButtonPanel
             // 
@@ -46,6 +47,7 @@
             ButtonPanel.Padding = new Padding(5);
             ButtonPanel.Size = new Size(257, 48);
             ButtonPanel.TabIndex = 0;
+            ButtonPanel.TemplateFile = null;
             // 
             // SaveButton
             // 
@@ -57,7 +59,7 @@
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(120, 38);
             SaveButton.TabIndex = 2;
-            SaveButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+            SaveButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
             SaveButton.Text = "Save";
             SaveButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             SaveButton.UseVisualStyleBackColor = true;
@@ -69,6 +71,7 @@
             SpacerPanel.Name = "SpacerPanel";
             SpacerPanel.Size = new Size(5, 38);
             SpacerPanel.TabIndex = 1;
+            SpacerPanel.TemplateFile = null;
             // 
             // CancelButton
             // 
@@ -80,7 +83,7 @@
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(120, 38);
             CancelButton.TabIndex = 0;
-            CancelButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
+            CancelButton.TemplateSource = Properties.Resources.ButtonTemplateCancel;
             CancelButton.Text = "Cancel";
             CancelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             CancelButton.UseVisualStyleBackColor = true;

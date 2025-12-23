@@ -4,6 +4,7 @@ using System.Drawing.Text;
 
 namespace Adaptive.Data.Vault.UI.Controls
 {
+    [DesignerCategory("Code")]
     public partial class VaultDialogHeader : UserControl
     {
         #region Private Member Declarations
@@ -17,33 +18,22 @@ namespace Adaptive.Data.Vault.UI.Controls
 
         #region Constructor / Dispose Methods		
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoginDialogHeader"/> class.
+        /// Initializes a new instance of the <see cref="VaultDialogHeader"/> class.
         /// </summary>
         /// <remarks>
         /// This is the default constructor.
         /// </remarks>
         public VaultDialogHeader()
         {
-            InitializeComponent();
-
+            // Set default size.
+            Width = 800;
+            Height = 300;
             SetStyle(ControlStyles.AllPaintingInWmPaint, value: true);
             SetStyle(ControlStyles.DoubleBuffer, value: true);
             SetStyle(ControlStyles.ResizeRedraw, value: true);
             SetStyle(ControlStyles.Selectable, value: false);
             SetStyle(ControlStyles.UserPaint, value: true);
-        }
-        /// <summary>
-        /// Releases the unmanaged resources used by the <see cref="T:System.Windows.Forms.Control" /> and its child controls and optionally releases the managed resources.
-        /// </summary>
-        /// <param name="disposing"><see langword="true" /> to release both managed and unmanaged resources; <see langword="false" /> to release only unmanaged resources.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (!IsDisposed && disposing)
-            {
-                components?.Dispose();
-            }
-
-            base.Dispose(disposing);
+            UpdateStyles();
         }
         #endregion
 
@@ -99,13 +89,6 @@ namespace Adaptive.Data.Vault.UI.Controls
         #endregion
 
         #region Private Methods / Functions		
-        /// <summary>
-        /// Initializes the component.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            components = new Container();
-        }
         /// <summary>
         /// Draws the initial background.
         /// </summary>

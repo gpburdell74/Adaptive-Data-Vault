@@ -6,36 +6,36 @@ using System.ComponentModel;
 namespace Adaptive.Data.Vault.UI;
 
 /// <summary>
-/// Provides a control for displaying a Secure Note as a line item.
+/// Provides the UI for viewing or editing a secure note list item.
 /// </summary>
 /// <seealso cref="AdaptiveControlBase" />
 public partial class SecureNoteListItem : AdaptiveControlBase
 {
     #region Public Events
     /// <summary>
-    /// Occurs when the user clicks the Categorize menu item.
+    /// Occurs when the user is categorizing the instance.
     /// </summary>
     public event EventHandler? CategorizeRequest;
 
     /// <summary>
-    /// Occurs when a user attempts to delete an entry.
+    /// Occurs when an item is being deleted.
     /// </summary>
     public event Intelligence.Shared.EventHandler<SecureNote>? DeleteRequest;
     #endregion
 
-    #region Private Member Declarations
+    #region Private Member Declarations    
     /// <summary>
-    /// The account
+    /// The note instance.
     /// </summary>
     private SecureNote? _note;
 
     /// <summary>
-    /// The selected flag.
+    /// The selection flag.
     /// </summary>
     private bool _selected;
     #endregion
 
-    #region Constructor / Dispose Methods
+    #region Constructor / Dispose Methods    
     /// <summary>
     /// Initializes a new instance of the <see cref="SecureNoteListItem"/> class.
     /// </summary>
@@ -46,10 +46,12 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     {
         InitializeComponent();
     }
-    /// <summary> 
-    /// Clean up any resources being used.
+
+    /// <summary>
+    /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources;
+    /// <c>false</c> to release only unmanaged resources.</param>
     protected override void Dispose(bool disposing)
     {
         if (!IsDisposed && disposing)
@@ -61,20 +63,24 @@ public partial class SecureNoteListItem : AdaptiveControlBase
         components = null;
         base.Dispose(disposing);
     }
+
     #endregion
 
     #region Public Properties
     /// <summary>
-    /// Gets or sets the reference to the secure note being shown.
+    /// Gets or sets the reference to the Secure Note being edited.
     /// </summary>
     /// <value>
-    /// The <see cref="SecureNote"/> instance.
+    /// The <see cref="SecureNote"/> being viewed or edited.
     /// </value>
-    [Browsable(false),
-     DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public SecureNote? Note
     {
-        get => _note;
+        get
+        {
+            return _note;
+        }
         set
         {
             _note = value;
@@ -89,20 +95,22 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     /// <value>
     ///   <c>true</c> if selected; otherwise, <c>false</c>.
     /// </value>
-    [Browsable(false),
-     DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    [Browsable(false)]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public bool Selected => _selected;
 
     #endregion
 
-    #region Protected Method Overrides
+    #region Protected Method Overrides    
     /// <summary>
     /// Assigns the event handlers for the controls on the dialog.
     /// </summary>
+    /// <remarks>
+    /// It is recommended that the overrides of this method call the base method.
+    /// </remarks>
     protected override void AssignEventHandlers()
     {
-        // General
-        Click += HandleToggleSelection;
+        base.Click += HandleToggleSelection;
         SelectionIndicator.Click += HandleToggleSelection;
 
         // Labels.
@@ -125,10 +133,12 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     /// <summary>
     /// Removes the event handlers for the controls on the dialog.
     /// </summary>
+    /// <remarks>
+    /// It is recommended that the overrides of this method call the base method.
+    /// </remarks>
     protected override void RemoveEventHandlers()
     {
-        // General
-        Click -= HandleToggleSelection;
+        base.Click -= HandleToggleSelection;
         SelectionIndicator.Click -= HandleToggleSelection;
 
         // Labels.
@@ -147,9 +157,13 @@ public partial class SecureNoteListItem : AdaptiveControlBase
         DeleteButton.Click -= HandleDeleteClicked;
         ContainerPanel.Click -= HandleToggleSelection;
     }
+
     /// <summary>
     /// Sets the state of the UI controls before the data content is loaded.
     /// </summary>
+    /// <remarks>
+    /// It is recommended that the overrides of this method call the base method.
+    /// </remarks>
     protected override void SetPreLoadState()
     {
         Cursor = Cursors.WaitCursor;
@@ -162,6 +176,9 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     /// <summary>
     /// Sets the state of the UI controls after the data content is loaded.
     /// </summary>
+    /// <remarks>
+    /// It is recommended that the overrides of this method call the base method.
+    /// </remarks>
     protected override void SetPostLoadState()
     {
         Cursor = Cursors.Default;
@@ -175,39 +192,36 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     }
     #endregion
 
-    #region Private Event Methods
+    #region Private Event Methods    
     /// <summary>
     /// Raises the <see cref="E:CategorizeRequest" /> event.
     /// </summary>
-    /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-    /// <returns></returns>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void OnCategorizeRequest(EventArgs e)
     {
-        ContinueInMainThread(() =>
+        ContinueInMainThread(delegate
         {
             CategorizeRequest?.Invoke(this, e);
         });
     }
 
     /// <summary>
-    /// Raises the <see cref="DeleteRequest" /> event.
+    /// Raises the <see cref="E:DeleteRequest" /> event.
     /// </summary>
-    /// <param name="evArgs">
-    /// The <see cref="EventArgs{T}"/> of <see cref="SecureNote"/> instance containing the 
-    /// reference to the <see cref="SecureNote"/> entry to be deleted.
-    /// </param>
+    /// <param name="evArgs">The <see cref="EventArgs{SecureNote}"/> instance containing the event data.</param>
     private void OnDeleteRequest(EventArgs<SecureNote> evArgs)
     {
-        ContinueInMainThread(() =>
+        ContinueInMainThread(delegate
         {
             DeleteRequest?.Invoke(this, evArgs);
         });
     }
+
     #endregion
 
     #region Private Event Handlers
     /// <summary>
-    /// Handles the event when the user info button is clicked.
+    /// Handles the event when the User Info button is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
@@ -217,11 +231,10 @@ public partial class SecureNoteListItem : AdaptiveControlBase
 
         if (_note != null)
         {
-            SecureNoteInfoDialog dialog = new SecureNoteInfoDialog();
-            dialog.Note = _note;
-            dialog.ShowDialog();
-
-            dialog.Dispose();
+            SecureNoteInfoDialog secureNoteInfoDialog = new SecureNoteInfoDialog();
+            secureNoteInfoDialog.Note = _note;
+            secureNoteInfoDialog.ShowDialog();
+            secureNoteInfoDialog.Dispose();
         }
 
         SetPostLoadState();
@@ -229,39 +242,36 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     }
 
     /// <summary>
-    /// Handles the event when the Context Menu New Item is clicked.
+    /// Handles the event when the New menu item is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleNewClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-
-        AddEditSecureNoteDialog dialog = new AddEditSecureNoteDialog();
-        DialogResult result = dialog.ShowDialog();
-
-        if (result == DialogResult.OK)
+        AddEditSecureNoteDialog addEditSecureNoteDialog = new AddEditSecureNoteDialog();
+        DialogResult dialogResult = addEditSecureNoteDialog.ShowDialog();
+        if (dialogResult == DialogResult.OK && base.Parent != null)
         {
-            if (Parent != null)
-                ((SecureNoteListControl)Parent).AddNewItem();
+            ((SecureNoteListControl)base.Parent).AddNewItem();
         }
 
         SetPostLoadState();
         SetState();
     }
+
     /// <summary>
-    /// Handles the event when the edit button is clicked.
+    /// Handles the event when the Edit button or menu item is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleEditClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-
-        AddEditSecureNoteDialog dialog = new AddEditSecureNoteDialog();
-        dialog.Note = _note;
-        DialogResult result = dialog.ShowDialog();
-        if (result == DialogResult.OK)
+        AddEditSecureNoteDialog addEditSecureNoteDialog = new AddEditSecureNoteDialog();
+        addEditSecureNoteDialog.Note = _note;
+        DialogResult dialogResult = addEditSecureNoteDialog.ShowDialog();
+        if (dialogResult == DialogResult.OK)
         {
             SetControlValues();
             OnContentChanged(EventArgs.Empty);
@@ -271,23 +281,17 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     }
 
     /// <summary>
-    /// Handles the event when the delete button is clicked.
+    /// Handles the event when the Delete button or menu item is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleDeleteClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-
-        if (_note != null)
+        if (_note != null && AdaptiveControlBase.GetUserConfirmation("Delete This Entry?", "Are you sure you want to delete the entry for: " + _note.Name + "?  This action cannot be undone."))
         {
-            bool canDelete = GetUserConfirmation("Delete This Entry?",
-                $"Are you sure you want to delete the entry for: {_note.Name}?  This action cannot be undone.");
-
-            if (canDelete)
-            {
-                OnDeleteRequest(new EventArgs<SecureNote>(_note));
-            }
+            OnDeleteRequest(new EventArgs<SecureNote>(_note));
+        }
         }
         SetPostLoadState();
         SetState();
@@ -308,7 +312,7 @@ public partial class SecureNoteListItem : AdaptiveControlBase
     }
 
     /// <summary>
-    /// Handles the event when the control is clicked to toggle a selected / not selected status.
+    /// Handles the toggle selection event.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
@@ -323,7 +327,7 @@ public partial class SecureNoteListItem : AdaptiveControlBase
 
     #region Private Methods / Functions
     /// <summary>
-    /// Sets the control values based on the business object.
+    /// Sets the data content on the control.
     /// </summary>
     private void SetControlValues()
     {

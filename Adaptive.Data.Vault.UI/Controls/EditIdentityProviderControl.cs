@@ -75,17 +75,24 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
     /// </summary>
     protected override void InitializeDataContent()
     {
-        SetControlValues();
-        if (_provider == null)
-            _provider = new IdentityProvider();
+        if (IdProviderTypeList.Items.Count == 0)
+        {
+            IdProviderTypeList.Items.Add("None");
+            IdProviderTypeList.Items.Add("Microsoft");
+            IdProviderTypeList.Items.Add("Google");
+            IdProviderTypeList.Items.Add("Facebook");
+            IdProviderTypeList.Items.Add("Apple");
+            IdProviderTypeList.Items.Add("Corporate, Custom, or Other");
+            IdProviderTypeList.SelectedIndex = 0;
+        }
     }
     #endregion
-    
-    #region Private Methods / Functions
+
+    #region Public Methods / Functions
     /// <summary>
     /// Saves the control values to the business object.
     /// </summary>
-    private void SaveControlValues()
+    public void SaveControlValues()
     {
         if (_provider != null)
         {
@@ -111,6 +118,9 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
         }
 
     }
+    #endregion
+
+    #region Private Methods / Functions
 
     /// <summary>
     /// Sets the content of the control from the business object.
@@ -122,6 +132,8 @@ public partial class EditIdentityProviderControl : AdaptiveControlBase
 
         if (_provider != null)
         {
+            if (IdProviderTypeList.Items.Count == 0)
+                InitializeDataContent();
 
             IdProviderTypeList.SelectedIndex = (int)_provider.ProviderType;
             NameText.Text = _provider.ProviderTypeName;

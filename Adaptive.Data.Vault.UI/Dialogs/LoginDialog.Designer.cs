@@ -1,5 +1,6 @@
 ﻿using Adaptive.Data.Vault.UI.Controls;
 using Adaptive.Intelligence.Shared.UI;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Adaptive.Data.Vault.UI;
 
@@ -28,14 +29,14 @@ partial class LoginDialog
         UserIdImage = new PictureBox();
         PwdImage = new PictureBox();
         ttp = new ToolTip(components);
-        ErrorProvider = new ErrorProvider(components);
-        ButtonPanel = new Panel();
         CloseButton = new TemplatedButton();
         OkButton = new TemplatedButton();
-        DividerLine = new LineControl();
-        pictureBox1 = new PictureBox();
         PinText = new PasswordTextBox();
         PinLabel = new AdvancedLabel();
+        ErrorProvider = new ErrorProvider(components);
+        ButtonPanel = new Panel();
+        DividerLine = new LineControl();
+        pictureBox1 = new PictureBox();
         ((System.ComponentModel.ISupportInitialize)UserIdImage).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PwdImage).BeginInit();
         ((System.ComponentModel.ISupportInitialize)ErrorProvider).BeginInit();
@@ -48,7 +49,7 @@ partial class LoginDialog
         DialogHeader.Dock = DockStyle.Top;
         DialogHeader.Location = new Point(0, 0);
         DialogHeader.Name = "DialogHeader";
-        DialogHeader.Size = new Size(460, 77);
+        DialogHeader.Size = new Size(448, 77);
         DialogHeader.TabIndex = 0;
         DialogHeader.TabStop = false;
         DialogHeader.TitleText = "ADAPTIVE DATA VAULT";
@@ -113,21 +114,6 @@ partial class LoginDialog
         PwdImage.TabIndex = 6;
         PwdImage.TabStop = false;
         // 
-        // ErrorProvider
-        // 
-        ErrorProvider.ContainerControl = this;
-        // 
-        // ButtonPanel
-        // 
-        ButtonPanel.Controls.Add(CloseButton);
-        ButtonPanel.Controls.Add(OkButton);
-        ButtonPanel.Controls.Add(DividerLine);
-        ButtonPanel.Dock = DockStyle.Bottom;
-        ButtonPanel.Location = new Point(0, 305);
-        ButtonPanel.Name = "ButtonPanel";
-        ButtonPanel.Size = new Size(460, 51);
-        ButtonPanel.TabIndex = 7;
-        // 
         // CloseButton
         // 
         CloseButton.Checked = false;
@@ -157,33 +143,6 @@ partial class LoginDialog
         ttp.SetToolTip(OkButton, "Click here to log in to the file and load the contents.");
         OkButton.UseVisualStyleBackColor = true;
         // 
-        // DividerLine
-        // 
-        DividerLine.BevelBottomColor = SystemColors.ControlLight;
-        DividerLine.BevelTopColor = SystemColors.ControlDark;
-        DividerLine.Direction = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-        DividerLine.Dock = DockStyle.Top;
-        DividerLine.EndColor = Color.FromArgb(255, 128, 0);
-        DividerLine.LineWidth = 3;
-        DividerLine.Location = new Point(0, 0);
-        DividerLine.Mode = LineControlMode.Line;
-        DividerLine.Name = "DividerLine";
-        DividerLine.Orientation = LineControlOrientation.Horizontal;
-        DividerLine.Size = new Size(460, 3);
-        DividerLine.StartColor = Color.DodgerBlue;
-        DividerLine.TabIndex = 10;
-        DividerLine.TabStop = false;
-        // 
-        // pictureBox1
-        // 
-        pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-        pictureBox1.Location = new Point(18, 242);
-        pictureBox1.Name = "pictureBox1";
-        pictureBox1.Size = new Size(32, 32);
-        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-        pictureBox1.TabIndex = 11;
-        pictureBox1.TabStop = false;
-        // 
         // PinText
         // 
         PinText.Font = new Font("Segoe UI", 9.75F);
@@ -208,11 +167,53 @@ partial class LoginDialog
         PinLabel.TextAlign = ContentAlignment.MiddleLeft;
         ttp.SetToolTip(PinLabel, "Enter the password for this file.");
         // 
+        // ErrorProvider
+        // 
+        ErrorProvider.ContainerControl = this;
+        // 
+        // ButtonPanel
+        // 
+        ButtonPanel.Controls.Add(CloseButton);
+        ButtonPanel.Controls.Add(OkButton);
+        ButtonPanel.Controls.Add(DividerLine);
+        ButtonPanel.Dock = DockStyle.Bottom;
+        ButtonPanel.Location = new Point(0, 302);
+        ButtonPanel.Name = "ButtonPanel";
+        ButtonPanel.Size = new Size(448, 51);
+        ButtonPanel.TabIndex = 7;
+        // 
+        // DividerLine
+        // 
+        DividerLine.BevelBottomColor = SystemColors.ControlLight;
+        DividerLine.BevelTopColor = SystemColors.ControlDark;
+        DividerLine.Direction = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+        DividerLine.Dock = DockStyle.Top;
+        DividerLine.EndColor = Color.FromArgb(255, 128, 0);
+        DividerLine.LineWidth = 3;
+        DividerLine.Location = new Point(0, 0);
+        DividerLine.Mode = LineControlMode.Line;
+        DividerLine.Name = "DividerLine";
+        DividerLine.Orientation = LineControlOrientation.Horizontal;
+        DividerLine.Size = new Size(448, 3);
+        DividerLine.StartColor = Color.DodgerBlue;
+        DividerLine.TabIndex = 10;
+        DividerLine.TabStop = false;
+        // 
+        // pictureBox1
+        // 
+        pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+        pictureBox1.Location = new Point(18, 242);
+        pictureBox1.Name = "pictureBox1";
+        pictureBox1.Size = new Size(32, 32);
+        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+        pictureBox1.TabIndex = 11;
+        pictureBox1.TabStop = false;
+        // 
         // LoginDialog
         // 
         AutoScaleDimensions = new SizeF(7F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(460, 356);
+        ClientSize = new Size(448, 353);
         ControlBox = false;
         Controls.Add(pictureBox1);
         Controls.Add(PinText);

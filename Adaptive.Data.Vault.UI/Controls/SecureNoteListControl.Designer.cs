@@ -1,4 +1,6 @@
-﻿namespace Adaptive.Data.Vault.UI;
+﻿using Adaptive.Intelligence.Shared.UI;
+
+namespace Adaptive.Data.Vault.UI;
 
 partial class SecureNoteListControl
 {
@@ -6,7 +8,6 @@ partial class SecureNoteListControl
     /// Required designer variable.
     /// </summary>
     private System.ComponentModel.IContainer components;
-
 
     #region Component Designer generated code
 
@@ -16,9 +17,9 @@ partial class SecureNoteListControl
     /// </summary>
     private void InitializeComponent()
     {
-        ToolbarPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-        NewAccountButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        ContainerPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+        ToolbarPanel = new GradientPanel();
+        NewAccountButton = new TemplatedButton();
+        ContainerPanel = new GradientPanel();
         ToolbarPanel.SuspendLayout();
         SuspendLayout();
         // 
@@ -39,13 +40,13 @@ partial class SecureNoteListControl
         // 
         NewAccountButton.Checked = false;
         NewAccountButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        NewAccountButton.Image = Properties.Resources.Add_16x16;
+        NewAccountButton.Image = Properties.Resources.Add16;
         NewAccountButton.ImageAlign = ContentAlignment.MiddleLeft;
         NewAccountButton.Location = new Point(5, 5);
         NewAccountButton.Name = "NewAccountButton";
         NewAccountButton.Size = new Size(247, 32);
         NewAccountButton.TabIndex = 0;
-        NewAccountButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
         NewAccountButton.Text = "Create New Secure Note...";
         NewAccountButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         NewAccountButton.UseVisualStyleBackColor = true;
@@ -71,10 +72,11 @@ partial class SecureNoteListControl
         ResumeLayout(false);
     }
 
+
     #endregion
 
-    private Intelligence.Shared.UI.GradientPanel ToolbarPanel;
-    private Intelligence.Shared.UI.TemplatedButton NewAccountButton;
-    private Intelligence.Shared.UI.GradientPanel ContainerPanel;
+    private GradientPanel ToolbarPanel;
+    private TemplatedButton NewAccountButton;
+    private GradientPanel ContainerPanel;
 
 }

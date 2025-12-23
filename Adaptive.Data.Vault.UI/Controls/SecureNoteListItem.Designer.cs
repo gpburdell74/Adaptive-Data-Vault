@@ -57,7 +57,7 @@ partial class SecureNoteListItem
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(440, 54);
         ContainerPanel.TabIndex = 0;
-        ContainerPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ControlBackground.template";
+        ContainerPanel.TemplateFile = "";
         // 
         // ContextMenu
         // 
@@ -68,7 +68,7 @@ partial class SecureNoteListItem
         // 
         // ContextMenuNew
         // 
-        ContextMenuNew.Image = Properties.Resources.Add_16x16;
+        ContextMenuNew.Image = Properties.Resources.Add16;
         ContextMenuNew.Name = "ContextMenuNew";
         ContextMenuNew.Size = new Size(197, 22);
         ContextMenuNew.Text = "New...";
@@ -114,7 +114,7 @@ partial class SecureNoteListItem
         ContextMenuProperties.ShortcutKeys = Keys.F5;
         ContextMenuProperties.Size = new Size(197, 22);
         ContextMenuProperties.Text = "Properties";
-        ContextMenuProperties.ToolTipText = "Show the detail imformation for this entry.";
+        ContextMenuProperties.ToolTipText = "Show the detail information for this entry.";
         // 
         // DividerLine
         // 
@@ -191,11 +191,12 @@ partial class SecureNoteListItem
         // 
         UserInfoButton.Checked = false;
         UserInfoButton.Dock = DockStyle.Right;
+        UserInfoButton.Image = Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV User Info Button.template";
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -212,11 +213,12 @@ partial class SecureNoteListItem
         // 
         EditButton.Checked = false;
         EditButton.Dock = DockStyle.Right;
+        EditButton.Image = Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Edit User Template.template";
+        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -238,7 +240,7 @@ partial class SecureNoteListItem
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Delete Template.template";
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 
@@ -271,11 +273,11 @@ partial class SecureNoteListItem
     private GradientPanel ContainerPanel;
     private GradientPanel ButtonsPanel;
     private Panel NamePanel;
-    private Intelligence.Shared.UI.AdvancedLabel NameLabel;
-    private Intelligence.Shared.UI.AdvancedLabel DescriptionLabel;
-    private Intelligence.Shared.UI.TemplatedButton EditButton;
-    private Intelligence.Shared.UI.TemplatedButton UserInfoButton;
-    private Intelligence.Shared.UI.TemplatedButton DeleteButton;
+    private AdvancedLabel NameLabel;
+    private AdvancedLabel DescriptionLabel;
+    private TemplatedButton EditButton;
+    private TemplatedButton UserInfoButton;
+    private TemplatedButton DeleteButton;
     private Panel ButtonDividerB;
     private Panel ButtonDividerA;
     private ToolTip ttp;

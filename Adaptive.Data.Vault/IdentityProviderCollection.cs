@@ -108,6 +108,7 @@ public sealed class IdentityProviderCollection : VaultBusinessCollectionBase<Ide
     private int AlphabeticComparison(IdentityProvider left, IdentityProvider right)
     {
         return string.Compare(left.Name, right.Name, StringComparison.OrdinalIgnoreCase);
+
     }
     #endregion
 }

@@ -255,4 +255,5 @@ partial class IdentityProviderInfoDialog
     private Intelligence.Shared.UI.AdvancedLabel AddressTitleLabel;
     private Intelligence.Shared.UI.TemplatedButton CloseButton;
     private ToolTip ttp;
+
 }

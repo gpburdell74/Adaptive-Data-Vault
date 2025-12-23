@@ -8,12 +8,16 @@
     <RootNamespace>Adaptive.Data.Vault.DataAccess</RootNamespace>
     <PackageId>Adaptive.Data.Vault.DataAccess</PackageId>
     <Title>Adaptive Intelligence Data Vault Data Access Library</Title>
-    <Version>0.9.1.0</Version>
+    <Description>A .NET Class Library to provide data access capabilities and definitions for the Adaptive Data Vault Application.</Description>
+	  <Version>0.93.100.0001</Version>
     <Authors>Sam Jones</Authors>
     <Company>Adaptive Intelligence</Company>
-    <Product>Adaptive.Data.Vault.DataAccess</Product>
-    <Description>A .NET Class Library to provide data access capabilities and definitions for the Adaptive Data Vault Application.</Description>
-    <Copyright>Copyright © 2024-2025 by Sam Jones. All rights reserved.</Copyright>
+    <Product>Adaptive Data Vault</Product>
+    <Copyright>Copyright © 2025 by Sam Jones.  All rights reserved.</Copyright>
+    <PackageProjectUrl>https://samjones.azurewebsites.net</PackageProjectUrl>
+    <PackageIcon>ADV.ico</PackageIcon>
+    <RepositoryType>github</RepositoryType>
+    <RepositoryUrl>https://github.com/gpburdell74/Adaptive-Data-Vault</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -25,7 +29,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Framework\Shared Code Library\Adaptive.Intelligence.Shared\Adaptive.Intelligence.Shared.csproj" />
+    <PackageReference Include="Sam.Jones.Adaptive.Intelligence.Shared" Version="0.92.100.1" />
   </ItemGroup>
 
 </Project>

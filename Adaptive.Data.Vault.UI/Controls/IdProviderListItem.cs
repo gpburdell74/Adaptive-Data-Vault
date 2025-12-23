@@ -11,7 +11,7 @@ namespace Adaptive.Data.Vault.UI;
 /// <seealso cref="AdaptiveControlBase" />
 public partial class IdProviderListItem : AdaptiveControlBase
 {
-    #region Public Events
+    #region Public Events    
     /// <summary>
     /// Occurs when the user clicks the Categorize menu item.
     /// </summary>
@@ -35,7 +35,7 @@ public partial class IdProviderListItem : AdaptiveControlBase
     private bool _selected;
     #endregion
 
-    #region Constructor / Dispose Methods
+    #region Constructor / Dispose Methods    
     /// <summary>
     /// Initializes a new instance of the <see cref="IdProviderListItem"/> class.
     /// </summary>
@@ -46,7 +46,8 @@ public partial class IdProviderListItem : AdaptiveControlBase
     {
         InitializeComponent();
     }
-    /// <summary> 
+
+    /// <summary>
     /// Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -64,6 +65,7 @@ public partial class IdProviderListItem : AdaptiveControlBase
     #endregion
 
     #region Public Properties
+
     /// <summary>
     /// Gets or sets the reference to the Identity Provider being shown.
     /// </summary>
@@ -95,10 +97,13 @@ public partial class IdProviderListItem : AdaptiveControlBase
 
     #endregion
 
-    #region Protected Method Overrides
+    #region Protected Method Overrides    
     /// <summary>
     /// Assigns the event handlers for the controls on the dialog.
     /// </summary>
+    /// <remarks>
+    /// It is recommended that the overrides of this method call the base method.
+    /// </remarks>
     protected override void AssignEventHandlers()
     {
         // General
@@ -127,6 +132,9 @@ public partial class IdProviderListItem : AdaptiveControlBase
     /// <summary>
     /// Removes the event handlers for the controls on the dialog.
     /// </summary>
+    /// <remarks>
+    /// It is recommended that the overrides of this method call the base method.
+    /// </remarks>
     protected override void RemoveEventHandlers()
     {
         // General
@@ -151,9 +159,13 @@ public partial class IdProviderListItem : AdaptiveControlBase
         DeleteButton.Click -= HandleDeleteClicked;
         ContainerPanel.Click -= HandleToggleSelection;
     }
+
     /// <summary>
     /// Sets the state of the UI controls before the data content is loaded.
     /// </summary>
+    /// <remarks>
+    /// It is recommended that the overrides of this method call the base method.
+    /// </remarks>
     protected override void SetPreLoadState()
     {
         Cursor = Cursors.WaitCursor;
@@ -167,6 +179,9 @@ public partial class IdProviderListItem : AdaptiveControlBase
     /// <summary>
     /// Sets the state of the UI controls after the data content is loaded.
     /// </summary>
+    /// <remarks>
+    /// It is recommended that the overrides of this method call the base method.
+    /// </remarks>
     protected override void SetPostLoadState()
     {
         Cursor = Cursors.Default;
@@ -193,7 +208,7 @@ public partial class IdProviderListItem : AdaptiveControlBase
     }
     #endregion
 
-    #region Private Event Methods
+    #region Private Event Methods    
     /// <summary>
     /// Raises the <see cref="E:CategorizeRequest" /> event.
     /// </summary>
@@ -224,6 +239,7 @@ public partial class IdProviderListItem : AdaptiveControlBase
     #endregion
 
     #region Private Event Handlers
+
     /// <summary>
     /// Handles the event when the URL label is clicked.
     /// </summary>
@@ -279,6 +295,7 @@ public partial class IdProviderListItem : AdaptiveControlBase
         SetPostLoadState();
         SetState();
     }
+
     /// <summary>
     /// Handles the event when the edit button is clicked.
     /// </summary>
@@ -315,9 +332,9 @@ public partial class IdProviderListItem : AdaptiveControlBase
                 $"Are you sure you want to delete the entry for: {_provider.Name}?  This action cannot be undone.");
 
             if (canDelete)
-            {
-                OnDeleteRequest(new EventArgs<IdentityProvider>(_provider));
-            }
+        {
+            OnDeleteRequest(new EventArgs<IdentityProvider>(_provider));
+        }
         }
         SetPostLoadState();
         SetState();

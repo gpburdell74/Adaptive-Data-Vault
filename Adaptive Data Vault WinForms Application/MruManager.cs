@@ -75,7 +75,7 @@ namespace Adaptive.Data.Vault.UI
         /// <value>
         ///   <c>true</c> if the EULA was accepted; otherwise, <c>false</c>.
         /// </value>
-        public bool EulaAccepted { get; set; }
+        public bool EulaAccepted { get; set; } = false;
 
         /// <summary>
         /// Gets the recent file name list.
@@ -179,8 +179,8 @@ namespace Adaptive.Data.Vault.UI
                 }
                 writer.Flush();
             }
-
-            byte[] data = ms.ToArray();
+            
+            byte[] data = ms.ToArray();   
             writer.Close();
             ms.Close();
 
@@ -202,6 +202,10 @@ namespace Adaptive.Data.Vault.UI
             {
                 ReadContent(data);
                 Array.Clear(data, 0, data.Length);
+            }
+            else
+            {
+                EulaAccepted = false;
             }
         }
 
@@ -230,7 +234,7 @@ namespace Adaptive.Data.Vault.UI
                 ms.Dispose();
             }
         }
-
+        
         /// <summary>
         /// Saves the content to the local MRU file.
         /// </summary>

@@ -1,7 +1,15 @@
 ﻿using Adaptive.Data.Vault.OS;
 using Adaptive.Intelligence.Shared.Logging;
 using Adaptive.Intelligence.Shared.UI;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Adaptive.Data.Vault.UI;
 /// <summary>
@@ -83,10 +91,13 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         if (_provider != null)
         {
             if (_provider.UserId != null)
+            {
                 UserIdLabel.Text = new string('*', _provider.UserId.Length);
 
             if (_provider.Password != null)
+            {
                 PasswordLabel.Text = new string('*', _provider.Password.Length);
+            }
         }
     }
 
@@ -165,6 +176,7 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         SetPreLoadState();
 
         if (_provider != null && _provider.Url != null)
+        {
             OSUtilities.StartBrowser(_provider.Url);
 
         SetPostLoadState();
@@ -181,10 +193,13 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         if (_provider != null && _provider.UserId != null)
         {
             if (ShowUserIdButton.Checked)
+            {
                 UserIdLabel.Text = _provider.UserId;
+            }
             else
+            {
                 UserIdLabel.Text = new string('*', _provider.UserId.Length);
-        }
+            }
 
     }
 
@@ -199,9 +214,13 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         if (_provider != null && _provider.Password != null)
         {
             if (ShowPasswordButton.Checked)
+            {
                 PasswordLabel.Text = _provider.Password;
+            }
             else
+            {
                 PasswordLabel.Text = new string('*', _provider.Password.Length);
+            }
         }
         Invalidate();
     }

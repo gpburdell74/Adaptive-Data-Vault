@@ -1,4 +1,5 @@
 ﻿using Adaptive.Intelligence.Shared.UI;
+using Adaptive.Intelligence.Shared.UI.Controls;
 
 namespace Adaptive.Data.Vault.UI;
 
@@ -60,20 +61,20 @@ partial class WebAccountListItem
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(440, 54);
         ContainerPanel.TabIndex = 0;
-        ContainerPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ControlBackground.template";
+        ContainerPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Button.template";
         // 
         // ContextMenu
         // 
         ContextMenu.Items.AddRange(new ToolStripItem[] { ContextMenuNew, ContextMenuEdit, ContextMenuDelete, ContextMenuDividerA, ContextMenuCategorize, ContextMenuDividerB, ContextMenuProperties });
         ContextMenu.Name = "ContextMenu";
         ContextMenu.ShowCheckMargin = true;
-        ContextMenu.Size = new Size(203, 148);
+        ContextMenu.Size = new Size(198, 126);
         // 
         // ContextMenuNew
         // 
-        ContextMenuNew.Image = Properties.Resources.Add_16x16;
+        ContextMenuNew.Image = Properties.Resources.Add16;
         ContextMenuNew.Name = "ContextMenuNew";
-        ContextMenuNew.Size = new Size(202, 22);
+        ContextMenuNew.Size = new Size(197, 22);
         ContextMenuNew.Text = "New...";
         ContextMenuNew.ToolTipText = "Create a new Web Account entry...";
         // 
@@ -81,7 +82,7 @@ partial class WebAccountListItem
         // 
         ContextMenuEdit.Image = Properties.Resources.Edit_16x16;
         ContextMenuEdit.Name = "ContextMenuEdit";
-        ContextMenuEdit.Size = new Size(202, 22);
+        ContextMenuEdit.Size = new Size(197, 22);
         ContextMenuEdit.Text = "Edit...";
         ContextMenuEdit.ToolTipText = "Edit this Account information.";
         // 
@@ -89,34 +90,34 @@ partial class WebAccountListItem
         // 
         ContextMenuDelete.Image = Properties.Resources.Delete_16x16;
         ContextMenuDelete.Name = "ContextMenuDelete";
-        ContextMenuDelete.Size = new Size(202, 22);
+        ContextMenuDelete.Size = new Size(197, 22);
         ContextMenuDelete.Text = "Delete";
         ContextMenuDelete.ToolTipText = "Delete this account.";
         // 
         // ContextMenuDividerA
         // 
         ContextMenuDividerA.Name = "ContextMenuDividerA";
-        ContextMenuDividerA.Size = new Size(199, 6);
+        ContextMenuDividerA.Size = new Size(194, 6);
         // 
         // ContextMenuCategorize
         // 
         ContextMenuCategorize.Image = Properties.Resources.Delete_2_16x16;
         ContextMenuCategorize.Name = "ContextMenuCategorize";
-        ContextMenuCategorize.Size = new Size(202, 22);
+        ContextMenuCategorize.Size = new Size(197, 22);
         ContextMenuCategorize.Text = "Change Category...";
         ContextMenuCategorize.ToolTipText = "Change the category this item belongs to.";
         // 
         // ContextMenuDividerB
         // 
         ContextMenuDividerB.Name = "ContextMenuDividerB";
-        ContextMenuDividerB.Size = new Size(199, 6);
+        ContextMenuDividerB.Size = new Size(194, 6);
         // 
         // ContextMenuProperties
         // 
         ContextMenuProperties.Image = (Image)resources.GetObject("ContextMenuProperties.Image");
         ContextMenuProperties.Name = "ContextMenuProperties";
         ContextMenuProperties.ShortcutKeys = Keys.F5;
-        ContextMenuProperties.Size = new Size(202, 22);
+        ContextMenuProperties.Size = new Size(197, 22);
         ContextMenuProperties.Text = "Properties";
         ContextMenuProperties.ToolTipText = "Show the detail imformation for this entry.";
         // 
@@ -211,11 +212,12 @@ partial class WebAccountListItem
         // 
         UserInfoButton.Checked = false;
         UserInfoButton.Dock = DockStyle.Right;
+        UserInfoButton.Image = Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV User Info Button.template";
+        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -232,11 +234,12 @@ partial class WebAccountListItem
         // 
         EditButton.Checked = false;
         EditButton.Dock = DockStyle.Right;
+        EditButton.Image = Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Edit User Template.template";
+        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -258,7 +261,7 @@ partial class WebAccountListItem
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Delete Template.template";
+        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 
@@ -291,12 +294,12 @@ partial class WebAccountListItem
     private GradientPanel ContainerPanel;
     private GradientPanel ButtonsPanel;
     private Panel NamePanel;
-    private Intelligence.Shared.UI.AdvancedLabel NameLabel;
-    private Intelligence.Shared.UI.AdvancedLabel DescriptionLabel;
-    private Intelligence.Shared.UI.AdvancedLabel UrlLabel;
-    private Intelligence.Shared.UI.TemplatedButton EditButton;
-    private Intelligence.Shared.UI.TemplatedButton UserInfoButton;
-    private Intelligence.Shared.UI.TemplatedButton DeleteButton;
+    private AdvancedLabel NameLabel;
+    private AdvancedLabel DescriptionLabel;
+    private AdvancedLabel UrlLabel;
+    private TemplatedButton EditButton;
+    private TemplatedButton UserInfoButton;
+    private TemplatedButton DeleteButton;
     private Panel ButtonDividerB;
     private Panel ButtonDividerA;
     private ToolTip ttp;
