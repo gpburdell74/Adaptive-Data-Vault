@@ -96,7 +96,7 @@ partial class IdentityProviderListControl
         
         this.NewAccountButton.Checked = false;
         this.NewAccountButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-        this.NewAccountButton.Image = Adaptive.Data.Vault.UI.Properties.Resources.Add16x16;
+        this.NewAccountButton.Image = Adaptive.Data.Vault.UI.Properties.Resources.Add16;
         this.NewAccountButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
         this.NewAccountButton.Location = new System.Drawing.Point(5, 5);
         this.NewAccountButton.Name = "NewAccountButton";
