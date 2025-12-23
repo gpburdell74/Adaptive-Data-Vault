@@ -11,6 +11,11 @@ public partial class MainDialog : AdaptiveDialogBase
 {
     #region Private Member Declarations
     /// <summary>
+    /// Manages the most recently used file list.
+    /// </summary>
+    private MruManager? _mru;
+
+    /// <summary>
     /// The manager instance.
     /// </summary>
     private VaultManager? _manager;
@@ -31,6 +36,8 @@ public partial class MainDialog : AdaptiveDialogBase
     public MainDialog()
     {
         InitializeComponent();
+        _mru = new MruManager();
+        AddMruMenuItems();
     }
 
     /// <summary>
@@ -41,10 +48,12 @@ public partial class MainDialog : AdaptiveDialogBase
     {
         if (!IsDisposed && disposing)
         {
+            _mru?.Dispose();
             _manager?.Dispose();
             components?.Dispose();
         }
 
+        _mru = null;
         components = null;
         _manager = null;
         base.Dispose(disposing);
@@ -64,11 +73,13 @@ public partial class MainDialog : AdaptiveDialogBase
         FileMenuSave.Click += HandleFileMenuSaveClicked;
         FileMenuSaveAs.Click += HandleFileMenuSaveAsClicked;
         FileMenuExit.Click += HandleFileMenuExitClicked;
+        MruMenuClear.Click += HandleClearMruClicked;
 
+        // Tool Menu
         ToolMenuSecureMessage.Click += HandleToolMenuSecureMessageClicked;
         ToolMenuDecryptMessage.Click += HandleToolMenuDecryptMessageClicked;
         ToolMenuEraseFile.Click += HandleToolMenuEraseFileClicked;
-        
+
         // Tool bar
         NewFileButton.Click += HandleFileMenuNewClicked;
         OpenFileButton.Click += HandleFileMenuOpenClicked;
@@ -98,7 +109,8 @@ public partial class MainDialog : AdaptiveDialogBase
         FileMenuSave.Click -= HandleFileMenuSaveClicked;
         FileMenuSaveAs.Click -= HandleFileMenuSaveAsClicked;
         FileMenuExit.Click -= HandleFileMenuExitClicked;
-
+        MruMenuClear.Click -= HandleClearMruClicked;
+        // Tool Menu
         ToolMenuSecureMessage.Click -= HandleToolMenuSecureMessageClicked;
         ToolMenuDecryptMessage.Click -= HandleToolMenuDecryptMessageClicked;
         ToolMenuEraseFile.Click -= HandleToolMenuEraseFileClicked;
@@ -126,9 +138,8 @@ public partial class MainDialog : AdaptiveDialogBase
         {
             EulaDialog dialog = new EulaDialog();
             dialog.ShowDialog();
+
         }
-        Data.Manager = _manager;
-        
     }
     /// <summary>
     /// Sets the state of the UI controls before the data content is loaded.
@@ -171,11 +182,14 @@ public partial class MainDialog : AdaptiveDialogBase
     protected override void SetDisplayState()
     {
         bool isOpen = _manager != null;
+        bool hasMru = _mru.Count > 0;
 
         FileMenuCloseFile.Visible = isOpen;
         FileMenuSave.Visible = isOpen;
         FileMenuSaveAs.Visible = isOpen;
         FileMenuDividerA.Visible = isOpen;
+        FileMenuMruDivider.Visible = hasMru;
+        FileMenuRecentFiles.Visible = hasMru;
 
         ToolbarSaveDivider.Visible = isOpen;
         CloseFileButton.Visible = isOpen;
@@ -220,6 +234,8 @@ public partial class MainDialog : AdaptiveDialogBase
                 Data.Manager = _manager;
                 Data.SelectedCategory = CatTree.SelectedCategory;
 
+                // Add to the MRU list.
+                AddMruItem(fileName);
             }
         }
 
@@ -239,30 +255,11 @@ public partial class MainDialog : AdaptiveDialogBase
         string? fileName = GetOpenFileName();
         if (!string.IsNullOrEmpty(fileName))
         {
-            // Prompt the user for the security credentials for the file, and
-            // attempt to open the file.
-            SecureFileParameters? secParams = ShowFileLogin(fileName);
-            if (secParams != null)
-            {
-                // Close all old data.
-                PerformClose();
+            // Close all old data.
+            PerformClose();
 
-                _secParams = secParams;
-                if (_secParams != null)
-                {
-                    _manager = new VaultManager();
-                    _manager.Load(
-                        _secParams.FileName!,
-                        _secParams.UserId!,
-                        _secParams.Password!,
-                        _secParams.Pin);
-
-                    // Set the categories list.
-                    CatTree.Categories = _manager!.Categories;
-                    Data.Manager = _manager;
-                    Data.SelectedCategory = CatTree.SelectedCategory;
-                }
-            }
+            // Open the new file.
+            PerformOpenFile(fileName);
         }
 
         SetPostLoadState();
@@ -304,28 +301,26 @@ public partial class MainDialog : AdaptiveDialogBase
     private void HandleFileMenuSaveAsClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
-        if (_manager != null)
+
+        // Prompt the user for the new file name.
+        string? fileName = GetNewFileName();
+        if (!string.IsNullOrEmpty(fileName))
         {
-            string? newFileName = GetNewFileName(true);
-            if (!string.IsNullOrEmpty(newFileName))
+            // Save the new file.
+            if (_secParams != null)
             {
-                bool changeCredentials = GetUserConfirmation("Change File Credentials?",
-                    "Would you like to enter new credentials for the new file?");
-                if (changeCredentials)
-                {
-                    SecureFileParameters? secParams = ShowFileLogin(newFileName);
-                    if (secParams != null)
-                    {
-                        _secParams?.Dispose();
-                        _secParams = secParams;
-                    }
-                }
-                _manager.Save(newFileName, _secParams!.UserId!, _secParams.Password!, _secParams.Pin);
+                _secParams.FileName = fileName;
+                PerformSave();
+
+                // Add to the MRU list.
+                AddMruItem(fileName);
             }
-        }      
+        }
+
         SetPostLoadState();
         SetState();
     }
+
     /// <summary>
     /// Handles the event when the File - New menu item or New File tool bar button is clicked.
     /// </summary>
@@ -337,9 +332,31 @@ public partial class MainDialog : AdaptiveDialogBase
         PerformClose();
         Close();
     }
-
     /// <summary>
-    /// Handles the event when the Tool Menu - Secure Message item is clicked.
+    /// Handles the event when the Clear MRU menu item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleClearMruClicked(object? sender, EventArgs e)
+    {
+        SetPreLoadState();
+
+        _mru.Clear();
+        while (FileMenuRecentFiles.DropDownItems.Count > 2)
+        {
+            FileMenuRecentFiles.DropDownItems[0].Click -= HandleMruItemClicked;
+            FileMenuRecentFiles.DropDownItems.RemoveAt(0);
+        }
+
+        SetPostLoadState();
+        SetState();
+
+    }
+    #endregion
+
+    #region Tool Menu
+    /// <summary>
+    /// Handles the event when the Tool Menu -- Create Secure Message item is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
@@ -355,9 +372,25 @@ public partial class MainDialog : AdaptiveDialogBase
         SetDisplayState();
     }
 
+    /// <summary>
+    /// Handles the event when the Tool Menu -- Secure Erase item is clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void HandleToolMenuEraseFileClicked(object? sender, EventArgs e)
+    {
+        SetPreLoadState();
+
+        SecureEraseFileDialog dialog = new SecureEraseFileDialog();
+        dialog.ShowDialog();
+        dialog.Dispose();
+
+        SetPostLoadState();
+        SetDisplayState();
+    }
 
     /// <summary>
-    /// Handles the event when the Tool Menu - Decrypt Message item is clicked.
+    /// Handles the event when the Tool Menu -- Decode Secure Message item is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
@@ -372,22 +405,28 @@ public partial class MainDialog : AdaptiveDialogBase
         SetPostLoadState();
         SetDisplayState();
     }
+
     /// <summary>
-    /// Handles the event when the Tool Menu - Erase File item is clicked.
+    /// Handles the event when an MRU File entry menu item is clicked.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-    private void HandleToolMenuEraseFileClicked(object? sender, EventArgs e)
+    private void HandleMruItemClicked(object? sender, EventArgs e)
     {
-        SetPreLoadState();
+        if (sender != null)
+        {
+            SetPreLoadState();
+            string fileName = (string)((ToolStripMenuItem)sender).Tag;
 
-        SecureEraseFileDialog dialog = new SecureEraseFileDialog();
-        dialog.ShowDialog();
-        dialog.Dispose();
+            // Close anything currently open.
+            PerformClose();
 
-        SetPostLoadState();
-        SetDisplayState();
+            // Open and load the specified file.
+            PerformOpenFile(fileName);
 
+            SetPostLoadState();
+            SetState();
+        }
     }
     #endregion
 
@@ -449,12 +488,8 @@ public partial class MainDialog : AdaptiveDialogBase
     private void HandleCategoryChanged(object? sender, EventArgs e)
     {
         SetPreLoadState();
-
         Data.SelectedCategory = CatTree.SelectedCategory;
-
-
         SetPostLoadState();
-
     }
 
     /// <summary>
@@ -472,29 +507,50 @@ public partial class MainDialog : AdaptiveDialogBase
 
     #region Private Methods / Functions
     /// <summary>
-    /// Performs operation to close the file.
+    /// Adds the new MRU file listing to the manager and drop-down menu list.
     /// </summary>
-    private void PerformClose()
+    /// <param name="fileName">
+    /// A string containing the path and name of the file.
+    /// </param>
+    private void AddMruItem(string fileName)
     {
-        // Prevent unnecessary re-painting issues.
-        CatTree.Visible = false;
-        Data.Visible = false;
-        Application.DoEvents();
+        if (_mru != null && !_mru.Contains(fileName))
+        {
+            _mru.Add(fileName);
+            ToolStripMenuItem item = new ToolStripMenuItem(fileName);
+            item.Tag = fileName;
+            item.Click += HandleMruItemClicked;
 
-        // Clear the current UI controls.
-        CatTree.ClearContent();
-        Data.ClearContent();
+            FileMenuRecentFiles.DropDownItems.Insert(0, item);
 
-        // Auto-save, if possible.
-        _manager?.Save();
-
-        _manager?.Dispose();
-        _secParams?.Dispose();
-
-        _manager = null;
-        _secParams = null;
-        GC.Collect();
+        }
     }
+
+    /// <summary>
+    /// Adds the MRU menu items when first loaded.
+    /// </summary>
+    private void AddMruMenuItems()
+    {
+        if (_mru != null && _mru.Count > 0)
+        {
+            FileMenuRecentFiles.Visible = true;
+            FileMenuMruDivider.Visible = true;
+            foreach (string mruFile in _mru.RecentFileList)
+            {
+                ToolStripMenuItem item = new ToolStripMenuItem(mruFile);
+                item.Tag = mruFile;
+                item.Click += HandleMruItemClicked;
+
+                FileMenuRecentFiles.DropDownItems.Insert(0, item);
+            }
+        }
+        else
+        {
+            FileMenuRecentFiles.Visible = false;
+            FileMenuMruDivider.Visible = false;
+        }
+    }
+
     /// <summary>
     /// Displays the Save As dialog for creating new files or saving files to prompt the
     /// user for a path and file name.
@@ -507,7 +563,7 @@ public partial class MainDialog : AdaptiveDialogBase
     /// A string containing the user-specified path and file name if successful;
     /// otherwise, returns <b>null</b>.
     /// </returns>
-    private static string? GetNewFileName(bool saveAs = false)
+    private string? GetNewFileName(bool saveAs = false)
     {
         string? fileName = null;
 
@@ -535,7 +591,7 @@ public partial class MainDialog : AdaptiveDialogBase
     /// A string containing the user-specified path and file name if successful;
     /// otherwise, returns <b>null</b>.
     /// </returns>
-    private static string? GetOpenFileName()
+    private string? GetOpenFileName()
     {
         string? fileName = null;
 
@@ -551,22 +607,74 @@ public partial class MainDialog : AdaptiveDialogBase
     }
 
     /// <summary>
-    /// Shows the login dialog to create or acquire the security parameters for the related file.
+    /// Performs operation to close the file.
     /// </summary>
-    /// <param name="newFileName">
-    /// A string containing the name of the file.
-    /// </param>
-    /// <returns>
-    /// <b>true</b> if the login and load of the file is successful; otherwise,
-    /// returns <b>false</b>.
-    /// </returns>
-    private static SecureFileParameters? ShowFileLogin(string newFileName)
+    private void PerformClose()
     {
-        SecureFileParameters? secParams = DialogProvider.DisplayLoginDialog(newFileName);
-        if (secParams != null)
-            secParams.FileName = newFileName;
+        // Prevent unnecessary re-painting issues.
+        CatTree.Visible = false;
+        Data.Visible = false;
+        Application.DoEvents();
 
-        return secParams;
+        // Clear the current UI controls.
+        CatTree.ClearContent();
+        Data.ClearContent();
+
+        // Auto-save, if possible.
+        _manager?.Save();
+
+        _manager?.Dispose();
+        _secParams?.Dispose();
+
+        _manager = null;
+        _secParams = null;
+        GC.Collect();
+    }
+
+    /// <summary>
+    /// Performs the process of logging into and opening the specified file.
+    /// </summary>
+    /// <param name="fileName">
+    /// A string containing the fully-qualified path and name of the file to be opened.
+    /// </param>
+    private void PerformOpenFile(string fileName)
+    {
+        // Open and load the specified file.
+
+        // Prompt the user for the security credentials for the file, and
+        // attempt to open the file.
+        SecureFileParameters? secParams = ShowFileLogin(fileName);
+        if (secParams != null)
+        {
+            _secParams = secParams;
+            _manager = new VaultManager();
+            bool success = _manager.Load(
+                _secParams.FileName,
+                _secParams.UserId,
+                _secParams.Password,
+                _secParams.Pin);
+
+            if (success)
+            {
+                // Set the categories list.
+                CatTree.Categories = _manager!.Categories;
+                Data.Manager = _manager;
+                Data.SelectedCategory = CatTree.SelectedCategory;
+
+                // Add to the MRU list.
+                AddMruItem(fileName);
+
+            }
+            else
+            {
+                ShowError("Invalid Credentials", "The specified file could not be read.");
+
+                _secParams.Dispose();
+                _manager?.Dispose();
+                _secParams = null;
+                _manager = null;
+            }
+        }
     }
 
     /// <summary>
@@ -580,11 +688,33 @@ public partial class MainDialog : AdaptiveDialogBase
                 _manager = new VaultManager();
 
             _manager.Save(
-                _secParams.FileName!,
-                _secParams.UserId!,
-                _secParams.Password!,
+                _secParams.FileName,
+                _secParams.UserId,
+                _secParams.Password,
                 _secParams.Pin);
         }
     }
+    /// <summary>
+    /// Shows the login dialog to create or acquire the security parameters for the related file.
+    /// </summary>
+    /// <param name="newFileName">
+    /// A string containing the name of the file.
+    /// </param>
+    /// <returns>
+    /// <b>true</b> if the login and load of the file is successful; otherwise,
+    /// returns <b>false</b>.
+    /// </returns>
+    private SecureFileParameters? ShowFileLogin(string newFileName)
+    {
+        SecureFileParameters? secParams = null;
+
+        secParams = DialogProvider.DisplayLoginDialog(newFileName);
+        if (secParams != null)
+            secParams.FileName = newFileName;
+
+        return secParams;
+
+    }
+
     #endregion
 }

@@ -189,15 +189,15 @@ public partial class SecureNoteListControl : UserControl
         if (result == DialogResult.OK)
         {
             // Add the new account to the list.
-            SecureNote? newAccount = dialog.Note;
-            if (_list != null && newAccount != null)
+            SecureNote? newNote = dialog.Note;
+            if (_list != null && newNote != null)
             {
-                note.CategoryId = _category.Id;
+                newNote.CategoryId = _category?.Id;
                 ContainerPanel.Visible = false;
-                _list.Add(newAccount);
+                _list.Add(newNote);
                 _list.SortAlpha();
 
-                OnItemAdded(new EventArgs<SecureNote>(newAccount));
+                OnItemAdded(new EventArgs<SecureNote>(newNote));
 
                 PopulateList();
                 ContainerPanel.Visible = true;

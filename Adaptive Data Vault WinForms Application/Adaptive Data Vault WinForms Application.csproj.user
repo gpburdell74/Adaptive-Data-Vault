@@ -7,6 +7,9 @@
     <Compile Update="Dialogs\DecodeSecureMessageDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dialogs\EulaDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Dialogs\MessageLoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>

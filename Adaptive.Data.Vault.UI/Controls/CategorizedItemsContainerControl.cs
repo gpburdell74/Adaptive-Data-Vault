@@ -111,7 +111,7 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
         WebAccountsList.ContentChanged += HandleGenericContentChange;
         WebAccountsList.ItemAdded += HandleWebAccountAdded;
         WebAccountsList.ItemDeleted += HandleWebAccountDeleted;
-        
+
         IdProvidersList.ContentChanged += HandleGenericContentChange;
         IdProvidersList.ItemAdded += HandleIdProviderAdded;
         IdProvidersList.ItemDeleted += HandleIdProviderDeleted;
@@ -198,12 +198,12 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
         SetPostLoadState();
         SetState();
     }
-    
+
     /// <summary>
-    /// Handles the event when a new Web Account is added.
+    /// Handles the event when a Web account is added.
     /// </summary>
     /// <param name="sender">The sender.</param>
-    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
+    /// <param name="e">The <see cref="EventArgs{WebAccount}"/> instance containing the event data.</param>
     private void HandleWebAccountAdded(object? sender, EventArgs<WebAccount> e)
     {
         if (_manager != null && _manager.WebAccounts != null && e.Data != null)
@@ -214,73 +214,15 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
     }
 
     /// <summary>
-    /// Handles the event when a new identity provider is added.
+    /// Handles the event when a Web account is deleted.
     /// </summary>
     /// <param name="sender">The sender.</param>
-    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
-    private void HandleIdProviderAdded(object? sender, EventArgs<IdentityProvider> e)
-    {
-        if (_manager != null && _manager.IdProviders != null && e.Data != null)
-        {
-            _manager.IdProviders.Add(e.Data);
-            _manager.Save();
-        }
-
-    }
-
-    /// <summary>
-    /// Handles the event when a new item is added.
-    /// </summary>
-    /// <param name="sender">The sender.</param>
-    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
-    private void HandleSecureNoteAdded(object? sender, EventArgs<SecureNote> e)
-    {
-        if (_manager != null && _manager.SecureNotes != null && e.Data != null)
-        {
-            _manager.SecureNotes.Add(e.Data);
-            _manager.Save();
-        }
-
-    }
-
-    /// <summary>
-    /// Handles the event when an item is deleted.
-    /// </summary>
-    /// <param name="sender">The sender.</param>
-    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
+    /// <param name="e">The <see cref="EventArgs{WebAccount}"/> instance containing the event data.</param>
     private void HandleWebAccountDeleted(object? sender, EventArgs<WebAccount> e)
     {
         if (_manager != null && _manager.WebAccounts != null && e.Data != null)
         {
             _manager.WebAccounts.Remove(e.Data);
-            _manager.Save();
-        }
-    }
-
-    /// <summary>
-    /// Handles the event when an item is deleted.
-    /// </summary>
-    /// <param name="sender">The sender.</param>
-    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
-    private void HandleIdProviderDeleted(object? sender, EventArgs<IdentityProvider> e)
-    {
-        if (_manager != null && _manager.IdProviders != null && e.Data != null)
-        {
-            _manager.IdProviders.Remove(e.Data);
-            _manager.Save();
-        }
-    }
-
-    /// <summary>
-    /// Handles the event when an item is deleted.
-    /// </summary>
-    /// <param name="sender">The sender.</param>
-    /// <param name="e">The <see cref="EventArgs{T}"/> instance containing the event data.</param>
-    private void HandleSecureNoteDeleted(object? sender, EventArgs<SecureNote> e)
-    {
-        if (_manager != null && _manager.WebAccounts != null && e.Data != null)
-        {
-            _manager.SecureNotes.Remove(e.Data);
             _manager.Save();
         }
     }
