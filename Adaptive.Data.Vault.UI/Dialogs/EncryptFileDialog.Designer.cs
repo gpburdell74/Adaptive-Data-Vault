@@ -17,6 +17,8 @@
         {
             components = new System.ComponentModel.Container();
             ContentPanel = new Panel();
+            SaveFile = new FileBrowseSelectControl();
+            OpenFile = new FileBrowseSelectControl();
             SaveCancel = new Adaptive.Data.Vault.UI.Controls.SaveCancelBar();
             PinText = new Adaptive.Intelligence.Shared.UI.IntegerTextBox();
             SecondaryText = new Adaptive.Intelligence.Shared.UI.PasswordTextBox();
@@ -26,8 +28,6 @@
             PrimaryTitleLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
             FileSecurityTitle = new Adaptive.Intelligence.Shared.UI.SectionTitleHeader();
             DialogHeader = new Adaptive.Data.Vault.UI.Controls.VaultDialogHeader();
-            OpenFile = new FileBrowseSelectControl();
-            SaveFile = new FileBrowseSelectControl();
             ttp = new ToolTip(components);
             ContainerPanel.SuspendLayout();
             ContentPanel.SuspendLayout();
@@ -58,6 +58,34 @@
             ContentPanel.Size = new Size(630, 315);
             ContentPanel.TabIndex = 0;
             // 
+            // SaveFile
+            // 
+            SaveFile.FileName = "";
+            SaveFile.FilePrompt = "Save Encrypted File As:";
+            SaveFile.FilePromptWidth = 150;
+            SaveFile.Font = new Font("Segoe UI", 9.75F);
+            SaveFile.Location = new Point(10, 110);
+            SaveFile.Margin = new Padding(48, 22, 48, 22);
+            SaveFile.Name = "SaveFile";
+            SaveFile.OpenFileMode = false;
+            SaveFile.Size = new Size(610, 25);
+            SaveFile.TabIndex = 2;
+            ttp.SetToolTip(SaveFile, "Specify the new file to write the encrypted data to.");
+            // 
+            // OpenFile
+            // 
+            OpenFile.FileName = "";
+            OpenFile.FilePrompt = "Select File to Encrypt:";
+            OpenFile.FilePromptWidth = 150;
+            OpenFile.Font = new Font("Segoe UI", 9.75F);
+            OpenFile.Location = new Point(10, 80);
+            OpenFile.Margin = new Padding(48, 22, 48, 22);
+            OpenFile.Name = "OpenFile";
+            OpenFile.OpenFileMode = true;
+            OpenFile.Size = new Size(610, 25);
+            OpenFile.TabIndex = 1;
+            ttp.SetToolTip(OpenFile, "Select a file to be encrypted.");
+            // 
             // SaveCancel
             // 
             SaveCancel.CancelEnabled = true;
@@ -68,7 +96,7 @@
             SaveCancel.Location = new Point(0, 267);
             SaveCancel.Margin = new Padding(48, 22, 48, 22);
             SaveCancel.Name = "SaveCancel";
-            SaveCancel.SaveEnabled = true;
+            SaveCancel.SaveEnabled = false;
             SaveCancel.SaveText = "Encrypt";
             SaveCancel.SaveVisible = true;
             SaveCancel.Size = new Size(630, 48);
@@ -157,34 +185,6 @@
             DialogHeader.TabIndex = 0;
             DialogHeader.TabStop = false;
             DialogHeader.TitleText = "ENCRYPT FILE";
-            // 
-            // OpenFile
-            // 
-            OpenFile.FileName = "";
-            OpenFile.FilePrompt = "Select File to Encrypt:";
-            OpenFile.FilePromptWidth = 150;
-            OpenFile.Font = new Font("Segoe UI", 9.75F);
-            OpenFile.Location = new Point(10, 80);
-            OpenFile.Margin = new Padding(48, 22, 48, 22);
-            OpenFile.Name = "OpenFile";
-            OpenFile.OpenFileMode = true;
-            OpenFile.Size = new Size(610, 25);
-            OpenFile.TabIndex = 1;
-            ttp.SetToolTip(OpenFile, "Select a file to be encrypted.");
-            // 
-            // SaveFile
-            // 
-            SaveFile.FileName = "";
-            SaveFile.FilePrompt = "Save Encrypted File As:";
-            SaveFile.FilePromptWidth = 150;
-            SaveFile.Font = new Font("Segoe UI", 9.75F);
-            SaveFile.Location = new Point(10, 110);
-            SaveFile.Margin = new Padding(48, 22, 48, 22);
-            SaveFile.Name = "SaveFile";
-            SaveFile.OpenFileMode = false;
-            SaveFile.Size = new Size(610, 25);
-            SaveFile.TabIndex = 2;
-            ttp.SetToolTip(SaveFile, "Specify the new file to write the encrypted data to.");
             // 
             // EncryptFileDialog
             // 

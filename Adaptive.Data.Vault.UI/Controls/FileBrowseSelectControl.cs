@@ -97,6 +97,36 @@ namespace Adaptive.Data.Vault.UI
         }
 
         /// <summary>
+        /// Gets a value indicating whether the contained text is valid.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if the file specification for this instance is valid; otherwise, <c>false</c>.
+        /// </value>
+        [Browsable(false),
+            DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public bool IsValid
+        {
+            get
+            {
+                bool isValid = false;
+
+                if (FileText.Text.Length > 0)
+                {
+                    string path = Path.GetDirectoryName(FileText.Text) ?? string.Empty;
+                    string fileName = Path.GetFileName(FileText.Text);
+
+                    isValid = (!string.IsNullOrEmpty(path) &&
+                       !string.IsNullOrEmpty(fileName) &&
+                       System.IO.Directory.Exists(path));
+                    if (OpenFileMode)
+                    {
+                        isValid &= System.IO.File.Exists(FileText.Text);
+                    }
+                }
+                return isValid;
+            }
+        }
+        /// <summary>
         /// Gets or sets the operation mode for the control.
         /// </summary>
         /// <value>

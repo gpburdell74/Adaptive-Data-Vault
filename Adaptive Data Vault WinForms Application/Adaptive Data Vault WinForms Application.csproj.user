@@ -4,9 +4,6 @@
     <Compile Update="AboutDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EncryptFileDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="EulaDialog.cs">
       <SubType>Form</SubType>
     </Compile>

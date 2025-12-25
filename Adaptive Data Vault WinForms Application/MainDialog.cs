@@ -478,6 +478,11 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleToolMenuEncryptFileClicked(object? sender, EventArgs e)
     {
+        SetPreLoadState();
+        EncryptFileDialog dialog = new EncryptFileDialog();
+        dialog.ShowDialog();
+        dialog.Dispose();
+        SetPostLoadState();
     }
 
     /// <summary>

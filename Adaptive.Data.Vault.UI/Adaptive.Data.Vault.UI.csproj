@@ -14,7 +14,7 @@
 	<Authors>Sam Jones</Authors>
 	<Company>Adaptive Intelligence</Company>
 	<Product>Adaptive Data Vault</Product>
-	<Copyright>Copyright © 2025 by Sam Jones.  All rights reserved.</Copyright>
+	<Copyright>Copyright © 2025-2026 by Sam Jones.  All rights reserved.</Copyright>
 	<PackageProjectUrl>https://samjones.azurewebsites.net</PackageProjectUrl>
 	<PackageIcon>ADV.ico</PackageIcon>
 	<RepositoryType>github</RepositoryType>
@@ -63,6 +63,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Dialogs\EncryptFileDialog.cs">
+	    <SubType>Form</SubType>
+	  </Compile>
 	  <Compile Update="Properties\Resources.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>

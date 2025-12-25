@@ -159,7 +159,7 @@
             CloseButton.Name = "CloseButton";
             CloseButton.Size = new Size(108, 32);
             CloseButton.TabIndex = 16;
-            CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
+            CloseButton.TemplateFile = null;
             CloseButton.Text = "Close";
             CloseButton.UseVisualStyleBackColor = true;
             // 
@@ -193,10 +193,10 @@
             FrameworkCopyrightLabel.Font = new Font("Segoe UI", 9.75F);
             FrameworkCopyrightLabel.Location = new Point(425, 110);
             FrameworkCopyrightLabel.Name = "FrameworkCopyrightLabel";
-            FrameworkCopyrightLabel.Size = new Size(139, 17);
+            FrameworkCopyrightLabel.Size = new Size(172, 17);
             FrameworkCopyrightLabel.TabIndex = 7;
             FrameworkCopyrightLabel.TabStop = false;
-            FrameworkCopyrightLabel.Text = "© 2005 by Sam Jones.";
+            FrameworkCopyrightLabel.Text = "© 2024-2026 by Sam Jones.";
             FrameworkCopyrightLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // FrameworkVersionLabel
@@ -241,10 +241,10 @@
             AppCopyrightLabel.Font = new Font("Segoe UI", 9.75F);
             AppCopyrightLabel.Location = new Point(20, 110);
             AppCopyrightLabel.Name = "AppCopyrightLabel";
-            AppCopyrightLabel.Size = new Size(139, 17);
+            AppCopyrightLabel.Size = new Size(172, 17);
             AppCopyrightLabel.TabIndex = 3;
             AppCopyrightLabel.TabStop = false;
-            AppCopyrightLabel.Text = "© 2005 by Sam Jones.";
+            AppCopyrightLabel.Text = "© 2025-2026 by Sam Jones.";
             AppCopyrightLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // AppVersionLabel
