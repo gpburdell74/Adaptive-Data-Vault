@@ -223,11 +223,8 @@ namespace Adaptive.Data.Vault.UI
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    FileText.Text = dialog.FileName;
-                    OnContentChanged(EventArgs.Empty);
-                }
+                FileText.Text = dialog.FileName;
+                OnContentChanged(EventArgs.Empty);
             }
             dialog.Dispose();
         }

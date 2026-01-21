@@ -1,6 +1,6 @@
 ﻿namespace Adaptive.Data.Vault.UI
 {
-    partial class EncryptFileDialog
+    partial class DecryptFileDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -193,7 +193,7 @@
             // SaveFile
             // 
             SaveFile.FileName = "";
-            SaveFile.FilePrompt = "Save Encrypted File As:";
+            SaveFile.FilePrompt = "Save Decrypted File As:";
             SaveFile.FilePromptWidth = 150;
             SaveFile.Font = new Font("Segoe UI", 9.75F);
             SaveFile.Location = new Point(5, 35);
@@ -202,12 +202,12 @@
             SaveFile.OpenFileMode = false;
             SaveFile.Size = new Size(610, 25);
             SaveFile.TabIndex = 1;
-            ttp.SetToolTip(SaveFile, "Specify the new file to write the encrypted data to.");
+            ttp.SetToolTip(SaveFile, "Specify the new file to write the decrypted data to.");
             // 
             // OpenFile
             // 
             OpenFile.FileName = "";
-            OpenFile.FilePrompt = "Select File to Encrypt:";
+            OpenFile.FilePrompt = "Select File to Decrypt:";
             OpenFile.FilePromptWidth = 150;
             OpenFile.Font = new Font("Segoe UI", 9.75F);
             OpenFile.Location = new Point(5, 5);
@@ -216,7 +216,7 @@
             OpenFile.OpenFileMode = true;
             OpenFile.Size = new Size(610, 25);
             OpenFile.TabIndex = 0;
-            ttp.SetToolTip(OpenFile, "Select a file to be encrypted.");
+            ttp.SetToolTip(OpenFile, "Select a file to be decrypted.");
             // 
             // SaveCancel
             // 
@@ -229,7 +229,7 @@
             SaveCancel.Margin = new Padding(48, 22, 48, 22);
             SaveCancel.Name = "SaveCancel";
             SaveCancel.SaveEnabled = false;
-            SaveCancel.SaveText = "Encrypt";
+            SaveCancel.SaveText = "Decrypt";
             SaveCancel.SaveVisible = true;
             SaveCancel.Size = new Size(620, 48);
             SaveCancel.TabIndex = 3;
@@ -242,20 +242,20 @@
             DialogHeader.Size = new Size(620, 66);
             DialogHeader.TabIndex = 0;
             DialogHeader.TabStop = false;
-            DialogHeader.TitleText = "ENCRYPT FILE";
+            DialogHeader.TitleText = "DECRYPT FILE";
             // 
             // ErrorProvider
             // 
             ErrorProvider.ContainerControl = this;
             // 
-            // EncryptFileDialog
+            // DecryptFileDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(630, 345);
             Margin = new Padding(48, 25, 48, 25);
-            Name = "EncryptFileDialog";
-            Text = "EncryptFileDialog";
+            Name = "DecryptFileDialog";
+            Text = "DecryptFileDialog";
             ContainerPanel.ResumeLayout(false);
             ContentPanel.ResumeLayout(false);
             StatusPanel.ResumeLayout(false);

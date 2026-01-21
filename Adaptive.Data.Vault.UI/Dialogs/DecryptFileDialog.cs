@@ -5,19 +5,19 @@
 namespace Adaptive.Data.Vault.UI
 {
     /// <summary>
-    /// Provides a dialog for encrypting files.
+    /// Provides a dialog for decrypting files.
     /// </summary>
-    /// <seealso cref="Adaptive.Data.Vault.UI.BorderedDialog" />
-    public partial class EncryptFileDialog : BorderedDialog
+    /// <seealso cref="BorderedDialog" />
+    public partial class DecryptFileDialog : BorderedDialog
     {
         #region Constructor / Dispose Methods
         /// <summary>
-        /// Initializes a new instance of the <see cref="EncryptFileDialog"/> class.
+        /// Initializes a new instance of the <see cref="DecryptFileDialog"/> class.
         /// </summary>
         /// <remarks>
         /// This is the default constructor.
         /// </remarks>
-        public EncryptFileDialog()
+        public DecryptFileDialog()
         {
             InitializeComponent();
         }
@@ -161,7 +161,7 @@ namespace Adaptive.Data.Vault.UI
         {
             SetPreLoadState();
 
-            PerformFileEncryptionAsync(
+            PerformFileDecryptionAsync(
                 OpenFile.FileName,
                 SaveFile.FileName,
                 PrimaryText.Text,
@@ -187,7 +187,7 @@ namespace Adaptive.Data.Vault.UI
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="ProgressUpdateEventArgs"/> instance containing the event data.</param>
-        private void HandleEncryptionStart(object? sender, ProgressUpdateEventArgs e)
+        private void HandleDecryptionStart(object? sender, ProgressUpdateEventArgs e)
         {
             ContinueInMainThread(() =>
             {
@@ -206,7 +206,7 @@ namespace Adaptive.Data.Vault.UI
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="ProgressUpdateEventArgs"/> instance containing the event data.</param>
-        private void HandleEncryptionEnd(object? sender, ProgressUpdateEventArgs e)
+        private void HandleDecryptionEnd(object? sender, ProgressUpdateEventArgs e)
         {
             ContinueInMainThread(() =>
             {
@@ -224,7 +224,7 @@ namespace Adaptive.Data.Vault.UI
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="ProgressUpdateEventArgs"/> instance containing the event data.</param>
-        private void HandleEncryptionProgress(object? sender, ProgressUpdateEventArgs e)
+        private void HandleDecryptionProgress(object? sender, ProgressUpdateEventArgs e)
         {
             ContinueInMainThread(() =>
             {
@@ -238,7 +238,7 @@ namespace Adaptive.Data.Vault.UI
 
         #region Private Methods / Functions
         /// <summary>
-        /// Performs the task of encrypting hte specified file asynchronously.
+        /// Performs the task of decrypting hte specified file asynchronously.
         /// </summary>
         /// <param name="sourceFile">
         /// A string containing the fully-qualified path and name of the file whose contents are to be encrypted.
@@ -255,7 +255,7 @@ namespace Adaptive.Data.Vault.UI
         /// <param name="pin">
         /// An integer containing the PIN value used in the encryption process.
         /// </param>
-        private async Task PerformFileEncryptionAsync(
+        private async Task PerformFileDecryptionAsync(
             string sourceFile,
             string destinationFile,
             string primaryKey,
@@ -267,15 +267,15 @@ namespace Adaptive.Data.Vault.UI
                SecondaryText.Text,
                int.Parse(PinText.Text));
 
-            crypt.EncryptionStart += HandleEncryptionStart;
-            crypt.EncryptionComplete += HandleEncryptionEnd;
-            crypt.CryptoProgress += HandleEncryptionProgress;
+            crypt.DecryptionStart += HandleDecryptionStart;
+            crypt.DecryptionComplete += HandleDecryptionEnd;
+            crypt.CryptoProgress += HandleDecryptionProgress;
 
-            await crypt.EncryptFileAsync(OpenFile.FileName, SaveFile.FileName).ConfigureAwait(false);
+            await crypt.DecryptFileAsync(OpenFile.FileName, SaveFile.FileName).ConfigureAwait(false);
 
-            crypt.EncryptionStart -= HandleEncryptionStart;
-            crypt.EncryptionComplete -= HandleEncryptionEnd;
-            crypt.CryptoProgress -= HandleEncryptionProgress;
+            crypt.DecryptionStart -= HandleDecryptionStart;
+            crypt.DecryptionComplete -= HandleDecryptionEnd;
+            crypt.CryptoProgress -= HandleDecryptionProgress;
 
             crypt.Dispose();
         }

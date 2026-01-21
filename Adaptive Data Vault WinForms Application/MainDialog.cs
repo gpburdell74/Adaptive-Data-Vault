@@ -383,7 +383,7 @@ public partial class MainDialog : AdaptiveDialogBase
     {
         SetPreLoadState();
 
-        _mru.Clear();
+        _mru?.Clear();
         while (FileMenuRecentFiles.DropDownItems.Count > 2)
         {
             FileMenuRecentFiles.DropDownItems[0].Click -= HandleMruItemClicked;
@@ -492,6 +492,11 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleToolMenuDecryptFileClicked(object? sender, EventArgs e)
     {
+        SetPreLoadState();
+        DecryptFileDialog dialog = new DecryptFileDialog();
+        dialog.ShowDialog();
+        dialog.Dispose();
+        SetPostLoadState();
     }
 
     /// <summary>

@@ -354,6 +354,7 @@ namespace Adaptive.Data.Vault
                 {
                     _sourceFile = SafeIO.OpenFileForExclusiveRead(fileName);
                     _reader = new SafeBinaryReader(_sourceFile!);
+                    result.Success = true;
                 }
                 catch (Exception ex)
                 {
@@ -384,6 +385,7 @@ namespace Adaptive.Data.Vault
             {
                 _destFile = SafeIO.CreateFileForExclusiveWrite(fileName);
                 _writer = new SafeBinaryWriter(_destFile!);
+                result.Success = true;
             }
             catch (Exception ex)
             {
