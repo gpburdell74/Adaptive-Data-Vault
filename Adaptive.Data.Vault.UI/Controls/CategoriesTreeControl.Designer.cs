@@ -20,12 +20,12 @@ partial class CategoriesTreeControl
         components = new System.ComponentModel.Container();
         Header = new VaultDialogHeader();
         CategoryList = new ListBox();
-        ContextMenu = new ContextMenuStrip(components);
+        CategoryContextMenu = new ContextMenuStrip(components);
         CategoryMenuAdd = new ToolStripMenuItem();
         CategoryMenuEdit = new ToolStripMenuItem();
         CategoryMenuRemove = new ToolStripMenuItem();
         ttp = new ToolTip(components);
-        ContextMenu.SuspendLayout();
+        CategoryContextMenu.SuspendLayout();
         SuspendLayout();
         // 
         // Header
@@ -39,7 +39,7 @@ partial class CategoriesTreeControl
         // 
         // CategoryList
         // 
-        CategoryList.ContextMenuStrip = ContextMenu;
+        CategoryList.ContextMenuStrip = CategoryContextMenu;
         CategoryList.Dock = DockStyle.Fill;
         CategoryList.Font = new Font("OCR A Extended", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
         CategoryList.FormattingEnabled = true;
@@ -48,11 +48,11 @@ partial class CategoriesTreeControl
         CategoryList.Size = new Size(487, 323);
         CategoryList.TabIndex = 1;
         // 
-        // ContextMenu
+        // CategoryContextMenu
         // 
-        ContextMenu.Items.AddRange(new ToolStripItem[] { CategoryMenuAdd, CategoryMenuEdit, CategoryMenuRemove });
-        ContextMenu.Name = "ContextMenu";
-        ContextMenu.Size = new Size(169, 70);
+        CategoryContextMenu.Items.AddRange(new ToolStripItem[] { CategoryMenuAdd, CategoryMenuEdit, CategoryMenuRemove });
+        CategoryContextMenu.Name = "ContextMenu";
+        CategoryContextMenu.Size = new Size(169, 70);
         // 
         // CategoryMenuAdd
         // 
@@ -86,7 +86,7 @@ partial class CategoriesTreeControl
         Controls.Add(Header);
         Name = "CategoriesTreeControl";
         Size = new Size(487, 387);
-        ContextMenu.ResumeLayout(false);
+        CategoryContextMenu.ResumeLayout(false);
         ResumeLayout(false);
     }
 
@@ -95,7 +95,7 @@ partial class CategoriesTreeControl
     private VaultDialogHeader Header;
     private ListBox CategoryList;
     private ToolTip ttp;
-    private ContextMenuStrip ContextMenu;
+    private ContextMenuStrip CategoryContextMenu;
     private ToolStripMenuItem CategoryMenuAdd;
     private ToolStripMenuItem CategoryMenuEdit;
     private ToolStripMenuItem CategoryMenuRemove;

@@ -17,9 +17,10 @@ partial class SecureNoteListControl
     /// </summary>
     private void InitializeComponent()
     {
-        ToolbarPanel = new GradientPanel();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecureNoteListControl));
+        ToolbarPanel = new TemplatedGradientPanel();
         NewAccountButton = new TemplatedButton();
-        ContainerPanel = new GradientPanel();
+        ContainerPanel = new TemplatedGradientPanel();
         ToolbarPanel.SuspendLayout();
         SuspendLayout();
         // 
@@ -34,7 +35,8 @@ partial class SecureNoteListControl
         ToolbarPanel.Padding = new Padding(10);
         ToolbarPanel.Size = new Size(400, 42);
         ToolbarPanel.TabIndex = 0;
-        ToolbarPanel.TemplateFile = null;
+        ToolbarPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ToolbarPanel.TemplateJson = resources.GetString("ToolbarPanel.TemplateJson");
         // 
         // NewAccountButton
         // 
@@ -46,7 +48,8 @@ partial class SecureNoteListControl
         NewAccountButton.Name = "NewAccountButton";
         NewAccountButton.Size = new Size(247, 32);
         NewAccountButton.TabIndex = 0;
-        NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+        NewAccountButton.TemplateFromFile = null;
+        NewAccountButton.TemplateJson = resources.GetString("NewAccountButton.TemplateJson");
         NewAccountButton.Text = "Create New Secure Note...";
         NewAccountButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         NewAccountButton.UseVisualStyleBackColor = true;
@@ -59,7 +62,8 @@ partial class SecureNoteListControl
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(400, 358);
         ContainerPanel.TabIndex = 1;
-        ContainerPanel.TemplateFile = null;
+        ContainerPanel.TemplateFromFile = null;
+        ContainerPanel.TemplateJson = null;
         // 
         // SecureNoteListControl
         // 
@@ -75,8 +79,8 @@ partial class SecureNoteListControl
 
     #endregion
 
-    private GradientPanel ToolbarPanel;
+    private TemplatedGradientPanel ToolbarPanel;
     private TemplatedButton NewAccountButton;
-    private GradientPanel ContainerPanel;
+    private TemplatedGradientPanel ContainerPanel;
 
 }

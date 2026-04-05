@@ -242,7 +242,14 @@ public sealed class VaultManager : DisposableObjectBase
         _data = _file.LoadDataSet(fileName, userId, password, pin);
 
         if (_data == null)
+        {
             Close();
+            // Re-initialize the collections to empty states.
+            _categories = new UserCategoryCollection();
+            _idProviders = new IdentityProviderCollection();
+            _webAccounts = new WebAccountCollection();
+            _secureNotes = new SecureNoteCollection();
+        }
         else
         {
             _categories = new UserCategoryCollection(_data.Categories!);

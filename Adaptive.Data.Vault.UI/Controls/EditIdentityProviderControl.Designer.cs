@@ -1,4 +1,7 @@
-﻿namespace Adaptive.Data.Vault.UI
+﻿using Adaptive.Intelligence.Shared.UI;
+using Adaptive.Intelligence.Shared.UI.TemplatedControls;
+
+namespace Adaptive.Data.Vault.UI
 {
     partial class EditIdentityProviderControl
     {
@@ -16,13 +19,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            UseridPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            UserIdText = new Adaptive.Intelligence.Shared.UI.PasswordTextBox();
-            UserIdLabelPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            UserIdLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-            UrlLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-            UrlLabelPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            UrlPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditIdentityProviderControl));
+            UseridPanel = new TemplatedGradientPanel();
+            UserIdText = new PasswordTextBox();
+            UserIdLabelPanel = new TemplatedGradientPanel();
+            UserIdLabel = new AdvancedLabel();
+            UrlLabel = new AdvancedLabel();
+            UrlLabelPanel = new TemplatedGradientPanel();
+            UrlPanel = new TemplatedGradientPanel();
             UrlText = new TextBox();
             ErrorProvider = new ErrorProvider(components);
             ttp = new ToolTip(components);
@@ -32,28 +36,28 @@
             MfaAddressText = new TextBox();
             MfaTypeText = new TextBox();
             MfaCheck = new CheckBox();
-            PasswordText = new Adaptive.Intelligence.Shared.UI.PasswordTextBox();
-            NamePanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+            PasswordText = new PasswordTextBox();
+            NamePanel = new TemplatedGradientPanel();
             NameLabelPanel = new Panel();
-            NewNameLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-            DescPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            DescLabelPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            DescLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
+            NewNameLabel = new AdvancedLabel();
+            DescPanel = new TemplatedGradientPanel();
+            DescLabelPanel = new TemplatedGradientPanel();
+            DescLabel = new AdvancedLabel();
             IdTypeLabelPanel = new Panel();
-            ProviderTypeLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
+            ProviderTypeLabel = new AdvancedLabel();
             IdTypePanel = new Panel();
-            MfaDeviceLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-            MfaCheckPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            MfaCheckLabelPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            MfaTypeLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-            MfaTypePanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            MfaTypeLabelPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            MfaAddLabelPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            MfaCheckLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-            MafAddressPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            PasswordLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-            PwdLabelPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            PwdPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+            MfaDeviceLabel = new AdvancedLabel();
+            MfaCheckPanel = new TemplatedGradientPanel();
+            MfaCheckLabelPanel = new TemplatedGradientPanel();
+            MfaTypeLabel = new AdvancedLabel();
+            MfaTypePanel = new TemplatedGradientPanel();
+            MfaTypeLabelPanel = new TemplatedGradientPanel();
+            MfaAddLabelPanel = new TemplatedGradientPanel();
+            MfaCheckLabel = new AdvancedLabel();
+            MafAddressPanel = new TemplatedGradientPanel();
+            PasswordLabel = new AdvancedLabel();
+            PwdLabelPanel = new TemplatedGradientPanel();
+            PwdPanel = new TemplatedGradientPanel();
             UseridPanel.SuspendLayout();
             UserIdLabelPanel.SuspendLayout();
             UrlLabelPanel.SuspendLayout();
@@ -85,7 +89,8 @@
             UseridPanel.Padding = new Padding(0, 0, 5, 0);
             UseridPanel.Size = new Size(600, 30);
             UseridPanel.TabIndex = 20;
-            UseridPanel.TemplateFile = null;
+            UseridPanel.TemplateFromFile = null;
+            UseridPanel.TemplateJson = resources.GetString("UseridPanel.TemplateJson");
             // 
             // UserIdText
             // 
@@ -107,7 +112,8 @@
             UserIdLabelPanel.Name = "UserIdLabelPanel";
             UserIdLabelPanel.Size = new Size(100, 30);
             UserIdLabelPanel.TabIndex = 0;
-            UserIdLabelPanel.TemplateFile = null;
+            UserIdLabelPanel.TemplateFromFile = null;
+            UserIdLabelPanel.TemplateJson = null;
             // 
             // UserIdLabel
             // 
@@ -143,7 +149,8 @@
             UrlLabelPanel.Name = "UrlLabelPanel";
             UrlLabelPanel.Size = new Size(100, 30);
             UrlLabelPanel.TabIndex = 0;
-            UrlLabelPanel.TemplateFile = null;
+            UrlLabelPanel.TemplateFromFile = null;
+            UrlLabelPanel.TemplateJson = null;
             // 
             // UrlPanel
             // 
@@ -155,7 +162,8 @@
             UrlPanel.Padding = new Padding(0, 0, 5, 0);
             UrlPanel.Size = new Size(600, 30);
             UrlPanel.TabIndex = 19;
-            UrlPanel.TemplateFile = null;
+            UrlPanel.TemplateFromFile = null;
+            UrlPanel.TemplateJson = resources.GetString("UrlPanel.TemplateJson");
             // 
             // UrlText
             // 
@@ -255,7 +263,8 @@
             NamePanel.Padding = new Padding(0, 0, 5, 0);
             NamePanel.Size = new Size(600, 30);
             NamePanel.TabIndex = 17;
-            NamePanel.TemplateFile = null;
+            NamePanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\TransparentPanel.panel.template.json";
+            NamePanel.TemplateJson = resources.GetString("NamePanel.TemplateJson");
             // 
             // NameLabelPanel
             // 
@@ -289,7 +298,8 @@
             DescPanel.Padding = new Padding(0, 0, 5, 0);
             DescPanel.Size = new Size(600, 30);
             DescPanel.TabIndex = 18;
-            DescPanel.TemplateFile = null;
+            DescPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\TransparentPanel.panel.template.json";
+            DescPanel.TemplateJson = resources.GetString("DescPanel.TemplateJson");
             // 
             // DescLabelPanel
             // 
@@ -299,7 +309,8 @@
             DescLabelPanel.Name = "DescLabelPanel";
             DescLabelPanel.Size = new Size(100, 30);
             DescLabelPanel.TabIndex = 0;
-            DescLabelPanel.TemplateFile = null;
+            DescLabelPanel.TemplateFromFile = null;
+            DescLabelPanel.TemplateJson = null;
             // 
             // DescLabel
             // 
@@ -370,7 +381,8 @@
             MfaCheckPanel.Padding = new Padding(0, 0, 5, 0);
             MfaCheckPanel.Size = new Size(600, 30);
             MfaCheckPanel.TabIndex = 22;
-            MfaCheckPanel.TemplateFile = null;
+            MfaCheckPanel.TemplateFromFile = null;
+            MfaCheckPanel.TemplateJson = null;
             // 
             // MfaCheckLabelPanel
             // 
@@ -380,7 +392,8 @@
             MfaCheckLabelPanel.Name = "MfaCheckLabelPanel";
             MfaCheckLabelPanel.Size = new Size(100, 30);
             MfaCheckLabelPanel.TabIndex = 0;
-            MfaCheckLabelPanel.TemplateFile = null;
+            MfaCheckLabelPanel.TemplateFromFile = null;
+            MfaCheckLabelPanel.TemplateJson = null;
             // 
             // MfaTypeLabel
             // 
@@ -405,7 +418,8 @@
             MfaTypePanel.Padding = new Padding(0, 0, 5, 0);
             MfaTypePanel.Size = new Size(600, 30);
             MfaTypePanel.TabIndex = 23;
-            MfaTypePanel.TemplateFile = null;
+            MfaTypePanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\TransparentPanel.panel.template.json";
+            MfaTypePanel.TemplateJson = resources.GetString("MfaTypePanel.TemplateJson");
             // 
             // MfaTypeLabelPanel
             // 
@@ -415,7 +429,8 @@
             MfaTypeLabelPanel.Name = "MfaTypeLabelPanel";
             MfaTypeLabelPanel.Size = new Size(100, 30);
             MfaTypeLabelPanel.TabIndex = 0;
-            MfaTypeLabelPanel.TemplateFile = null;
+            MfaTypeLabelPanel.TemplateFromFile = null;
+            MfaTypeLabelPanel.TemplateJson = null;
             // 
             // MfaAddLabelPanel
             // 
@@ -425,7 +440,8 @@
             MfaAddLabelPanel.Name = "MfaAddLabelPanel";
             MfaAddLabelPanel.Size = new Size(100, 30);
             MfaAddLabelPanel.TabIndex = 0;
-            MfaAddLabelPanel.TemplateFile = null;
+            MfaAddLabelPanel.TemplateFromFile = null;
+            MfaAddLabelPanel.TemplateJson = null;
             // 
             // MfaCheckLabel
             // 
@@ -450,7 +466,8 @@
             MafAddressPanel.Padding = new Padding(0, 0, 5, 0);
             MafAddressPanel.Size = new Size(600, 30);
             MafAddressPanel.TabIndex = 24;
-            MafAddressPanel.TemplateFile = null;
+            MafAddressPanel.TemplateFromFile = null;
+            MafAddressPanel.TemplateJson = null;
             // 
             // PasswordLabel
             // 
@@ -473,7 +490,8 @@
             PwdLabelPanel.Name = "PwdLabelPanel";
             PwdLabelPanel.Size = new Size(100, 30);
             PwdLabelPanel.TabIndex = 0;
-            PwdLabelPanel.TemplateFile = null;
+            PwdLabelPanel.TemplateFromFile = null;
+            PwdLabelPanel.TemplateJson = null;
             // 
             // PwdPanel
             // 
@@ -485,12 +503,14 @@
             PwdPanel.Padding = new Padding(0, 0, 5, 0);
             PwdPanel.Size = new Size(600, 30);
             PwdPanel.TabIndex = 21;
-            PwdPanel.TemplateFile = null;
+            PwdPanel.TemplateFromFile = null;
+            PwdPanel.TemplateJson = resources.GetString("PwdPanel.TemplateJson");
             // 
             // EditIdentityProviderControl
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = Color.Transparent;
             Controls.Add(MfaCheckPanel);
             Controls.Add(MfaTypePanel);
             Controls.Add(MafAddressPanel);
@@ -534,37 +554,37 @@
 
         #endregion
 
-        private Intelligence.Shared.UI.GradientPanel UseridPanel;
+        private TemplatedGradientPanel UseridPanel;
         private Intelligence.Shared.UI.PasswordTextBox UserIdText;
         private ToolTip ttp;
-        private Intelligence.Shared.UI.GradientPanel UserIdLabelPanel;
+        private TemplatedGradientPanel UserIdLabelPanel;
         private Intelligence.Shared.UI.AdvancedLabel UserIdLabel;
         private Intelligence.Shared.UI.AdvancedLabel UrlLabel;
-        private Intelligence.Shared.UI.GradientPanel UrlLabelPanel;
-        private Intelligence.Shared.UI.GradientPanel UrlPanel;
+        private TemplatedGradientPanel UrlLabelPanel;
+        private TemplatedGradientPanel UrlPanel;
         private TextBox UrlText;
         private ErrorProvider ErrorProvider;
-        private Intelligence.Shared.UI.GradientPanel MfaCheckPanel;
+        private TemplatedGradientPanel MfaCheckPanel;
         private TextBox MfaAddressText;
-        private Intelligence.Shared.UI.GradientPanel MfaCheckLabelPanel;
+        private TemplatedGradientPanel MfaCheckLabelPanel;
         private Intelligence.Shared.UI.AdvancedLabel MfaDeviceLabel;
-        private Intelligence.Shared.UI.GradientPanel MfaTypePanel;
+        private TemplatedGradientPanel MfaTypePanel;
         private TextBox MfaTypeText;
-        private Intelligence.Shared.UI.GradientPanel MfaTypeLabelPanel;
+        private TemplatedGradientPanel MfaTypeLabelPanel;
         private Intelligence.Shared.UI.AdvancedLabel MfaTypeLabel;
-        private Intelligence.Shared.UI.GradientPanel MafAddressPanel;
+        private TemplatedGradientPanel MafAddressPanel;
         private CheckBox MfaCheck;
-        private Intelligence.Shared.UI.GradientPanel MfaAddLabelPanel;
+        private TemplatedGradientPanel MfaAddLabelPanel;
         private Intelligence.Shared.UI.AdvancedLabel MfaCheckLabel;
-        private Intelligence.Shared.UI.GradientPanel PwdPanel;
+        private TemplatedGradientPanel PwdPanel;
         private Intelligence.Shared.UI.PasswordTextBox PasswordText;
-        private Intelligence.Shared.UI.GradientPanel PwdLabelPanel;
+        private TemplatedGradientPanel PwdLabelPanel;
         private Intelligence.Shared.UI.AdvancedLabel PasswordLabel;
-        private Intelligence.Shared.UI.GradientPanel DescPanel;
+        private TemplatedGradientPanel DescPanel;
         private TextBox DescText;
-        private Intelligence.Shared.UI.GradientPanel DescLabelPanel;
+        private TemplatedGradientPanel DescLabelPanel;
         private Intelligence.Shared.UI.AdvancedLabel DescLabel;
-        private Intelligence.Shared.UI.GradientPanel NamePanel;
+        private TemplatedGradientPanel NamePanel;
         private TextBox NameText;
         private Panel NameLabelPanel;
         private Intelligence.Shared.UI.AdvancedLabel NewNameLabel;

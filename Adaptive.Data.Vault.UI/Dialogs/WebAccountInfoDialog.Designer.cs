@@ -40,6 +40,7 @@ partial class WebAccountInfoDialog
         // 
         ContainerPanel.Controls.Add(ContentPanel);
         ContainerPanel.Size = new Size(644, 260);
+        ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.json";
         // 
         // AddressLabel
         // 
@@ -62,7 +63,8 @@ partial class WebAccountInfoDialog
         CopyPasswordButton.Name = "CopyPasswordButton";
         CopyPasswordButton.Size = new Size(40, 40);
         CopyPasswordButton.TabIndex = 11;
-        CopyPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
+        CopyPasswordButton.TemplateFromFile = null;
+        CopyPasswordButton.TemplateJson = resources.GetString("CopyPasswordButton.TemplateJson");
         ttp.SetToolTip(CopyPasswordButton, "Copy the password to the clipboard.");
         CopyPasswordButton.UseVisualStyleBackColor = true;
         // 
@@ -73,7 +75,8 @@ partial class WebAccountInfoDialog
         ShowPasswordButton.Name = "ShowPasswordButton";
         ShowPasswordButton.Size = new Size(40, 40);
         ShowPasswordButton.TabIndex = 10;
-        ShowPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
+        ShowPasswordButton.TemplateFromFile = null;
+        ShowPasswordButton.TemplateJson = resources.GetString("ShowPasswordButton.TemplateJson");
         ttp.SetToolTip(ShowPasswordButton, "Show or Hide the Password.");
         ShowPasswordButton.UseVisualStyleBackColor = true;
         // 
@@ -84,7 +87,8 @@ partial class WebAccountInfoDialog
         CopyUserIdButton.Name = "CopyUserIdButton";
         CopyUserIdButton.Size = new Size(40, 40);
         CopyUserIdButton.TabIndex = 7;
-        CopyUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
+        CopyUserIdButton.TemplateFromFile = null;
+        CopyUserIdButton.TemplateJson = resources.GetString("CopyUserIdButton.TemplateJson");
         ttp.SetToolTip(CopyUserIdButton, "Copy the User ID / Login Name to the clipboard.");
         CopyUserIdButton.UseVisualStyleBackColor = true;
         // 
@@ -95,7 +99,8 @@ partial class WebAccountInfoDialog
         ShowUserIdButton.Name = "ShowUserIdButton";
         ShowUserIdButton.Size = new Size(40, 40);
         ShowUserIdButton.TabIndex = 6;
-        ShowUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
+        ShowUserIdButton.TemplateFromFile = null;
+        ShowUserIdButton.TemplateJson = resources.GetString("ShowUserIdButton.TemplateJson");
         ttp.SetToolTip(ShowUserIdButton, "Show or Hide the User Id.");
         ShowUserIdButton.UseVisualStyleBackColor = true;
         // 
@@ -106,7 +111,8 @@ partial class WebAccountInfoDialog
         CopyUrlButton.Name = "CopyUrlButton";
         CopyUrlButton.Size = new Size(40, 40);
         CopyUrlButton.TabIndex = 3;
-        CopyUrlButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
+        CopyUrlButton.TemplateFromFile = null;
+        CopyUrlButton.TemplateJson = resources.GetString("CopyUrlButton.TemplateJson");
         ttp.SetToolTip(CopyUrlButton, "Copy this URL to the clipboard.");
         CopyUrlButton.UseVisualStyleBackColor = true;
         // 
@@ -117,7 +123,8 @@ partial class WebAccountInfoDialog
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(129, 40);
         CloseButton.TabIndex = 12;
-        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
+        CloseButton.TemplateFromFile = null;
+        CloseButton.TemplateJson = resources.GetString("CloseButton.TemplateJson");
         CloseButton.Text = "Close";
         ttp.SetToolTip(CloseButton, "Close this window.");
         CloseButton.UseVisualStyleBackColor = true;
@@ -214,7 +221,6 @@ partial class WebAccountInfoDialog
         AutoScaleDimensions = new SizeF(96F, 96F);
         AutoScaleMode = AutoScaleMode.Dpi;
         ClientSize = new Size(644, 260);
-        FormBorderStyle = FormBorderStyle.FixedSingle;
         Icon = (Icon)resources.GetObject("$this.Icon");
         Name = "WebAccountInfoDialog";
         ContainerPanel.ResumeLayout(false);

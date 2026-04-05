@@ -154,4 +154,9 @@ public partial class AddEditWebAccountDialog : BorderedDialog
         Close();
     }
     #endregion
+
+    private void SaveCancel_Load(object sender, EventArgs e)
+    {
+
+    }
 }

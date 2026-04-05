@@ -89,7 +89,6 @@ namespace Adaptive.Data.Vault.UI
             Application.DoEvents();
             EmailLabel.ForeColor = System.Drawing.Color.Purple;
             Application.DoEvents();
-            Thread.Sleep(250);
             SetPostLoadState();
         }
         /// <summary>
@@ -104,7 +103,6 @@ namespace Adaptive.Data.Vault.UI
             Application.DoEvents();
             SiteLabel.ForeColor = System.Drawing.Color.Purple;
             Application.DoEvents();
-            Thread.Sleep(250);
             SetPostLoadState();
         }
         #endregion

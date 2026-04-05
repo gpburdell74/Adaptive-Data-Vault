@@ -63,14 +63,11 @@ namespace Adaptive.Data.Vault.Tests
         public void OnStatusUpdate_ExceptionInHandler_LogsException()
         {
             // Arrange
-            var client = new SecureDeleteClient();
-            bool logCalled = false;
+            var client = new SecureDeleteClientMock();
             client.StatusUpdate += (s, e) => throw new InvalidOperationException();
 
             // Act
-            client.GetType().GetMethod("OnStatusUpdate", 
-                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-                .Invoke(client, new object[] { new ProgressUpdateEventArgs("Test", 0) });
+            bool logCalled = client.RaiseStatusUpdateEvent(new ProgressUpdateEventArgs("Test", 0));
 
             // Assert
             Assert.True(logCalled);

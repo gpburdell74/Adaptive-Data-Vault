@@ -1,3 +1,4 @@
+using Adaptive.Data.Vault.UI.Dialogs;
 using Adaptive.Intelligence.Shared;
 using Adaptive.Intelligence.Shared.Logging;
 using Adaptive.Intelligence.Shared.UI;
@@ -208,8 +209,11 @@ public partial class MainDialog : AdaptiveDialogBase
         MainToolbar.Enabled = true;
         MainStatus.Enabled = true;
         MainStatusLabel.Text = "Ready";
-        MainStatusPrg.Visible = false;
-        MainStatusPrg.Value = 0;
+        if (!MainStatusPrg.IsDisposed)
+        {
+            MainStatusPrg.Visible = false;
+            MainStatusPrg.Value = 0;
+        }
         ResumeLayout();
     }
 
@@ -506,6 +510,10 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleToolMenuNumtoHexClicked(object? sender, EventArgs e)
     {
+        SetPreLoadState();
+        NumberToHexDialog dialog = new NumberToHexDialog();
+        dialog.ShowDialog();
+        SetPostLoadState();
     }
 
     /// <summary>
@@ -515,7 +523,11 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleToolMenuTextToBase64Clicked(object? sender, EventArgs e)
 {
-}
+        SetPreLoadState();
+        TextToBase64Dialog dialog = new TextToBase64Dialog();
+        dialog.ShowDialog();
+        SetPostLoadState();
+    }
 
     /// <summary>
     /// Handles the event when the Tools -> Text to Hexadecimal menu item is clicked.
@@ -524,7 +536,11 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleToolMenuTextToHexClicked(object? sender, EventArgs e)
 {
-}
+        SetPreLoadState();
+        TextToHexDialog dialog = new TextToHexDialog();
+        dialog.ShowDialog();
+        SetPostLoadState();
+    }
 
     /// <summary>
     /// Handles the event when the Tools -> Base-64 to Text menu item is clicked.
@@ -533,7 +549,12 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleToolMenuBase64ToTextClicked(object? sender, EventArgs e)
 {
-}
+        SetPreLoadState();
+        Base64ToTextDialog dialog = new Base64ToTextDialog();
+        dialog.ShowDialog();
+        SetPostLoadState();
+
+    }
 
     /// <summary>
     /// Handles the event when the Tools -> Hexadecimal To Text menu item is clicked.
@@ -542,6 +563,10 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleToolMenuHexToTextClicked(object? sender, EventArgs e)
     {
+        SetPreLoadState();
+        HexToTextDialog dialog = new HexToTextDialog();
+        dialog.ShowDialog();
+        SetPostLoadState();
     }
     #endregion
 

@@ -50,7 +50,12 @@ namespace Adaptive.Data.Vault.UI
          DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public WebAccount Account
         {
-            get => _account;
+            get
+            {
+                if (_account == null)
+                    _account = new WebAccount();
+                return _account;
+            }
             set
             {
                 _account = value;
@@ -63,10 +68,13 @@ namespace Adaptive.Data.Vault.UI
         /// </summary>
         protected override void InitializeDataContent()
         {
-            Header.Text = _account.Name;
-            AddressLabel.Text = _account.Url;
-            UserIdLabel.Text = new string('*', _account.UserId.Length);
-            PasswordLabel.Text = new string('*', _account.Password.Length);
+            if (_account != null)
+            {
+                Header.Text = _account.Name;
+                AddressLabel.Text = _account.Url;
+                UserIdLabel.Text = new string('*', _account.UserId.Length);
+                PasswordLabel.Text = new string('*', _account.Password.Length);
+            }
         }
 
         /// <summary>

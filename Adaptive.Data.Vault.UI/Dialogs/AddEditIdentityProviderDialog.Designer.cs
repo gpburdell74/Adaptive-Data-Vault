@@ -55,6 +55,7 @@
             // 
             // IdProviderEdit
             // 
+            IdProviderEdit.BackColor = Color.Transparent;
             IdProviderEdit.Dock = DockStyle.Fill;
             IdProviderEdit.Font = new Font("Segoe UI", 9.75F);
             IdProviderEdit.Location = new Point(5, 75);

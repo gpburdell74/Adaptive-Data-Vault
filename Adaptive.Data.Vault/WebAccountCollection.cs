@@ -85,7 +85,7 @@ namespace Adaptive.Data.Vault
         /// </summary>
         /// <param name="categoryId">The category identifier.</param>
         /// <returns></returns>
-        public WebAccountCollection GetForCategory(Guid? categoryId)
+        public override WebAccountCollection GetForCategory(Guid? categoryId)
         {
             WebAccountCollection results = new WebAccountCollection();
 

@@ -19,10 +19,11 @@ partial class DecodeSecureMessageDialog
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DecodeSecureMessageDialog));
         MessageText = new TextBox();
-        BorderPanel = new GradientPanel();
-        ContainerPanel = new GradientPanel();
-        ContentPanel = new GradientPanel();
+        BorderPanel = new TemplatedGradientPanel();
+        ContainerPanel = new TemplatedGradientPanel();
+        ContentPanel = new TemplatedGradientPanel();
         FileButton = new TemplatedButton();
         PrepareButton = new TemplatedButton();
         MessageHeader = new SectionTitleHeader();
@@ -60,7 +61,8 @@ partial class DecodeSecureMessageDialog
         BorderPanel.Padding = new Padding(5);
         BorderPanel.Size = new Size(645, 639);
         BorderPanel.TabIndex = 2;
-        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        BorderPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.panel.template.json";
+        BorderPanel.TemplateJson = resources.GetString("BorderPanel.TemplateJson");
         // 
         // ContainerPanel
         // 
@@ -72,7 +74,8 @@ partial class DecodeSecureMessageDialog
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(635, 629);
         ContainerPanel.TabIndex = 1;
-        ContainerPanel.TemplateFile = null;
+        ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.json";
+        ContainerPanel.TemplateJson = resources.GetString("ContainerPanel.TemplateJson");
         // 
         // ContentPanel
         // 
@@ -86,7 +89,8 @@ partial class DecodeSecureMessageDialog
         ContentPanel.Padding = new Padding(5, 0, 5, 5);
         ContentPanel.Size = new Size(635, 529);
         ContentPanel.TabIndex = 1;
-        ContentPanel.TemplateFile = null;
+        ContentPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ContentPanel.TemplateJson = resources.GetString("ContentPanel.TemplateJson");
         // 
         // FileButton
         // 
@@ -95,7 +99,8 @@ partial class DecodeSecureMessageDialog
         FileButton.Name = "FileButton";
         FileButton.Size = new Size(151, 32);
         FileButton.TabIndex = 2;
-        FileButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        FileButton.TemplateFromFile = null;
+        FileButton.TemplateJson = resources.GetString("FileButton.TemplateJson");
         FileButton.Text = "&From File";
         ttp.SetToolTip(FileButton, "Click to load the encrypted text from a file.");
         FileButton.UseVisualStyleBackColor = true;
@@ -107,7 +112,8 @@ partial class DecodeSecureMessageDialog
         PrepareButton.Name = "PrepareButton";
         PrepareButton.Size = new Size(151, 32);
         PrepareButton.TabIndex = 3;
-        PrepareButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        PrepareButton.TemplateFromFile = null;
+        PrepareButton.TemplateJson = resources.GetString("PrepareButton.TemplateJson");
         PrepareButton.Text = "&Decode Message";
         ttp.SetToolTip(PrepareButton, "Click to decrypt the message for reading.");
         PrepareButton.UseVisualStyleBackColor = true;
@@ -159,6 +165,8 @@ partial class DecodeSecureMessageDialog
         FormBorderStyle = FormBorderStyle.None;
         KeyPreview = true;
         Name = "DecodeSecureMessageDialog";
+        ShowIcon = false;
+        ShowInTaskbar = false;
         StartPosition = FormStartPosition.CenterScreen;
         BorderPanel.ResumeLayout(false);
         ContainerPanel.ResumeLayout(false);
@@ -169,9 +177,9 @@ partial class DecodeSecureMessageDialog
 
     private TextBox MessageText;
     private ToolTip ttp;
-    private GradientPanel BorderPanel;
-    private GradientPanel ContainerPanel;
-    private GradientPanel ContentPanel;
+    private TemplatedGradientPanel BorderPanel;
+    private TemplatedGradientPanel ContainerPanel;
+    private TemplatedGradientPanel ContentPanel;
     private TemplatedButton PrepareButton;
     private SectionTitleHeader MessageHeader;
     private SaveCancelBar ButtonBar;

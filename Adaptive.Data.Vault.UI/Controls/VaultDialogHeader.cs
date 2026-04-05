@@ -9,8 +9,8 @@ namespace Adaptive.Data.Vault.UI.Controls
     {
         #region Private Member Declarations
 
-        private Color _startColor = Color.FromArgb(255, 0, 79, 210);
-        private Color _endColor = Color.FromArgb(255, 136, 181, 255);
+        private Color _startColor = Color.FromArgb(255, 0, 0, 192);
+        private Color _endColor = Color.FromArgb(255, 0, 255, 0);
 
         private string _titleText = "ADAPTIVE DATA VAULT";
         #endregion
@@ -114,17 +114,17 @@ namespace Adaptive.Data.Vault.UI.Controls
         /// <param name="g">The g.</param>
         private void DrawBottomBar(Graphics g)
         {
-            Color color = Color.FromArgb(255, 0, 79, 210);
-            Color color2 = Color.FromArgb(255, 240, 143, 13);
-            int num = (int)((float)base.Width / 2f);
-            int num2 = 8;
-            Rectangle rect = new Rectangle(0, base.Height - num2, num + 1, num2);
-            Rectangle rect2 = new Rectangle(num, base.Height - num2, base.Width - num, num2);
-            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(rect2, color2, color, LinearGradientMode.Horizontal);
-            g.FillRectangle(linearGradientBrush, rect2);
+            Color color = Color.FromArgb(255, 0, 128, 0);
+            Color color2 = Color.FromArgb(255, 0, 0, 128);
+            int halfWidth = (int)((float)base.Width / 2f);
+            int barHeight = 8;
+            Rectangle topRectangle = new Rectangle(0, base.Height - barHeight, halfWidth + 1, barHeight);
+            Rectangle barRectangle = new Rectangle(halfWidth, base.Height - barHeight, base.Width - halfWidth, barHeight);
+            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(barRectangle, color2, color, LinearGradientMode.Horizontal);
+            g.FillRectangle(linearGradientBrush, barRectangle);
             linearGradientBrush.Dispose();
-            linearGradientBrush = new LinearGradientBrush(rect, color, color2, LinearGradientMode.Horizontal);
-            g.FillRectangle(linearGradientBrush, rect);
+            linearGradientBrush = new LinearGradientBrush(topRectangle, color, color2, LinearGradientMode.Horizontal);
+            g.FillRectangle(linearGradientBrush, topRectangle);
             linearGradientBrush.Dispose();
         }
         /// <summary>

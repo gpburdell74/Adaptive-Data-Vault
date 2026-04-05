@@ -26,7 +26,7 @@
             ContainerPanel.Controls.Add(CategoryEdit);
             ContainerPanel.Controls.Add(SaveCancel);
             ContainerPanel.Controls.Add(DialogHeader);
-            ContainerPanel.Size = new Size(432, 166);
+            ContainerPanel.Size = new Size(432, 173);
             // 
             // SaveCancel
             // 
@@ -35,7 +35,7 @@
             SaveCancel.CancelVisible = true;
             SaveCancel.Dock = DockStyle.Bottom;
             SaveCancel.Font = new Font("Segoe UI", 9.75F);
-            SaveCancel.Location = new Point(5, 113);
+            SaveCancel.Location = new Point(5, 120);
             SaveCancel.Margin = new Padding(48, 22, 48, 22);
             SaveCancel.Name = "SaveCancel";
             SaveCancel.SaveEnabled = true;
@@ -55,19 +55,22 @@
             // 
             // CategoryEdit
             // 
+            CategoryEdit.BackColor = Color.Transparent;
             CategoryEdit.Dock = DockStyle.Fill;
             CategoryEdit.Font = new Font("Segoe UI", 9.75F);
             CategoryEdit.Location = new Point(5, 75);
+            CategoryEdit.MaximumSize = new Size(9999, 35);
+            CategoryEdit.MinimumSize = new Size(100, 35);
             CategoryEdit.Name = "CategoryEdit";
             CategoryEdit.Padding = new Padding(0, 10, 0, 0);
-            CategoryEdit.Size = new Size(422, 38);
+            CategoryEdit.Size = new Size(422, 35);
             CategoryEdit.TabIndex = 0;
             // 
             // AddEditCategoryDialog
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(432, 166);
+            ClientSize = new Size(432, 173);
             Name = "AddEditCategoryDialog";
             ContainerPanel.ResumeLayout(false);
             ResumeLayout(false);

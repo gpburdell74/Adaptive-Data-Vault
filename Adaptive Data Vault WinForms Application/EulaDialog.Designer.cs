@@ -1,4 +1,6 @@
-﻿namespace Adaptive.Data.Vault.UI
+﻿using Adaptive.Intelligence.Shared.UI;
+
+namespace Adaptive.Data.Vault.UI
 {
     partial class EulaDialog
     {
@@ -16,14 +18,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EulaDialog));
-            ContainerPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            EulaPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+            ContainerPanel = new TemplatedGradientPanel();
+            EulaPanel = new TemplatedGradientPanel();
             TextPanel = new Panel();
             EulaText = new RichTextBox();
-            DateLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-            ButtonsPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+            DateLabel = new AdvancedLabel();
+            ButtonsPanel = new TemplatedGradientPanel();
             AgreeCheck = new CheckBox();
-            CloseButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+            CloseButton = new TemplatedButton();
             Header = new Adaptive.Data.Vault.UI.Controls.VaultDialogHeader();
             ContainerPanel.SuspendLayout();
             EulaPanel.SuspendLayout();
@@ -37,10 +39,11 @@
             ContainerPanel.Dock = DockStyle.Fill;
             ContainerPanel.Location = new Point(0, 0);
             ContainerPanel.Name = "ContainerPanel";
-            ContainerPanel.Padding = new Padding(10);
+            ContainerPanel.Padding = new Padding(5);
             ContainerPanel.Size = new Size(800, 600);
             ContainerPanel.TabIndex = 1;
-            ContainerPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+            ContainerPanel.TemplateFromFile = null;
+            ContainerPanel.TemplateJson = null;
             // 
             // EulaPanel
             // 
@@ -48,11 +51,12 @@
             EulaPanel.Controls.Add(ButtonsPanel);
             EulaPanel.Controls.Add(Header);
             EulaPanel.Dock = DockStyle.Fill;
-            EulaPanel.Location = new Point(10, 10);
+            EulaPanel.Location = new Point(5, 5);
             EulaPanel.Name = "EulaPanel";
-            EulaPanel.Size = new Size(780, 580);
+            EulaPanel.Size = new Size(790, 590);
             EulaPanel.TabIndex = 0;
-            EulaPanel.TemplateFile = null;
+            EulaPanel.TemplateFromFile = null;
+            EulaPanel.TemplateJson = null;
             // 
             // TextPanel
             // 
@@ -62,7 +66,7 @@
             TextPanel.Location = new Point(0, 68);
             TextPanel.Name = "TextPanel";
             TextPanel.Padding = new Padding(10);
-            TextPanel.Size = new Size(780, 469);
+            TextPanel.Size = new Size(790, 479);
             TextPanel.TabIndex = 2;
             // 
             // EulaText
@@ -73,7 +77,7 @@
             EulaText.Name = "EulaText";
             EulaText.ReadOnly = true;
             EulaText.ScrollBars = RichTextBoxScrollBars.Vertical;
-            EulaText.Size = new Size(760, 432);
+            EulaText.Size = new Size(770, 442);
             EulaText.TabIndex = 1;
             EulaText.Text = resources.GetString("EulaText.Text");
             // 
@@ -83,7 +87,7 @@
             DateLabel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DateLabel.Location = new Point(10, 10);
             DateLabel.Name = "DateLabel";
-            DateLabel.Size = new Size(760, 17);
+            DateLabel.Size = new Size(770, 17);
             DateLabel.TabIndex = 0;
             DateLabel.TabStop = false;
             DateLabel.Text = "Last updated August 01, 2025";
@@ -94,30 +98,33 @@
             ButtonsPanel.Controls.Add(AgreeCheck);
             ButtonsPanel.Controls.Add(CloseButton);
             ButtonsPanel.Dock = DockStyle.Bottom;
-            ButtonsPanel.Location = new Point(0, 537);
+            ButtonsPanel.Location = new Point(0, 547);
             ButtonsPanel.Name = "ButtonsPanel";
-            ButtonsPanel.Size = new Size(780, 43);
+            ButtonsPanel.Size = new Size(790, 43);
             ButtonsPanel.TabIndex = 2;
-            ButtonsPanel.TemplateFile = null;
+            ButtonsPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+            ButtonsPanel.TemplateJson = resources.GetString("ButtonsPanel.TemplateJson");
             // 
             // AgreeCheck
             // 
             AgreeCheck.AutoSize = true;
+            AgreeCheck.BackColor = Color.Transparent;
             AgreeCheck.Location = new Point(43, 12);
             AgreeCheck.Name = "AgreeCheck";
             AgreeCheck.Size = new Size(221, 21);
             AgreeCheck.TabIndex = 1;
             AgreeCheck.Text = "I agree to the terms listed above.";
-            AgreeCheck.UseVisualStyleBackColor = true;
+            AgreeCheck.UseVisualStyleBackColor = false;
             // 
             // CloseButton
             // 
             CloseButton.Checked = false;
-            CloseButton.Location = new Point(670, 6);
+            CloseButton.Location = new Point(662, 6);
             CloseButton.Name = "CloseButton";
-            CloseButton.Size = new Size(100, 32);
+            CloseButton.Size = new Size(118, 32);
             CloseButton.TabIndex = 0;
-            CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
+            CloseButton.TemplateFromFile = null;
+            CloseButton.TemplateJson = resources.GetString("CloseButton.TemplateJson");
             CloseButton.Text = "Close";
             CloseButton.UseVisualStyleBackColor = true;
             // 
@@ -126,7 +133,7 @@
             Header.Dock = DockStyle.Top;
             Header.Location = new Point(0, 0);
             Header.Name = "Header";
-            Header.Size = new Size(780, 68);
+            Header.Size = new Size(790, 68);
             Header.TabIndex = 0;
             Header.TabStop = false;
             Header.TitleText = "END USER LICENSE AGREEMENT";
@@ -153,10 +160,10 @@
 
         #endregion
 
-        private Intelligence.Shared.UI.GradientPanel ContainerPanel;
-        private Intelligence.Shared.UI.GradientPanel EulaPanel;
+        private TemplatedGradientPanel ContainerPanel;
+        private TemplatedGradientPanel EulaPanel;
         private Panel TextPanel;
-        private Intelligence.Shared.UI.GradientPanel ButtonsPanel;
+        private TemplatedGradientPanel ButtonsPanel;
         private Controls.VaultDialogHeader Header;
         private Intelligence.Shared.UI.AdvancedLabel DateLabel;
         private CheckBox AgreeCheck;

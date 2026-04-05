@@ -18,8 +18,9 @@ partial class IdProviderListItem
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        ContainerPanel = new GradientPanel();
-        ContextMenu = new ContextMenuStrip(components);
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdProviderListItem));
+        ContainerPanel = new TemplatedGradientPanel();
+        IdProviderContextMenu = new ContextMenuStrip(components);
         ContextMenuNew = new ToolStripMenuItem();
         ContextMenuEdit = new ToolStripMenuItem();
         ContextMenuDelete = new ToolStripMenuItem();
@@ -27,50 +28,51 @@ partial class IdProviderListItem
         ContextMenuCategorize = new ToolStripMenuItem();
         ContextMenuDividerB = new ToolStripSeparator();
         ContextMenuProperties = new ToolStripMenuItem();
-        DividerLine = new LineControl();
         UrlLabel = new AdvancedLabel();
         NamePanel = new Panel();
         DescriptionLabel = new AdvancedLabel();
         NameLabel = new AdvancedLabel();
-        ButtonsPanel = new GradientPanel();
+        ButtonsPanel = new TemplatedGradientPanel();
         UserInfoButton = new TemplatedButton();
         ButtonDividerA = new Panel();
         EditButton = new TemplatedButton();
         ButtonDividerB = new Panel();
         DeleteButton = new TemplatedButton();
-        SelectionIndicator = new GradientPanel();
+        SelectionIndicator = new TemplatedGradientPanel();
+        DividerLine = new LineControl();
         ttp = new ToolTip(components);
         ContainerPanel.SuspendLayout();
-        ContextMenu.SuspendLayout();
+        IdProviderContextMenu.SuspendLayout();
         NamePanel.SuspendLayout();
         ButtonsPanel.SuspendLayout();
-        this.SuspendLayout();
+        SuspendLayout();
         // 
         // ContainerPanel
         // 
-        ContainerPanel.ContextMenuStrip = ContextMenu;
-        ContainerPanel.Controls.Add(DividerLine);
+        ContainerPanel.ContextMenuStrip = IdProviderContextMenu;
         ContainerPanel.Controls.Add(UrlLabel);
         ContainerPanel.Controls.Add(NamePanel);
         ContainerPanel.Controls.Add(ButtonsPanel);
         ContainerPanel.Controls.Add(SelectionIndicator);
+        ContainerPanel.Controls.Add(DividerLine);
         ContainerPanel.Dock = DockStyle.Fill;
         ContainerPanel.Location = new Point(0, 0);
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(440, 54);
         ContainerPanel.TabIndex = 0;
-        ContainerPanel.TemplateFile = null;
+        ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ContainerPanel.TemplateJson = resources.GetString("ContainerPanel.TemplateJson");
         // 
-        // ContextMenu
+        // IdProviderContextMenu
         // 
-        ContextMenu.Items.AddRange(new ToolStripItem[] { ContextMenuNew, ContextMenuEdit, ContextMenuDelete, ContextMenuDividerA, ContextMenuCategorize, ContextMenuDividerB, ContextMenuProperties });
-        ContextMenu.Name = "ContextMenu";
-        ContextMenu.ShowCheckMargin = true;
-        ContextMenu.Size = new Size(198, 126);
+        IdProviderContextMenu.Items.AddRange(new ToolStripItem[] { ContextMenuNew, ContextMenuEdit, ContextMenuDelete, ContextMenuDividerA, ContextMenuCategorize, ContextMenuDividerB, ContextMenuProperties });
+        IdProviderContextMenu.Name = "ContextMenu";
+        IdProviderContextMenu.ShowCheckMargin = true;
+        IdProviderContextMenu.Size = new Size(198, 126);
         // 
         // ContextMenuNew
         // 
-        ContextMenuNew.Image = Adaptive.Data.Vault.UI.Properties.Resources.Add16;
+        ContextMenuNew.Image = Properties.Resources.Add16;
         ContextMenuNew.Name = "ContextMenuNew";
         ContextMenuNew.Size = new Size(197, 22);
         ContextMenuNew.Text = "New...";
@@ -78,7 +80,7 @@ partial class IdProviderListItem
         // 
         // ContextMenuEdit
         // 
-        ContextMenuEdit.Image = Adaptive.Data.Vault.UI.Properties.Resources.Edit_16x16;
+        ContextMenuEdit.Image = Properties.Resources.Edit_16x16;
         ContextMenuEdit.Name = "ContextMenuEdit";
         ContextMenuEdit.Size = new Size(197, 22);
         ContextMenuEdit.Text = "Edit...";
@@ -86,7 +88,7 @@ partial class IdProviderListItem
         // 
         // ContextMenuDelete
         // 
-        ContextMenuDelete.Image = Adaptive.Data.Vault.UI.Properties.Resources.Delete_16x16;
+        ContextMenuDelete.Image = Properties.Resources.Delete_16x16;
         ContextMenuDelete.Name = "ContextMenuDelete";
         ContextMenuDelete.Size = new Size(197, 22);
         ContextMenuDelete.Text = "Delete";
@@ -99,7 +101,7 @@ partial class IdProviderListItem
         // 
         // ContextMenuCategorize
         // 
-        ContextMenuCategorize.Image = Adaptive.Data.Vault.UI.Properties.Resources.Delete_2_16x16;
+        ContextMenuCategorize.Image = Properties.Resources.Delete_2_16x16;
         ContextMenuCategorize.Name = "ContextMenuCategorize";
         ContextMenuCategorize.Size = new Size(197, 22);
         ContextMenuCategorize.Text = "Change Category...";
@@ -118,29 +120,13 @@ partial class IdProviderListItem
         ContextMenuProperties.Text = "Properties";
         ContextMenuProperties.ToolTipText = "Show the detail information for this entry.";
         // 
-        // DividerLine
-        // 
-        DividerLine.BevelBottomColor = SystemColors.ControlLight;
-        DividerLine.BevelTopColor = SystemColors.ControlDark;
-        DividerLine.Direction = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-        DividerLine.Dock = DockStyle.Bottom;
-        DividerLine.EndColor = Color.FromArgb((int)(byte)136, (int)(byte)181, (int)(byte)255);
-        DividerLine.LineWidth = 2;
-        DividerLine.Location = new Point(5, 52);
-        DividerLine.Mode = LineControlMode.Line;
-        DividerLine.Name = "DividerLine";
-        DividerLine.Orientation = LineControlOrientation.Horizontal;
-        DividerLine.Size = new Size(281, 2);
-        DividerLine.StartColor = SystemColors.Control;
-        DividerLine.TabIndex = 9;
-        // 
         // UrlLabel
         // 
         UrlLabel.BackColor = Color.Transparent;
-        UrlLabel.ContextMenuStrip = ContextMenu;
+        UrlLabel.ContextMenuStrip = IdProviderContextMenu;
         UrlLabel.Cursor = Cursors.Hand;
         UrlLabel.Dock = DockStyle.Top;
-        UrlLabel.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, (byte)0);
+        UrlLabel.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
         UrlLabel.ForeColor = Color.SteelBlue;
         UrlLabel.Location = new Point(5, 34);
         UrlLabel.Name = "UrlLabel";
@@ -165,7 +151,7 @@ partial class IdProviderListItem
         // 
         DescriptionLabel.BackColor = Color.Transparent;
         DescriptionLabel.Dock = DockStyle.Top;
-        DescriptionLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+        DescriptionLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
         DescriptionLabel.Location = new Point(0, 20);
         DescriptionLabel.Name = "DescriptionLabel";
         DescriptionLabel.Size = new Size(281, 15);
@@ -177,9 +163,9 @@ partial class IdProviderListItem
         // NameLabel
         // 
         NameLabel.BackColor = Color.Transparent;
-        NameLabel.ContextMenuStrip = ContextMenu;
+        NameLabel.ContextMenuStrip = IdProviderContextMenu;
         NameLabel.Dock = DockStyle.Top;
-        NameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+        NameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         NameLabel.Location = new Point(0, 0);
         NameLabel.Name = "NameLabel";
         NameLabel.Size = new Size(281, 20);
@@ -191,7 +177,7 @@ partial class IdProviderListItem
         // ButtonsPanel
         // 
         ButtonsPanel.BackColor = Color.LightGray;
-        ButtonsPanel.ContextMenuStrip = ContextMenu;
+        ButtonsPanel.ContextMenuStrip = IdProviderContextMenu;
         ButtonsPanel.Controls.Add(UserInfoButton);
         ButtonsPanel.Controls.Add(ButtonDividerA);
         ButtonsPanel.Controls.Add(EditButton);
@@ -201,21 +187,22 @@ partial class IdProviderListItem
         ButtonsPanel.Location = new Point(286, 0);
         ButtonsPanel.Name = "ButtonsPanel";
         ButtonsPanel.Padding = new Padding(5);
-        ButtonsPanel.Size = new Size(154, 54);
+        ButtonsPanel.Size = new Size(154, 52);
         ButtonsPanel.TabIndex = 4;
-        ButtonsPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        ButtonsPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ButtonsPanel.TemplateJson = resources.GetString("ButtonsPanel.TemplateJson");
         // 
         // UserInfoButton
         // 
         UserInfoButton.Checked = false;
         UserInfoButton.Dock = DockStyle.Right;
-        UserInfoButton.Image = Adaptive.Data.Vault.UI.Properties.Resources.User_Info_32x32;
+        UserInfoButton.Image = Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
-        UserInfoButton.Size = new Size(44, 44);
+        UserInfoButton.Size = new Size(44, 42);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateFile = null;
-        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo; 
+        UserInfoButton.TemplateFromFile = null;
+        UserInfoButton.TemplateJson = resources.GetString("UserInfoButton.TemplateJson");
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -225,20 +212,20 @@ partial class IdProviderListItem
         ButtonDividerA.Dock = DockStyle.Right;
         ButtonDividerA.Location = new Point(51, 5);
         ButtonDividerA.Name = "ButtonDividerA";
-        ButtonDividerA.Size = new Size(5, 44);
+        ButtonDividerA.Size = new Size(5, 42);
         ButtonDividerA.TabIndex = 3;
         // 
         // EditButton
         // 
         EditButton.Checked = false;
         EditButton.Dock = DockStyle.Right;
-        EditButton.Image = Adaptive.Data.Vault.UI.Properties.Resources.Edit_32x32;
+        EditButton.Image = Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
-        EditButton.Size = new Size(44, 44);
+        EditButton.Size = new Size(44, 42);
         EditButton.TabIndex = 2;
-        EditButton.TemplateFile = null;
-        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
+        EditButton.TemplateFromFile = null;
+        EditButton.TemplateJson = resources.GetString("EditButton.TemplateJson");
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -248,19 +235,20 @@ partial class IdProviderListItem
         ButtonDividerB.Dock = DockStyle.Right;
         ButtonDividerB.Location = new Point(100, 5);
         ButtonDividerB.Name = "ButtonDividerB";
-        ButtonDividerB.Size = new Size(5, 44);
+        ButtonDividerB.Size = new Size(5, 42);
         ButtonDividerB.TabIndex = 4;
         // 
         // DeleteButton
         // 
         DeleteButton.Checked = false;
         DeleteButton.Dock = DockStyle.Right;
+        DeleteButton.Image = Properties.Resources.ButtonFlatX;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
-        DeleteButton.Size = new Size(44, 44);
+        DeleteButton.Size = new Size(44, 42);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateFile = null;
-        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
+        DeleteButton.TemplateFromFile = null;
+        DeleteButton.TemplateJson = resources.GetString("DeleteButton.TemplateJson");
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 
@@ -269,29 +257,46 @@ partial class IdProviderListItem
         SelectionIndicator.Dock = DockStyle.Left;
         SelectionIndicator.Location = new Point(0, 0);
         SelectionIndicator.Name = "SelectionIndicator";
-        SelectionIndicator.Size = new Size(5, 54);
+        SelectionIndicator.Size = new Size(5, 52);
         SelectionIndicator.TabIndex = 10;
-        SelectionIndicator.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        SelectionIndicator.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.panel.template.json";
+        SelectionIndicator.TemplateJson = resources.GetString("SelectionIndicator.TemplateJson");
         SelectionIndicator.Visible = false;
+        // 
+        // DividerLine
+        // 
+        DividerLine.BevelBottomColor = SystemColors.ControlLight;
+        DividerLine.BevelTopColor = SystemColors.ControlDark;
+        DividerLine.Direction = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+        DividerLine.Dock = DockStyle.Bottom;
+        DividerLine.EndColor = Color.Blue;
+        DividerLine.LineWidth = 2;
+        DividerLine.Location = new Point(0, 52);
+        DividerLine.Mode = LineControlMode.Line;
+        DividerLine.Name = "DividerLine";
+        DividerLine.Orientation = LineControlOrientation.Horizontal;
+        DividerLine.Size = new Size(440, 2);
+        DividerLine.StartColor = Color.Lime;
+        DividerLine.TabIndex = 9;
         // 
         // IdProviderListItem
         // 
-        this.AutoScaleDimensions = new SizeF(96F, 96F);
-        this.Controls.Add(ContainerPanel);
-        this.Margin = new Padding(3);
-        this.Name = "IdProviderListItem";
-        this.Size = new Size(440, 54);
+        AutoScaleDimensions = new SizeF(96F, 96F);
+        Controls.Add(ContainerPanel);
+        Margin = new Padding(3);
+        Name = "IdProviderListItem";
+        Size = new Size(440, 54);
         ContainerPanel.ResumeLayout(false);
-        ContextMenu.ResumeLayout(false);
+        IdProviderContextMenu.ResumeLayout(false);
         NamePanel.ResumeLayout(false);
         ButtonsPanel.ResumeLayout(false);
-        this.ResumeLayout(false);
+        ResumeLayout(false);
     }
 
     #endregion
 
-    private GradientPanel ContainerPanel;
-    private GradientPanel ButtonsPanel;
+    private TemplatedGradientPanel ContainerPanel;
+    private TemplatedGradientPanel ButtonsPanel;
     private Panel NamePanel;
     private AdvancedLabel NameLabel;
     private AdvancedLabel DescriptionLabel;
@@ -303,8 +308,8 @@ partial class IdProviderListItem
     private Panel ButtonDividerA;
     private ToolTip ttp;
     private LineControl DividerLine;
-    private GradientPanel SelectionIndicator;
-    private ContextMenuStrip ContextMenu;
+    private TemplatedGradientPanel SelectionIndicator;
+    private ContextMenuStrip IdProviderContextMenu;
     private ToolStripMenuItem ContextMenuNew;
     private ToolStripMenuItem ContextMenuEdit;
     private ToolStripMenuItem ContextMenuDelete;

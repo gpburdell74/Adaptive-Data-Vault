@@ -17,11 +17,11 @@ partial class IdentityProviderListControl
     /// </summary>
     private void InitializeComponent()
     {
-
         components = new System.ComponentModel.Container();
-        ToolbarPanel = new GradientPanel();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdentityProviderListControl));
+        ToolbarPanel = new TemplatedGradientPanel();
         NewAccountButton = new TemplatedButton();
-        ContainerPanel = new GradientPanel();
+        ContainerPanel = new TemplatedGradientPanel();
         ttp = new ToolTip(components);
         ToolbarPanel.SuspendLayout();
         SuspendLayout();
@@ -29,7 +29,7 @@ partial class IdentityProviderListControl
         // ToolbarPanel
         // 
         ToolbarPanel.AutoScroll = true;
-        ToolbarPanel.BackColor = Color.White;
+        ToolbarPanel.BackColor = Color.Transparent;
         ToolbarPanel.Controls.Add(NewAccountButton);
         ToolbarPanel.Dock = DockStyle.Top;
         ToolbarPanel.Location = new Point(0, 0);
@@ -37,7 +37,8 @@ partial class IdentityProviderListControl
         ToolbarPanel.Padding = new Padding(10);
         ToolbarPanel.Size = new Size(400, 42);
         ToolbarPanel.TabIndex = 0;
-        ToolbarPanel.TemplateFile = null;
+        ToolbarPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ToolbarPanel.TemplateJson = resources.GetString("ToolbarPanel.TemplateJson");
         // 
         // NewAccountButton
         // 
@@ -49,7 +50,8 @@ partial class IdentityProviderListControl
         NewAccountButton.Name = "NewAccountButton";
         NewAccountButton.Size = new Size(265, 32);
         NewAccountButton.TabIndex = 0;
-        NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+        NewAccountButton.TemplateFromFile = null;
+        NewAccountButton.TemplateJson = resources.GetString("NewAccountButton.TemplateJson");
         NewAccountButton.Text = "Create New ID Provider Entry...";
         NewAccountButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(NewAccountButton, "Create a new entry to contain the login information for an identity provider, such as Microsoft, Google, Facebook, etc.");
@@ -58,12 +60,14 @@ partial class IdentityProviderListControl
         // ContainerPanel
         // 
         ContainerPanel.AutoScroll = true;
+        ContainerPanel.BackColor = Color.White;
         ContainerPanel.Dock = DockStyle.Fill;
         ContainerPanel.Location = new Point(0, 42);
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(400, 358);
         ContainerPanel.TabIndex = 1;
-        ContainerPanel.TemplateFile = null;
+        ContainerPanel.TemplateFromFile = null;
+        ContainerPanel.TemplateJson = null;
         ttp.SetToolTip(ContainerPanel, "List if identity providers in this category.");
         // 
         // IdentityProviderListControl
@@ -76,60 +80,12 @@ partial class IdentityProviderListControl
         ToolbarPanel.ResumeLayout(false);
         ResumeLayout(false);
 
-        this.components = new System.ComponentModel.Container();
-        this.ToolbarPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-        this.NewAccountButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        this.ContainerPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-        this.ttp = new System.Windows.Forms.ToolTip(this.components);
-        this.ToolbarPanel.SuspendLayout();
-        base.SuspendLayout();
-        this.ToolbarPanel.AutoScroll = true;
-        this.ToolbarPanel.BackColor = System.Drawing.Color.White;
-        this.ToolbarPanel.Controls.Add(this.NewAccountButton);
-        this.ToolbarPanel.Dock = System.Windows.Forms.DockStyle.Top;
-        this.ToolbarPanel.Location = new System.Drawing.Point(0, 0);
-        this.ToolbarPanel.Name = "ToolbarPanel";
-        this.ToolbarPanel.Padding = new System.Windows.Forms.Padding(10);
-        this.ToolbarPanel.Size = new System.Drawing.Size(400, 42);
-        this.ToolbarPanel.TabIndex = 0;
-        this.ToolbarPanel.TemplateFile = null;
-        
-        this.NewAccountButton.Checked = false;
-        this.NewAccountButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-        this.NewAccountButton.Image = Adaptive.Data.Vault.UI.Properties.Resources.Add16;
-        this.NewAccountButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-        this.NewAccountButton.Location = new System.Drawing.Point(5, 5);
-        this.NewAccountButton.Name = "NewAccountButton";
-        this.NewAccountButton.Size = new System.Drawing.Size(265, 32);
-        this.NewAccountButton.TabIndex = 0;
-        this.NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
-        this.NewAccountButton.Text = "Create New ID Provider Entry...";
-        this.NewAccountButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-        this.ttp.SetToolTip(this.NewAccountButton, "Create a new entry to contain the login information for an identity provider, such as Microsoft, Google, Facebook, etc.");
-        this.NewAccountButton.UseVisualStyleBackColor = true;
-
-        this.ContainerPanel.AutoScroll = true;
-        this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        this.ContainerPanel.Location = new System.Drawing.Point(0, 42);
-        this.ContainerPanel.Name = "ContainerPanel";
-        this.ContainerPanel.Size = new System.Drawing.Size(400, 358);
-        this.ContainerPanel.TabIndex = 1;
-        this.ContainerPanel.TemplateFile = null;
-        this.ttp.SetToolTip(this.ContainerPanel, "List if identity providers in this category.");
-        this.BackColor = System.Drawing.Color.White;
-        base.Controls.Add(this.ContainerPanel);
-        base.Controls.Add(this.ToolbarPanel);
-        base.Name = "IdentityProviderListControl";
-        base.Size = new System.Drawing.Size(400, 400);
-        this.ToolbarPanel.ResumeLayout(false);
-        base.ResumeLayout(false);
-
     }
 
     #endregion
 
-    private GradientPanel ToolbarPanel;
+    private TemplatedGradientPanel ToolbarPanel;
     private TemplatedButton NewAccountButton;
-    private GradientPanel ContainerPanel;
+    private TemplatedGradientPanel ContainerPanel;
     private ToolTip ttp;
 }

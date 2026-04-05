@@ -43,6 +43,8 @@
             ContainerPanel.Controls.Add(ContentPanel);
             ContainerPanel.Padding = new Padding(5, 6, 5, 6);
             ContainerPanel.Size = new Size(650, 273);
+            ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.json";
+            ContainerPanel.TemplateJson = resources.GetString("ContainerPanel.TemplateJson");
             // 
             // ContentPanel
             // 
@@ -159,7 +161,8 @@
             CloseButton.Name = "CloseButton";
             CloseButton.Size = new Size(108, 32);
             CloseButton.TabIndex = 16;
-            CloseButton.TemplateFile = null;
+            CloseButton.TemplateFromFile = null;
+            CloseButton.TemplateJson = resources.GetString("CloseButton.TemplateJson");
             CloseButton.Text = "Close";
             CloseButton.UseVisualStyleBackColor = true;
             // 

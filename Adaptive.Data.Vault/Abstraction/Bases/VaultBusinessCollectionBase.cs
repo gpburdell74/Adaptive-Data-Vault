@@ -1,4 +1,5 @@
-﻿using Adaptive.Data.Vault.Abstraction;
+﻿using System.Diagnostics.CodeAnalysis;
+using Adaptive.Data.Vault.Abstraction;
 using Adaptive.Data.Vault.Entities;
 
 namespace Adaptive.Data.Vault;
@@ -13,7 +14,7 @@ namespace Adaptive.Data.Vault;
 /// The data type of the underlying data entity for the business object.
 /// </typeparam>
 /// <seealso cref="List{T}" />
-public abstract class VaultBusinessCollectionBase<T, E> : List<T>
+public abstract class VaultBusinessCollectionBase<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] E> : List<T>
     where T : VaultBusinessBase<E>
     where E : IEntity
 {
@@ -41,7 +42,7 @@ public abstract class VaultBusinessCollectionBase<T, E> : List<T>
         // For each entity, create an new wrapper business object and add it to the collection.
         foreach (E entity in sourceList)
         {
-            T? businessObject = (T?)VaultActivator.CreateInstanceForEntity<E>(entity);
+            T? businessObject = VaultActivator.CreateInstanceForEntity<E>(entity) as T;
             if (businessObject != null)
                 Add(businessObject);
         }
@@ -59,7 +60,7 @@ public abstract class VaultBusinessCollectionBase<T, E> : List<T>
     /// <returns>
     /// A <see cref="List{T}"/> containing the results.
     /// </returns>
-    public List<T> GetForCategory(Guid? categoryId)
+    public virtual List<T> GetForCategory(Guid? categoryId)
     {
         return this.Where(x => x.CategoryId == categoryId).ToList();
     }

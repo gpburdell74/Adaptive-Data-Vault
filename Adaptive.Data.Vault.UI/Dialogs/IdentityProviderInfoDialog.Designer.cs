@@ -18,8 +18,9 @@ partial class IdentityProviderInfoDialog
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        BorderPanel = new GradientPanel();
-        ContentPanel = new GradientPanel();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IdentityProviderInfoDialog));
+        BorderPanel = new TemplatedGradientPanel();
+        ContentPanel = new TemplatedGradientPanel();
         CloseButton = new TemplatedButton();
         CopyPasswordButton = new TemplatedButton();
         ShowPasswordButton = new TemplatedButton();
@@ -45,9 +46,10 @@ partial class IdentityProviderInfoDialog
         BorderPanel.Location = new Point(0, 0);
         BorderPanel.Name = "BorderPanel";
         BorderPanel.Padding = new Padding(5);
-        BorderPanel.Size = new Size(587, 248);
+        BorderPanel.Size = new Size(580, 243);
         BorderPanel.TabIndex = 0;
-        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        BorderPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.json";
+        BorderPanel.TemplateJson = resources.GetString("BorderPanel.TemplateJson");
         // 
         // ContentPanel
         // 
@@ -67,9 +69,10 @@ partial class IdentityProviderInfoDialog
         ContentPanel.Dock = DockStyle.Fill;
         ContentPanel.Location = new Point(5, 5);
         ContentPanel.Name = "ContentPanel";
-        ContentPanel.Size = new Size(577, 238);
+        ContentPanel.Size = new Size(570, 233);
         ContentPanel.TabIndex = 0;
-        ContentPanel.TemplateFile = null;
+        ContentPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ContentPanel.TemplateJson = resources.GetString("ContentPanel.TemplateJson");
         // 
         // CloseButton
         // 
@@ -78,7 +81,8 @@ partial class IdentityProviderInfoDialog
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(80, 40);
         CloseButton.TabIndex = 12;
-        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
+        CloseButton.TemplateFromFile = null;
+        CloseButton.TemplateJson = resources.GetString("CloseButton.TemplateJson");
         CloseButton.Text = "Close";
         ttp.SetToolTip(CloseButton, "Close this window.");
         CloseButton.UseVisualStyleBackColor = true;
@@ -90,18 +94,21 @@ partial class IdentityProviderInfoDialog
         CopyPasswordButton.Name = "CopyPasswordButton";
         CopyPasswordButton.Size = new Size(40, 40);
         CopyPasswordButton.TabIndex = 11;
-        CopyPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
+        CopyPasswordButton.TemplateFromFile = null;
+        CopyPasswordButton.TemplateJson = resources.GetString("CopyPasswordButton.TemplateJson");
         ttp.SetToolTip(CopyPasswordButton, "Copy the password to the clipboard.");
         CopyPasswordButton.UseVisualStyleBackColor = true;
         // 
         // ShowPasswordButton
         // 
         ShowPasswordButton.Checked = false;
+        ShowPasswordButton.Image = Properties.Resources.Edit_32x32;
         ShowPasswordButton.Location = new Point(485, 125);
         ShowPasswordButton.Name = "ShowPasswordButton";
         ShowPasswordButton.Size = new Size(40, 40);
         ShowPasswordButton.TabIndex = 10;
-        ShowPasswordButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
+        ShowPasswordButton.TemplateFromFile = null;
+        ShowPasswordButton.TemplateJson = resources.GetString("ShowPasswordButton.TemplateJson");
         ttp.SetToolTip(ShowPasswordButton, "Show or Hide the Password.");
         ShowPasswordButton.UseVisualStyleBackColor = true;
         // 
@@ -112,18 +119,21 @@ partial class IdentityProviderInfoDialog
         CopyUserIdButton.Name = "CopyUserIdButton";
         CopyUserIdButton.Size = new Size(40, 40);
         CopyUserIdButton.TabIndex = 9;
-        CopyUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
+        CopyUserIdButton.TemplateFromFile = null;
+        CopyUserIdButton.TemplateJson = resources.GetString("CopyUserIdButton.TemplateJson");
         ttp.SetToolTip(CopyUserIdButton, "Copy the User ID / Login Name to the clipboard.");
         CopyUserIdButton.UseVisualStyleBackColor = true;
         // 
         // ShowUserIdButton
         // 
         ShowUserIdButton.Checked = false;
+        ShowUserIdButton.Image = Properties.Resources.Edit_32x32;
         ShowUserIdButton.Location = new Point(485, 85);
         ShowUserIdButton.Name = "ShowUserIdButton";
         ShowUserIdButton.Size = new Size(40, 40);
         ShowUserIdButton.TabIndex = 8;
-        ShowUserIdButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV ShowHide Template.template";
+        ShowUserIdButton.TemplateFromFile = null;
+        ShowUserIdButton.TemplateJson = resources.GetString("ShowUserIdButton.TemplateJson");
         ttp.SetToolTip(ShowUserIdButton, "Show or Hide the User Id.");
         ShowUserIdButton.UseVisualStyleBackColor = true;
         // 
@@ -134,12 +144,14 @@ partial class IdentityProviderInfoDialog
         CopyUrlButton.Name = "CopyUrlButton";
         CopyUrlButton.Size = new Size(40, 40);
         CopyUrlButton.TabIndex = 7;
-        CopyUrlButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Copy Button Template.template";
+        CopyUrlButton.TemplateFromFile = null;
+        CopyUrlButton.TemplateJson = resources.GetString("CopyUrlButton.TemplateJson");
         ttp.SetToolTip(CopyUrlButton, "Copy this URL to the clipboard.");
         CopyUrlButton.UseVisualStyleBackColor = true;
         // 
         // PasswordLabel
         // 
+        PasswordLabel.BackColor = Color.Transparent;
         PasswordLabel.Font = new Font("Segoe UI", 14.25F);
         PasswordLabel.Location = new Point(121, 125);
         PasswordLabel.Name = "PasswordLabel";
@@ -151,6 +163,7 @@ partial class IdentityProviderInfoDialog
         // 
         // PasswordTitleLabel
         // 
+        PasswordTitleLabel.BackColor = Color.Transparent;
         PasswordTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
         PasswordTitleLabel.Location = new Point(7, 125);
         PasswordTitleLabel.Name = "PasswordTitleLabel";
@@ -162,6 +175,7 @@ partial class IdentityProviderInfoDialog
         // 
         // UserIdLabel
         // 
+        UserIdLabel.BackColor = Color.Transparent;
         UserIdLabel.Font = new Font("Segoe UI", 14.25F);
         UserIdLabel.Location = new Point(121, 85);
         UserIdLabel.Name = "UserIdLabel";
@@ -173,6 +187,7 @@ partial class IdentityProviderInfoDialog
         // 
         // UserIdTitleLabel
         // 
+        UserIdTitleLabel.BackColor = Color.Transparent;
         UserIdTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
         UserIdTitleLabel.Location = new Point(7, 83);
         UserIdTitleLabel.Name = "UserIdTitleLabel";
@@ -184,6 +199,7 @@ partial class IdentityProviderInfoDialog
         // 
         // AddressLabel
         // 
+        AddressLabel.BackColor = Color.Transparent;
         AddressLabel.Cursor = Cursors.Hand;
         AddressLabel.Font = new Font("Segoe UI", 14.25F);
         AddressLabel.ForeColor = Color.Blue;
@@ -202,12 +218,13 @@ partial class IdentityProviderInfoDialog
         Header.Location = new Point(0, 0);
         Header.Margin = new Padding(48, 23, 48, 23);
         Header.Name = "Header";
-        Header.Size = new Size(577, 39);
+        Header.Size = new Size(570, 39);
         Header.TabIndex = 1;
         Header.Text = "(Header)";
         // 
         // AddressTitleLabel
         // 
+        AddressTitleLabel.BackColor = Color.Transparent;
         AddressTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
         AddressTitleLabel.Location = new Point(7, 45);
         AddressTitleLabel.Name = "AddressTitleLabel";
@@ -221,10 +238,10 @@ partial class IdentityProviderInfoDialog
         // 
         AutoScaleDimensions = new SizeF(96F, 96F);
         AutoScaleMode = AutoScaleMode.Dpi;
-        ClientSize = new Size(587, 248);
+        ClientSize = new Size(580, 243);
         ControlBox = false;
         Controls.Add(BorderPanel);
-        FormBorderStyle = FormBorderStyle.FixedSingle;
+        FormBorderStyle = FormBorderStyle.None;
         KeyPreview = true;
         MaximizeBox = false;
         MinimizeBox = false;
@@ -236,8 +253,8 @@ partial class IdentityProviderInfoDialog
     }
     #endregion
 
-    private GradientPanel BorderPanel;
-    private GradientPanel ContentPanel;
+    private TemplatedGradientPanel BorderPanel;
+    private TemplatedGradientPanel ContentPanel;
     private TemplatedButton CopyPasswordButton;
     private TemplatedButton ShowPasswordButton;
     private TemplatedButton CopyUserIdButton;

@@ -15,12 +15,12 @@ public partial class WebAccountListItem : AdaptiveControlBase
     /// <summary>
     /// Occurs when the user clicks the Categorize menu item.
     /// </summary>
-    public event EventHandler CategorizeRequest;
+    public event EventHandler? CategorizeRequest;
 
     /// <summary>
     /// Occurs when a user attempts to delete an entry.
     /// </summary>
-    public event Intelligence.Shared.EventHandler<WebAccount> DeleteRequest;
+    public event Intelligence.Shared.EventHandler<WebAccount>? DeleteRequest;
     #endregion
 
     #region Private Member Declarations
@@ -248,11 +248,14 @@ public partial class WebAccountListItem : AdaptiveControlBase
     {
         SetPreLoadState();
 
-        WebAccountInfoDialog dialog = new WebAccountInfoDialog();
-        dialog.Account = _account;
-        dialog.ShowDialog();
+        if (_account != null)
+        {
+            WebAccountInfoDialog dialog = new WebAccountInfoDialog();
+            dialog.Account = _account;
+            dialog.ShowDialog();
 
-        dialog.Dispose();
+            dialog.Dispose();
+        }
 
         SetPostLoadState();
         SetState();

@@ -5,20 +5,26 @@ using System.Security.Cryptography;
 
 namespace Adaptive.Data.Vault;
 
-public sealed class SecureDeleteClient : DisposableObjectBase
+/// <summary>
+/// Provides a client instance for performing secure file deletions.
+/// </summary>
+/// <seealso cref="DisposableObjectBase" />
+public class SecureDeleteClient : DisposableObjectBase
 {
-    public event ProgressUpdateEventHandler StatusUpdate;
+    /// <summary>
+    /// Occurs when the status is updated.
+    /// </summary>
+    public event ProgressUpdateEventHandler? StatusUpdate;
 
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-    }
-
-    private void OnStatusUpdate(ProgressUpdateEventArgs e)
+    /// <summary>
+    /// Raises the <see cref="E:StatusUpdate" /> event.
+    /// </summary>
+    /// <param name="e">The <see cref="ProgressUpdateEventArgs"/> instance containing the event data.</param>
+    protected virtual void OnStatusUpdate(ProgressUpdateEventArgs e)
     {
         try
         {
-            this.StatusUpdate?.Invoke(this, e);
+            StatusUpdate?.Invoke(this, e);
         }
         catch (Exception ex)
         {
@@ -26,6 +32,12 @@ public sealed class SecureDeleteClient : DisposableObjectBase
         }
     }
 
+    /// <summary>
+    /// Securely deletes the specified file using a multi-pass overwrite method.
+    /// </summary>
+    /// <param name="fileName">
+    /// A string containing the name of the file to be deleted.
+    /// </param>
     public async Task SecureDeleteFileAsync(string fileName)
     {
         OnStatusUpdate(new ProgressUpdateEventArgs("Starting...", 0));
@@ -58,7 +70,7 @@ public sealed class SecureDeleteClient : DisposableObjectBase
     private async Task PerformDoDPassOneAsync(string fileName)
     {
         long length = SafeIO.GetFileSize(fileName);
-        FileStream stream = SafeIO.OpenFileForExclusiveWrite(fileName);
+        FileStream? stream = SafeIO.OpenFileForExclusiveWrite(fileName);
         if (stream != null)
         {
             await WriteDataAsync(stream, length, 0).ConfigureAwait(continueOnCapturedContext: false);
@@ -70,7 +82,7 @@ public sealed class SecureDeleteClient : DisposableObjectBase
     private async Task PerformDoDPassTwoAsync(string fileName)
     {
         long length = SafeIO.GetFileSize(fileName);
-        FileStream stream = SafeIO.OpenFileForExclusiveWrite(fileName);
+        FileStream? stream = SafeIO.OpenFileForExclusiveWrite(fileName);
         if (stream != null)
         {
             await WriteDataAsync(stream, length, byte.MaxValue).ConfigureAwait(continueOnCapturedContext: false);
@@ -85,7 +97,7 @@ public sealed class SecureDeleteClient : DisposableObjectBase
         byte[] randomChar = new byte[1];
         rng.GetBytes(randomChar);
         long length = SafeIO.GetFileSize(fileName);
-        FileStream stream = SafeIO.OpenFileForExclusiveWrite(fileName);
+        FileStream? stream = SafeIO.OpenFileForExclusiveWrite(fileName);
         if (stream != null)
         {
             await WriteDataAsync(stream, length, randomChar[0]).ConfigureAwait(continueOnCapturedContext: false);
@@ -101,7 +113,7 @@ public sealed class SecureDeleteClient : DisposableObjectBase
         byte[] randomChar = new byte[1];
         rng.GetBytes(randomChar);
         long length = SafeIO.GetFileSize(fileName);
-        FileStream stream = SafeIO.OpenFileForExclusiveWrite(fileName);
+        FileStream? stream = SafeIO.OpenFileForExclusiveWrite(fileName);
         if (stream != null)
         {
             await WriteRandomDataAsync(stream, length).ConfigureAwait(continueOnCapturedContext: false);
@@ -117,7 +129,7 @@ public sealed class SecureDeleteClient : DisposableObjectBase
         {
             SafeIO.DeleteFile(fileName);
         }
-        FileStream stream = SafeIO.CreateFileForExclusiveWrite(fileName);
+        FileStream? stream = SafeIO.CreateFileForExclusiveWrite(fileName);
         if (stream != null)
         {
             byte[] randomData = RandomNumberGenerator.GetBytes(5100);

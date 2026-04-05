@@ -21,6 +21,7 @@ namespace Adaptive.Data.Vault.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditRemoveToolbar));
             AddButton = new TemplatedButton();
             EditButton = new TemplatedButton();
             RemoveButton = new TemplatedButton();
@@ -35,8 +36,8 @@ namespace Adaptive.Data.Vault.UI
             AddButton.Name = "AddButton";
             AddButton.Size = new Size(120, 25);
             AddButton.TabIndex = 0;
-            AddButton.TemplateFile = null;
-            AddButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+            AddButton.TemplateFromFile = null;
+            AddButton.TemplateJson = resources.GetString("AddButton.TemplateJson");
             AddButton.Text = "&Add Entry";
             AddButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             AddButton.UseVisualStyleBackColor = true;
@@ -50,8 +51,8 @@ namespace Adaptive.Data.Vault.UI
             EditButton.Name = "EditButton";
             EditButton.Size = new Size(120, 25);
             EditButton.TabIndex = 1;
-            EditButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
-            EditButton.TemplateFile = null;
+            EditButton.TemplateFromFile = null;
+            EditButton.TemplateJson = resources.GetString("EditButton.TemplateJson");
             EditButton.Text = "&Edit Entry";
             EditButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             EditButton.UseVisualStyleBackColor = true;
@@ -65,8 +66,8 @@ namespace Adaptive.Data.Vault.UI
             RemoveButton.Name = "RemoveButton";
             RemoveButton.Size = new Size(120, 25);
             RemoveButton.TabIndex = 2;
-            RemoveButton.TemplateFile = null;
-            RemoveButton.TemplateSource = Properties.Resources.ButtonTemplateDelete16;
+            RemoveButton.TemplateFromFile = null;
+            RemoveButton.TemplateJson = resources.GetString("RemoveButton.TemplateJson");
             RemoveButton.Text = "&Remove Entry";
             RemoveButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             RemoveButton.UseVisualStyleBackColor = true;

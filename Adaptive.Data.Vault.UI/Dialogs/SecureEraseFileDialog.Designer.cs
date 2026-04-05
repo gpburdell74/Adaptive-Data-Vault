@@ -19,8 +19,9 @@ namespace Adaptive.Data.Vault.UI
 
         private void InitializeComponent()
         {
-            BorderPanel = new GradientPanel();
-            ContainerPanel = new GradientPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecureEraseFileDialog));
+            BorderPanel = new TemplatedGradientPanel();
+            ContainerPanel = new TemplatedGradientPanel();
             CloseButton = new TemplatedButton();
             DeleteButton = new TemplatedButton();
             StatusPrg = new ProgressBar();
@@ -42,7 +43,8 @@ namespace Adaptive.Data.Vault.UI
             BorderPanel.Padding = new Padding(5);
             BorderPanel.Size = new Size(750, 263);
             BorderPanel.TabIndex = 0;
-            BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+            BorderPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.json";
+            BorderPanel.TemplateJson = resources.GetString("BorderPanel.TemplateJson");
             // 
             // ContainerPanel
             // 
@@ -59,7 +61,8 @@ namespace Adaptive.Data.Vault.UI
             ContainerPanel.Name = "ContainerPanel";
             ContainerPanel.Size = new Size(740, 253);
             ContainerPanel.TabIndex = 0;
-            ContainerPanel.TemplateFile = null;
+            ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+            ContainerPanel.TemplateJson = resources.GetString("ContainerPanel.TemplateJson");
             // 
             // CloseButton
             // 
@@ -68,7 +71,8 @@ namespace Adaptive.Data.Vault.UI
             CloseButton.Name = "CloseButton";
             CloseButton.Size = new Size(100, 40);
             CloseButton.TabIndex = 8;
-            CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
+            CloseButton.TemplateFromFile = null;
+            CloseButton.TemplateJson = resources.GetString("CloseButton.TemplateJson");
             CloseButton.Text = "Cancel";
             CloseButton.UseVisualStyleBackColor = true;
             // 
@@ -76,12 +80,14 @@ namespace Adaptive.Data.Vault.UI
             // 
             DeleteButton.Checked = false;
             DeleteButton.Enabled = false;
+            DeleteButton.Image = Properties.Resources.Password_Lock;
             DeleteButton.ImageAlign = ContentAlignment.MiddleLeft;
             DeleteButton.Location = new Point(471, 205);
             DeleteButton.Name = "DeleteButton";
             DeleteButton.Size = new Size(155, 40);
             DeleteButton.TabIndex = 7;
-            DeleteButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Delete Template.template";
+            DeleteButton.TemplateFromFile = null;
+            DeleteButton.TemplateJson = resources.GetString("DeleteButton.TemplateJson");
             DeleteButton.Text = "Secure Delete";
             DeleteButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             DeleteButton.UseVisualStyleBackColor = true;
@@ -97,6 +103,7 @@ namespace Adaptive.Data.Vault.UI
             // StatusLabel
             // 
             StatusLabel.AutoSize = true;
+            StatusLabel.BackColor = Color.Transparent;
             StatusLabel.Font = new Font("Segoe UI", 9.75F);
             StatusLabel.Location = new Point(115, 119);
             StatusLabel.Name = "StatusLabel";
@@ -114,7 +121,8 @@ namespace Adaptive.Data.Vault.UI
             BrowseButton.Name = "BrowseButton";
             BrowseButton.Size = new Size(40, 25);
             BrowseButton.TabIndex = 3;
-            BrowseButton.TemplateFile = null;
+            BrowseButton.TemplateFromFile = null;
+            BrowseButton.TemplateJson = null;
             BrowseButton.Text = "...";
             BrowseButton.UseVisualStyleBackColor = true;
             // 
@@ -127,6 +135,7 @@ namespace Adaptive.Data.Vault.UI
             // 
             // FileLabel
             // 
+            FileLabel.BackColor = Color.Transparent;
             FileLabel.Font = new Font("Segoe UI", 9.75F);
             FileLabel.Location = new Point(9, 76);
             FileLabel.Name = "FileLabel";
@@ -163,8 +172,8 @@ namespace Adaptive.Data.Vault.UI
         }
         #endregion
 
-        private GradientPanel BorderPanel;
-        private GradientPanel ContainerPanel;
+        private TemplatedGradientPanel BorderPanel;
+        private TemplatedGradientPanel ContainerPanel;
         private VaultDialogHeader Header;
         private ProgressBar StatusPrg;
         private AdvancedLabel StatusLabel;

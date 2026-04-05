@@ -20,9 +20,10 @@ partial class CreateSecureMessageDialog
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        BorderPanel = new GradientPanel();
-        ContainerPanel = new GradientPanel();
-        ContentPanel = new GradientPanel();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateSecureMessageDialog));
+        BorderPanel = new TemplatedGradientPanel();
+        ContainerPanel = new TemplatedGradientPanel();
+        ContentPanel = new TemplatedGradientPanel();
         PrepareButton = new TemplatedButton();
         MessageText = new TextBox();
         MessageHeader = new SectionTitleHeader();
@@ -43,7 +44,8 @@ partial class CreateSecureMessageDialog
         BorderPanel.Padding = new Padding(5);
         BorderPanel.Size = new Size(645, 639);
         BorderPanel.TabIndex = 1;
-        BorderPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        BorderPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.json";
+        BorderPanel.TemplateJson = resources.GetString("BorderPanel.TemplateJson");
         // 
         // ContainerPanel
         // 
@@ -55,7 +57,8 @@ partial class CreateSecureMessageDialog
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(635, 629);
         ContainerPanel.TabIndex = 1;
-        ContainerPanel.TemplateFile = null;
+        ContainerPanel.TemplateFromFile = null;
+        ContainerPanel.TemplateJson = null;
         // 
         // ContentPanel
         // 
@@ -68,7 +71,8 @@ partial class CreateSecureMessageDialog
         ContentPanel.Padding = new Padding(5, 0, 5, 5);
         ContentPanel.Size = new Size(635, 529);
         ContentPanel.TabIndex = 1;
-        ContentPanel.TemplateFile = null;
+        ContentPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ContentPanel.TemplateJson = resources.GetString("ContentPanel.TemplateJson");
         // 
         // PrepareButton
         // 
@@ -77,7 +81,8 @@ partial class CreateSecureMessageDialog
         PrepareButton.Name = "PrepareButton";
         PrepareButton.Size = new Size(151, 32);
         PrepareButton.TabIndex = 6;
-        PrepareButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        PrepareButton.TemplateFromFile = null;
+        PrepareButton.TemplateJson = resources.GetString("PrepareButton.TemplateJson");
         PrepareButton.Text = "&Prepare Message";
         ttp.SetToolTip(PrepareButton, "Click to prepare the message for sending,");
         PrepareButton.UseVisualStyleBackColor = true;
@@ -152,11 +157,11 @@ partial class CreateSecureMessageDialog
         ResumeLayout(false);
     }
 
-    private GradientPanel BorderPanel;
-    private GradientPanel ContainerPanel;
+    private TemplatedGradientPanel BorderPanel;
+    private TemplatedGradientPanel ContainerPanel;
     private SaveCancelBar ButtonBar;
     private VaultDialogHeader Header;
-    private GradientPanel ContentPanel;
+    private TemplatedGradientPanel ContentPanel;
     private TextBox MessageText;
     private SectionTitleHeader MessageHeader;
     private ToolTip ttp;

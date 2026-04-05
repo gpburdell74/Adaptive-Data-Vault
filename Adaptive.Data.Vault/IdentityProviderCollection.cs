@@ -77,6 +77,7 @@ namespace Adaptive.Data.Vault
                 MFADescription = mfaDescription,
                 MFADeviceAddress = mfaAddress,
                 Name = name,
+                Description = description,
                 Password = password,
                 UserId = userId,
                 UsesMFA = usesMfa,

@@ -255,7 +255,7 @@ public partial class CategoriesTreeControl : AdaptiveControlBase
     {
         Cursor = Cursors.WaitCursor;
         CategoryList.Enabled = false;
-        ContextMenu.Enabled = false;
+        CategoryContextMenu.Enabled = false;
         Application.DoEvents();
         SuspendLayout();
     }
@@ -267,7 +267,7 @@ public partial class CategoriesTreeControl : AdaptiveControlBase
     {
         Cursor = Cursors.Default;
         CategoryList.Enabled = true;
-        ContextMenu.Enabled = true;
+        CategoryContextMenu.Enabled = true;
         ResumeLayout();
     }
 

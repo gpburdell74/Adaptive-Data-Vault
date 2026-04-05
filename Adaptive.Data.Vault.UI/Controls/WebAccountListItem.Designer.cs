@@ -20,8 +20,8 @@ partial class WebAccountListItem
     {
         components = new System.ComponentModel.Container();
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WebAccountListItem));
-        ContainerPanel = new GradientPanel();
-        ContextMenu = new ContextMenuStrip(components);
+        ContainerPanel = new TemplatedGradientPanel();
+        WebContextMenu = new ContextMenuStrip(components);
         ContextMenuNew = new ToolStripMenuItem();
         ContextMenuEdit = new ToolStripMenuItem();
         ContextMenuDelete = new ToolStripMenuItem();
@@ -34,23 +34,23 @@ partial class WebAccountListItem
         NamePanel = new Panel();
         DescriptionLabel = new AdvancedLabel();
         NameLabel = new AdvancedLabel();
-        ButtonsPanel = new GradientPanel();
+        ButtonsPanel = new TemplatedGradientPanel();
         UserInfoButton = new TemplatedButton();
         ButtonDividerA = new Panel();
         EditButton = new TemplatedButton();
         ButtonDividerB = new Panel();
         DeleteButton = new TemplatedButton();
-        SelectionIndicator = new GradientPanel();
+        SelectionIndicator = new TemplatedGradientPanel();
         ttp = new ToolTip(components);
         ContainerPanel.SuspendLayout();
-        ContextMenu.SuspendLayout();
+        WebContextMenu.SuspendLayout();
         NamePanel.SuspendLayout();
         ButtonsPanel.SuspendLayout();
         SuspendLayout();
         // 
         // ContainerPanel
         // 
-        ContainerPanel.ContextMenuStrip = ContextMenu;
+        ContainerPanel.ContextMenuStrip = WebContextMenu;
         ContainerPanel.Controls.Add(DividerLine);
         ContainerPanel.Controls.Add(UrlLabel);
         ContainerPanel.Controls.Add(NamePanel);
@@ -61,14 +61,15 @@ partial class WebAccountListItem
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(440, 54);
         ContainerPanel.TabIndex = 0;
-        ContainerPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive Data Vault\\Resources\\ADV Button.template";
+        ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ContainerPanel.TemplateJson = resources.GetString("ContainerPanel.TemplateJson");
         // 
         // ContextMenu
         // 
-        ContextMenu.Items.AddRange(new ToolStripItem[] { ContextMenuNew, ContextMenuEdit, ContextMenuDelete, ContextMenuDividerA, ContextMenuCategorize, ContextMenuDividerB, ContextMenuProperties });
-        ContextMenu.Name = "ContextMenu";
-        ContextMenu.ShowCheckMargin = true;
-        ContextMenu.Size = new Size(198, 126);
+        WebContextMenu.Items.AddRange(new ToolStripItem[] { ContextMenuNew, ContextMenuEdit, ContextMenuDelete, ContextMenuDividerA, ContextMenuCategorize, ContextMenuDividerB, ContextMenuProperties });
+        WebContextMenu.Name = "ContextMenu";
+        WebContextMenu.ShowCheckMargin = true;
+        WebContextMenu.Size = new Size(198, 126);
         // 
         // ContextMenuNew
         // 
@@ -140,7 +141,7 @@ partial class WebAccountListItem
         // UrlLabel
         // 
         UrlLabel.BackColor = Color.Transparent;
-        UrlLabel.ContextMenuStrip = ContextMenu;
+        UrlLabel.ContextMenuStrip = WebContextMenu;
         UrlLabel.Cursor = Cursors.Hand;
         UrlLabel.Dock = DockStyle.Top;
         UrlLabel.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
@@ -180,7 +181,7 @@ partial class WebAccountListItem
         // NameLabel
         // 
         NameLabel.BackColor = Color.Transparent;
-        NameLabel.ContextMenuStrip = ContextMenu;
+        NameLabel.ContextMenuStrip = WebContextMenu;
         NameLabel.Dock = DockStyle.Top;
         NameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         NameLabel.Location = new Point(0, 0);
@@ -193,8 +194,8 @@ partial class WebAccountListItem
         // 
         // ButtonsPanel
         // 
-        ButtonsPanel.BackColor = Color.LightGray;
-        ButtonsPanel.ContextMenuStrip = ContextMenu;
+        ButtonsPanel.BackColor = Color.Transparent;
+        ButtonsPanel.ContextMenuStrip = WebContextMenu;
         ButtonsPanel.Controls.Add(UserInfoButton);
         ButtonsPanel.Controls.Add(ButtonDividerA);
         ButtonsPanel.Controls.Add(EditButton);
@@ -206,7 +207,8 @@ partial class WebAccountListItem
         ButtonsPanel.Padding = new Padding(5);
         ButtonsPanel.Size = new Size(154, 54);
         ButtonsPanel.TabIndex = 4;
-        ButtonsPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        ButtonsPanel.TemplateFromFile = null;
+        ButtonsPanel.TemplateJson = null;
         // 
         // UserInfoButton
         // 
@@ -217,7 +219,8 @@ partial class WebAccountListItem
         UserInfoButton.Name = "UserInfoButton";
         UserInfoButton.Size = new Size(44, 44);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
+        UserInfoButton.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\User Info 32.button.template.json";
+        UserInfoButton.TemplateJson = resources.GetString("UserInfoButton.TemplateJson");
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -239,7 +242,8 @@ partial class WebAccountListItem
         EditButton.Name = "EditButton";
         EditButton.Size = new Size(44, 44);
         EditButton.TabIndex = 2;
-        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
+        EditButton.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Button.button.template.json";
+        EditButton.TemplateJson = resources.GetString("EditButton.TemplateJson");
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -261,7 +265,8 @@ partial class WebAccountListItem
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(44, 44);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
+        DeleteButton.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Button.button.template.json";
+        DeleteButton.TemplateJson = resources.GetString("DeleteButton.TemplateJson");
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 
@@ -272,7 +277,8 @@ partial class WebAccountListItem
         SelectionIndicator.Name = "SelectionIndicator";
         SelectionIndicator.Size = new Size(5, 54);
         SelectionIndicator.TabIndex = 10;
-        SelectionIndicator.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        SelectionIndicator.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Selection Indicator.panel.template.json";
+        SelectionIndicator.TemplateJson = resources.GetString("SelectionIndicator.TemplateJson");
         SelectionIndicator.Visible = false;
         // 
         // WebAccountListItem
@@ -283,7 +289,7 @@ partial class WebAccountListItem
         Name = "WebAccountListItem";
         Size = new Size(440, 54);
         ContainerPanel.ResumeLayout(false);
-        ContextMenu.ResumeLayout(false);
+        WebContextMenu.ResumeLayout(false);
         NamePanel.ResumeLayout(false);
         ButtonsPanel.ResumeLayout(false);
         ResumeLayout(false);
@@ -291,8 +297,8 @@ partial class WebAccountListItem
 
     #endregion
 
-    private GradientPanel ContainerPanel;
-    private GradientPanel ButtonsPanel;
+    private TemplatedGradientPanel ContainerPanel;
+    private TemplatedGradientPanel ButtonsPanel;
     private Panel NamePanel;
     private AdvancedLabel NameLabel;
     private AdvancedLabel DescriptionLabel;
@@ -304,8 +310,8 @@ partial class WebAccountListItem
     private Panel ButtonDividerA;
     private ToolTip ttp;
     private LineControl DividerLine;
-    private GradientPanel SelectionIndicator;
-    private ContextMenuStrip ContextMenu;
+    private TemplatedGradientPanel SelectionIndicator;
+    private ContextMenuStrip WebContextMenu;
     private ToolStripMenuItem ContextMenuNew;
     private ToolStripMenuItem ContextMenuEdit;
     private ToolStripMenuItem ContextMenuDelete;

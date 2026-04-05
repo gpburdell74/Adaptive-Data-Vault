@@ -1,11 +1,9 @@
-﻿namespace Adaptive.Data.Vault.UI;
+﻿using Adaptive.Intelligence.Shared.UI;
+
+namespace Adaptive.Data.Vault.UI;
 
 partial class BorderedDialog
 {
-    /// <summary>
-    /// Required designer variable.
-    /// </summary>
-    private System.ComponentModel.IContainer components;
 
     #region Windows Form Designer generated code
 
@@ -16,7 +14,7 @@ partial class BorderedDialog
     private void InitializeComponent()
     {
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorderedDialog));
-        ContainerPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+        ContainerPanel = new TemplatedGradientPanel();
         SuspendLayout();
         // 
         // ContainerPanel
@@ -27,7 +25,8 @@ partial class BorderedDialog
         ContainerPanel.Padding = new Padding(5);
         ContainerPanel.Size = new Size(800, 450);
         ContainerPanel.TabIndex = 0;
-        ContainerPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.panel.template.json";
+        ContainerPanel.TemplateJson = resources.GetString("ContainerPanel.TemplateJson");
         // 
         // BorderedDialog
         // 
@@ -48,5 +47,5 @@ partial class BorderedDialog
 
     #endregion
 
-    public Intelligence.Shared.UI.GradientPanel ContainerPanel;
+    public TemplatedGradientPanel ContainerPanel;
 }

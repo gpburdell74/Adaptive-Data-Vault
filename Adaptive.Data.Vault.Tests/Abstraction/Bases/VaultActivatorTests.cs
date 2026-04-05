@@ -9,8 +9,9 @@ public class VaultActivatorTests
     [Fact]
     public void CreateInstance_SecureNoteEntity_ReturnsInstance()
     { 
-        Assert.NotNull(instance);
-        Assert.IsType<SecureNoteEntity>(instance);
+        SecureNoteEntity note = VaultActivator.CreateInstance<SecureNoteEntity>();
+        Assert.NotNull(note);
+        Assert.IsType<SecureNoteEntity>(note);
     }
 
     [Fact]

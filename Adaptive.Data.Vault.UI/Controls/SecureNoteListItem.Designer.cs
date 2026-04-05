@@ -18,8 +18,9 @@ partial class SecureNoteListItem
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        ContainerPanel = new GradientPanel();
-        ContextMenu = new ContextMenuStrip(components);
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecureNoteListItem));
+        ContainerPanel = new TemplatedGradientPanel();
+        SecureNoteMenu = new ContextMenuStrip(components);
         ContextMenuNew = new ToolStripMenuItem();
         ContextMenuEdit = new ToolStripMenuItem();
         ContextMenuDelete = new ToolStripMenuItem();
@@ -27,44 +28,45 @@ partial class SecureNoteListItem
         ContextMenuCategorize = new ToolStripMenuItem();
         ContextMenuDividerB = new ToolStripSeparator();
         ContextMenuProperties = new ToolStripMenuItem();
-        DividerLine = new LineControl();
         NamePanel = new Panel();
         DescriptionLabel = new AdvancedLabel();
         NameLabel = new AdvancedLabel();
-        ButtonsPanel = new GradientPanel();
+        ButtonsPanel = new TemplatedGradientPanel();
         UserInfoButton = new TemplatedButton();
         ButtonDividerA = new Panel();
         EditButton = new TemplatedButton();
         ButtonDividerB = new Panel();
         DeleteButton = new TemplatedButton();
-        SelectionIndicator = new GradientPanel();
+        SelectionIndicator = new TemplatedGradientPanel();
+        DividerLine = new LineControl();
         ttp = new ToolTip(components);
         ContainerPanel.SuspendLayout();
-        ContextMenu.SuspendLayout();
+        SecureNoteMenu.SuspendLayout();
         NamePanel.SuspendLayout();
         ButtonsPanel.SuspendLayout();
         SuspendLayout();
         // 
         // ContainerPanel
         // 
-        ContainerPanel.ContextMenuStrip = ContextMenu;
-        ContainerPanel.Controls.Add(DividerLine);
+        ContainerPanel.ContextMenuStrip = SecureNoteMenu;
         ContainerPanel.Controls.Add(NamePanel);
         ContainerPanel.Controls.Add(ButtonsPanel);
         ContainerPanel.Controls.Add(SelectionIndicator);
+        ContainerPanel.Controls.Add(DividerLine);
         ContainerPanel.Dock = DockStyle.Fill;
         ContainerPanel.Location = new Point(0, 0);
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(440, 54);
         ContainerPanel.TabIndex = 0;
-        ContainerPanel.TemplateFile = "";
+        ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ContainerPanel.TemplateJson = resources.GetString("ContainerPanel.TemplateJson");
         // 
-        // ContextMenu
+        // SecureNoteMenu
         // 
-        ContextMenu.Items.AddRange(new ToolStripItem[] { ContextMenuNew, ContextMenuEdit, ContextMenuDelete, ContextMenuDividerA, ContextMenuCategorize, ContextMenuDividerB, ContextMenuProperties });
-        ContextMenu.Name = "ContextMenu";
-        ContextMenu.ShowCheckMargin = true;
-        ContextMenu.Size = new Size(198, 126);
+        SecureNoteMenu.Items.AddRange(new ToolStripItem[] { ContextMenuNew, ContextMenuEdit, ContextMenuDelete, ContextMenuDividerA, ContextMenuCategorize, ContextMenuDividerB, ContextMenuProperties });
+        SecureNoteMenu.Name = "ContextMenu";
+        SecureNoteMenu.ShowCheckMargin = true;
+        SecureNoteMenu.Size = new Size(198, 126);
         // 
         // ContextMenuNew
         // 
@@ -116,22 +118,6 @@ partial class SecureNoteListItem
         ContextMenuProperties.Text = "Properties";
         ContextMenuProperties.ToolTipText = "Show the detail information for this entry.";
         // 
-        // DividerLine
-        // 
-        DividerLine.BevelBottomColor = SystemColors.ControlLight;
-        DividerLine.BevelTopColor = SystemColors.ControlDark;
-        DividerLine.Direction = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-        DividerLine.Dock = DockStyle.Bottom;
-        DividerLine.EndColor = Color.FromArgb(136, 181, 255);
-        DividerLine.LineWidth = 2;
-        DividerLine.Location = new Point(5, 52);
-        DividerLine.Mode = LineControlMode.Line;
-        DividerLine.Name = "DividerLine";
-        DividerLine.Orientation = LineControlOrientation.Horizontal;
-        DividerLine.Size = new Size(281, 2);
-        DividerLine.StartColor = SystemColors.Control;
-        DividerLine.TabIndex = 9;
-        // 
         // NamePanel
         // 
         NamePanel.BackColor = Color.Transparent;
@@ -159,7 +145,7 @@ partial class SecureNoteListItem
         // NameLabel
         // 
         NameLabel.BackColor = Color.Transparent;
-        NameLabel.ContextMenuStrip = ContextMenu;
+        NameLabel.ContextMenuStrip = SecureNoteMenu;
         NameLabel.Dock = DockStyle.Top;
         NameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         NameLabel.Location = new Point(0, 0);
@@ -172,8 +158,8 @@ partial class SecureNoteListItem
         // 
         // ButtonsPanel
         // 
-        ButtonsPanel.BackColor = Color.LightGray;
-        ButtonsPanel.ContextMenuStrip = ContextMenu;
+        ButtonsPanel.BackColor = Color.Transparent;
+        ButtonsPanel.ContextMenuStrip = SecureNoteMenu;
         ButtonsPanel.Controls.Add(UserInfoButton);
         ButtonsPanel.Controls.Add(ButtonDividerA);
         ButtonsPanel.Controls.Add(EditButton);
@@ -183,9 +169,10 @@ partial class SecureNoteListItem
         ButtonsPanel.Location = new Point(286, 0);
         ButtonsPanel.Name = "ButtonsPanel";
         ButtonsPanel.Padding = new Padding(5);
-        ButtonsPanel.Size = new Size(154, 54);
+        ButtonsPanel.Size = new Size(154, 52);
         ButtonsPanel.TabIndex = 4;
-        ButtonsPanel.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        ButtonsPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ButtonsPanel.TemplateJson = resources.GetString("ButtonsPanel.TemplateJson");
         // 
         // UserInfoButton
         // 
@@ -194,9 +181,10 @@ partial class SecureNoteListItem
         UserInfoButton.Image = Properties.Resources.User_Info_32x32;
         UserInfoButton.Location = new Point(7, 5);
         UserInfoButton.Name = "UserInfoButton";
-        UserInfoButton.Size = new Size(44, 44);
+        UserInfoButton.Size = new Size(44, 42);
         UserInfoButton.TabIndex = 1;
-        UserInfoButton.TemplateSource = Properties.Resources.ButtonTemplateUserInfo;
+        UserInfoButton.TemplateFromFile = null;
+        UserInfoButton.TemplateJson = resources.GetString("UserInfoButton.TemplateJson");
         ttp.SetToolTip(UserInfoButton, "Show the sensitive login information.");
         UserInfoButton.UseVisualStyleBackColor = false;
         // 
@@ -206,7 +194,7 @@ partial class SecureNoteListItem
         ButtonDividerA.Dock = DockStyle.Right;
         ButtonDividerA.Location = new Point(51, 5);
         ButtonDividerA.Name = "ButtonDividerA";
-        ButtonDividerA.Size = new Size(5, 44);
+        ButtonDividerA.Size = new Size(5, 42);
         ButtonDividerA.TabIndex = 3;
         // 
         // EditButton
@@ -216,9 +204,10 @@ partial class SecureNoteListItem
         EditButton.Image = Properties.Resources.Edit_32x32;
         EditButton.Location = new Point(56, 5);
         EditButton.Name = "EditButton";
-        EditButton.Size = new Size(44, 44);
+        EditButton.Size = new Size(44, 42);
         EditButton.TabIndex = 2;
-        EditButton.TemplateSource = Properties.Resources.ButtonTemplateEditUser;
+        EditButton.TemplateFromFile = null;
+        EditButton.TemplateJson = resources.GetString("EditButton.TemplateJson");
         ttp.SetToolTip(EditButton, "Edit the account information.");
         EditButton.UseVisualStyleBackColor = false;
         // 
@@ -228,18 +217,20 @@ partial class SecureNoteListItem
         ButtonDividerB.Dock = DockStyle.Right;
         ButtonDividerB.Location = new Point(100, 5);
         ButtonDividerB.Name = "ButtonDividerB";
-        ButtonDividerB.Size = new Size(5, 44);
+        ButtonDividerB.Size = new Size(5, 42);
         ButtonDividerB.TabIndex = 4;
         // 
         // DeleteButton
         // 
         DeleteButton.Checked = false;
         DeleteButton.Dock = DockStyle.Right;
+        DeleteButton.Image = Properties.Resources.ButtonFlatX;
         DeleteButton.Location = new Point(105, 5);
         DeleteButton.Name = "DeleteButton";
-        DeleteButton.Size = new Size(44, 44);
+        DeleteButton.Size = new Size(44, 42);
         DeleteButton.TabIndex = 0;
-        DeleteButton.TemplateSource = Properties.Resources.ButtonTemplateLineItemDelete;
+        DeleteButton.TemplateFromFile = null;
+        DeleteButton.TemplateJson = resources.GetString("DeleteButton.TemplateJson");
         ttp.SetToolTip(DeleteButton, "Delete this entry.");
         DeleteButton.UseVisualStyleBackColor = false;
         // 
@@ -248,10 +239,27 @@ partial class SecureNoteListItem
         SelectionIndicator.Dock = DockStyle.Left;
         SelectionIndicator.Location = new Point(0, 0);
         SelectionIndicator.Name = "SelectionIndicator";
-        SelectionIndicator.Size = new Size(5, 54);
+        SelectionIndicator.Size = new Size(5, 52);
         SelectionIndicator.TabIndex = 10;
-        SelectionIndicator.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        SelectionIndicator.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Selection Indicator.panel.template.json";
+        SelectionIndicator.TemplateJson = resources.GetString("SelectionIndicator.TemplateJson");
         SelectionIndicator.Visible = false;
+        // 
+        // DividerLine
+        // 
+        DividerLine.BevelBottomColor = SystemColors.ControlLight;
+        DividerLine.BevelTopColor = SystemColors.ControlDark;
+        DividerLine.Direction = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+        DividerLine.Dock = DockStyle.Bottom;
+        DividerLine.EndColor = Color.Lime;
+        DividerLine.LineWidth = 2;
+        DividerLine.Location = new Point(0, 52);
+        DividerLine.Mode = LineControlMode.Line;
+        DividerLine.Name = "DividerLine";
+        DividerLine.Orientation = LineControlOrientation.Horizontal;
+        DividerLine.Size = new Size(440, 2);
+        DividerLine.StartColor = Color.Navy;
+        DividerLine.TabIndex = 9;
         // 
         // SecureNoteListItem
         // 
@@ -261,15 +269,15 @@ partial class SecureNoteListItem
         Name = "SecureNoteListItem";
         Size = new Size(440, 54);
         ContainerPanel.ResumeLayout(false);
-        ContextMenu.ResumeLayout(false);
+        SecureNoteMenu.ResumeLayout(false);
         NamePanel.ResumeLayout(false);
         ButtonsPanel.ResumeLayout(false);
         ResumeLayout(false);
     }
     #endregion
 
-    private GradientPanel ContainerPanel;
-    private GradientPanel ButtonsPanel;
+    private TemplatedGradientPanel ContainerPanel;
+    private TemplatedGradientPanel ButtonsPanel;
     private Panel NamePanel;
     private AdvancedLabel NameLabel;
     private AdvancedLabel DescriptionLabel;
@@ -280,8 +288,8 @@ partial class SecureNoteListItem
     private Panel ButtonDividerA;
     private ToolTip ttp;
     private LineControl DividerLine;
-    private GradientPanel SelectionIndicator;
-    private ContextMenuStrip ContextMenu;
+    private TemplatedGradientPanel SelectionIndicator;
+    private ContextMenuStrip SecureNoteMenu;
     private ToolStripMenuItem ContextMenuNew;
     private ToolStripMenuItem ContextMenuEdit;
     private ToolStripMenuItem ContextMenuDelete;

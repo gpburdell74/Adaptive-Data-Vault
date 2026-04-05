@@ -38,7 +38,7 @@ public sealed class WebAccount : VaultBusinessBase<IWebAccountEntity>
     /// A <see cref="T:System.Guid" /> containing the ID of the category the item belongs to,
     /// or <b>null</b> if the item is not categorized.
     /// </value>
-    public Guid? CategoryId
+    public override Guid? CategoryId
     {
         get
         {

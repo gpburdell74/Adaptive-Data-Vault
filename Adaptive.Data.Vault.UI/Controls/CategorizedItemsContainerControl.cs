@@ -257,6 +257,8 @@ public partial class CategorizedItemsContainerControl : AdaptiveControlBase
         }
         else if (IdProvidersButton.Checked)
         {
+            WebAccountsList.Visible = false;
+            SecureNotesList.Visible = false;
             IdProvidersList.Visible = true;
             SetIdProviderList();
         }

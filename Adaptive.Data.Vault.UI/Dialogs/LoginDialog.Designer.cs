@@ -117,13 +117,15 @@ partial class LoginDialog
         // CloseButton
         // 
         CloseButton.Checked = false;
-        CloseButton.ImageAlign = ContentAlignment.MiddleLeft;
+        CloseButton.ImageAlign = ContentAlignment.TopLeft;
         CloseButton.Location = new Point(340, 10);
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(100, 32);
         CloseButton.TabIndex = 1;
-        CloseButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Cancel  Template.template";
+        CloseButton.TemplateFromFile = null;
+        CloseButton.TemplateJson = resources.GetString("CloseButton.TemplateJson");
         CloseButton.Text = "Cancel";
+        CloseButton.TextAlign = ContentAlignment.BottomRight;
         CloseButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(CloseButton, "Click here to Cancel.");
         CloseButton.UseVisualStyleBackColor = true;
@@ -137,7 +139,8 @@ partial class LoginDialog
         OkButton.Name = "OkButton";
         OkButton.Size = new Size(100, 32);
         OkButton.TabIndex = 0;
-        OkButton.TemplateFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\ADV Button.template";
+        OkButton.TemplateFromFile = null;
+        OkButton.TemplateJson = resources.GetString("OkButton.TemplateJson");
         OkButton.Text = "OK";
         OkButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         ttp.SetToolTip(OkButton, "Click here to log in to the file and load the contents.");

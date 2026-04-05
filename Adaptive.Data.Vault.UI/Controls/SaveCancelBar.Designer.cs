@@ -1,4 +1,6 @@
-﻿namespace Adaptive.Data.Vault.UI.Controls
+﻿using Adaptive.Intelligence.Shared.UI;
+
+namespace Adaptive.Data.Vault.UI.Controls
 {
     partial class SaveCancelBar
     {
@@ -16,11 +18,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaveCancelBar));
-            ContainerPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            ButtonPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            SaveButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-            SpacerPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-            CancelButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
+            ContainerPanel = new TemplatedGradientPanel();
+            ButtonPanel = new TemplatedGradientPanel();
+            SaveButton = new TemplatedButton();
+            SpacerPanel = new Panel();
+            CancelButton = new TemplatedButton();
             ContainerPanel.SuspendLayout();
             ButtonPanel.SuspendLayout();
             SuspendLayout();
@@ -33,7 +35,8 @@
             ContainerPanel.Name = "ContainerPanel";
             ContainerPanel.Size = new Size(1039, 48);
             ContainerPanel.TabIndex = 0;
-            ContainerPanel.TemplateFile = null;
+            ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Save Cancel Panel.panel.template.json";
+            ContainerPanel.TemplateJson = resources.GetString("ContainerPanel.TemplateJson");
             // 
             // ButtonPanel
             // 
@@ -47,7 +50,8 @@
             ButtonPanel.Padding = new Padding(5);
             ButtonPanel.Size = new Size(257, 48);
             ButtonPanel.TabIndex = 0;
-            ButtonPanel.TemplateFile = null;
+            ButtonPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+            ButtonPanel.TemplateJson = resources.GetString("ButtonPanel.TemplateJson");
             // 
             // SaveButton
             // 
@@ -59,19 +63,20 @@
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(120, 38);
             SaveButton.TabIndex = 2;
-            SaveButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+            SaveButton.TemplateFromFile = null;
+            SaveButton.TemplateJson = resources.GetString("SaveButton.TemplateJson");
             SaveButton.Text = "Save";
             SaveButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             SaveButton.UseVisualStyleBackColor = true;
             // 
             // SpacerPanel
             // 
+            SpacerPanel.BackColor = Color.Transparent;
             SpacerPanel.Dock = DockStyle.Right;
             SpacerPanel.Location = new Point(127, 5);
             SpacerPanel.Name = "SpacerPanel";
             SpacerPanel.Size = new Size(5, 38);
             SpacerPanel.TabIndex = 1;
-            SpacerPanel.TemplateFile = null;
             // 
             // CancelButton
             // 
@@ -83,7 +88,8 @@
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(120, 38);
             CancelButton.TabIndex = 0;
-            CancelButton.TemplateSource = Properties.Resources.ButtonTemplateCancel;
+            CancelButton.TemplateFromFile = null;
+            CancelButton.TemplateJson = resources.GetString("CancelButton.TemplateJson");
             CancelButton.Text = "Cancel";
             CancelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             CancelButton.UseVisualStyleBackColor = true;
@@ -102,10 +108,10 @@
 
         #endregion
 
-        private Intelligence.Shared.UI.GradientPanel ContainerPanel;
-        private Intelligence.Shared.UI.GradientPanel ButtonPanel;
+        private TemplatedGradientPanel ContainerPanel;
+        private TemplatedGradientPanel ButtonPanel;
         private Intelligence.Shared.UI.TemplatedButton SaveButton;
-        private Intelligence.Shared.UI.GradientPanel SpacerPanel;
+        private Panel SpacerPanel;
         private Intelligence.Shared.UI.TemplatedButton CancelButton;
     }
 }

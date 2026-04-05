@@ -1,4 +1,5 @@
-﻿using Adaptive.Intelligence.Shared.UI;
+﻿using Adaptive.Data.Vault.UI.Properties;
+using Adaptive.Intelligence.Shared.UI;
 
 namespace Adaptive.Data.Vault.UI;
 
@@ -18,6 +19,7 @@ partial class CategorizedItemsContainerControl
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategorizedItemsContainerControl));
         TabsPanel = new Panel();
         SecureNotesButton = new TemplatedButton();
         IdSeparatorPanel = new Panel();
@@ -52,7 +54,8 @@ partial class CategorizedItemsContainerControl
         SecureNotesButton.Name = "SecureNotesButton";
         SecureNotesButton.Size = new Size(200, 64);
         SecureNotesButton.TabIndex = 2;
-        SecureNotesButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+        SecureNotesButton.TemplateFromFile = null;
+        SecureNotesButton.TemplateJson = resources.GetString("SecureNotesButton.TemplateJson");
         SecureNotesButton.Text = "Secure Notes";
         SecureNotesButton.UseVisualStyleBackColor = true;
         // 
@@ -73,8 +76,8 @@ partial class CategorizedItemsContainerControl
         IdProvidersButton.Name = "IdProvidersButton";
         IdProvidersButton.Size = new Size(200, 64);
         IdProvidersButton.TabIndex = 1;
-        IdProvidersButton.TemplateFile = null;
-        IdProvidersButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+        IdProvidersButton.TemplateFromFile = null;
+        IdProvidersButton.TemplateJson = resources.GetString("IdProvidersButton.TemplateJson");
         IdProvidersButton.Text = "Identity Providers";
         IdProvidersButton.UseVisualStyleBackColor = true;
         // 
@@ -94,8 +97,8 @@ partial class CategorizedItemsContainerControl
         AccountsButton.Name = "AccountsButton";
         AccountsButton.Size = new Size(200, 64);
         AccountsButton.TabIndex = 0;
-        AccountsButton.TemplateFile = null;
-        AccountsButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+        AccountsButton.TemplateFromFile = null;
+        AccountsButton.TemplateJson = resources.GetString("AccountsButton.TemplateJson");
         AccountsButton.Text = "Accounts";
         AccountsButton.UseVisualStyleBackColor = true;
         // 

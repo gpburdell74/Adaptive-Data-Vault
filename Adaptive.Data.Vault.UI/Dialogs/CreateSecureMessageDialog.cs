@@ -150,16 +150,19 @@ public partial class CreateSecureMessageDialog : AdaptiveDialogBase
 
     private string? EncryptAndPrepareText()
     {
-        string newText = null;
-        if (_credentials != null)
+        string? newText = null;
+        if (_credentials != null && _credentials.UserId != null && _credentials.Password != null && _credentials.PIN != null)
         {
-            SuperCrypt crypt = new SuperCrypt(_credentials.UserId, _credentials.Password, _credentials.PIN.Value);
-            byte[] encryptedData = crypt.Encrypt(_original);
-            crypt.Dispose();
-            if (encryptedData != null)
+            SuperCrypt? crypt = new SuperCrypt(_credentials.UserId, _credentials.Password, _credentials.PIN.Value);
+            if (crypt != null && _original != null)
             {
-                newText = Convert.ToBase64String(encryptedData);
-                Array.Clear(encryptedData, 0, encryptedData.Length);
+                byte[]? encryptedData = crypt.Encrypt(_original);
+                crypt.Dispose();
+                if (encryptedData != null)
+                {
+                    newText = Convert.ToBase64String(encryptedData);
+                    Array.Clear(encryptedData, 0, encryptedData.Length);
+                }
             }
         }
         return newText;

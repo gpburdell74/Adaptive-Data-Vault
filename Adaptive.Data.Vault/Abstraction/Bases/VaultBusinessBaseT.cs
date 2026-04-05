@@ -70,7 +70,7 @@ public abstract class VaultBusinessBase<[DynamicallyAccessedMembers(DynamicallyA
     /// A <see cref="Guid"/> containing the ID of the category the item belongs to,
     /// or <b>null</b> if the item is not categorized.
     /// </value>
-    public Guid? CategoryId
+    public virtual Guid? CategoryId
     {
         get
         {

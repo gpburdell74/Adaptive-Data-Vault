@@ -209,15 +209,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Adaptive Data Vault Installer (64-bit)"
-        "ProductCode" = "8:{00D72849-2FB1-4BF7-B652-0560B4A35F00}"
-        "PackageCode" = "8:{9F82B5B6-9CC9-4285-986F-908D2C5E56B3}"
+        "ProductCode" = "8:{290C62E5-B3BA-46A3-92E4-E829F4A1B0B7}"
+        "PackageCode" = "8:{1FAC5792-AD5D-4EAB-AC68-AE318552917F}"
         "UpgradeCode" = "8:{10C8695A-F338-4511-BCF0-786E320C19BA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.93.0001"
+        "ProductVersion" = "8:0.95.1000"
         "Manufacturer" = "8:Adaptive Intelligence"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://samjones.azurewebsites.net"
@@ -745,7 +745,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1930FEC1B8FD45059674D28E4BAA1222"
             {
-            "SourcePath" = "8:..\\..\\Adaptive Data Vault WinForms Application\\obj\\Release\\net9.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\..\\Adaptive Data Vault WinForms Application\\obj\\Debug\\net10.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EAF4E3B9F1C54116A1A5F564720D89C6"

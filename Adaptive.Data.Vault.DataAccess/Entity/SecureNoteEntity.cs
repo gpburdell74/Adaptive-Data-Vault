@@ -15,7 +15,7 @@ public sealed class SecureNoteEntity : EntityBase, ISecureNoteEntity
     private SecureString? _content;
     #endregion
 
-    #region Constructor / Dispose Methods        
+    #region Constructor / Dispose Methods
     /// <summary>
     /// Initializes a new instance of the <see cref="SecureNoteEntity"/> class.
     /// </summary>

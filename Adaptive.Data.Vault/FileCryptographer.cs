@@ -527,13 +527,16 @@ namespace Adaptive.Data.Vault
                         Array.Copy(dataBuffer, dataRead, readCount);
 
                         // Perform the encryption process.
-                        byte[]? dataToWrite = _crypt.Encrypt(dataRead);
+                        if (_crypt != null)
+                        {
+                            byte[]? dataToWrite = _crypt.Encrypt(dataRead);
 
-                        // Write the content.
-                        PerformEncryptedDataWrite(result, dataToWrite);
+                            // Write the content.
+                            PerformEncryptedDataWrite(result, dataToWrite);
 
-                        // Clear memory.
-                        CryptoUtil.SecureClear(dataToWrite);
+                            // Clear memory.
+                            CryptoUtil.SecureClear(dataToWrite);
+                        }
                         CryptoUtil.SecureClear(dataRead);
                     }
                     else

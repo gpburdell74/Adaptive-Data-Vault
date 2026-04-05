@@ -92,4 +92,5 @@ public partial class EditCategoryControl : AdaptiveControlBase
         }
     }
     #endregion
+
 }

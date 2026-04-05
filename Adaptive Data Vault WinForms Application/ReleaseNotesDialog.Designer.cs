@@ -28,6 +28,8 @@
             ContainerPanel.Controls.Add(SaveCancelBar);
             ContainerPanel.Controls.Add(vaultDialogHeader1);
             ContainerPanel.Size = new Size(800, 600);
+            ContainerPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Panel.json";
+            ContainerPanel.TemplateJson = resources.GetString("ContainerPanel.TemplateJson");
             // 
             // vaultDialogHeader1
             // 

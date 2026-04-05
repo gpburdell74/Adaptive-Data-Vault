@@ -30,10 +30,11 @@ partial class AddEditWebAccountDialog
         // 
         // ContainerPanel
         // 
+        ContainerPanel.BackColor = Color.Transparent;
         ContainerPanel.Controls.Add(WebEdit);
         ContainerPanel.Controls.Add(SaveCancel);
         ContainerPanel.Controls.Add(DialogHeader);
-        ContainerPanel.Size = new Size(800, 376);
+        ContainerPanel.Size = new Size(800, 380);
         // 
         // ErrorProvider
         // 
@@ -55,7 +56,7 @@ partial class AddEditWebAccountDialog
         SaveCancel.CancelVisible = true;
         SaveCancel.Dock = DockStyle.Bottom;
         SaveCancel.Font = new Font("Segoe UI", 9.75F);
-        SaveCancel.Location = new Point(5, 323);
+        SaveCancel.Location = new Point(5, 327);
         SaveCancel.Margin = new Padding(48, 22, 48, 22);
         SaveCancel.Name = "SaveCancel";
         SaveCancel.SaveEnabled = true;
@@ -63,26 +64,26 @@ partial class AddEditWebAccountDialog
         SaveCancel.SaveVisible = true;
         SaveCancel.Size = new Size(790, 48);
         SaveCancel.TabIndex = 4;
+        SaveCancel.Load += SaveCancel_Load;
         // 
         // WebEdit
         // 
-        WebEdit.BackColor = Color.White;
+        WebEdit.BackColor = Color.Transparent;
         WebEdit.Dock = DockStyle.Fill;
         WebEdit.Font = new Font("Segoe UI", 9.75F);
         WebEdit.ForeColor = Color.Black;
         WebEdit.Location = new Point(5, 75);
         WebEdit.Margin = new Padding(4, 5, 4, 5);
         WebEdit.Name = "WebEdit";
-        WebEdit.Padding = new Padding(0, 10, 0, 0);
-        WebEdit.Size = new Size(790, 248);
+        WebEdit.Size = new Size(790, 252);
         WebEdit.TabIndex = 5;
         // 
         // AddEditWebAccountDialog
         // 
         AutoScaleDimensions = new SizeF(7F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        BackColor = Color.White;
-        ClientSize = new Size(800, 376);
+        BackColor = Color.WhiteSmoke;
+        ClientSize = new Size(800, 380);
         ForeColor = Color.Black;
         Margin = new Padding(4, 5, 4, 5);
         Name = "AddEditWebAccountDialog";

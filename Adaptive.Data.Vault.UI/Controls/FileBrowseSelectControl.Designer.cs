@@ -40,7 +40,8 @@
             BrowseButton.Name = "BrowseButton";
             BrowseButton.Size = new Size(32, 24);
             BrowseButton.TabIndex = 2;
-            BrowseButton.TemplateFile = null;
+            BrowseButton.TemplateFromFile = null;
+            BrowseButton.TemplateJson = null;
             BrowseButton.Text = "...";
             BrowseButton.UseVisualStyleBackColor = true;
             // 

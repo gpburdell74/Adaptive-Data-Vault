@@ -1,4 +1,6 @@
-﻿namespace Adaptive.Data.Vault.UI;
+﻿using Adaptive.Intelligence.Shared.UI;
+
+namespace Adaptive.Data.Vault.UI;
 
 partial class WebAccountListControl
 {
@@ -15,9 +17,10 @@ partial class WebAccountListControl
     /// </summary>
     private void InitializeComponent()
     {
-        ToolbarPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
-        NewAccountButton = new Adaptive.Intelligence.Shared.UI.TemplatedButton();
-        ContainerPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WebAccountListControl));
+        ToolbarPanel = new TemplatedGradientPanel();
+        NewAccountButton = new TemplatedButton();
+        ContainerPanel = new TemplatedGradientPanel();
         ToolbarPanel.SuspendLayout();
         SuspendLayout();
         // 
@@ -32,7 +35,8 @@ partial class WebAccountListControl
         ToolbarPanel.Padding = new Padding(10);
         ToolbarPanel.Size = new Size(400, 42);
         ToolbarPanel.TabIndex = 0;
-        ToolbarPanel.TemplateFile = null;
+        ToolbarPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+        ToolbarPanel.TemplateJson = resources.GetString("ToolbarPanel.TemplateJson");
         // 
         // NewAccountButton
         // 
@@ -44,8 +48,8 @@ partial class WebAccountListControl
         NewAccountButton.Name = "NewAccountButton";
         NewAccountButton.Size = new Size(247, 32);
         NewAccountButton.TabIndex = 0;
-        NewAccountButton.TemplateFile = null;
-        NewAccountButton.TemplateSource = Properties.Resources.ButtonTemplateStandard;
+        NewAccountButton.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\Standard Button.button.template.json";
+        NewAccountButton.TemplateJson = resources.GetString("NewAccountButton.TemplateJson");
         NewAccountButton.Text = "Create New Account Entry...";
         NewAccountButton.TextImageRelation = TextImageRelation.ImageBeforeText;
         NewAccountButton.UseVisualStyleBackColor = true;
@@ -58,7 +62,8 @@ partial class WebAccountListControl
         ContainerPanel.Name = "ContainerPanel";
         ContainerPanel.Size = new Size(400, 358);
         ContainerPanel.TabIndex = 1;
-        ContainerPanel.TemplateFile = null;
+        ContainerPanel.TemplateFromFile = null;
+        ContainerPanel.TemplateJson = null;
         // 
         // WebAccountListControl
         // 
@@ -73,8 +78,8 @@ partial class WebAccountListControl
 
     #endregion
 
-    private Intelligence.Shared.UI.GradientPanel ToolbarPanel;
+    private TemplatedGradientPanel ToolbarPanel;
     private Intelligence.Shared.UI.TemplatedButton NewAccountButton;
-    private Intelligence.Shared.UI.GradientPanel ContainerPanel;
+    private TemplatedGradientPanel ContainerPanel;
     
 }

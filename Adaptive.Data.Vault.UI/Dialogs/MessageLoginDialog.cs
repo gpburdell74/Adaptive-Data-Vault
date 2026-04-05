@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Adaptive.Data.Vault.UI;
 
-public partial class MessageLoginDialog : AdaptiveDialogBase
+public partial class MessageLoginDialog : BorderedDialog
 {
     #region Private Member Declarations    
     /// <summary>

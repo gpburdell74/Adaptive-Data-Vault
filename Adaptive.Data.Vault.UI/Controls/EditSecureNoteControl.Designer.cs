@@ -1,4 +1,6 @@
-﻿namespace Adaptive.Data.Vault.UI
+﻿using Adaptive.Intelligence.Shared.UI;
+
+namespace Adaptive.Data.Vault.UI
 {
     partial class EditSecureNoteControl
     {
@@ -15,14 +17,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            NamePanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditSecureNoteControl));
+            NamePanel = new TemplatedGradientPanel();
             NameText = new TextBox();
             NameLabelPanel = new Panel();
-            NewNameLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
-            ContentPanel = new Adaptive.Intelligence.Shared.UI.GradientPanel();
+            NewNameLabel = new AdvancedLabel();
+            ContentPanel = new TemplatedGradientPanel();
             ContentText = new TextBox();
             ContentLabelPanel = new Panel();
-            ContentLabel = new Adaptive.Intelligence.Shared.UI.AdvancedLabel();
+            ContentLabel = new AdvancedLabel();
             NamePanel.SuspendLayout();
             NameLabelPanel.SuspendLayout();
             ContentPanel.SuspendLayout();
@@ -31,6 +34,7 @@
             // 
             // NamePanel
             // 
+            NamePanel.BackColor = Color.Transparent;
             NamePanel.Controls.Add(NameText);
             NamePanel.Controls.Add(NameLabelPanel);
             NamePanel.Dock = DockStyle.Top;
@@ -39,7 +43,8 @@
             NamePanel.Padding = new Padding(0, 0, 5, 0);
             NamePanel.Size = new Size(600, 30);
             NamePanel.TabIndex = 1;
-            NamePanel.TemplateFile = null;
+            NamePanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+            NamePanel.TemplateJson = resources.GetString("NamePanel.TemplateJson");
             // 
             // NameText
             // 
@@ -82,7 +87,8 @@
             ContentPanel.Padding = new Padding(0, 0, 5, 0);
             ContentPanel.Size = new Size(600, 267);
             ContentPanel.TabIndex = 2;
-            ContentPanel.TemplateFile = null;
+            ContentPanel.TemplateFromFile = "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Resources\\Button Templates\\General Background.panel.template.json";
+            ContentPanel.TemplateJson = resources.GetString("ContentPanel.TemplateJson");
             // 
             // ContentText
             // 
@@ -96,6 +102,7 @@
             // 
             // ContentLabelPanel
             // 
+            ContentLabelPanel.BackColor = Color.Transparent;
             ContentLabelPanel.Controls.Add(ContentLabel);
             ContentLabelPanel.Dock = DockStyle.Left;
             ContentLabelPanel.Location = new Point(0, 0);
@@ -120,6 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = Color.Transparent;
             Controls.Add(ContentPanel);
             Controls.Add(NamePanel);
             Margin = new Padding(3);
@@ -137,11 +145,11 @@
 
         #endregion
 
-        private Intelligence.Shared.UI.GradientPanel NamePanel;
+        private TemplatedGradientPanel NamePanel;
         private TextBox NameText;
         private Panel NameLabelPanel;
         private Intelligence.Shared.UI.AdvancedLabel NewNameLabel;
-        private Intelligence.Shared.UI.GradientPanel ContentPanel;
+        private TemplatedGradientPanel ContentPanel;
         private TextBox ContentText;
         private Panel ContentLabelPanel;
         private Intelligence.Shared.UI.AdvancedLabel ContentLabel;
