@@ -1,0 +1,2 @@
+MainPackage=D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Release\Installer_0.95.1.0_x64.msix
+SymbolPackage=D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Release\Symbols\Installer_0.95.1.0_x64.appxsym

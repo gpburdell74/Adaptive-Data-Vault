@@ -1,0 +1,50 @@
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.DataAccess.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.UI.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.UI.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.UI.TemplatedCommon.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.UI.TemplatedControls.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.UI.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.DataAccess.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.UI.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.UI.TemplatedCommon.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.UI.TemplatedControls.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.Desktop.deps.json
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\License.txt
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Resources\ADV Button.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Resources\ADV Cancel  Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Resources\ADV Copy Button Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Resources\ADV Delete Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Resources\ADV Edit User Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Resources\ADV ShowHide Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Resources\ADV User Info Button.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.Desktop.exe
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\ADV.ico
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.Desktop.runtimeconfig.json
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.Desktop.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.Desktop.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\resources.pri
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\AppxManifest.xml
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\Installer.build.appxrecipe
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\Installer.wapproj.AssemblyReference.cache
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\Installer.wapproj.CoreCompileInputs.cache
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\priconfig.xml
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\priconfig.xml.intermediate
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\unfiltered.layout.resfiles
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\unfiltered.layout.resfiles.intermediate
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\filtered.layout.resfiles
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\filtered.layout.resfiles.intermediate
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\excluded.layout.resfiles
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\excluded.layout.resfiles.intermediate
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\resources.resfiles
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\resources.resfiles.intermediate
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\pri.resfiles
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\pri.resfiles.intermediate
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\qualifiers.txt
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\qualifiers.txt.intermediate
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\MultipleQualifiersPerDimensionFound.txt
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\ProjectArchitectures.txt
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\Installer.wapproj.LastBuild.txt

@@ -1,0 +1,37 @@
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\ADV-Padlock-320x320.png
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\SplashScreen.scale-200.png
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\LockScreenLogo.scale-200.png
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\Square150x150Logo.scale-200.png
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\Square44x44Logo.scale-200.png
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\Square44x44Logo.targetsize-24_altform-unplated.png
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\StoreLogo.png
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\Wide310x150Logo.scale-200.png
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\resources.pri
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive.Data.Vault.DataAccess\bin\x64\Debug\net10.0\Adaptive.Data.Vault.DataAccess.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive.Data.Vault\bin\x64\Debug\net10.0\Adaptive.Data.Vault.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive.Data.Vault.UI\bin\x64\Debug\net10.0-windows7.0\Adaptive.Data.Vault.UI.dll
+D:\Adaptive.Intelligence\Framework\Shared Code Library\Adaptive.Intelligence.Shared\bin\x64\Debug\net10.0\Adaptive.Intelligence.Shared.dll
+D:\Adaptive.Intelligence\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI\bin\x64\Debug\net10.0-windows7.0\Adaptive.Intelligence.Shared.UI.dll
+D:\Adaptive.Intelligence\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI.TemplatedCommon\bin\x64\Debug\net10.0-windows7.0\Adaptive.Intelligence.Shared.UI.TemplatedCommon.dll
+D:\Adaptive.Intelligence\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI.TemplatedControls\bin\x64\Debug\net10.0-windows\Adaptive.Intelligence.Shared.UI.TemplatedControls.dll
+D:\Adaptive.Intelligence\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI\bin\x64\Debug\net10.0-windows7.0\Adaptive.Intelligence.Shared.UI.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive.Data.Vault.DataAccess\bin\x64\Debug\net10.0\Adaptive.Data.Vault.DataAccess.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive.Data.Vault.UI\bin\x64\Debug\net10.0-windows7.0\Adaptive.Data.Vault.UI.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive.Data.Vault\bin\x64\Debug\net10.0\Adaptive.Data.Vault.pdb
+D:\Adaptive.Intelligence\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI.TemplatedCommon\bin\x64\Debug\net10.0-windows7.0\Adaptive.Intelligence.Shared.UI.TemplatedCommon.pdb
+D:\Adaptive.Intelligence\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI.TemplatedControls\bin\x64\Debug\net10.0-windows\Adaptive.Intelligence.Shared.UI.TemplatedControls.pdb
+D:\Adaptive.Intelligence\Framework\Shared Code Library\Adaptive.Intelligence.Shared\bin\x64\Debug\net10.0\Adaptive.Intelligence.Shared.pdb
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\bin\x64\Debug\net10.0-windows\Adaptive.Data.Vault.Desktop.deps.json
+D:\Adaptive.Intelligence\Framework\Shared Code Library\Adaptive.Intelligence.Shared\License.txt
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Button.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Cancel  Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Copy Button Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Delete Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Edit User Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV ShowHide Template.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV User Info Button.template
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\obj\x64\Debug\net10.0-windows\apphost.exe
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\ADV.ico
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\bin\x64\Debug\net10.0-windows\Adaptive.Data.Vault.Desktop.runtimeconfig.json
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\bin\x64\Debug\net10.0-windows\Adaptive.Data.Vault.Desktop.dll
+D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\bin\x64\Debug\net10.0-windows\Adaptive.Data.Vault.Desktop.pdb

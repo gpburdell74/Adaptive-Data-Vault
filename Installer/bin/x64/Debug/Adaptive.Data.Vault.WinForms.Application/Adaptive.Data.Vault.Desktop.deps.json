@@ -1,0 +1,158 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Adaptive.Data.Vault.Desktop/0.95.1": {
+        "dependencies": {
+          "Adaptive.Data.Vault": "0.95.1",
+          "Adaptive.Data.Vault.DataAccess": "0.94.0",
+          "Adaptive.Data.Vault.UI": "0.95.1",
+          "Adaptive.Intelligence.Shared.UI": "0.95.1",
+          "Adaptive.Intelligence.Shared": "0.95.1.0"
+        },
+        "runtime": {
+          "Adaptive.Data.Vault.Desktop.dll": {}
+        }
+      },
+      "Adaptive.Data.Vault/0.95.1": {
+        "dependencies": {
+          "Adaptive.Data.Vault.DataAccess": "0.94.0"
+        },
+        "runtime": {
+          "Adaptive.Data.Vault.dll": {
+            "assemblyVersion": "0.95.1.0",
+            "fileVersion": "0.95.1.0"
+          }
+        }
+      },
+      "Adaptive.Data.Vault.DataAccess/0.94.0": {
+        "dependencies": {
+          "Sam.Jones.Adaptive.Intelligence.Shared": "0.95.1"
+        },
+        "runtime": {
+          "Adaptive.Data.Vault.DataAccess.dll": {
+            "assemblyVersion": "0.95.1.0",
+            "fileVersion": "0.95.1.0"
+          }
+        }
+      },
+      "Adaptive.Data.Vault.UI/0.95.1": {
+        "dependencies": {
+          "Adaptive.Data.Vault": "0.95.1",
+          "Adaptive.Data.Vault.DataAccess": "0.94.0",
+          "Adaptive.Intelligence.Shared.UI": "0.95.1",
+          "Adaptive.Intelligence.Shared.UI.TemplatedCommon": "0.95.1",
+          "Adaptive.Intelligence.Shared.UI.TemplatedControls": "0.95.1"
+        },
+        "runtime": {
+          "Adaptive.Data.Vault.UI.dll": {
+            "assemblyVersion": "0.95.1.0",
+            "fileVersion": "0.95.1.0"
+          }
+        }
+      },
+      "Adaptive.Intelligence.Shared.UI/0.95.1": {
+        "dependencies": {
+          "Sam.Jones.Adaptive.Intelligence.Shared": "0.95.1"
+        },
+        "runtime": {
+          "Adaptive.Intelligence.Shared.UI.dll": {
+            "assemblyVersion": "0.95.1.0",
+            "fileVersion": "0.95.1.0"
+          }
+        }
+      },
+      "Adaptive.Intelligence.Shared.UI.TemplatedCommon/0.95.1": {
+        "dependencies": {
+          "Adaptive.Intelligence.Shared.UI": "0.95.1",
+          "Sam.Jones.Adaptive.Intelligence.Shared": "0.95.1"
+        },
+        "runtime": {
+          "Adaptive.Intelligence.Shared.UI.TemplatedCommon.dll": {
+            "assemblyVersion": "0.95.1.0",
+            "fileVersion": "0.95.1.0"
+          }
+        }
+      },
+      "Adaptive.Intelligence.Shared.UI.TemplatedControls/0.95.1": {
+        "dependencies": {
+          "Adaptive.Intelligence.Shared.UI": "0.95.1",
+          "Sam.Jones.Adaptive.Intelligence.Shared": "0.95.1"
+        },
+        "runtime": {
+          "Adaptive.Intelligence.Shared.UI.TemplatedControls.dll": {
+            "assemblyVersion": "0.95.1.0",
+            "fileVersion": "0.95.1.0"
+          }
+        }
+      },
+      "Sam.Jones.Adaptive.Intelligence.Shared/0.95.1": {
+        "runtime": {
+          "Adaptive.Intelligence.Shared.dll": {
+            "assemblyVersion": "0.95.1.0",
+            "fileVersion": "0.95.1.0"
+          }
+        }
+      },
+      "Adaptive.Intelligence.Shared/0.95.1.0": {
+        "runtime": {
+          "Adaptive.Intelligence.Shared.dll": {
+            "assemblyVersion": "0.95.1.0",
+            "fileVersion": "0.95.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Adaptive.Data.Vault.Desktop/0.95.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Adaptive.Data.Vault/0.95.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Adaptive.Data.Vault.DataAccess/0.94.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Adaptive.Data.Vault.UI/0.95.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Adaptive.Intelligence.Shared.UI/0.95.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Adaptive.Intelligence.Shared.UI.TemplatedCommon/0.95.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Adaptive.Intelligence.Shared.UI.TemplatedControls/0.95.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sam.Jones.Adaptive.Intelligence.Shared/0.95.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Adaptive.Intelligence.Shared/0.95.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

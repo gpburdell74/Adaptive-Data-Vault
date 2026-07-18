@@ -52,8 +52,7 @@ namespace Adaptive.Data.Vault.UI
         {
             get
             {
-                if (_account == null)
-                    _account = new WebAccount();
+                _account ??= new WebAccount();
                 return _account;
             }
             set
@@ -72,8 +71,15 @@ namespace Adaptive.Data.Vault.UI
             {
                 Header.Text = _account.Name;
                 AddressLabel.Text = _account.Url;
-                UserIdLabel.Text = new string('*', _account.UserId.Length);
-                PasswordLabel.Text = new string('*', _account.Password.Length);
+                if (!string.IsNullOrEmpty(_account.UserId))
+                {
+                    UserIdLabel.Text = new string('*', _account.UserId.Length);
+                }
+
+                if (!string.IsNullOrEmpty(_account.Password))
+                {
+                    PasswordLabel.Text = new string('*', _account.Password.Length);
+                }
             }
         }
 
@@ -176,11 +182,14 @@ namespace Adaptive.Data.Vault.UI
         private void HandleShowUserIdClicked(object? sender, EventArgs e)
         {
             ShowUserIdButton.Checked = !ShowUserIdButton.Checked;
-            if (ShowUserIdButton.Checked)
-                UserIdLabel.Text = _account.UserId;
-            else
-                UserIdLabel.Text = new string('*', _account.UserId.Length);
-
+            if (_account?.UserId != null)
+            {
+                if (ShowUserIdButton.Checked)
+                    UserIdLabel.Text = _account?.UserId;
+                else
+                    UserIdLabel.Text = new string('*', _account.UserId.Length);
+            }
+            Invalidate();
         }
 
         /// <summary>
@@ -191,10 +200,13 @@ namespace Adaptive.Data.Vault.UI
         private void HandleShowPasswordClicked(object? sender, EventArgs e)
         {
             ShowPasswordButton.Checked = !ShowPasswordButton.Checked;
-            if (ShowPasswordButton.Checked)
-                PasswordLabel.Text = _account.Password;
-            else
-                PasswordLabel.Text = new string('*', _account.Password.Length);
+            if (!string.IsNullOrEmpty(_account?.Password))
+            {
+                if (ShowPasswordButton.Checked)
+                    PasswordLabel.Text = _account.Password;
+                else
+                    PasswordLabel.Text = new string('*', _account.Password.Length);
+            }
             Invalidate();
         }
 
@@ -205,7 +217,10 @@ namespace Adaptive.Data.Vault.UI
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleCopyPasswordClicked(object? sender, EventArgs e)
         {
-            Clipboard.SetText(_account.Password);
+            if (_account != null && _account.Password != null)
+            {
+                Clipboard.SetText(_account.Password);
+            }
         }
 
         /// <summary>
@@ -215,7 +230,10 @@ namespace Adaptive.Data.Vault.UI
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleCopyUrlClicked(object? sender, EventArgs e)
         {
-            Clipboard.SetText(_account.Url);
+            if (_account != null && _account.Url != null)
+            {
+                Clipboard.SetText(_account.Url);
+            }
         }
 
 
@@ -226,7 +244,10 @@ namespace Adaptive.Data.Vault.UI
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void HandleCopyUserIdClicked(object? sender, EventArgs e)
         {
-            Clipboard.SetText(_account.UserId);
+            if (_account != null && _account.UserId != null)
+            {
+                Clipboard.SetText(_account.UserId);
+            }
         }
 
         /// <summary>

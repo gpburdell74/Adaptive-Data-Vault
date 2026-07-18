@@ -52,13 +52,16 @@ namespace Adaptive.Data.Vault.Tests.OS
         {
             // Use reflection to invoke private method
             var method = typeof(OSUtilities).GetMethod("GetWindowsPath", BindingFlags.NonPublic | BindingFlags.Static);
-            string? result = (string?)method.Invoke(null, null);
+            if (method != null)
+            {
+                string? result = (string?)method.Invoke(null, null);
 
-            // Assert
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                Assert.False(string.IsNullOrEmpty(result));
-            else
-                Assert.True(result == null || result == string.Empty);
+                // Assert
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                    Assert.False(string.IsNullOrEmpty(result));
+                else
+                    Assert.True(result == null || result == string.Empty);
+            }
         }
     }
 }

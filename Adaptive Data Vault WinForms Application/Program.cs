@@ -8,17 +8,15 @@ internal static class Program
     [STAThread]
     static void Main()
     {
-        // re-create.
-        //MasterTest t = new MasterTest();
-        //t.ExecuteMasterTest();
-        
-        // To customize application configuration such as set high DPI settings or default font,
-        // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
-        
+
+        using SplashScreenDialog splash = new SplashScreenDialog();
+        splash.Show();
+        Application.DoEvents();
+
         MainDialog dialog = new MainDialog();
+        splash.Close();
         Application.Run(dialog);
         dialog.Dispose();
-        dialog = null;
     }
 }

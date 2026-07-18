@@ -166,8 +166,7 @@ public partial class MainDialog : AdaptiveDialogBase
     /// </summary>
     protected override void InitializeDataContent()
     {
-        if (_mru == null)
-            _mru = new MruManager();
+        _mru ??= new MruManager();
 
         if (!_mru.EulaAccepted)
         {
@@ -459,17 +458,18 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void HandleMruItemClicked(object? sender, EventArgs e)
     {
-        if (sender != null)
+        if (sender is ToolStripMenuItem menuItem)
         {
             SetPreLoadState();
-            string fileName = (string)((ToolStripMenuItem)sender).Tag;
+            string? fileName = menuItem.Tag as string;
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                // Close anything currently open.
+                PerformClose();
 
-            // Close anything currently open.
-            PerformClose();
-
-            // Open and load the specified file.
-            PerformOpenFile(fileName);
-
+                // Open and load the specified file.
+                PerformOpenFile(fileName);
+            }
             SetPostLoadState();
             SetState();
         }
@@ -608,7 +608,6 @@ public partial class MainDialog : AdaptiveDialogBase
         AboutDialog dialog = new AboutDialog();
         dialog.ShowDialog();
         dialog.Dispose();
-        dialog = null;
 
         SetPostLoadState();
     }
@@ -766,7 +765,7 @@ public partial class MainDialog : AdaptiveDialogBase
     /// A string containing the user-specified path and file name if successful;
     /// otherwise, returns <b>null</b>.
     /// </returns>
-    private string? GetNewFileName(bool saveAs = false)
+    private static string? GetNewFileName(bool saveAs = false)
     {
         string? fileName = null;
 
@@ -794,7 +793,7 @@ public partial class MainDialog : AdaptiveDialogBase
     /// A string containing the user-specified path and file name if successful;
     /// otherwise, returns <b>null</b>.
     /// </returns>
-    private string? GetOpenFileName()
+    private static string? GetOpenFileName()
     {
         string? fileName = null;
 
@@ -851,12 +850,18 @@ public partial class MainDialog : AdaptiveDialogBase
         {
             _secParams = secParams;
             _manager = new VaultManager();
-            bool success = _manager.Load(
-                _secParams.FileName,
-                _secParams.UserId,
-                _secParams.Password,
-                _secParams.Pin);
+            bool success = false;
 
+            if (!string.IsNullOrEmpty(_secParams.FileName) &&
+                !string.IsNullOrEmpty(_secParams.UserId) &&
+                !string.IsNullOrEmpty(_secParams.Password))
+            {
+                success = _manager.Load(
+                        _secParams.FileName,
+                        _secParams.UserId,
+                        _secParams.Password,
+                        _secParams.Pin);
+            }
             if (success)
             {
                 // Set the categories list.
@@ -887,14 +892,16 @@ public partial class MainDialog : AdaptiveDialogBase
     {
         if (_secParams != null)
         {
-            if (_manager == null)
-                _manager = new VaultManager();
+            _manager ??= new VaultManager();
 
-            _manager.Save(
+            if (!string.IsNullOrEmpty(_secParams.FileName) && !string.IsNullOrEmpty(_secParams.UserId) && !string.IsNullOrEmpty(_secParams.Password))
+            {
+                _manager.Save(
                 _secParams.FileName,
                 _secParams.UserId,
                 _secParams.Password,
                 _secParams.Pin);
+            }
         }
     }
     /// <summary>
@@ -907,18 +914,11 @@ public partial class MainDialog : AdaptiveDialogBase
     /// <b>true</b> if the login and load of the file is successful; otherwise,
     /// returns <b>false</b>.
     /// </returns>
-    private SecureFileParameters? ShowFileLogin(string newFileName)
+    private static SecureFileParameters? ShowFileLogin(string newFileName)
     {
-        SecureFileParameters? secParams = null;
-
-        secParams = DialogProvider.DisplayLoginDialog(newFileName);
-        if (secParams != null)
-            secParams.FileName = newFileName;
-
+        SecureFileParameters? secParams = DialogProvider.DisplayLoginDialog(newFileName);
+        secParams?.FileName = newFileName;
         return secParams;
-
     }
-
     #endregion
-
 }

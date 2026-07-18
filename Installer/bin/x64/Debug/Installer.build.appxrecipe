@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SAMJ</Machine>
+    <WindowsUser>gpburdell74</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>e124c4f5-8472-4590-8d98-dcf91bcd63c2</PackageIdentityName>
+    <PackageIdentityPublisher>CN=Adaptive Intelligence</PackageIdentityPublisher>
+    <IntermediateOutputPath>D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\obj\x64\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType></RemoteDeploymentType>
+    <PackageRegistrationPath></PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath></WindowsSdkPath>
+    <LayoutDir>D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\AppX</LayoutDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\ADV-Padlock-320x320.png">
+      <PackagePath>Images\ADV-Padlock-320x320.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\SplashScreen.scale-200.png">
+      <PackagePath>Images\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\LockScreenLogo.scale-200.png">
+      <PackagePath>Images\LockScreenLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\Square150x150Logo.scale-200.png">
+      <PackagePath>Images\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\Square44x44Logo.scale-200.png">
+      <PackagePath>Images\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\StoreLogo.png">
+      <PackagePath>Images\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\Images\Wide310x150Logo.scale-200.png">
+      <PackagePath>Images\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Installer\bin\x64\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive.Data.Vault.DataAccess\bin\x64\Debug\net10.0\Adaptive.Data.Vault.DataAccess.dll">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.DataAccess.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive.Data.Vault\bin\x64\Debug\net10.0\Adaptive.Data.Vault.dll">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive.Data.Vault.UI\bin\x64\Debug\net10.0-windows7.0\Adaptive.Data.Vault.UI.dll">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.UI.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Framework\Shared Code Library\Adaptive.Intelligence.Shared\bin\x64\Debug\net10.0\Adaptive.Intelligence.Shared.dll">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI\bin\x64\Debug\net10.0-windows7.0\Adaptive.Intelligence.Shared.UI.dll">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.UI.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI.TemplatedCommon\bin\x64\Debug\net10.0-windows7.0\Adaptive.Intelligence.Shared.UI.TemplatedCommon.dll">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.UI.TemplatedCommon.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Framework\Shared UI Code Library\Adaptive.Intelligence.Shared.UI.TemplatedControls\bin\x64\Debug\net10.0-windows\Adaptive.Intelligence.Shared.UI.TemplatedControls.dll">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Intelligence.Shared.UI.TemplatedControls.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\bin\x64\Debug\net10.0-windows\Adaptive.Data.Vault.Desktop.deps.json">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.Desktop.deps.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Framework\Shared Code Library\Adaptive.Intelligence.Shared\License.txt">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\License.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Button.template">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Resources\ADV Button.template</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Cancel  Template.template">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Resources\ADV Cancel  Template.template</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Copy Button Template.template">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Resources\ADV Copy Button Template.template</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Delete Template.template">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Resources\ADV Delete Template.template</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV Edit User Template.template">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Resources\ADV Edit User Template.template</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV ShowHide Template.template">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Resources\ADV ShowHide Template.template</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\Resources\ADV User Info Button.template">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Resources\ADV User Info Button.template</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\obj\x64\Debug\net10.0-windows\apphost.exe">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.Desktop.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\ADV.ico">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\ADV.ico</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\bin\x64\Debug\net10.0-windows\Adaptive.Data.Vault.Desktop.runtimeconfig.json">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.Desktop.runtimeconfig.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Adaptive.Intelligence\Win32\Adaptive Data Vault\Adaptive-Data-Vault\Adaptive Data Vault WinForms Application\bin\x64\Debug\net10.0-windows\Adaptive.Data.Vault.Desktop.dll">
+      <PackagePath>Adaptive.Data.Vault.WinForms.Application\Adaptive.Data.Vault.Desktop.dll</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

@@ -1,30 +1,35 @@
 ﻿using Adaptive.Data.Vault.OS;
 using Adaptive.Intelligence.Shared.Logging;
 using Adaptive.Intelligence.Shared.UI;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Adaptive.Data.Vault.UI;
 
+/// <summary>
+/// Provides a dialog for displaying information about an identity provider, including its name, URL, user ID, and password. The dialog allows users to view and copy this information securely.
+/// </summary>
 public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
 {
+    #region Private Member Declarations
+    /// <summary>
+    /// The identity provider being edited.
+    /// </summary>
     private IdentityProvider? _provider;
+    #endregion
 
-    private bool _userIdChecked;
-
+    #region Constructor / Dispose Methods
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IdentityProviderInfoDialog"/> class.
+    /// </summary>
     public IdentityProviderInfoDialog()
     {
         InitializeComponent();
     }
 
-
+    /// <summary>
+    /// Releases the unmanaged resources used by the <see cref="IdentityProviderInfoDialog"/> and optionally releases the managed resources.
+    /// </summary>
+    /// <param name="disposing"></param>
     protected override void Dispose(bool disposing)
     {
         if (!base.IsDisposed && disposing)
@@ -35,8 +40,15 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         components = null;
         base.Dispose(disposing);
     }
+    #endregion
 
-
+    #region Public Properties
+    /// <summary>
+    /// Gets or sets the reference to the <see cref="IdentityProvider"/> instance being edited.
+    /// </summary>
+    /// <value>
+    /// An <see cref="IdentityProvider"/> instance, or <b>null</b>.
+    /// </value>
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public IdentityProvider? IdProvider
@@ -51,8 +63,12 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
             Invalidate();
         }
     }
+    #endregion
 
-
+    #region Protected Method Overrides
+    /// <summary>
+    /// Initializes the data content of the dialog based on the current <see cref="IdentityProvider"/> instance. 
+    /// </summary>
     protected override void InitializeDataContent()
     {
         Header.Text = _provider?.Name;
@@ -70,6 +86,9 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         }
     }
 
+    /// <summary>
+    /// Assigns event handlers to the dialog's controls for handling user interactions, such as clicking buttons or labels.
+    /// </summary>
     protected override void AssignEventHandlers()
     {
         AddressLabel.Click += HandleAddressClicked;
@@ -81,6 +100,9 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         CloseButton.Click += HandleCloseClicked;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     protected override void RemoveEventHandlers()
     {
         AddressLabel.Click -= HandleAddressClicked;
@@ -92,6 +114,9 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         CloseButton.Click -= HandleCloseClicked;
     }
 
+    /// <summary>
+    /// Sets the dialog's state to a pre-load state, disabling user interactions and changing the cursor to indicate that a process is ongoing.
+    /// </summary>
     protected override void SetPreLoadState()
     {
         Cursor = Cursors.WaitCursor;
@@ -105,6 +130,9 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         SuspendLayout();
     }
 
+    /// <summary>
+    /// Sets the dialog to a UI state when not busy.
+    /// </summary>
     protected override void SetPostLoadState()
     {
         Cursor = Cursors.Default;
@@ -118,8 +146,14 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         Invalidate();
         Application.DoEvents();
     }
+    #endregion
 
-
+    #region Private Event Handlers
+    /// <summary>
+    /// Handles th event when the address label is clicked, opening the identity provider's URL in the default web browser.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void HandleAddressClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
@@ -130,6 +164,11 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         SetPostLoadState();
     }
 
+    /// <summary>
+    /// Handles the event when the "Show User ID" button is clicked, toggling the visibility of the user ID in the dialog.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void HandleShowUserIdClicked(object? sender, EventArgs e)
     {
         ShowUserIdButton.Checked = !ShowUserIdButton.Checked;
@@ -146,6 +185,11 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         }
     }
 
+    /// <summary>
+    /// Handles the event when the "Show Password" button is clicked, toggling the visibility of the password in the dialog.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void HandleShowPasswordClicked(object? sender, EventArgs e)
     {
         ShowPasswordButton.Checked = !ShowPasswordButton.Checked;
@@ -163,6 +207,11 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         Invalidate();
     }
 
+    /// <summary>
+    /// Handles the event when the "Copy Password" button is clicked, copying the password to the clipboard.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void HandleCopyPasswordClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
@@ -180,6 +229,11 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         SetPostLoadState();
     }
 
+    /// <summary>
+    /// Handles the event when the "Copy URL" button is clicked, copying the identity provider's URL to the clipboard.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void HandleCopyUrlClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
@@ -197,6 +251,11 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         SetPostLoadState();
     }
 
+    /// <summary>
+    /// Handles the event when the "Copy User ID" button is clicked, copying the user ID to the clipboard.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void HandleCopyUserIdClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
@@ -214,6 +273,11 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         SetPostLoadState();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void HandleCloseClicked(object? sender, EventArgs e)
     {
         SetPreLoadState();
@@ -221,4 +285,5 @@ public partial class IdentityProviderInfoDialog : AdaptiveDialogBase
         base.DialogResult = DialogResult.OK;
         Close();
     }
+    #endregion
 }

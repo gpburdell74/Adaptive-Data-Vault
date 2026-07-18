@@ -1,5 +1,4 @@
 using Adaptive.Data.Vault.Entities;
-using Newtonsoft.Json;
 
 namespace Adaptive.Data.Vault.Tests.Abstraction.Bases
 {

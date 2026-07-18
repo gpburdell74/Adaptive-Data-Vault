@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "4Ev6zbNUciA=",
+  "success": true,
+  "projectFilePath": "D:\\Adaptive.Intelligence\\Win32\\Adaptive Data Vault\\Adaptive-Data-Vault\\Installer\\Installer.wapproj",
+  "expectedPackageFiles": [
+    "D:\\NuGet\\microsoft.windows.sdk.buildtools\\10.0.28000.2270\\microsoft.windows.sdk.buildtools.10.0.28000.2270.nupkg.sha512",
+    "D:\\NuGet\\sam.jones.adaptive.intelligence.shared\\0.95.1\\sam.jones.adaptive.intelligence.shared.0.95.1.nupkg.sha512"
+  ],
+  "logs": []
+}

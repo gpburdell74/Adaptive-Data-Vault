@@ -1,0 +1,2257 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Adaptive.Intelligence.Shared.UI.TemplatedControls</name>
+    </assembly>
+    <members>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IButtonDrawingAlgorithm">
+            <summary>
+            Provides the signature definition for implementing button drawing algorithm instances.
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IButtonDrawingAlgorithm.DrawBackground(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the background of the control based on its state.
+            </summary>
+            <param name="g">The <see cref="T:System.Drawing.Graphics"/> instance to use.
+            </param>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IButtonDrawingAlgorithm.DrawButton(System.Windows.Forms.Button,System.Drawing.Graphics)">
+            <summary>
+            Draws the button.
+            </summary>
+            <param name="controlReference">
+            The reference to the <see cref="T:System.Windows.Forms.Button"/> being drawn.
+            </param>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> reference from the button's paint methods.
+            </param>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IPanelDrawingAlgorithm">
+            <summary>
+            Provides the signature definition for implementing panel drawing algorithm instances.
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IPanelDrawingAlgorithm.DrawBackground(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the background of the control based on its state.
+            </summary>
+            <param name="g">The <see cref="T:System.Drawing.Graphics"/> instance to use.
+            </param>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IPanelDrawingAlgorithm.DrawPanel(System.Windows.Forms.Panel,System.Drawing.Graphics)">
+            <summary>
+            Draws the panel.
+            </summary>
+            <param name="controlReference">
+            The reference to the <see cref="T:System.Windows.Forms.Panel"/> being drawn.
+            </param>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> reference from the button's paint methods.
+            </param>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm">
+            <summary>
+            Provides an implementation of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IButtonDrawingAlgorithm"/> interface to use when 
+            drawing template buttons.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+            <seealso cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IButtonDrawingAlgorithm" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm._state">
+            <summary>
+            The current button state.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm._template">
+            <summary>
+            The template to use.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm._currentState">
+            <summary>
+            The current state template reference.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm._buttonImage">
+            <summary>
+            The button image, if provided.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.#ctor(Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm" /> class.
+            </summary>
+            <param name="template">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> instance to use.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.State">
+            <summary>
+            Gets or sets the state of the related button.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlStates"/> enumerated value indicating the state of the button.
+            </value>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.DrawBackground(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the background of the control based on its state.
+            </summary>
+            <param name="g">The <see cref="T:System.Drawing.Graphics"/> instance to use.
+            </param>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.DrawButton(System.Windows.Forms.Button,System.Drawing.Graphics)">
+            <summary>
+            Draws the button.
+            </summary>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> reference from the button's paint methods.
+            </param>
+            <param name="controlReference">
+            The reference to the <see cref="T:System.Windows.Forms.Button"/> being drawn.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.SetTemplateReference">
+            <summary>
+            Sets the current template to used based on button state.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.CalculateImagePosition(System.Drawing.Rectangle)">
+            <summary>
+            Calculates the image position and size.
+            </summary>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+            <returns>
+            A <see cref="T:System.Drawing.Rectangle"/> containing the X and Y co-ordinates and the width and height of the image.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.DrawBorder(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the button border.
+            </summary>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> object used to draw the button.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.DrawText(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Font,System.String)">
+            <summary>
+            Draws the text.
+            </summary>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> object used to draw the button.
+            </param>
+            <param name="textFont">
+            The <see cref="T:System.Drawing.Font"/> to use with the text.
+            </param>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+            <param name="text">
+            A string containing the text to be drawn.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.GetTextFormatFlags">
+            <summary>
+            Gets the text format flags.
+            </summary>
+            <returns>
+            A <see cref="T:System.Windows.Forms.TextFormatFlags"/> enumerated value indicating how to draw the text.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.CalculateTextRectangle(System.Drawing.Rectangle)">
+            <summary>
+            Calculates the actual drawing area for the text, based on the image settings.
+            </summary>
+            <returns>
+            The <see cref="T:System.Drawing.Rectangle"/> to draw the text in.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.DrawButtonImage(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Image)">
+            <summary>
+            Draws the button image.
+            </summary>
+            <param name="g">The <see cref="T:System.Drawing.Graphics"/> instance to use.
+            </param>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedButtonDrawingAlgorithm.SetDrawingQuality(System.Drawing.Graphics)">
+            <summary>
+            Sets the drawing quality.
+            </summary>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> instance to be set.
+            </param>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm">
+            <summary>
+            Provides an implementation of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IPanelDrawingAlgorithm"/> interface to use when 
+            drawing template panels.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+            <seealso cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.IPanelDrawingAlgorithm" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm._state">
+            <summary>
+            The current panel state.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm._template">
+            <summary>
+            The template to use.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm._currentState">
+            <summary>
+            The current state template reference.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.#ctor(Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm" /> class.
+            </summary>
+            <param name="template">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate"/> instance to use.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.State">
+            <summary>
+            Gets or sets the state of the related panel.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlStates"/> enumerated value indicating the state of the panel.
+            </value>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.DrawBackground(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the background of the control based on its state.
+            </summary>
+            <param name="g">The <see cref="T:System.Drawing.Graphics"/> instance to use.
+            </param>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.DrawPanel(System.Windows.Forms.Panel,System.Drawing.Graphics)">
+            <summary>
+            Draws the panel.
+            </summary>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> reference from the button's paint methods.
+            </param>
+            <param name="controlReference">
+            The reference to the <see cref="T:System.Windows.Forms.Panel"/> being drawn.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.SetTemplateReference">
+            <summary>
+            Sets the current template to used based on panel state.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.DrawBorder(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draws the button border.
+            </summary>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> object used to draw the button.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.DrawText(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Font,System.String)">
+            <summary>
+            Draws the text.
+            </summary>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> object used to draw the button.
+            </param>
+            <param name="textFont">
+            The <see cref="T:System.Drawing.Font"/> to use with the text.
+            </param>
+            <param name="drawingArea">
+            A <see cref="T:System.Drawing.Rectangle"/> specifying the drawing area.
+            </param>
+            <param name="text">
+            A string containing the text to be drawn.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.GetTextFormatFlags">
+            <summary>
+            Gets the text format flags.
+            </summary>
+            <returns>
+            A <see cref="T:System.Windows.Forms.TextFormatFlags"/> enumerated value indicating how to draw the text.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.CalculateTextRectangle(System.Drawing.Rectangle)">
+            <summary>
+            Calculates the actual drawing area for the text, based on the image settings.
+            </summary>
+            <returns>
+            The <see cref="T:System.Drawing.Rectangle"/> to draw the text in.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Algorithms.TemplatedPanelDrawingAlgorithm.SetDrawingQuality(System.Drawing.Graphics)">
+            <summary>
+            Sets the drawing quality.
+            </summary>
+            <param name="g">
+            The <see cref="T:System.Drawing.Graphics"/> instance to be set.
+            </param>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate">
+            <summary>
+            Provides a template for specifying the UI settings for different states of a <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedButton"/>.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlTemplateBase" />
+            <seealso cref="T:System.ICloneable" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate._normal">
+            <summary>
+            The settings template to use when the button is in a normal state.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate._checked">
+            <summary>
+            The settings template to use when the button is in a checked (true) state.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate._hover">
+            <summary>
+            The settings template to use when the button is in a hover state.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate._pressed">
+            <summary>
+            The settings template to use when the button is in a pressed state.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate._disabled">
+            <summary>
+            The settings template to use when the button is in a disabled state.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> class.
+            </summary>
+            <remarks>
+            This is the default constructor.
+            </remarks>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.#ctor(Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate,Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate,Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate,Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate,Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> class.
+            </summary>
+            <remarks>
+            This is used only when cloning the instance.
+            </remarks>
+            <param name="checkedTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> to use when the button is in the checked state.
+            </param>
+            <param name="normalTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> to use when the button is in the normal state.
+            </param>
+            <param name="disabledTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> to use when the button is in the disabled state.
+            </param>
+            <param name="hoverTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> to use when the button is in the hover state.
+            </param>
+            <param name="pressedTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> to use when the button is in the pressed state.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.Checked">
+            <summary>
+            Gets the reference to the template to use when the button is in a checked state.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance, or <b>null</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.Disabled">
+            <summary>
+            Gets the reference to the template to use when the button is in a disabled state.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance, or <b>null</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.Hover">
+            <summary>
+            Gets the reference to the template to use when the mouse is hovering over the button.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance, or <b>null</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.Normal">
+            <summary>
+            Gets the reference to the template to use when the button is in a normal, idle state.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance, or <b>null</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.Pressed">
+            <summary>
+            Gets the reference to the template to use when the button is being pressed.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance, or <b>null</b>.
+            </value>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.Clone">
+            <summary>
+            Clones this instance.
+            </summary>
+            <returns>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> that is a copy of the current instance.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.InitializeTemplateInstances">
+            <summary>
+            Initializes the state template instances.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate.SetDefaultValues">
+            <summary>
+            Sets the default values for the templates.
+            </summary>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlTemplateBase">
+            <summary>
+            Provides the base definition for a control UI template for containing the settings for different states of
+            a templated control.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+            <seealso cref="!:IControlTemplate" />
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlTemplateBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlTemplateBase"/> class.
+            </summary>
+            <remarks>
+            This is the default constructor.
+            </remarks>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlTemplateBase.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlTemplateBase.InitializeTemplateInstances">
+            <summary>
+            Initializes the state template instances.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlTemplateBase.SetDefaultValues">
+            <summary>
+            Sets the default values for the templates.
+            </summary>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlStates">
+            <summary>
+            Lists the control states that are currently supported for implementing templates for the UI.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlStates.Normal">
+            <summary>
+            Indicates the control is in a normal, idle state.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlStates.Hover">
+            <summary>
+            Indicates the control is in a hovered / hovering state. 
+            This value may not be used in all controls.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlStates.Checked">
+            <summary>
+            Indicates the control is in a checked (true) state.
+            This value may not be used in all controls.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlStates.Pressed">
+            <summary>
+            Indicates the control is in a mouse-down / pressed state.
+            This value may not be used in all controls.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlStates.Disabled">
+            <summary>
+            Indicates the control is in a disabled state.
+            </summary>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats">
+            <summary>
+            Lists the types of control template data formats that are currently supported.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats.NoneOrNotSpecified">
+            <summary>
+            Indicates the template data file format is either not specified or unknown.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats.OldVersion92Format">
+            <summary>
+            Indicates the old binary template format used in version 0.92 and earlier.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats.JsonTextFormat">
+            <summary>
+            Indicates the template is in "pretty-printed" JSON text format.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats.JsonTextMinifiedFormat">
+            <summary>
+            Indicates the template is in compressed JSON text format.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats.BinaryFormat">
+            <summary>
+            Indicates the template is in a binary serialized format.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats.OtherFormat">
+            <summary>
+            Indicates another data format not listed.
+            </summary>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate">
+            <summary>
+            Contains the information for specifying a font name, size, style, and weight.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.DEFAULT_FONT_FAMILY">
+            <summary>
+            The default font family name.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.DEFAULT_FONT_SIZE">
+            <summary>
+            The default font size.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.DEFAULT_CHARSET">
+            <summary>
+            The default character set.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate"/> class.
+            </summary>
+            <remarks>
+            This is the default constructor.
+            </remarks>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.#ctor(System.String,System.Single,System.Drawing.FontStyle,System.Drawing.GraphicsUnit,System.Boolean,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate"/> class.
+            </summary>
+            <param name="fontFamily">
+            A string containing the font family name / font name.
+            </param>
+            <param name="size">
+            A float containing the size of the font.
+            </param>
+            <param name="style">
+            A <see cref="T:System.Drawing.FontStyle"/> enumerated value specifying the style.
+            </param>
+            <param name="unit">
+            An optional <see cref="T:System.Drawing.GraphicsUnit"/> enumerated value specifying the unit for the font size.
+            </param>
+            <param name="gdiVerticalFont">
+            An optional parameter specifying whether the font is vertical.
+            </param>
+            <param name="gdiCharSet">
+            An optional paramter specifying the GDI character set to use.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.FontFamily">
+            <summary>
+            Gets or sets the font family name or the name of the font to be used.
+            </summary>
+            <value>
+            A string containing the font name and/or the font family name value.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.GdiCharSet">
+            <summary>
+            Gets or sets a vlaue indicating the GDI character set to be used.
+            </summary>
+            <value>
+            A byte value specifying the GDI character set.  This is typically 1 for ANSI.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.GdiVerticalFont">
+            <summary>
+            Gets or sets a value indicating whether the font is vertical.
+            </summary>
+            <value>
+              <c>true</c> if the font is vertical; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.Size">
+            <summary>
+            Gets or sets the size of the font, in the specified <see cref="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.Unit"/> value.
+            </summary>
+            <value>
+            A <see cref="T:System.Single"/> containing the size of the font.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.Style">
+            <summary>
+            Gets or sets the font style.
+            </summary>
+            <remarks>
+            This property can be a combination of one or more <see cref="T:System.Drawing.FontStyle"/> enumerated values, indicating
+            whether the font is bold, italic, underlined, or struck through or a combination of these styles.
+            </remarks>
+            <value>
+            A <see cref="T:System.Drawing.FontStyle"/> enumerated value containing the font style.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.Unit">
+            <summary>
+            Gets or sets the unit used in determining the font size.
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.GraphicsUnit"/> enumerated value specifying the unit type.
+            </value>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate.ToFont">
+            <summary>
+            Creates a <see cref="T:System.Drawing.Font"/> object from the current <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate"/> instance.
+            </summary>
+            <returns>
+            The <see cref="T:System.Drawing.Font"/> instance to be used.
+            </returns>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateImage">
+            <summary>
+            Provides static methods and functions for converting images from one format to another.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateImage.FromImage(System.Drawing.Image)">
+            <summary>
+            Translates the specified <see cref="T:System.Drawing.Image"/> object into a base-64 encoded string.
+            </summary>
+            <param name="source">
+            The <see cref="T:System.Drawing.Image"/> instance containing the source image.
+            </param>
+            <returns>
+            A base-64 encoded string that is a copy of <paramref name="source"/>, or <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateImage.ToImage(System.String)">
+            <summary>
+            Translates the specified base-64 encoded string into an <see cref="T:System.Drawing.Image"/> object.
+            </summary>
+            <param name="encodedImage">
+            A string containing The base-64 encoded image.</param>
+            <returns>
+            The <see cref="T:System.Drawing.Image"/> instance represented by the encoded string, or <b>null</b>.
+            </returns>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader">
+            <summary>
+            Provides the methods and functions for reading a <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> from an underlying stream.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.DefaultFont">
+            <summary>
+            The default font instance.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader._sourceStream">
+            <summary>
+            The source stream to read from.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader._reader">
+            <summary>
+            The reader instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader"/> class.
+            </summary>
+            <param name="sourceStream">
+            The destination <see cref="T:System.IO.Stream"/> instance to be read from.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.Close">
+            <summary>
+            Closes this instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.Read(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Attempts to read the content of the template from the underlying stream.
+            </summary>
+            <returns>
+            An <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> containing the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> if successful;
+            otherwise, contains the result of the operation.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.CheckReader(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Ensures the reader object is ready to read data.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            <b>true</b> if the data can be read; otherwise, <b>false</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ImageFromBytes(Adaptive.Intelligence.Shared.OperationalResult,System.Byte[])">
+            <summary>
+            Converts the specified byte array to an image object.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> tracking the result of the write operations.
+            </param>
+            <param name="dataSource">
+            A byte array containing the image data.
+            </param>
+            <returns>
+            An <see cref="T:System.Drawing.Image"/> if successful; otherwise, returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ReadStateTemplate(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance if successful; otherwise, returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ReadColor(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Drawing.Color"/> value from the stream, if able.
+            </summary>
+            <remarks>
+            This method reads the color in the format of the A, R, G, and B integers, then the IsSystem flag
+            and then the color name.
+            </remarks>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.Drawing.Color"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ReadFontTemplate(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Drawing.Font"/> value from the stream, if able.
+            </summary>
+            <remarks>
+            This method reads the font in the format of:
+                Font Family Name
+                Font Name
+                Is Bold?
+                Is Italic?
+                Is Underlined?
+                Em Size
+                Font Style
+            </remarks>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate"/> instance that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ReadImage(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Drawing.Image"/> value from the stream, if able.
+            </summary>
+            <remarks>
+            This method reads the image in the format of an integer length indicator, and then
+            an array of bytes of that specified length.
+            </remarks>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.Drawing.Image"/> instance that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ReadBoolean(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Boolean"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ReadInt32(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Int32"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ReadSingle(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Single"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.Single"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ReadString(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.String"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateReader.ReadBytes(Adaptive.Intelligence.Shared.OperationalResult,System.Int32)">
+            <summary>
+            Reads the <see cref="T:System.Byte"/> array from the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="length">
+            An integer specifying the number of bytes to be read.
+            </param>
+            <returns>
+            The <see cref="T:System.Byte"/> array that was read.
+            </returns>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter">
+            <summary>
+            Provides the methods and functions for writing a <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> to an underlying stream.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter._destinationStream">
+            <summary>
+            The source stream to write to.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter._writer">
+            <summary>
+            The writer instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter"/> class.
+            </summary>
+            <param name="destinationStream">
+            The destination <see cref="T:System.IO.Stream"/> instance to be written to.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.Close">
+            <summary>
+            Closes this instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.WriteOldFormat(Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate)">
+            <summary>
+            Attempts to write the content of the template to the underlying stream.
+            </summary>
+            <param name="template">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> instance to be written.
+            </param>
+            <returns>
+            An <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> containing the result of the operation.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.WriteStateTemplate(Adaptive.Intelligence.Shared.OperationalResult,Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate)">
+            <summary>
+            Writes the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="stateTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance whose content is to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.Drawing.Color)">
+            <summary>
+            Writes the <see cref="T:System.Drawing.Color"/> value to the stream, if able.
+            </summary>
+            <remarks>
+            This method writes the color in the format of the A, R, G, and B integers, then the IsSystem flag
+            and then the color name.
+            </remarks>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Drawing.Color"/> value to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate)">
+            <summary>
+            Writes the <see cref="T:System.Drawing.Font"/> value to the stream, if able.
+            </summary>
+            <remarks>
+            This method writes the font in the format of:
+                Font Family Name
+                Font Name
+                Is Bold?
+                Is Italic?
+                Is Underlined?
+                Em Size
+                Font Style
+            </remarks>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="font">
+            The <see cref="T:System.Drawing.Font"/> value to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.Boolean)">
+            <summary>
+            Writes the <see cref="T:System.Boolean"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Boolean"/> instance to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.Int32)">
+            <summary>
+            Writes the <see cref="T:System.Int32"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Int32"/> instance to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.String)">
+            <summary>
+            Writes the <see cref="T:System.String"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.String"/> instance to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.Single)">
+            <summary>
+            Writes the <see cref="T:System.Single"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Single"/> instance to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.ButtonTemplateWriter.PostWrite(Adaptive.Intelligence.Shared.OperationalResult,Adaptive.Intelligence.Shared.IO.SafeBinaryWriter)">
+            <summary>
+            Completes the tasks/state changes after writing data.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> tracking the result of the write operations.
+            </param>
+            <param name="writer">
+            The <see cref="T:Adaptive.Intelligence.Shared.IO.SafeBinaryWriter"/> instance being used to write data.
+            </param>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader">
+            <summary>
+            Provides the methods and functions for reading a <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate"/> from an underlying stream.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.DefaultFont">
+            <summary>
+            The default font instance.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader._sourceStream">
+            <summary>
+            The source stream to read from.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader._reader">
+            <summary>
+            The reader instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader"/> class.
+            </summary>
+            <param name="sourceStream">
+            The destination <see cref="T:System.IO.Stream"/> instance to be read from.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.Close">
+            <summary>
+            Closes this instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.Read(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Attempts to read the content of the template from the underlying stream.
+            </summary>
+            <returns>
+            An <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> containing the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate"/> if successful;
+            otherwise, contains the result of the operation.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.CheckReader(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Ensures the reader object is ready to read data.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            <b>true</b> if the data can be read; otherwise, <b>false</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.ImageFromBytes(Adaptive.Intelligence.Shared.OperationalResult,System.Byte[])">
+            <summary>
+            Converts the specified byte array to an image object.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> tracking the result of the write operations.
+            </param>
+            <param name="dataSource">
+            A byte array containing the image data.
+            </param>
+            <returns>
+            An <see cref="T:System.Drawing.Image"/> if successful; otherwise, returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.ReadStateTemplate(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance if successful; otherwise, returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.ReadColor(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Drawing.Color"/> value from the stream, if able.
+            </summary>
+            <remarks>
+            This method reads the color in the format of the A, R, G, and B integers, then the IsSystem flag
+            and then the color name.
+            </remarks>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.Drawing.Color"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.ReadFontTemplate(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Drawing.Font"/> value from the stream, if able.
+            </summary>
+            <remarks>
+            This method reads the font in the format of:
+                Font Family Name
+                Font Name
+                Is Bold?
+                Is Italic?
+                Is Underlined?
+                Em Size
+                Font Style
+            </remarks>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate"/> instance that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.ReadBoolean(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Boolean"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.ReadInt32(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Int32"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.ReadSingle(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.Single"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.Single"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.ReadString(Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the <see cref="T:System.String"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/> value that was read.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateReader.ReadBytes(Adaptive.Intelligence.Shared.OperationalResult,System.Int32)">
+            <summary>
+            Reads the <see cref="T:System.Byte"/> array from the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="length">
+            An integer specifying the number of bytes to be read.
+            </param>
+            <returns>
+            The <see cref="T:System.Byte"/> array that was read.
+            </returns>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter">
+            <summary>
+            Provides the methods and functions for writing a <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate"/> to an underlying stream.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter._destinationStream">
+            <summary>
+            The source stream to write to.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter._writer">
+            <summary>
+            The writer instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter"/> class.
+            </summary>
+            <param name="destinationStream">
+            The destination <see cref="T:System.IO.Stream"/> instance to be written to.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.Close">
+            <summary>
+            Closes this instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.WriteOldFormat(Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate)">
+            <summary>
+            Attempts to write the content of the template to the underlying stream.
+            </summary>
+            <param name="template">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate"/> instance to be written.
+            </param>
+            <returns>
+            An <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> containing the result of the operation.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.WriteStateTemplate(Adaptive.Intelligence.Shared.OperationalResult,Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate)">
+            <summary>
+            Writes the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="stateTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance whose content is to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.Drawing.Color)">
+            <summary>
+            Writes the <see cref="T:System.Drawing.Color"/> value to the stream, if able.
+            </summary>
+            <remarks>
+            This method writes the color in the format of the A, R, G, and B integers, then the IsSystem flag
+            and then the color name.
+            </remarks>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Drawing.Color"/> value to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,Adaptive.Intelligence.Shared.UI.TemplatedControls.FontTemplate)">
+            <summary>
+            Writes the <see cref="T:System.Drawing.Font"/> value to the stream, if able.
+            </summary>
+            <remarks>
+            This method writes the font in the format of:
+                Font Family Name
+                Font Name
+                Is Bold?
+                Is Italic?
+                Is Underlined?
+                Em Size
+                Font Style
+            </remarks>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="font">
+            The <see cref="T:System.Drawing.Font"/> value to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.Boolean)">
+            <summary>
+            Writes the <see cref="T:System.Boolean"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Boolean"/> instance to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.Int32)">
+            <summary>
+            Writes the <see cref="T:System.Int32"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Int32"/> instance to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.String)">
+            <summary>
+            Writes the <see cref="T:System.String"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.String"/> instance to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.WriteIfOk(Adaptive.Intelligence.Shared.OperationalResult,System.Single)">
+            <summary>
+            Writes the <see cref="T:System.Single"/> value to the stream, if able.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance tracking the result of the operation.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Single"/> instance to be written.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.IO.PanelTemplateWriter.PostWrite(Adaptive.Intelligence.Shared.OperationalResult,Adaptive.Intelligence.Shared.IO.SafeBinaryWriter)">
+            <summary>
+            Completes the tasks/state changes after writing data.
+            </summary>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> tracking the result of the write operations.
+            </param>
+            <param name="writer">
+            The <see cref="T:Adaptive.Intelligence.Shared.IO.SafeBinaryWriter"/> instance being used to write data.
+            </param>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.ColorJsonConverter">
+            <summary>
+            Converts data to and from a .NET <see cref="T:System.Drawing.Color"/> structure to and a usable JSON format.
+            </summary>
+            <seealso cref="T:System.Text.Json.Serialization.JsonConverter`1" />
+            <seealso cref="T:System.Drawing.Color"/>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.ColorJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads and converts the JSON to a <see cref="T:System.Drawing.Color"/> structure.
+            </summary>
+            <param name="reader">
+            The <see cref="T:System.Text.Json.Utf8JsonReader"/> reader instance used to read the JSON content.
+            </param>
+            <param name="typeToConvert">
+            The data type to convert.
+            </param>
+            <param name="options">
+            An object that specifies serialization options to use.
+            </param>
+            <returns>
+            A <see cref="T:System.Drawing.Color"/> structure created from the JSON data, if the data is valid.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.ColorJsonConverter.Write(System.Text.Json.Utf8JsonWriter,System.Drawing.Color,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes a specified <see cref="T:System.Drawing.Color"/> structure as JSON text (specific to this library).
+            </summary>
+            <param name="writer">
+            The <see cref="T:System.Text.Json.Utf8JsonWriter"/> instance used to write the JSON text.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Drawing.Color"/> value to convert to JSON text.
+            </param>
+            <param name="options">
+            An object that specifies the serialization options to use.
+            </param>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.ImageJsonConverter">
+            <summary>
+            Converts data to and from a .NET <see cref="T:System.Drawing.Image"/> class to and a usable JSON format.
+            </summary>
+            <seealso cref="T:System.Text.Json.Serialization.JsonConverter`1" />
+            <seealso cref="T:System.Drawing.Image"/>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.ImageJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads and converts the JSON to a <see cref="T:System.Drawing.Color"/> structure.
+            </summary>
+            <param name="reader">
+            The <see cref="T:System.Text.Json.Utf8JsonReader"/> reader instance used to read the JSON content.
+            </param>
+            <param name="typeToConvert">
+            The data type to convert.
+            </param>
+            <param name="options">
+            An object that specifies serialization options to use.
+            </param>
+            <returns>
+            A <see cref="T:System.Drawing.Color"/> structure created from the JSON data, if the data is valid.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.ImageJsonConverter.Write(System.Text.Json.Utf8JsonWriter,System.Drawing.Image,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes a specified <see cref="T:System.Drawing.Color"/> structure as JSON text (specific to this library).
+            </summary>
+            <param name="writer">
+            The <see cref="T:System.Text.Json.Utf8JsonWriter"/> instance used to write the JSON text.
+            </param>
+            <param name="value">
+            The <see cref="T:System.Drawing.Image"/> value to convert to JSON text, or <b>null</b> if no image is specified.
+            </param>
+            <param name="options">
+            An object that specifies the serialization options to use.
+            </param>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.JsonConversions">
+            <summary>
+            Provides static methods / functions for converting data types to and from JSON text.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.JsonConversions.Base64StringToBytes(System.String)">
+            <summary>
+            Safely converts a base64 string to a byte array. If the input string is null, empty, whitespace, 
+            or the literal "null", this method returns null. If the input string is not a valid base64 string, 
+            this method also returns null without throwing an exception.
+            </summary>
+            <param name="base64String">
+            A string containing the base-64 encoded string to convert.
+            </param>
+            <returns>
+            An array of bytes created from the provide string if successful; otherwise,
+            returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.JsonConversions.BytesToBase64String(System.Byte[])">
+            <summary>
+            Converts the byte array to a base64 string. 
+            If the input byte array is null or empty, this method returns null.
+            </summary>
+            <param name="data">
+            A byte array containing the data to be convrted.
+            </param>
+            <returns>
+            A string containing the base-64 encoded version of the byte array if successful; otherwise,
+            return <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.JsonConversions.BytesToImage(System.Byte[])">
+            <summary>
+            Converts the provided byte array to an image instance.
+            </summary>
+            <param name="data">
+            A byte array containing the image data.
+            </param>
+            <returns>
+            The <see cref="T:System.Drawing.Image"/> instance if successful; otherwise, returns <b>null</b> if the input data 
+            is null, empty, or if the conversion fails.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.JsonConversions.ImageFromJson(System.String)">
+            <summary>
+            Converts the JSON text to an image instance.
+            </summary>
+            <param name="jsonText">
+            A base-64 encoded string containing the image data, or "null" if no image is specified.
+            </param>
+            <returns>
+            The <see cref="T:System.Drawing.Image"/> instance if successful; otherwise, returns <b>null</b> if the input data 
+            is null, empty, or if the conversion fails.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.JsonConversions.ImageToBytes(System.Drawing.Image)">
+            <summary>
+            Converts a <see cref="T:System.Drawing.Image"/> instance to a byte array.
+            </summary>
+            <param name="image">
+            The <see cref="T:System.Drawing.Image"/> instance to be converted.
+            </param>
+            <returns>
+            A byte array containing the image data in PNG format if the conversion is successful; 
+            otherwise, returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.JsonConversions.ImageToJson(System.Drawing.Image)">
+            <summary>
+            Converts a <see cref="T:System.Drawing.Image"/> instance to string for JSON serialization.
+            </summary>
+            <param name="image">
+            The <see cref="T:System.Drawing.Image"/> instance to be converted.
+            </param>
+            <returns>
+            A string containing hte base-64 encoding of the image data, or "null" if the input 
+            image is null or if the conversion fails.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.TemplateFileManager.LoadButtonTemplate(System.String,Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats,Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Attempts to read the template from the specified file.
+            </summary>
+            <param name="fileName">
+            A string containing the fully-qualified path and name of the file to be read.
+            </param>
+            <returns>
+            An <see cref="T:Adaptive.Intelligence.Shared.OperationalResult`1"/> containing the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> that was loaded
+            if successful; otherwise, contains the error.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.TemplateFileManager.SaveButtonTemplate(Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate,System.String,Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats,Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Attempts to save the template to the specified file.
+            </summary>
+            <param name="template">
+            The reference to the template instance to be saved.
+            </param>
+            <param name="fileName">
+            A string containing the fully-qualified path and name of the file to be written.
+            </param>
+            <param name="format">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats"/> enumeration value specifying the file format.
+            </param>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance used to contain the result of the operation.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.TemplateFileManager.LoadPanelTemplate(System.String,Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats,Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Attempts to read the template from the specified file.
+            </summary>
+            <param name="fileName">
+            A string containing the fully-qualified path and name of the file to be read.
+            </param>
+            <returns>
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate"/> that was loaded
+            if successful; otherwise, returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.TemplateFileManager.SavePanelTemplate(Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate,System.String,Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats,Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Attempts to save the template to the specified file.
+            </summary>
+            <param name="template">
+            The reference to the template instance to be saved.
+            </param>
+            <param name="fileName">
+            A string containing the fully-qualified path and name of the file to be written.
+            </param>
+            <param name="format">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.TemplateFormats"/> enumeration value specifying the file format.
+            </param>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance used to contain the result of the operation.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.TemplateFileManager.OpenFileForReading(System.String,Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Attempts to open the specified file for reading.
+            </summary>
+            <param name="fileName">
+            A string containing the fully-qualified path and name of the file to be read.
+            </param>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance used to contain the result of the operation.
+            </param>
+            <returns>
+            The <see cref="T:System.IO.FileStream"/> containing the opened stream if successful;
+            otherwise, returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.TemplateFileManager.OpenFileForWriting(System.String,Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Attempts to open the specified file for writing.
+            </summary>
+            <remarks>
+            If a file by the same name exists, it will be deleted before the new file is written.
+            </remarks>
+            <param name="fileName">
+            A string containing the fully-qualified path and name of the file to be written.
+            </param>
+            <param name="result">
+            The <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance used to contain the result of the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.IO.FileStream"/> containing the opened stream if successful;
+            otherwise, returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.TemplateFileManager.ReadFromJson``1(System.IO.FileStream,Adaptive.Intelligence.Shared.OperationalResult)">
+            <summary>
+            Reads the text from the open JSON file and creates the specified object instance from the data.
+            </summary>
+            <typeparam name="T">
+            The data type of the template object to be created.
+            </typeparam>
+            <param name="sourceStream">
+            The source <see cref="T:System.IO.FileStream"/> instance to be read from.
+            </param>
+            <param name="result">
+            An <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> instance used to contain the result of the operation.
+            </param>
+            <returns>
+            A new instance of <typeparamref name="T"/> if successful, populated with the data from the file;
+            otherwise, returns <b>null</b>.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.Templates.IO.TemplateFileManager.WriteToJson``1(``0,System.IO.FileStream,Adaptive.Intelligence.Shared.OperationalResult,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes the specified object instance to the specified destination stream in 
+            JSON text format.
+            </summary>
+            <typeparam name="T">
+            The data type of the object beng written.
+            </typeparam>
+            <param name="templateInstance">
+            The template instance to be saved.
+            </param>
+            <param name="destStream">
+            The reference to the destination <see cref="T:System.IO.Stream"/>.
+            </param>
+            <param name="result">
+            An <see cref="T:Adaptive.Intelligence.Shared.OperationalResult"/> containing the result of the operation.
+            </param>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate">
+            <summary>
+            Provides a template for specifying the UI settings for different states of a 
+            <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel"/>.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlTemplateBase" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate._normal">
+            <summary>
+            The settings template to use when the panel is in a normal state.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate._hover">
+            <summary>
+            The settings template to use when the panel is in a hover state.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate._disabled">
+            <summary>
+            The settings template to use when the panel is in a disabled state.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> class.
+            </summary>
+            <remarks>
+            This is the default constructor.
+            </remarks>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate.#ctor(Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate,Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate,Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> class.
+            </summary>
+            <remarks>
+            This is used only when cloning the instance.
+            </remarks>
+            <param name="normalTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> to use when the button is in the normal state.
+            </param>
+            <param name="disabledTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> to use when the button is in the disabled state.
+            </param>
+            <param name="hoverTemplate">
+            The <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> to use when the button is in the hover state.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate.Disabled">
+            <summary>
+            Gets the reference to the template to use when the button is in a disabled state.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance, or <b>null</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate.Hover">
+            <summary>
+            Gets the reference to the template to use when the mouse is hovering over the button.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance, or <b>null</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate.Normal">
+            <summary>
+            Gets the reference to the template to use when the button is in a normal, idle state.
+            </summary>
+            <value>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> instance, or <b>null</b>.
+            </value>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate.Clone">
+            <summary>
+            Clones this instance.
+            </summary>
+            <returns>
+            A <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate"/> that is a copy of the current instance.
+            </returns>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate.InitializeTemplateInstances">
+            <summary>
+            Initializes the state template instances.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate.SetDefaultValues">
+            <summary>
+            Sets the default values for the templates.
+            </summary>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase">
+            <summary>
+            Provides the base definition for defining a template for a control in a specified UI state.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase._fontTemplate">
+            <summary>
+            The font template instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ControlTemplateBase"/> class.
+            </summary>
+            <remarks>
+            This is the default constructor.
+            </remarks>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.BorderStyle">
+            <summary>
+            Gets or sets the border style.
+            </summary>
+            <value>
+            A <see cref="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.BorderStyle"/> enumerated value indicating the border style for the button.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.BorderColor">
+            <summary>
+            Gets or sets the border color value.
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color"/> structure indicating the border color.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.BorderWidth">
+            <summary>
+            Gets or sets the width of the border.
+            </summary>
+            <value>
+            An integer specifying the width of the border, in pixels, if drawn.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.CornerRadius">
+            <summary>
+            Gets or sets the circular radius of the button's rounded edges.
+            </summary>
+            <value>
+            An integer specifying the radius of the corners of the button, in pixels, if drawn.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.EndColor">
+            <summary>
+            Gets or sets the color of the ending background gradient.
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color"/> specifying the ending of the color gradient when the background is drawn.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.Font">
+            <summary>
+            Gets or sets the reference to the font to use to draw text.
+            </summary>
+            <value>
+            A <see cref="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.Font"/> instance.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.ForeColor">
+            <summary>
+            Gets or sets the foreground color for the button.
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color"/> specifying the foreground color value.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.Mode">
+            <summary>
+            Gets or sets the mode in how the background gradient will be drawn.
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Drawing2D.LinearGradientMode"/> enumerated value indicating the direction of the gradient.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.StartColor">
+            <summary>
+            Gets or sets the color of the starting background gradient.
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color"/> specifying the starting of the color gradient when the background is drawn.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.TextAlign">
+            <summary>
+            Gets or sets the alignment of the image on the button control.
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.ContentAlignment"/> enumerated value.
+            </value>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+            <exception cref="T:System.NotImplementedException">
+            This is not implemented in the base class.
+            </exception>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.CreateBorderPen">
+            <summary>
+            Creates a graphical <see cref="T:System.Drawing.Pen"/> instance for drawing borders on the button.
+            </summary>
+            <returns>
+            A <see cref="T:System.Drawing.Pen"/> with the specified <see cref="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.BorderWidth"/> and <see cref="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.ControlStateTemplateBase.BorderColor"/>.
+            </returns>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate">
+            <summary>
+            Provides a template for a single button state.
+            </summary>
+            <seealso cref="T:Adaptive.Intelligence.Shared.DisposableObjectBase" />
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> class.
+            </summary>
+            <remarks>
+            This is the default constructor.
+            </remarks>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><b>true</b> to release both managed and unmanaged resources;
+            <b>false</b> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate.Image">
+            <summary>
+            Gets or sets the image that is displayed on a button control as a base-64 encoded string.
+            </summary>
+            <value>
+            An <see cref="T:System.String"/> containing the base-64 encoded image to display on the button, or <b>null</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate.ImageAlign">
+            <summary>
+            Gets or sets the alignment of the image on the button control.
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.ContentAlignment"/> enumerated value.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate.ShadowText">
+            <summary>
+            Gets or sets a value indicating whether to draw a shadow under the text on the button
+            </summary>
+            <value>
+              <c>true</c> to draw a shadow under the text on the button; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate.TextImageRelation">
+            <summary>
+            Gets or sets the position of text and image relative to each other.
+            </summary>
+            <value>
+            An <see cref="P:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate.TextImageRelation"/> enumerated value indicating the relationship. The default is 
+            <see cref="F:System.Windows.Forms.TextImageRelation.ImageBeforeText"/>
+            </value>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.States.StateTemplate"/> that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel">
+            <summary>
+            Provides a Windows Forms Panel control with a gradient background that can be templated.
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Panel" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel._jsonTemplate">
+            <summary>
+            The text containing the JSON template definition.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel._lastFile">
+            <summary>
+            The last file name value.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel._template">
+            <summary>
+            The template.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel._painter">
+            <summary>
+            The button drawing instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel"/> class.
+            </summary>
+            <remarks>
+            This is the default constructor.
+            </remarks>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.Windows.Forms.Control" /> and its child controls and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"><see langword="true" /> to release both managed and unmanaged resources; <see langword="false" /> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.Template">
+            <summary>
+            Gets or sets the reference to the template to be used.
+            </summary>
+            <value>
+            The reference to the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate"/> instance to use when drawing the button, or <b>null</b>."/>
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.TemplateFromFile">
+            <summary>
+            Gets or sets the template data by loading and reading the specified file.
+            </summary>
+            <value>
+            A string containing the path and name of the file to be read, or <b>null</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.TemplateJson">
+            <summary>
+            Gets or sets the reference to the JSON text defining the button template to use 
+            when drawing the button.
+            </summary>
+            <value>
+            A string containing the JSON defining the template, or <b>null</b>.
+            </value>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.OnEnabledChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.EnabledChanged" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.OnMouseEnter(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseEnter" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.OnMouseLeave(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseLeave" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseDown" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseUp" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paints the background of the control.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Windows.Forms.PaintEventArgs"/> instance containing the event data and 
+            the <see cref="T:System.Drawing.Graphics"/> instance used for drawing.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Paint" /> event and paints the control.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Windows.Forms.PaintEventArgs"/> instance containing the event data and 
+            the <see cref="T:System.Drawing.Graphics"/> instance used for drawing.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.OnResize(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Resize" /> event and resets the graphics objects for the new size.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedGradientPanel.DeserializeTemplate(System.String)">
+            <summary>
+            Deserializes the text data into a button template instance.
+            </summary>
+            <param name="jsonTemplate">
+            A string containing the JSON text defining the template.
+            </param>
+            <returns>
+            The new <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.PanelTemplate"/> instance, or <b>null</b>.
+            </returns>
+        </member>
+        <member name="T:Adaptive.Intelligence.Shared.UI.TemplatedButton">
+            <summary>
+            Provides an advanced styling button that supports templates for button designs.
+            </summary>
+            <seealso cref="T:System.Windows.Forms.Button" />
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedButton._jsonTemplate">
+            <summary>
+            The JSON representation of the template.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedButton._lastFile">
+            <summary>
+            The last file name value.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedButton._template">
+            <summary>
+            The template.
+            </summary>
+        </member>
+        <member name="F:Adaptive.Intelligence.Shared.UI.TemplatedButton._painter">
+            <summary>
+            The button drawing instance.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedButton"/> class.
+            </summary>
+            <remarks>
+            This is the default constructor.
+            </remarks>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.Windows.Forms.ButtonBase" /> and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"><see langword="true" /> to release both managed and unmanaged resources; <see langword="false" /> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedButton.Checked">
+            <summary>
+            Gets or sets a value indicating whether the button is in a checked state.
+            </summary>
+            <value>
+              <b>true</b> if the button is in a checked state; otherwise, <b>false</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedButton.Template">
+            <summary>
+            Gets or sets the reference to the template to be used.
+            </summary>
+            <value>
+            The reference to the <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> instance to use when drawing the button, or <b>null</b>."/>
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedButton.TemplateFromFile">
+            <summary>
+            Gets or sets the template data by loading and reading the specified file.
+            </summary>
+            <value>
+            A string containing the path and name of the file to be read, or <b>null</b>.
+            </value>
+        </member>
+        <member name="P:Adaptive.Intelligence.Shared.UI.TemplatedButton.TemplateJson">
+            <summary>
+            Gets or sets the reference to the JSON text defining the button template to use 
+            when drawing the button.
+            </summary>
+            <value>
+            A string containing the JSON defining the template, or <b>null</b>.
+            </value>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.OnEnabledChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.EnabledChanged" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.OnMouseEnter(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseEnter" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.OnMouseLeave(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseLeave" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseDown" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseUp" /> event 
+            and sets the button state accordingly.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paints the background of the control.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Windows.Forms.PaintEventArgs"/> instance containing the event data and 
+            the <see cref="T:System.Drawing.Graphics"/> instance used for drawing.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Paint" /> event and paints the control.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.Windows.Forms.PaintEventArgs"/> instance containing the event data and 
+            the <see cref="T:System.Drawing.Graphics"/> instance used for drawing.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.OnResize(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.Resize" /> event and resets the graphics objects for the new size.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs" /> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.SetImageReferences">
+            <summary>
+            Sets the image object references for the button.
+            </summary>
+        </member>
+        <member name="M:Adaptive.Intelligence.Shared.UI.TemplatedButton.DeserializeTemplate(System.String)">
+            <summary>
+            Deserializes the text data into a button template instance.
+            </summary>
+            <param name="jsonTemplate">
+            A string containing the JSON text defining the template.
+            </param>
+            <returns>
+            The new <see cref="T:Adaptive.Intelligence.Shared.UI.TemplatedControls.ButtonTemplate"/> instance, or <b>null</b>.
+            </returns>
+        </member>
+    </members>
+</doc>

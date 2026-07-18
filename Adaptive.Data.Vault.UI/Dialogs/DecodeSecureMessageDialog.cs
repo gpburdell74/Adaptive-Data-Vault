@@ -174,7 +174,7 @@ public partial class DecodeSecureMessageDialog : AdaptiveDialogBase
                 if (loginResult == DialogResult.OK)
                 {
                     _credentials?.Dispose();
-                    _credentials = loginDialog.Credentials.Clone();
+                    _credentials = loginDialog.Credentials?.Clone();
                     _decrypted = DecryptText();
                     MessageText.Text = _decrypted;
                 }
@@ -212,16 +212,13 @@ public partial class DecodeSecureMessageDialog : AdaptiveDialogBase
     private void DecryptMessage()
     {
         _original = MessageText.Text;
-        if (_credentials == null)
-        {
-            _credentials = new InMemoryCredentials();
-        }
+        _credentials ??= new InMemoryCredentials();
         MessageLoginDialog dialog = new MessageLoginDialog(_credentials);
         DialogResult result = dialog.ShowDialog();
         if (result == DialogResult.OK)
         {
             _credentials?.Dispose();
-            _credentials = dialog.Credentials.Clone();
+            _credentials = dialog.Credentials?.Clone();
             _decrypted = DecryptText();
             MessageText.Text = _decrypted;
         }
@@ -237,10 +234,10 @@ public partial class DecodeSecureMessageDialog : AdaptiveDialogBase
 
     private string? DecryptText()
     {
-        string newText = null;
+        string? newText = null;
         if (_credentials != null)
         {
-            byte[]? encryptedData = null;
+            byte[]? encryptedData;
             try
             {
                 encryptedData = Convert.FromBase64String(MessageText.Text);
@@ -273,9 +270,18 @@ public partial class DecodeSecureMessageDialog : AdaptiveDialogBase
         return newText;
     }
 
-    private string ReadTextFile(string fileName)
+    /// <summary>
+    /// Reads the content of the specified file as a text file.
+    /// </summary>
+    /// <param name="fileName">
+    /// A string containing the fully-qualified path and name of the file.
+    /// </param>
+    /// <returns>
+    /// A string containing the entire content of the file. If the file cannot be read, an empty string is returned.
+    /// </returns>
+    private static string ReadTextFile(string fileName)
     {
-        string text = SafeIO.ReadTextFromFile(fileName, isUnicode: false);
+        string? text = SafeIO.ReadTextFromFile(fileName, isUnicode: false);
         if (text == null)
         {
             return string.Empty;

@@ -3,6 +3,7 @@ using Adaptive.Intelligence.Shared.UI;
 
 namespace Adaptive.Data.Vault.UI;
 
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 public partial class SecureEraseFileDialog : AdaptiveDialogBase
 {
     public SecureEraseFileDialog()
@@ -95,7 +96,9 @@ public partial class SecureEraseFileDialog : AdaptiveDialogBase
         StatusPrg.Value = 0;
         StatusPrg.Visible = true;
         StatusLabel.Visible = true;
+
         PerformSecureDeleteAsync(FileText.Text);
+
     }
 
     private void HandleDeleteStatusUpdate(object? sender, ProgressUpdateEventArgs e)

@@ -479,7 +479,6 @@ partial class MainDialog
     private MenuStrip MainMenu;
     private StatusStrip MainStatus;
     private ToolStrip MainToolbar;
-    private SplitContainer Container;
     private ToolStripMenuItem FileMenu;
     private ToolStripMenuItem ToolMenu;
     private ToolStripMenuItem FileMenuNewFile;
@@ -490,10 +489,7 @@ partial class MainDialog
     private ToolStripMenuItem FileMenuSaveAs;
     private ToolStripSeparator FileMenuDividerB;
     private ToolStripMenuItem FileMenuExit;
-    private ToolStripMenuItem WindowMenu;
     private ToolStripSeparator ToolMenuDividerA;
-    private ToolStripMenuItem ToolMenuOptions;
-    private ToolStripSeparator WindowMenuDividerA;
     private ToolStripStatusLabel MainStatusLabel;
     private ToolStripProgressBar MainStatusPrg;
     private ToolStripButton NewFileButton;
@@ -503,7 +499,6 @@ partial class MainDialog
     private ToolStripButton SaveButton;
     private ToolStripButton SaveAsButton;
     private ToolStripSeparator ToolbarSaveDivider;
-    private ToolStripButton OptionsButton;
     private ToolTip ttp;
     private CategoriesTreeControl CatTree;
     private CategorizedItemsContainerControl Data;

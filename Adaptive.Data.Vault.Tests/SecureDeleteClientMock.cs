@@ -15,7 +15,7 @@ namespace Adaptive.Data.Vault.Tests
 
             base.OnStatusUpdate(e);
 
-            return true;
+            return didNotCrash;
         }
     }
 }

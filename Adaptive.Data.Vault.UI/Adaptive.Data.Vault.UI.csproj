@@ -21,14 +21,23 @@
 	<RepositoryUrl>https://github.com/gpburdell74/Adaptive-Data-Vault</RepositoryUrl>
 	<FileVersion>0.95.1.0</FileVersion>
 	<AssemblyVersion>0.95.1.0</AssemblyVersion>
+	<Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<IsTrimmable>True</IsTrimmable>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+	  <IsTrimmable>True</IsTrimmable>
+	</PropertyGroup>
+
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<IsTrimmable>True</IsTrimmable>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+	  <IsTrimmable>True</IsTrimmable>
 	</PropertyGroup>
 
 	<ItemGroup>
